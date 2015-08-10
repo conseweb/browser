@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:background="@color/top_bar_bg" >
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="53dp"
+                android:layout_marginLeft="8dp"
+                android:gravity="center" >
+
+                <LinearLayout
+                    android:id="@+id/bottom_one"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:visibility="gone" >
+
+                    <ImageView
+                        android:id="@+id/bottom_back"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:padding="5dp"
+                        android:src="@drawable/bottom_bar_back" />
+
+                    <ImageView
+                        android:id="@+id/bottom_forward"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="5dp"
+                        android:src="@drawable/bottom_bar_forward" />
+
+                    <ImageView
+                        android:id="@+id/bottom_refresh"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:padding="5dp"
+                        android:src="@drawable/bottom_bar_refresh" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/top_bar_main_layout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="4dip"
+                    android:layout_weight="2"
+                    android:background="@drawable/content_bg"
+                    android:gravity="center" >
+
+                    <ImageView
+                        android:id="@+id/addbookmark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:src="@drawable/hai_detail_2" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        android:background="#e3e5e7" />
+
+                    <EditText
+                        android:id="@+id/url_edittext"
+                        android:layout_width="0dip"
+                        android:layout_height="35dp"
+                        android:layout_marginLeft="8dip"
+                        android:layout_weight="4"
+                        android:background="@null"
+                        android:drawablePadding="5.0dip"
+                        android:gravity="center_vertical"
+                        android:hint="输入网址或关键字"
+                        android:singleLine="true"
+                        android:textColor="@color/textview_hint"
+                        android:textColorHighlight="@color/edittext_Highlight"
+                        android:textColorHint="@color/textview_hint"
+                        android:textSize="14dip" />
+
+                    <ImageView
+                        android:id="@+id/title_er_wei_ma"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:src="@drawable/top_er_wei_ma" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/add_to_launcher"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="8dp"
+                    android:background="@drawable/ic_btn_account" />
+
+                <LinearLayout
+                    android:id="@+id/bottom_two"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:visibility="gone" >
+
+                    <ImageView
+                        android:id="@+id/bottom_homepage"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:padding="5dp"
+                        android:src="@drawable/bottom_bar_homepage" />
+
+                    <ImageView
+                        android:id="@+id/bottom_menu"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:padding="5dp"
+                        android:src="@drawable/bottom_bar_menu" />
+
+                    <FrameLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="5dp" >
+
+                        <ImageView
+                            android:id="@+id/bottom_tabs"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:clickable="true"
+                            android:src="@drawable/bottom_bar_tabs" />
+
+                        <TextView
+                            android:id="@+id/bottom_tabs_num"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center|bottom"
+                            android:layout_marginBottom="7dp"
+                            android:layout_marginLeft="1dp"
+                            android:gravity="bottom"
+                            android:text="1"
+                            android:textColor="#FF898989"
+                            android:textSize="10dip" />
+                    </FrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                android:gravity="center" >
+
+                <ProgressBar
+                    android:id="@+id/WebViewProgress"
+                    style="@style/Widget_ProgressBar_Horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:indeterminate="false"
+                    android:maxHeight="2dp"
+                    android:visibility="gone" >
+                </ProgressBar>
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1.0px"
+                android:background="@drawable/leba_shape_line" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/top_folder_view"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/Folder_bg_color"
+            android:visibility="gone" />
+    </FrameLayout>
+
+</LinearLayout>

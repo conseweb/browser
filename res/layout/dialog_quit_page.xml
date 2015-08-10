@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center" >
+
+    <LinearLayout
+        android:id="@+id/loading_linear"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical" >
+
+         <include layout="@layout/title_dialog" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/dialog_ok_clean"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/button_bg_dialog_selector"
+                android:gravity="center"
+                android:text="退出并清除本次浏览记录"
+                android:textColor="@color/textview_blue"
+                android:textSize="@dimen/button_text_size" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1.0px"
+                android:background="@drawable/leba_shape_line" />
+
+            <Button
+                android:id="@+id/dialog_ok"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/button_bg_dialog_selector"
+                android:gravity="center"
+                android:text="退出"
+                android:textColor="@color/textview_blue"
+                android:textSize="@dimen/button_text_size" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1.0px"
+                android:background="@drawable/leba_shape_line" />
+
+            <Button
+                android:id="@+id/dialog_cancel"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/button_bg_dialog_selector"
+                android:gravity="center"
+                android:text="取消"
+                android:textColor="@color/textview"
+                android:textSize="@dimen/button_text_size" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

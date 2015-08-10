@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <com.qing.browser.components.CustomWebView
+        android:id="@+id/webview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
+   <include layout="@layout/dialog_bottom_ad_show" android:layout_alignParentBottom="true" />
+   <include layout="@layout/dialog_middle_ad_show"/>
+    
+   <LinearLayout android:layout_width="fill_parent" android:id="@+id/failweblinearlayout"
+		android:layout_height="fill_parent" android:background="@android:color/white"
+		android:visibility="gone" android:orientation="horizontal">
+		<LinearLayout android:layout_gravity="center_vertical"
+			android:orientation="horizontal" android:id="@+id/loading_linear"
+			android:gravity="center" android:layout_width="fill_parent"
+			android:layout_height="wrap_content">
+			<LinearLayout android:id="@+id/loading_view"
+				android:background="@android:color/white" android:layout_width="280.0dip"
+				android:orientation="vertical" android:layout_height="wrap_content">
+
+				<ImageView android:id="@+id/loading_process_dialog_progressBar"
+				    android:layout_gravity="center"
+					android:layout_width="wrap_content" android:layout_height="wrap_content"
+					android:background="@drawable/webview_fail" />
+
+				<TextView android:textSize="30dip" android:textColor="@android:color/black"
+					android:id="@+id/loading_text" android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:maxWidth="220.0dip"
+					android:layout_gravity="center"
+					android:text="@string/webviewfail.shibai1" />
+				<View android:layout_width="fill_parent" android:layout_height="1dip"
+				      android:background="@color/kougouyanse"/>
+				
+				<TextView android:textSize="15.0dip" android:textColor="#454f55"
+					android:paddingTop="15dip" android:id="@+id/loading_text2"
+					android:layout_marginBottom="15dip"
+					android:layout_width="wrap_content" android:layout_height="wrap_content"
+					android:text="@string/webviewfail.shibai2" />
+				<TextView android:textSize="15.0dip" android:textColor="#454f55"
+					android:paddingTop="5dip" android:drawableLeft="@drawable/webview_dian"
+					android:layout_width="wrap_content" android:layout_height="wrap_content"
+					android:text="@string/webviewfail.shibai3" />
+				<TextView android:textSize="15.0dip" android:textColor="#454f55"
+					android:paddingTop="5dip" android:drawableLeft="@drawable/webview_dian"
+					android:layout_width="wrap_content" android:layout_height="wrap_content"
+					android:text="@string/webviewfail.shibai4" />
+				<TextView android:textSize="15.0dip" android:textColor="#454f55"
+					android:paddingTop="5dip" android:drawableLeft="@drawable/webview_dian"
+					android:layout_width="wrap_content" android:layout_height="wrap_content"
+					android:layout_marginBottom="7dip" android:text="@string/webviewfail.shibai5" />
+				<View android:layout_width="fill_parent" android:layout_height="1dip"
+				      android:background="@color/kougouyanse"/>
+				
+				<LinearLayout 
+					android:background="@android:color/white" android:layout_width="fill_parent"
+					android:id="@+id/allimage" android:layout_marginTop="7dip"
+					android:orientation="horizontal" android:layout_height="wrap_content">
+					<LinearLayout android:layout_weight="1" android:layout_width="0dip"
+					    android:gravity="center"
+						android:orientation="vertical" android:layout_height="wrap_content" >
+						<ImageButton android:id="@+id/shuju"
+							android:layout_width="38dip" android:layout_height="38dip"
+							android:background="@drawable/webview_fail_shuju_selector"  />
+						<TextView android:textSize="15.0dip" android:textColor="#454f55"
+							android:layout_width="wrap_content" android:layout_height="wrap_content"
+							android:text="@string/webviewfail.shibai.shuju" android:gravity="center" />
+				    </LinearLayout>
+				    
+					<LinearLayout android:layout_weight="1" android:layout_width="0dip"
+					    android:gravity="center"
+						android:orientation="vertical" android:layout_height="wrap_content" >
+						<ImageButton android:paddingTop="5dip" android:layout_width="38dip" 
+						    android:background="@drawable/webview_fail_wifi_selector"
+							android:id="@+id/wifi" android:layout_height="38dip"/>
+						<TextView android:textSize="15.0dip" android:textColor="#454f55"
+							android:layout_width="wrap_content" 
+							android:gravity="center"
+							android:layout_height="wrap_content" android:text="wifi" />
+				    </LinearLayout>
+				    
+					<LinearLayout android:layout_weight="1" android:layout_width="0dip"
+					    android:gravity="center"
+						android:orientation="vertical" android:layout_height="wrap_content" >
+						<ImageButton android:paddingTop="5dip" android:id="@+id/shuaxin"
+						    android:background="@drawable/webview_fail_shuaxin_selector"
+							android:layout_width="38dip" android:layout_height="38dip" />
+						<TextView android:textSize="15.0dip" android:textColor="#454f55"
+						    android:gravity="center" android:text="@string/webviewfail.shibai.shuaxin"
+							android:layout_width="wrap_content" android:layout_height="wrap_content" />
+				    </LinearLayout>
+				    
+					<LinearLayout android:layout_weight="1" android:layout_width="0dip"
+					    android:gravity="center" android:visibility="gone" 
+						android:orientation="vertical" android:layout_height="wrap_content" >
+						<ImageButton android:paddingTop="5dip" android:id="@+id/daohang"
+						    android:background="@drawable/webview_fail_daohang_selector"
+							android:layout_width="38dip" android:layout_height="38dip" />
+						<TextView android:textSize="15.0dip" android:textColor="#454f55"
+						    android:gravity="center" 
+							android:layout_width="wrap_content" android:layout_height="wrap_content"
+							android:layout_marginBottom="7dip" android:text="@string/webviewfail.shibai.daohang" />
+				    </LinearLayout>
+					
+				</LinearLayout>
+			</LinearLayout>
+		</LinearLayout>
+	</LinearLayout>
+
+</RelativeLayout>

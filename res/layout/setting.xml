@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/page_bg"
+    android:orientation="vertical" >
+
+    <include layout="@layout/title_public" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:orientation="vertical"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/white_zone_layout_margin"
+                android:background="@drawable/content_bg"
+                android:orientation="vertical" >
+
+                <CheckBox
+                    android:id="@+id/checkBox_wifi_img"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/user_list_item_height"
+                    android:button="@null"
+                    android:checked="true"
+                    android:drawableRight="@drawable/checkbox"
+                    android:paddingLeft="15dip"
+                    android:paddingRight="10dip"
+                    android:paddingTop="3dp"
+                    android:text="仅在WIFI下显示图片"
+                    android:textColor="#666666"
+                    android:textSize="15sp" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1.0px"
+                    android:background="@drawable/leba_shape_line" />
+
+                <CheckBox
+                    android:id="@+id/checkBox_wifi_download"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/user_list_item_height"
+                    android:button="@null"
+                    android:checked="true"
+                    android:drawableRight="@drawable/checkbox"
+                    android:paddingLeft="15dip"
+                    android:paddingRight="10dip"
+                    android:paddingTop="3dp"
+                    android:text="非wifi环境下载文件提醒"
+                    android:textColor="#666666"
+                    android:textSize="15sp" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1.0px"
+                    android:background="@drawable/leba_shape_line" />
+
+                <LinearLayout
+                    android:id="@+id/checkBox_seting_default"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/list_selector"
+                    android:clickable="true"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="@dimen/user_list_item_height"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="5dip"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="10dip"
+                        android:text="设置为默认浏览器"
+                        android:textColor="#666666"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:id="@+id/seting_default_select"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/user_list_item_height"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/checkbox_unselect" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1.0px"
+                    android:background="@drawable/leba_shape_line" />
+
+                <LinearLayout
+                    android:id="@+id/seting_textSize"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/list_selector"
+                    android:clickable="true"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="@dimen/user_list_item_height"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="5dip"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="10dip"
+                        android:text="文字大小"
+                        android:textColor="#666666"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/textSize"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/user_list_item_height"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="20dp"
+                        android:layout_weight="1"
+                        android:drawablePadding="5dp"
+                        android:drawableRight="@drawable/more_ziti_bg"
+                        android:gravity="center|right"
+                        android:text="中号字体"
+                        android:textColor="#666666"
+                        android:textSize="15sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/white_zone_layout_margin"
+                android:background="@drawable/content_bg"
+                android:orientation="vertical" >
+
+                <CheckBox
+                    android:id="@+id/checkBox_cookies"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/user_list_item_height"
+                    android:button="@null"
+                    android:checked="true"
+                    android:drawableRight="@drawable/checkbox"
+                    android:paddingLeft="15dip"
+                    android:paddingRight="10dip"
+                    android:paddingTop="3dp"
+                    android:text="接收cookies"
+                    android:textColor="#666666"
+                    android:textSize="15sp" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1.0px"
+                    android:background="@drawable/leba_shape_line" />
+
+                <CheckBox
+                    android:id="@+id/checkBox_remData"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/user_list_item_height"
+                    android:button="@null"
+                    android:checked="true"
+                    android:drawableRight="@drawable/checkbox"
+                    android:paddingLeft="15dip"
+                    android:paddingRight="10dip"
+                    android:paddingTop="3dp"
+                    android:text="记住表单数据"
+                    android:textColor="#666666"
+                    android:textSize="15sp" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1.0px"
+                    android:background="@drawable/leba_shape_line" />
+
+                <LinearLayout
+                    android:id="@+id/seting_clean"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/list_selector"
+                    android:clickable="true"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="@dimen/user_list_item_height"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="5dip"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="10dip"
+                        android:text="清除数据"
+                        android:textColor="#666666"
+                        android:textSize="15sp" >
+                    </TextView>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/white_zone_layout_margin"
+                android:background="@drawable/content_bg"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:id="@+id/seting_liuliang"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/list_selector"
+                    android:clickable="true"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="@dimen/user_list_item_height"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="5dip"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="10dip"
+                        android:text="流量统计"
+                        android:textColor="#666666"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1.0px"
+                    android:background="@drawable/leba_shape_line" />
+
+                <LinearLayout
+                    android:id="@+id/seting_jianyifankui"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/list_selector"
+                    android:clickable="true"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="@dimen/user_list_item_height"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="5dip"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="10dip"
+                        android:text="建议反馈"
+                        android:textColor="#666666"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1.0px"
+                    android:background="@drawable/leba_shape_line" />
+
+                <LinearLayout
+                    android:id="@+id/seting_xinshouzhinan"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@drawable/list_selector"
+                    android:clickable="true"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="@dimen/user_list_item_height"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="5dip"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="10dip"
+                        android:text="新手指南"
+                        android:textColor="#666666"
+                        android:textSize="15sp" />
+                </LinearLayout>
+                
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1.0px"
+                    android:background="@drawable/leba_shape_line" />
+
+                <LinearLayout
+                    android:id="@+id/seting_bangzhu"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@drawable/list_selector"
+                    android:clickable="true"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="@dimen/user_list_item_height"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="5dip"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="10dip"
+                        android:text="帮助"
+                        android:textColor="#666666"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1.0px"
+                    android:background="@drawable/leba_shape_line" />
+
+                <LinearLayout
+                    android:id="@+id/seting_guanyu"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@drawable/list_selector"
+                    android:clickable="true"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="@dimen/user_list_item_height"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="5dip"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="10dip"
+                        android:text="关于"
+                        android:textColor="#666666"
+                        android:textSize="15sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+     <dimen name="LockPatternView_width_height">288dp</dimen>
+     <dimen name="Lock_Image_PaddingTop">15dp</dimen>
+</resources>

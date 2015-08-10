@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2009 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<favorites xmlns:launcher="http://schemas.android.com/apk/res/com.qing.browser" >
+
+    <!-- Left screen [0] -->
+
+
+    <!-- Middle screen [1] -->
+    <favorite
+        launcher:container="-100"
+        launcher:icon="@drawable/erweima"
+        launcher:iconresource=""
+        launcher:icontype="1"
+        launcher:itemindex="0"
+        launcher:itemtype="1"
+        launcher:screen="1"
+        launcher:shortid="-1"
+        launcher:title="扫一扫"
+        launcher:url="command:tianqi" />
+    <favorite
+        launcher:container="-100"
+        launcher:icon="@drawable/zhuanke"
+        launcher:iconresource=""
+        launcher:icontype="1"
+        launcher:itemindex="1"
+        launcher:itemtype="1"
+        launcher:screen="1"
+        launcher:shortid="-1"
+        launcher:title="设置"
+        launcher:url="command:zhuanke" />
+    <favorite
+        launcher:container="-100"
+        launcher:icon="@drawable/shuqian_baidu"
+        launcher:iconresource=""
+        launcher:icontype="1"
+        launcher:itemindex="1"
+        launcher:itemtype="1"
+        launcher:screen="1"
+        launcher:shortid="-1"
+        launcher:title="百度"
+        launcher:url="http://www.baidu.com" />
+    <favorite
+        launcher:container="-100"
+        launcher:icon="@drawable/shuqian_xinlang"
+        launcher:iconresource=""
+        launcher:icontype="1"
+        launcher:itemindex="1"
+        launcher:itemtype="1"
+        launcher:screen="1"
+        launcher:shortid="-1"
+        launcher:title="新浪"
+        launcher:url="http://3g.sina.com.cn" />
+    <favorite
+        launcher:container="-100"
+        launcher:icon="@drawable/shuqian_tengxun"
+        launcher:iconresource=""
+        launcher:icontype="1"
+        launcher:itemindex="1"
+        launcher:itemtype="1"
+        launcher:screen="1"
+        launcher:shortid="-1"
+        launcher:title="腾讯"
+        launcher:url="http://www.qq.com" />
+    <favorite
+        launcher:container="-100"
+        launcher:icon="@drawable/shuqian_fenghuang"
+        launcher:iconresource=""
+        launcher:icontype="1"
+        launcher:itemindex="1"
+        launcher:itemtype="1"
+        launcher:screen="1"
+        launcher:shortid="-1"
+        launcher:title="凤凰网"
+        launcher:url="http://www.ifeng.com" />
+    <favorite
+        launcher:container="-100"
+        launcher:icon="@drawable/shuqian_weibo"
+        launcher:iconresource=""
+        launcher:icontype="1"
+        launcher:itemindex="1"
+        launcher:itemtype="1"
+        launcher:screen="1"
+        launcher:shortid="-1"
+        launcher:title="新浪微博"
+        launcher:url="http://www.weibo.com" />
+    <favorite
+        launcher:container="-100"
+        launcher:icon="@drawable/shuqian_renren"
+        launcher:iconresource=""
+        launcher:icontype="1"
+        launcher:itemindex="1"
+        launcher:itemtype="1"
+        launcher:screen="1"
+        launcher:shortid="-1"
+        launcher:title="人人网"
+        launcher:url="http://m.renren.com" />
+    <favorite
+        launcher:container="-100"
+        launcher:icon="@drawable/shuqian_shiji"
+        launcher:iconresource=""
+        launcher:icontype="1"
+        launcher:itemindex="1"
+        launcher:itemtype="1"
+        launcher:screen="1"
+        launcher:shortid="-1"
+        launcher:title="世纪佳缘"
+        launcher:url="http://www.jiayuan.com" />
+    <favorite
+        launcher:container="-100"
+        launcher:icon="@drawable/shuqian_youku"
+        launcher:iconresource=""
+        launcher:icontype="1"
+        launcher:itemindex="1"
+        launcher:itemtype="1"
+        launcher:screen="1"
+        launcher:shortid="-1"
+        launcher:title="优酷"
+        launcher:url="http://www.youku.com" />
+    <favorite
+        launcher:container="-100"
+        launcher:icon="@drawable/shuqian_tudou"
+        launcher:iconresource=""
+        launcher:icontype="1"
+        launcher:itemindex="1"
+        launcher:itemtype="1"
+        launcher:screen="1"
+        launcher:shortid="-1"
+        launcher:title="土豆"
+        launcher:url="http://www.tudou.com" />
+    <favorite
+        launcher:container="-100"
+        launcher:icon="@drawable/shuqian_yamaxun"
+        launcher:iconresource=""
+        launcher:icontype="1"
+        launcher:itemindex="1"
+        launcher:itemtype="1"
+        launcher:screen="1"
+        launcher:shortid="-1"
+        launcher:title="亚马逊"
+        launcher:url="http://www.amazon.cn/" />
+    <!-- Right screen [2] -->
+  <favorite
+        launcher:container="-100"
+        launcher:icon="@drawable/shuqian_xinhua"
+        launcher:iconresource=""
+        launcher:icontype="1"
+        launcher:itemindex="1"
+        launcher:itemtype="1"
+        launcher:screen="2"
+        launcher:shortid="-1"
+        launcher:title="新华网"
+        launcher:url="http://3g.news.cn" />
+  <favorite
+        launcher:container="-100"
+        launcher:icon="@drawable/shuqian_douban"
+        launcher:iconresource=""
+        launcher:icontype="1"
+        launcher:itemindex="1"
+        launcher:itemtype="1"
+        launcher:screen="2"
+        launcher:shortid="-1"
+        launcher:title="豆瓣网"
+        launcher:url="http://www.douban.com" />
+  <favorite
+        launcher:container="-100"
+        launcher:icon="@drawable/shuqian_aiqiyi"
+        launcher:iconresource=""
+        launcher:icontype="1"
+        launcher:itemindex="1"
+        launcher:itemtype="1"
+        launcher:screen="2"
+        launcher:shortid="-1"
+        launcher:title="爱奇艺"
+        launcher:url="http://m.iqiyi.com/dianshiju/" />
+  <favorite
+        launcher:container="-100"
+        launcher:icon="@drawable/shuqian_wangyi"
+        launcher:iconresource=""
+        launcher:icontype="1"
+        launcher:itemindex="1"
+        launcher:itemtype="1"
+        launcher:screen="2"
+        launcher:shortid="-1"
+        launcher:title="网易"
+        launcher:url="http://www.163.com" />
+  <favorite
+        launcher:container="-100"
+        launcher:icon="@drawable/shuqian_fanke"
+        launcher:iconresource=""
+        launcher:icontype="1"
+        launcher:itemindex="1"
+        launcher:itemtype="1"
+        launcher:screen="2"
+        launcher:shortid="-1"
+        launcher:title="凡客"
+        launcher:url="http://www.vancl.com" />
+  <favorite
+        launcher:container="-100"
+        launcher:icon="@drawable/shuqian_quna"
+        launcher:iconresource=""
+        launcher:icontype="1"
+        launcher:itemindex="1"
+        launcher:itemtype="1"
+        launcher:screen="2"
+        launcher:shortid="-1"
+        launcher:title="去哪儿"
+        launcher:url="http://www.qunar.com" />
+  <favorite
+        launcher:container="-100"
+        launcher:icon="@drawable/shuqian_jumei"
+        launcher:iconresource=""
+        launcher:icontype="1"
+        launcher:itemindex="1"
+        launcher:itemtype="1"
+        launcher:screen="2"
+        launcher:shortid="-1"
+        launcher:title="聚美优品"
+        launcher:url="http://m.jumei.com/" />
+  <favorite
+        launcher:container="-100"
+        launcher:icon="@drawable/shuqian_weipin"
+        launcher:iconresource=""
+        launcher:icontype="1"
+        launcher:itemindex="1"
+        launcher:itemtype="1"
+        launcher:screen="2"
+        launcher:shortid="-1"
+        launcher:title="唯品会"
+        launcher:url="http://www.vip.com" />
+  <favorite
+        launcher:container="-100"
+        launcher:icon="@drawable/shuqian_qiche"
+        launcher:iconresource=""
+        launcher:icontype="1"
+        launcher:itemindex="1"
+        launcher:itemtype="1"
+        launcher:screen="2"
+        launcher:shortid="-1"
+        launcher:title="汽车之家"
+        launcher:url="http://www.autohome.com.cn" />
+  <favorite
+        launcher:container="-100"
+        launcher:icon="@drawable/shuqian_taipingyang"
+        launcher:iconresource=""
+        launcher:icontype="1"
+        launcher:itemindex="1"
+        launcher:itemtype="1"
+        launcher:screen="2"
+        launcher:shortid="-1"
+        launcher:title="太平洋汽车"
+        launcher:url="http://m.autohome.com.cn/" />
+  <favorite
+        launcher:container="-100"
+        launcher:icon="@drawable/shuqian_yihao"
+        launcher:iconresource=""
+        launcher:icontype="1"
+        launcher:itemindex="1"
+        launcher:itemtype="1"
+        launcher:screen="2"
+        launcher:shortid="-1"
+        launcher:title="1号店"
+        launcher:url="http://www.yhd.com" />
+  <favorite
+        launcher:container="-100"
+        launcher:icon="@drawable/shuqian_qiancheng"
+        launcher:iconresource=""
+        launcher:icontype="1"
+        launcher:itemindex="1"
+        launcher:itemtype="1"
+        launcher:screen="2"
+        launcher:shortid="-1"
+        launcher:title="前程无忧"
+        launcher:url="http://www.51job.com" />
+  <favorite
+        launcher:container="-100"
+        launcher:icon="@drawable/shuqian_diannao"
+        launcher:iconresource=""
+        launcher:icontype="1"
+        launcher:itemindex="1"
+        launcher:itemtype="1"
+        launcher:screen="2"
+        launcher:shortid="-1"
+        launcher:title="太平洋电脑"
+        launcher:url="http://www.pconline.com.cn" />
+  <favorite
+        launcher:container="-100"
+        launcher:icon="@drawable/shuqian_xiaoxiang"
+        launcher:iconresource=""
+        launcher:icontype="1"
+        launcher:itemindex="1"
+        launcher:itemtype="1"
+        launcher:screen="2"
+        launcher:shortid="-1"
+        launcher:title="潇湘书院"
+        launcher:url="http://g.xxsy.net/" />
+  <favorite
+        launcher:container="-100"
+        launcher:icon="@drawable/shuqian_dongfang"
+        launcher:iconresource=""
+        launcher:icontype="1"
+        launcher:itemindex="1"
+        launcher:itemtype="1"
+        launcher:screen="2"
+        launcher:shortid="-1"
+        launcher:title="东方财富网"
+        launcher:url="http://wap.eastmoney.com/" />
+    <favorite
+        launcher:container="-100"
+        launcher:icon="@drawable/shuqian_kugou"
+        launcher:iconresource=""
+        launcher:icontype="1"
+        launcher:itemindex="1"
+        launcher:itemtype="1"
+        launcher:screen="2"
+        launcher:shortid="-1"
+        launcher:title="酷狗音乐"
+        launcher:url="http://m.kugou.com/" />
+    <!-- DockBar screen [0] -->
+
+</favorites>

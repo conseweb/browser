@@ -1,0 +1,55 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_gravity="bottom|center_vertical"
+    android:layout_marginBottom="@dimen/default_browser_bottom"
+    android:background="@color/top_bar_bg"
+    android:padding="5dp"
+    android:visibility="gone" >
+
+    <LinearLayout
+        android:id="@+id/menu"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#f8faff"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:id="@+id/tv_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="设置为默认浏览器?"
+            android:textColor="@color/textview"
+            android:textSize="16dp" />
+
+        <Button
+            android:id="@+id/button_ok"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/button_bg_blue_selector"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="设置"
+            android:textColor="@color/white"
+            android:textSize="16dp" />
+
+        <Button
+            android:id="@+id/button_cancel"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/button_bg_whiter_selector"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="不用"
+            android:textColor="@color/textview"
+            android:textSize="16dp" />
+    </LinearLayout>
+
+</RelativeLayout>

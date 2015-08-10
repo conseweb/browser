@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.qing.browser.ui.launcher.FolderIcon xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/name"
+    android:layout_width="wrap_content"
+    android:layout_height="88dip"
+    android:layout_gravity="center"
+    android:layout_marginBottom="8dip"
+    android:layout_marginLeft="3dip"
+    android:layout_marginRight="3dip"
+    android:layout_marginTop="13dip"
+    android:drawablePadding="3dip"
+    android:drawableTop="@drawable/ic_launcher_folder"
+    android:ellipsize="end"
+    android:gravity="center"
+    android:maxLength="8"
+    android:maxLines="1"
+    android:paddingTop="4dip"
+    android:textSize="14dip"
+    android:textColor="@color/textview" >
+
+</com.qing.browser.ui.launcher.FolderIcon>

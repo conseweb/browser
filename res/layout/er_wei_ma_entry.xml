@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <GridView
+        android:id="@+id/entry_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnWidth="90dp"
+        android:gravity="center"
+        android:horizontalSpacing="1dp"
+        android:listSelector="#00000000"
+        android:numColumns="4"
+        android:padding="@dimen/white_zone_layout_margin"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="1dp" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1.0px"
+        android:background="@drawable/leba_shape_line" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/dialog_cancel"
+            android:layout_width="0.0dip"
+            android:layout_height="@dimen/dialog_title_height"
+            android:layout_weight="1.0"
+            android:background="@drawable/button_bg_dialog_selector"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="@color/textview_blue"
+            android:textSize="@dimen/button_text_size"
+            android:visibility="visible" />
+    </LinearLayout>
+
+</LinearLayout>

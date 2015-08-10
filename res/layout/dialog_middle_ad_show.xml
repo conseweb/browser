@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+       xmlns:android="http://schemas.android.com/apk/res/android"
+       android:id="@+id/chapinbg"
+       android:gravity="center" android:visibility="gone"
+       android:background="@drawable/ad_cha_ping_bg">
+       
+	<RelativeLayout 
+	    android:layout_width="250dip"
+	    android:layout_height="320dip" >
+	
+	
+	    <ImageView
+	        android:id="@+id/middle_image"
+	        android:layout_width="240dip"
+	        android:layout_marginTop="10dip"
+	        android:layout_height="240dip"
+	        android:textSize="18dp" />
+	
+	    <LinearLayout
+	        android:layout_width="240dip"
+	        android:layout_height="80dip"
+	        android:gravity="center"
+	        android:layout_alignParentLeft="true"
+	        android:layout_below="@+id/middle_image"
+	        android:background="@color/white" >
+	
+	        <Button
+	            android:layout_width="100dip"
+	            android:layout_height="33dip"
+	            android:id="@+id/ad_dakai"
+	            android:gravity="center"
+	            android:background="@drawable/selector_middle_ad_show"
+	            android:textColor="@color/black"
+	            android:text="立即体验" />
+	    </LinearLayout>
+	
+	    <Button
+	        android:layout_width="24dip"
+	        android:layout_height="24dip"
+	        android:id="@+id/middle_close"
+	        android:layout_alignParentRight="true"
+	        android:layout_alignParentTop="true"
+	        android:background="@drawable/tabs_item_close" />
+	
+	</RelativeLayout>
+ </LinearLayout>

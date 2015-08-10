@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item name="gray" type="drawable">#ff666666</item>
+    <item name="selector_transparent" type="drawable">#00000000</item>
+    <item name="transparent" type="drawable">#00000000</item>
+    <item name="page_bg" type="drawable">#ececec</item>
+    <item name="dialog_button_bg_press" type="drawable">#d5d4db</item> 
+    <item name="dialog_button_bg_default" type="drawable">#FFFFFF</item>
+    <item name="zone_bg" type="drawable">#293035</item>
+    <item name="zone_bg_hover" type="drawable">#d62401</item>
+    <item name="list_item_press" type="drawable">#d5d4db</item>
+    <item name="inputbar_bg" type="drawable">#282828</item>
+    <item name="inputbar_press_bg" type="drawable">#1a1a1a</item>
+</resources>

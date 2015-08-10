@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_title_bar"
+    android:layout_width="fill_parent"
+    android:layout_height="45dp"
+    android:layout_gravity="center_vertical"
+    android:background="@drawable/titlebar_bg"
+    android:paddingRight="5.0dip" >
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_margin="3dip"
+        android:src="@drawable/icon" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="10dip"
+        android:layout_toRightOf="@+id/image"
+        android:textColor="@color/white"
+        android:textSize="17dip" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="80dip"
+        android:layout_height="18dip"
+        android:layout_alignBottom="@+id/image"
+        android:layout_alignLeft="@+id/name"
+        android:background="@drawable/ying_yong_xia_zai_xing" />
+
+    <Button
+        android:id="@+id/bangdan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/ying_yong_xia_zai_geng_duo_selector"
+        android:gravity="center"
+        android:text="@string/bangdan"
+        android:textColor="@color/white"
+        android:textSize="20dip" />
+
+</RelativeLayout>

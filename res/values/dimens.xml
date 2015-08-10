@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <!-- height of the bottom row of controls -->
+    <dimen name="button_bar_height">56dip</dimen>
+
+    <!-- roughly a status bar (for vertically centering the all apps
+         home icon in landscape) -->
+    <dimen name="status_bar_height">25dip</dimen>
+
+    <!-- delete_zone_size_full - button_bar_height_portrait -->
+    <dimen name="edit_text_size">16dp</dimen>
+    <dimen name="edit_height_singleLine">40dp</dimen>
+    <dimen name="button_text_size">16dp</dimen>
+    <dimen name="button_layout_margin">10dp</dimen>
+    <dimen name="dialog_title_height">50dp</dimen>
+    <dimen name="user_list_item_height">40dp</dimen>
+    <dimen name="button_layout_height">50dp</dimen>
+    <dimen name="white_zone_layout_margin">5dp</dimen>
+    <dimen name="LockPatternView_width_height">288dp</dimen>
+    <dimen name="Lock_Image_PaddingTop">15dp</dimen>
+    <dimen name="erweima_jie_guo_item_height">50dp</dimen>
+    <dimen name="status_bar_recents_thumbnail_width">164dp</dimen>
+    <dimen name="status_bar_recents_thumbnail_height">145dp</dimen>
+    <dimen name="status_bar_recents_app_label_text_size">14dip</dimen>
+    <dimen name="status_bar_recents_fading_edge_length">20dip</dimen>
+
+</resources>

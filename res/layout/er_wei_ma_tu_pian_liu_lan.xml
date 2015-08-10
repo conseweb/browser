@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:orientation="vertical" android:background="@android:color/white">
+
+	<include layout="@layout/title_public"></include>
+
+	<TextView android:layout_width="fill_parent" android:id="@+id/tupianname"
+		android:text="您还没有保存的图片哦~" android:layout_height="wrap_content"
+		android:gravity="center" android:paddingTop="20dip" android:textColor="@color/textview"
+		android:paddingBottom="20dip" android:textSize="20sp" />
+
+	<View android:background="@color/kougouyanse"
+		android:layout_width="fill_parent" android:layout_height="1.5dip"
+		android:layout_marginBottom="10.0dip" />
+	
+	<LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:orientation="horizontal" android:background="@android:color/white" >
+		<ImageSwitcher android:id="@+id/switcher"
+			android:background="@android:color/white" android:layout_gravity="center_vertical"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:layout_alignParentLeft="true" android:layout_alignParentRight="true" />
+		<TextView android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/neirong"
+			android:layout_marginLeft="10dip"
+			android:layout_marginRight="10dip"
+			android:layout_toLeftOf="@+id/switcher"
+			android:gravity="center" android:textColor="@android:color/black"
+			android:textSize="20sp" />
+	</LinearLayout>
+	<Gallery android:id="@+id/mygallery" android:layout_width="fill_parent"
+		android:layout_height="80dp" android:layout_marginTop="70dip"
+		android:gravity="center_vertical" android:spacing="16dp" />
+
+</LinearLayout>

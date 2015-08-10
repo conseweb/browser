@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="70dip"
+    android:id="@+id/bottom_ad"
+    android:layout_alignParentBottom="true"
+    android:visibility="gone"
+    android:background="@drawable/bottom_ad_show_bg" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="45dip"
+        android:layout_height="45dip"
+        android:layout_marginLeft="6dip"
+        android:layout_marginRight="8dip"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        />
+
+    <Button
+        android:id="@+id/ad_close"
+        android:layout_width="20dip"
+        android:layout_height="20dip"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/tabs_item_close" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:layout_centerVertical="true"
+        android:textSize="15dip"
+        android:layout_toRightOf="@+id/imageView1"
+         />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="80dip"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ying_yong_xia_zai_guan_bi_pressed"
+        android:textSize="16dip"
+        android:layout_alignBaseline="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_toLeftOf="@+id/ad_close"
+        android:text="立即打开" />
+
+</RelativeLayout>

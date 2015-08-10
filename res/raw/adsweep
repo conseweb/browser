@@ -1,0 +1,248 @@
+javascript:(function () {
+adsweep();
+
+var version = '2.0.3';
+
+function adsweep(){		
+		if(location.href){
+			window.adsweepVersion=version;
+			window.ua=navigator.userAgent;			
+			window.URL = location.href;
+			
+			var countTries=0;
+			function checkDOM(){
+				if(countTries<120){
+					if(document.getElementsByTagName("HEAD")[0] && document.getElementsByTagName("BODY")[0]){
+							adsweep_core();
+							window.addEventListener("load", adsweep_removeAdNodes, false);
+					} else {
+						countTries++;
+						window.setTimeout(checkDOM,250);
+					}
+				}
+			}
+			checkDOM();						
+		}
+}
+
+function adsweep_core(){
+	// Whitelist. AdSweep does nothing for URLs listed here.
+	var whitelist=[];
+	
+	// List of sites for which you don't want to hide common ad patterns 
+	var adPatternExceptions=['deviantart.com','boulanger.fr','chess.com','docs.google.com','gamestar.de','google.com.hk/finance','google.com/calendar','hulu.com','mail.google.com','moskva.fm','picasaweb.google.com','spreadsheets.google.com','wikipedia.org','winfuture.de']; // I'm adding Hulu because it's causing a false-positive and I can't test, as I am not in the US.
+	
+	// List custom CSS selectors that you want to hide on specific sites
+	var sites=new Array();
+	sites['3g.163.com']='[class="tnb"]';
+	sites['m.vip.com']='[class="i_client hide"]';
+	sites['m.taobao.com']='[class="smartad"]';
+	sites['m.tmall.com']='[class="smartad"]';
+	sites['m.jd.com']='[class="download-con"]';
+	sites['m.weathercn.com']='[src*="/ad_"]'
+	sites['m.soufun.com']='[id="downapp"],[id="downclient"]';
+	sites['sina.com.cn']='[class="banner_top"],[style="display:block;background:rgb(250, 250, 250);"]';
+	sites['sina.cn']='[class="banner_top"],[style="display:block;background:rgb(250, 250, 250);"]';
+	sites['m.duitang.com']='[class="exmobile"]';
+	//sites['example.com']='';
+	
+	// Remove specific selectors from common ad patterns for specific sites. If you have a site that generates a false positive, add it here. Separate by commas.
+	var css_exceptions=new Array();
+	
+	//css_exceptions['example.com']='';
+
+	// Add custom CSS code to specific sites. Separate statements by ", " if more than one.
+	var sites_custom_css=new Array();
+	//sites_custom_css['example.com']='';
+
+	// Common ad patterns
+	var common_ad_patterns = '[id="cproIframe1Wrap"],[id="cproIframe2Wrap"]';
+
+	// Patterns found in advertisement javascripts. We use these patterns to detect advertisement scripts and to abort them in Opera (src attribute and text content)
+	var scriptSrcMatch = "atwola\.com|\.ad_utils\.|\/(a|A)ds\.js|\/adclick\/|contextweb|dinclinx|ADSAdClient|adsyndication|pagead2|doubleclick\.net|\.fmpub\.net\/zone|\/ad\/|\/Ad\/|\/ads\/|\/Ads\/|\/adserver|bidvertiser|adbrite|http:\/\/ad\.|http:\/\/ads\.|http:\/\/adserver\.|http:\/\/adfarm\.|http:\/\/aj\.|realmatch\.com|\.snap\.com|industrybrains|hirdetes|adserving|infolinks|adbrite|chitika|kontera|pagead|smartad|adjuggler|atdmt|intellitxt|quantcast|quantserve|adocean|-ad\/|-ads\/|_ad\/|_ads\/|-Ad\/|-Ads\/|_Ad\/|_Ads\/|\/ad-|\/ads-|\/ad_|\/ads_|\/Ad-|\/Ads-|\/Ad_|\/Ads_|247realmedia\.com|adform\.net|adtech\.de";
+	var scriptTxtMatch = "contextweb|google_ad(s|_)|Advertise|alimama_pid|addthis_pub|_adprod|AdLinkColor|microsoft_adunitid|phpAds|condenetads|bdv_ref_pid|ib_title|AdBrite|adbrite|Adbrite|ch_type|ch_client|realmatch|industrybrains|hirdetes|adserving|infolinks|adbrite|chitika|kontera|smartad|adjuggler|atdmt|intellitxt|quantcast|quantserve|adocean|OAS_AD|OASd|openads_|ADTECH_AD";
+	
+	// List of exceptions for Javascript src-matching patterns in Opera. Add RegExps here if false positive, separate by ', '
+	var scriptSrcMatchExceptions=new Array();
+	scriptSrcMatchExceptions['gamingunion.net']='|http:\/\/aj\.';
+	scriptSrcMatchExceptions['stern.de']='|doubleclick\.net, |http:\/\/ad\.';
+	scriptSrcMatchExceptions['tetrisfriends.com']='|\/(a|A)ds\.js';
+	scriptSrcMatchExceptions['twitter.com']='|http:\/\/aj\.';
+	scriptSrcMatchExceptions['ldlc.']='A)ds\.js';
+
+	// Same as above for Javascript text-match patterns
+	var scriptTxtMatchExceptions=new Array();
+	scriptTxtMatchExceptions['digg.com']='|atdmt';
+	scriptTxtMatchExceptions['facebook.com']='|ch_type';
+	scriptTxtMatchExceptions['joost.com']='|Advertise';
+	scriptTxtMatchExceptions['last.fm']='|atdmt';
+	scriptTxtMatchExceptions['lifehacker.com']='|google_ad(s|_)';
+	scriptTxtMatchExceptions['tetrisfriends.com']='|OAS_AD, |OASd';
+	scriptTxtMatchExceptions['theonion.com']='|google_ad(s|_)';
+	scriptTxtMatchExceptions['torrentleech.org']='|ch_type';
+
+	// AdSweep functions
+	
+	function removeCSSSelector(myStr, mySubstr){
+		myStr = "," + myStr + ",";
+		myStr = myStr.split("," + mySubstr + ",").join(",");
+		myStr = myStr.substring(1, myStr.length-1);
+		return myStr;
+	}
+	function removeCSSSelector_bkp(myStr, mySubstr){
+		myStr=myStr.split(",");
+		for(a in myStr){
+			if(myStr[a].match(mySubstr)){
+				myStr.splice(a,1);
+			}
+		}
+		myStr=myStr.join(",");
+		return myStr;
+	}
+	// Continue execution or stop if URL is whitelisted
+	window.whitelistFlag = false;
+	for(var i in whitelist){
+		// If the URL is in the whitelist
+		if(URL.match(whitelist[i])){
+			whitelistFlag = true;
+			break;
+		} else {
+			whitelistFlag=false;	
+		}
+	}
+	if(whitelistFlag==false){
+		// Store all CSS rules into an array
+		var css_rules = new Array();
+		
+		// Variable to hide common ad patterns or not
+		window.hide_common_ads = true;
+		
+		// Hide common ad patterns or not?
+		for(var e in adPatternExceptions){
+			// If the URL is in the list of exception web sites
+			if(URL.indexOf(adPatternExceptions[e])!=-1){
+				hide_common_ads = false;
+				break;
+			}
+		}
+		if(hide_common_ads==true){
+			// Remove CSS selectors listed in the exception list for a specific web site
+			for(var b in css_exceptions){
+				if(URL.indexOf(b)!=-1){
+					var css_exception_tags = css_exceptions[b].split(',');
+					for(var c in css_exception_tags){
+						common_ad_patterns = removeCSSSelector(common_ad_patterns, css_exception_tags[c]);
+					}
+				}
+			}
+			// Add common ad patterns to the CSS rules
+			css_rules['hide_common_ads'] = common_ad_patterns + '{display:none !important;height:0px !important;width:0px !important;}';
+	
+			// Remove styling from notorious inline ads until they are removed
+			css_rules['remove_ad_styling'] = 'span.IL_LINK_STYLE{border:0!important;color:inherit!important;text-decoration:inherit!important;font-weight:inherit!important;font-family:inherit!important;}';
+	
+			// Abort advertisement javascripts in Opera
+			if(ua.match("Opera")){
+				// Remove exceptions if any			
+				for(var a in scriptSrcMatchExceptions){
+					if(URL.match(a)){
+						var scriptSrcMatchExceptionsTags = scriptSrcMatchExceptions[a].split(', ');
+						for(var b in scriptSrcMatchExceptionsTags){
+							scriptSrcMatch = scriptSrcMatch.replace(scriptSrcMatchExceptionsTags[b], '');
+						}
+					}
+				}
+				for(var a in scriptTxtMatchExceptions){
+					if(URL.match(a)){
+						var scriptTxtMatchExceptionsTags = scriptTxtMatchExceptions[a].split(', ');
+						for(var b in scriptTxtMatchExceptionsTags){
+							scriptTxtMatch = scriptTxtMatch.replace(scriptTxtMatchExceptionsTags[b], '');
+						}
+					}
+				}
+				
+				
+				window.opera.addEventListener(
+					'BeforeExternalScript',
+					function(e) {
+						if(e.element.src){
+							if(e.element.getAttribute('src').match(scriptSrcMatch)){
+								e.preventDefault();
+							}
+						}
+					},
+					false
+				);
+				window.opera.addEventListener(
+					'BeforeScript',
+					function(e) {
+						if(e.element.text){
+							if(e.element.text.match(scriptTxtMatch)){
+								e.preventDefault();
+							}
+						}
+					},
+					false
+				);
+			}
+		}
+	
+		// Add custom objects to hide to CSS rules, based on the URL
+		for(var i in sites){
+			if(URL.indexOf(i)!=-1){
+				css_rules['sites'] = sites[i]+'{display:none !important;height:0px !important;width:0px !important;}';
+				break;
+			}
+		}
+	
+		// Add custom CSS code to CSS rules, based on the URL
+		for(var j in sites_custom_css){
+			if(URL.indexOf(j)!=-1){
+				var site_custom_css_rules = sites_custom_css[j].split(", ");
+				for (var k=0; k<site_custom_css_rules.length; k++) {
+					css_rules[k] = site_custom_css_rules[k];
+				}
+				break;
+			}
+		}
+		
+		
+		// Inject all CSS rules into the page
+		var style = document.createElement("style");
+		document.getElementsByTagName("head")[0].appendChild(style);
+		var sheet = style.sheet;
+		for(var k in css_rules){
+			sheet.insertRule(css_rules[k],sheet.cssRules.length);
+		}
+	
+	}
+}
+function adsweep_removeAdNodes()
+{
+	window.setTimeout(function()
+	{		
+		// AdBrite
+		if(document.getElementsByTagName("A")){var anchorTags=document.getElementsByTagName("A");for(var a=0;a<anchorTags.length;a++){for(var x=0;x<anchorTags[a].attributes.length;x++){if(anchorTags[a].attributes[x].nodeName.toLowerCase()=='id'){if(anchorTags[a].attributes[x].nodeValue.indexOf("AdBriteInlineAd")!=-1){var textString=anchorTags[a].innerHTML;var newNode=document.createElement('SPAN');newNode.innerHTML=textString;anchorTags[a].parentNode.insertBefore(newNode,anchorTags[a]);}}}}}
+		
+		// Infolinks
+		if(document.getElementsByTagName("SPAN")){var spanTags=document.getElementsByTagName("SPAN");for(var a=0;a<spanTags.length;a++){for(var x=0;x<spanTags[a].attributes.length;x++){if(spanTags[a].attributes[x].nodeName.toLowerCase()=='class'){if(spanTags[a].attributes[x].nodeValue=='IL_LINK_STYLE'){var textString=spanTags[a].innerHTML;var newNode=document.createElement('LABEL');newNode.innerHTML=textString;spanTags[a].parentNode.insertBefore(newNode,spanTags[a]);spanTags[a].parentNode.removeChild(spanTags[a]);}}}}}
+	
+		// Kontera
+		if(document.getElementsByTagName("A")){var anchorTags=document.getElementsByTagName("A");for(var a=0;a<anchorTags.length;a++){for(var x=0;x<anchorTags[a].attributes.length;x++){if(anchorTags[a].attributes[x].nodeName.toLowerCase()=='class') {if(anchorTags[a].attributes[x].nodeValue=='kLink'){var textString=anchorTags[a].childNodes[0].childNodes[0].innerHTML;var newNode=document.createElement('SPAN');newNode.innerHTML=textString;anchorTags[a].parentNode.insertBefore(newNode,anchorTags[a]);anchorTags[a].parentNode.removeChild(anchorTags[a]);}}}}}
+	
+		// VibrantMedia
+		if(document.getElementsByTagName("A")){var anchorTags=document.getElementsByTagName("A");for(var a=0;a<anchorTags.length;a++){for(var x=0;x<anchorTags[a].attributes.length;x++){if(anchorTags[a].attributes[x].nodeName.toLowerCase()=='class') {if(anchorTags[a].attributes[x].nodeValue=='iAs'){var textString=anchorTags[a].innerHTML;var newNode=document.createElement('SPAN');newNode.innerHTML=textString;anchorTags[a].parentNode.insertBefore(newNode,anchorTags[a]);anchorTags[a].parentNode.removeChild(anchorTags[a]);}}}}}
+	},50);
+	
+		// Hide content using Javascript on specific sites once the page is loaded
+	
+		if(URL.match("distrowatch.com")){ if(document.getElementsByTagName("TABLE")){ if(document.getElementsByTagName("TABLE")[0].nextSibling){ if(document.getElementsByTagName("TABLE")[0].nextSibling.nextSibling){ var tbTag=document.getElementsByTagName("TABLE")[0].nextSibling.nextSibling; if(tbTag.innerHTML){ if(tbTag.innerHTML.match("pagead2")){ if(tbTag.tagName){ tbTag.style.display='none'; } } } } } } if(document.getElementsByTagName("TD")){ var tdTag=document.getElementsByTagName("TD"); for(a=0;a<tdTag.length;a++){ if(tdTag[a].innerHTML){ if(tdTag[a].innerHTML.match(/^Sponsored Message$|^???????????? ??????$|^????????? ?????$|^?????????? ???????????$|^Wiadomosc sponsorowana$|^Pesan Sponsor$|^?????? ????? ????$|^????$|^Remeju Žinute$|^?????? ?????$|^Sponzorji - sporocila$|^Gesponsord Bericht$|^Message de pub$|^Mensaje patrocinado$|^Sponsorennachricht$|^Sponsoroitu viesti$|^???????????? ?????????$|^????$|^Sponsorun Mesaji$|^Missatge patrocinat$|^???????? ??????$|^????µa ???????$|^???????????? ????????$|^Szponzorált üzenet$|^???? ?? ?????$|^Mensagem de Publicidade$|^Sponsoreeritud teade$|^Sponsoreret Besked$|^???? ????????$|^???????????? ????????????$|^Messaggio sponsorizzato$|^Sponzorske poruke$/)){ if(tdTag[a].parentNode){ if(tdTag[a].parentNode.parentNode){ if(tdTag[a].parentNode.parentNode.parentNode){ if(tdTag[a].parentNode.parentNode.parentNode.parentNode){ if(tdTag[a].parentNode.parentNode.parentNode.parentNode.parentNode){ var hideTag=tdTag[a].parentNode.parentNode.parentNode.parentNode.parentNode; if(hideTag.tagName){ hideTag.style.display='none'; } } } } } } } } } } if(document.getElementsByTagName("TH")){ var thTags=document.getElementsByTagName("TH"); for(a=0;a<thTags.length;a++){ if(thTags[a].innerHTML.match(/^Linux Netbooks$|^???????????$|^????????$|^Advertisement$|^??????????$|^Reklamy$|^Iklan$|^??????$|^??$|^Reklam$|^?????$|^Reklama$|^Advertentie$|^Oglaševanje$|^Advertisement$|^Anuncions$|^Annonce$|^Werbung$|^Mainos$|^Anunci$|^??af?µ?s?$|^Hirdetés$|^???????$|^??$|^Publicidade$|^????????$|^Reklaam$|^??????$|^?????????$|^Reklame$|^???????$|^???????$|^Pubblicità$|^Oglas$/)){ if(thTags[a].parentNode){ if(thTags[a].parentNode.parentNode){ var hideTag=thTags[a].parentNode.parentNode; if(hideTag.tagName){ hideTag.style.display='none'; } } } } } } if(document.getElementsByTagName("A")){ var aTags=document.getElementsByTagName("A"); for(var a=0;a<aTags.length;a++){ if(aTags[a].innerHTML.match(/vpslink|osdisc|3cx|Acunetix/)){ if(aTags[a].parentNode){ if(aTags[a].parentNode.parentNode){ if(aTags[a].parentNode.parentNode.parentNode){ if(aTags[a].parentNode.parentNode.parentNode.parentNode){ var hideTag=aTags[a].parentNode.parentNode.parentNode.parentNode; if(hideTag.tagName){ hideTag.style.display='none'; } if(hideTag.nextSibling){ if(hideTag.nextSibling.nextSibling){ var hideTag2=hideTag.nextSibling.nextSibling; if(hideTag2.tagName){ hideTag2.style.display='none'; } } } } } } } } if(aTags[a].innerHTML){ if(aTags[a].innerHTML.match(/linuxidentity|linuxcd/)){ if(aTags[a].parentNode){ if(aTags[a].parentNode.parentNode){ if(aTags[a].parentNode.parentNode.parentNode){ if(aTags[a].parentNode.parentNode.parentNode.parentNode){ var hideTag=aTags[a].parentNode.parentNode.parentNode.parentNode; hideTag.style.display='none'; if(hideTag.nextSibling){ if(hideTag.nextSibling.tagName){ var hideTag2=hideTag.nextSibling; hideTag2.style.display='none'; } } } } } } } } } } if(document.getElementsByTagName("FORM")){ var formTags=document.getElementsByTagName("FORM"); for(a=0;a<formTags.length;a++){ for(var x=0;x<formTags[a].attributes.length;x++){ if(formTags[a].attributes[x].nodeName.toLowerCase()=='name') { if(formTags[a].attributes[x].nodeValue=='Dataspan'){ if(formTags[a].parentNode){ if(formTags[a].parentNode.parentNode){ if(formTags[a].parentNode.parentNode.parentNode){ if(formTags[a].parentNode.parentNode.parentNode.parentNode){ if(formTags[a].parentNode.parentNode.parentNode.parentNode.previousSibling){ if(formTags[a].parentNode.parentNode.parentNode.parentNode.previousSibling.previousSibling){ hideTag=formTags[a].parentNode.parentNode.parentNode.parentNode.previousSibling.previousSibling; if(hideTag.tagName){ hideTag.style.display='none'; } } } } } } } } } } } } document.getElementsByTagName("BODY")[0].style.display='block'; }
+		if(URL.match("forums.futura-sciences.com")){var nodes=document.getElementsByClassName("page");for(var i=0;i<nodes.length;i++){if(nodes[i].innerHTML){if(nodes[i].innerHTML.match('Liens sponsoris')){nodes[i].parentNode.removeChild(nodes[i]);}}} var nodes=document.getElementsByTagName("TD");for(var i=0;i<nodes.length;i++){if(nodes[i].innerHTML){if(nodes[i].innerHTML.match('Futura Sciences n\'est pas responsable du contenu de ces publicit')){var node=nodes[i].parentNode.parentNode.parentNode.parentNode.parentNode.getElementsByTagName("DIV")[0];node.parentNode.removeChild(node);}}}}
+		if(URL.match("mashable.com")){if(document.getElementsByTagName("H3")){ var h3Tags=document.getElementsByTagName("H3"); for(var a=0;a<h3Tags.length;a++){ if(h3Tags[a].innerHTML=="Mashable Partners"){ var hideElement=h3Tags[a].parentNode.parentNode; hideElement.parentNode.removeChild(hideElement); } } } if(document.getElementsByTagName("H3")){ var h3Tags=document.getElementsByTagName("H3"); for(var a=0;a<h3Tags.length;a++){ if(h3Tags[a].innerHTML=="Sun Startup Essentials"){ var hideElement=h3Tags[a].parentNode.parentNode; hideElement.parentNode.removeChild(hideElement); } } } if(document.getElementsByTagName("P")){ var pTags=document.getElementsByTagName("P"); for(var a=0;a<pTags.length;a++){ if(pTags[a].innerHTML=="Sponsored By:"){ pTags[a].parentNode.removeChild(pTags[a]); } } } if(document.getElementsByTagName("A")){ var aTags=document.getElementsByTagName("A"); for(var a=0;a<aTags.length;a++){ if(aTags[a].innerHTML=="Advertise Here"){ var hideElement=aTags[a].parentNode.parentNode.parentNode; hideElement.parentNode.removeChild(hideElement); } } } if(document.getElementsByTagName("STRONG")){ var strongTags=document.getElementsByTagName("STRONG"); for(var a=0;a<strongTags.length;a++){ if(strongTags[a].innerHTML=="Twitter Brand Sponsors"){ var hideElement=strongTags[a].parentNode.parentNode.parentNode.parentNode.parentNode; hideElement.parentNode.removeChild(hideElement);}}}}
+		if(URL.match("my.opera.com/community/forums")){if(document.getElementsByClassName('fpost')){var posts = document.getElementsByClassName('fpost');for(var a=0;a<posts.length;a++){if(posts[a].innerHTML.match("882703")){$('content').removeChild(posts[a]);}}}}
+		if(URL.match("pcwelt.de")){if(document.getElementsByTagName("A")){ var anchorTags=document.getElementsByTagName("A"); for(var a=0;a<anchorTags.length;a++){ if(anchorTags[a].innerHTML.match("mentasys")){ var hideTag=anchorTags[a].parentNode.parentNode.parentNode.parentNode.parentNode; hideTag.parentNode.removeChild(hideTag); } } } if(document.getElementsByTagName("SPAN")){ var sTags=document.getElementsByTagName("SPAN"); for(var a=0;a<sTags.length;a++){ if(sTags[a].innerHTML.match("Office Anwendung-Software")){ var hideTag=sTags[a].parentNode; hideTag.parentNode.removeChild(hideTag); } } } if(document.getElementsByTagName("SPAN")){ var sTags=document.getElementsByTagName("SPAN"); for(var a=0;a<sTags.length;a++){ if(sTags[a].innerHTML.match("Ligatus")){ var hideTag=sTags[a].parentNode; hideTag.parentNode.removeChild(hideTag); } } } if(document.getElementsByTagName("H1")){ var h1Tags=document.getElementsByTagName("H1"); for(var a=0;a<h1Tags.length;a++){ if(h1Tags[a].innerHTML.match(/^Ligatus/)){ var hideTag=h1Tags[a].parentNode.parentNode.parentNode.parentNode; hideTag.parentNode.removeChild(hideTag); } } } }
+		if(URL.match("squidoo.com")){window.setTimeout(function(){if(document.getElementsByTagName("H2")){var hTags=document.getElementsByTagName("H2");for(var a=0;a<hTags.length;a++){if(hTags[a].innerHTML.match("Great Stuff on Amazon")){hTags[a].parentNode.parentNode.removeChild(hTags[a].parentNode);}}}},50);}
+		if(URL.match(/lifehacker\.com\/$/m)){if(document.getElementsByTagName("link")){var tag=document.getElementsByTagName("link")[1];var tagC = tag.cloneNode(true);tagC.href="http://tags.lifehacker.com/assets/minify.php?files=/assets/g4.lifehacker.com/css/style.css";tag.parentNode.replaceChild(tagC, tag);}}
+		if(URL.match("facepunch.com")){var body=document.getElementsByTagName("body")[1];var tag=body.getElementsByTagName("script")[0];if(tag.src="http://facepunchcom.skimlinks.com/api/skimlinks.js"){tag.parentNode.removeChild(tag);}}
+}
+})();

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/page_bg"
+    android:orientation="vertical" >
+
+    <include layout="@layout/title_public" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/white_zone_layout_margin"
+        android:background="@drawable/content_bg"
+        android:orientation="vertical" >
+
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="vertical" >
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/button_layout_height"
+                    android:layout_margin="2dp"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:text=""
+                    android:textColor="@color/textview"
+                    android:textSize="@dimen/button_text_size" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/button_layout_height"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:gravity="center|right"
+                    android:text="数据"
+                    android:textColor="@color/textview"
+                    android:textSize="@dimen/button_text_size" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/button_layout_height"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:gravity="center|right"
+                    android:text="WIFI"
+                    android:textColor="@color/textview"
+                    android:textSize="@dimen/button_text_size" />
+            </TableRow>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1.0px"
+                android:background="@drawable/leba_shape_line" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/button_layout_height"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:text="今日"
+                    android:textColor="@color/textview"
+                    android:textSize="@dimen/button_text_size" />
+
+                <TextView
+                    android:id="@+id/today_3g"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/button_layout_height"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:gravity="center|right"
+                    android:text="0B"
+                    android:textColor="@color/textview"
+                    android:textSize="@dimen/button_text_size" />
+
+                <TextView
+                    android:id="@+id/today_wifi"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/button_layout_height"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:gravity="center|right"
+                    android:text="0B"
+                    android:textColor="@color/textview"
+                    android:textSize="@dimen/button_text_size" />
+            </TableRow>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1.0px"
+                android:background="@drawable/leba_shape_line" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/button_layout_height"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:text="本月"
+                    android:textColor="@color/textview"
+                    android:textSize="@dimen/button_text_size" />
+
+                <TextView
+                    android:id="@+id/month_3g"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/button_layout_height"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:gravity="center|right"
+                    android:text="0B"
+                    android:textColor="@color/textview"
+                    android:textSize="@dimen/button_text_size" />
+
+                <TextView
+                    android:id="@+id/month_wifi"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/button_layout_height"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:gravity="center|right"
+                    android:text="0B"
+                    android:textColor="@color/textview"
+                    android:textSize="@dimen/button_text_size" />
+            </TableRow>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1.0px"
+                android:background="@drawable/leba_shape_line" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/button_layout_height"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:text="总计"
+                    android:textColor="@color/textview"
+                    android:textSize="@dimen/button_text_size" />
+
+                <TextView
+                    android:id="@+id/total_3g"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/button_layout_height"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:gravity="center|right"
+                    android:text="0B"
+                    android:textColor="@color/textview"
+                    android:textSize="@dimen/button_text_size" />
+
+                <TextView
+                    android:id="@+id/total_wifi"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/button_layout_height"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:gravity="center|right"
+                    android:text="0B"
+                    android:textColor="@color/textview"
+                    android:textSize="@dimen/button_text_size" />
+            </TableRow>
+        </TableLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1.0px"
+            android:background="@drawable/leba_shape_line" />
+ 
+         
+
+        <Button
+            android:id="@+id/btn_clean_data"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/button_layout_height"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="@dimen/button_layout_margin"
+            android:layout_marginRight="@dimen/button_layout_margin"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_bg_whiter_selector"
+            android:gravity="center"
+            android:text="清除统计数据"
+            android:textColor="@color/textview"
+            android:textSize="@dimen/button_text_size" >
+        </Button>
+    </LinearLayout>
+
+</LinearLayout>

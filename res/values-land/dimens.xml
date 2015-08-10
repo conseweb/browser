@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <dimen name="workspace_cell_width">90dip</dimen>
+    <dimen name="workspace_cell_height">80dip</dimen>
+    <dimen name="button_bar_height">62dip</dimen>
+    <dimen name="default_browser_bottom">0dp</dimen>
+    <dimen name="setting_default_browser_height">200dp</dimen>
+    
+    <dimen name="status_bar_recents_thumbnail_left_margin">0dp</dimen>
+    <dimen name="status_bar_recents_thumbnail_top_margin">15dp</dimen>
+    <dimen name="status_bar_recents_text_description_padding">8dp</dimen>
+    <dimen name="status_bar_recents_app_label_width">156dip</dimen>
+    <dimen name="status_bar_recents_app_label_left_margin">12dip</dimen>
+    <dimen name="status_bar_recents_right_glow_margin">0dip</dimen>
+    <dimen name="status_bar_recents_item_padding">2dip</dimen>
+    <dimen name="status_bar_recents_app_icon_left_margin">8dp</dimen>
+    <dimen name="status_bar_recents_app_icon_top_margin">8dp</dimen>
+</resources>

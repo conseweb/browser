@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center" >
+
+    <LinearLayout
+        android:id="@+id/loading_linear"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical" >
+
+         <include layout="@layout/title_dialog" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:padding="10dip" >
+
+            <EditText
+                android:id="@+id/dialog_edit"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/edit_height_singleLine"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="20dip"
+                android:layout_weight="1"
+                android:background="@drawable/content_bg"
+                android:hint=""
+                android:maxWidth="220.0dip"
+                android:padding="3dp"
+                android:textColor="@android:color/black"
+                android:textColorHighlight="@color/edittext_Highlight"
+                android:textSize="15.0sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1.0px"
+            android:background="@drawable/leba_shape_line" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/dialog_cancel"
+                android:layout_width="0.0dip"
+                android:layout_height="@dimen/button_layout_height"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_bg_dialog_selector"
+                android:gravity="center"
+                android:text="取消"
+                android:textColor="@color/textview"
+                android:textSize="@dimen/button_text_size"
+                android:visibility="visible" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="fill_parent"
+                android:background="@drawable/leba_shape_line" />
+
+            <Button
+                android:id="@+id/dialog_ok"
+                android:layout_width="0.0dip"
+                android:layout_height="@dimen/button_layout_height"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_bg_dialog_selector"
+                android:gravity="center"
+                android:text="确定"
+                android:textColor="@color/textview_blue"
+                android:textSize="@dimen/button_text_size"
+                android:visibility="visible" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

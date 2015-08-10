@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/page_bg"
+    android:orientation="vertical" >
+
+    <include layout="@layout/title_public" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <LinearLayout
+            android:id="@+id/reg_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="@dimen/button_layout_margin"
+                android:background="@color/white"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingLeft="10.0dip"
+                android:paddingRight="10.0dip" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30.0dip"
+                    android:orientation="horizontal" >
+
+                    <RelativeLayout
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5.0dip"
+                        android:layout_weight="1.0" >
+
+                        <EditText
+                            android:id="@+id/et_qr_string"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/content_bg"
+                            android:gravity="top"
+                            android:hint="输入内容"
+                            android:minLines="3"
+                            android:padding="5dp"
+                            android:textColor="@color/textview"
+                            android:textColorHighlight="@color/edittext_Highlight"
+                            android:textColorHint="@color/textview_hint"
+                            android:textSize="@dimen/button_text_size" >
+                        </EditText>
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7.0dip"
+                    android:orientation="horizontal" >
+
+                    <RelativeLayout
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5.0dip"
+                        android:layout_weight="1.0" >
+
+                        <EditText
+                            android:id="@+id/et_qr_string2"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/content_bg"
+                            android:gravity="top"
+                            android:hint="短息内容"
+                            android:minLines="3"
+                            android:padding="5dp"
+                            android:textColor="@color/textview"
+                            android:textColorHighlight="@color/edittext_Highlight"
+                            android:textColorHint="@color/textview_hint"
+                            android:textSize="@dimen/button_text_size"
+                            android:visibility="gone" >
+                        </EditText>
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7.0dip"
+                    android:orientation="horizontal" >
+
+                    <RelativeLayout
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5.0dip"
+                        android:layout_weight="1.0" >
+
+                        <EditText
+                            android:id="@+id/lianxidianhua"
+                            android:layout_width="fill_parent"
+                            android:layout_height="@dimen/edit_height_singleLine"
+                            android:background="@drawable/content_bg"
+                            android:gravity="top"
+                            android:hint="联系电话"
+                            android:padding="5dp"
+                            android:textColor="@color/textview"
+                            android:textColorHighlight="@color/edittext_Highlight"
+                            android:textColorHint="@color/textview_hint"
+                            android:textSize="@dimen/button_text_size"
+                            android:visibility="gone" >
+                        </EditText>
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7.0dip"
+                    android:orientation="horizontal" >
+
+                    <RelativeLayout
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5.0dip"
+                        android:layout_weight="1.0" >
+
+                        <EditText
+                            android:id="@+id/lianxidizhi"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/content_bg"
+                            android:gravity="top"
+                            android:hint="联系地址"
+                            android:minLines="3"
+                            android:padding="5dp"
+                            android:textColor="@color/textview"
+                            android:textColorHighlight="@color/edittext_Highlight"
+                            android:textColorHint="@color/textview_hint"
+                            android:textSize="@dimen/button_text_size"
+                            android:visibility="gone" >
+                        </EditText>
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7.0dip"
+                    android:orientation="horizontal" >
+
+                    <RelativeLayout
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5.0dip"
+                        android:layout_weight="1.0" >
+
+                        <EditText
+                            android:id="@+id/gongsimingzi"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/content_bg"
+                            android:gravity="top"
+                            android:hint="公司名字"
+                            android:minLines="3"
+                            android:padding="5dp"
+                            android:textColor="@color/textview"
+                            android:textColorHighlight="@color/edittext_Highlight"
+                            android:textColorHint="@color/textview_hint"
+                            android:textSize="@dimen/button_text_size"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7.0dip"
+                    android:orientation="horizontal" >
+
+                    <RelativeLayout
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5.0dip"
+                        android:layout_weight="1.0" >
+
+                        <EditText
+                            android:id="@+id/gongsizhiwei"
+                            android:layout_width="fill_parent"
+                            android:layout_height="@dimen/edit_height_singleLine"
+                            android:background="@drawable/content_bg"
+                            android:gravity="top"
+                            android:hint="公司职位"
+                            android:singleLine="true"
+                            android:padding="5dp"
+                            android:textColor="@color/textview"
+                            android:textColorHighlight="@color/edittext_Highlight"
+                            android:textColorHint="@color/textview_hint"
+                            android:textSize="@dimen/button_text_size"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7.0dip"
+                    android:orientation="horizontal" >
+
+                    <RelativeLayout
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5.0dip"
+                        android:layout_weight="1.0" >
+
+                        <EditText
+                            android:id="@+id/zhuyedizhi"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/content_bg"
+                            android:gravity="top"
+                            android:hint="主页地址"
+                            android:minLines="3"
+                            android:padding="5dp"
+                            android:textColor="@color/textview"
+                            android:textColorHighlight="@color/edittext_Highlight"
+                            android:textColorHint="@color/textview_hint"
+                            android:textSize="@dimen/button_text_size"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7.0dip"
+                    android:orientation="horizontal" >
+
+                    <RelativeLayout
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5.0dip"
+                        android:layout_weight="1.0" >
+
+                        <EditText
+                            android:id="@+id/et_qr_string3"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/content_bg"
+                            android:gravity="top|left"
+                            android:hint="邮件内容"
+                            android:minLines="3"
+                            android:padding="5dp"
+                            android:paddingTop="8.0dp"
+                            android:textColor="@color/textview"
+                            android:textColorHighlight="@color/edittext_Highlight"
+                            android:textColorHint="@color/textview_hint"
+                            android:textSize="@dimen/button_text_size"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="30.0dip"
+                    android:orientation="horizontal" >
+
+                    <RelativeLayout
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5.0dip"
+                        android:layout_weight="1.0" >
+
+                        <Button
+                            android:id="@+id/btn_add_qrcode"
+                            android:layout_width="fill_parent"
+                            android:layout_height="@dimen/button_layout_height"
+                            android:layout_gravity="left"
+                            android:background="@drawable/button_bg_blue_selector"
+                            android:gravity="center"
+                            android:minWidth="100.0dip"
+                            android:padding="5dp"
+                            android:tag="max"
+                            android:text="生成二维码图片"
+                            android:textColor="@color/white"
+                            android:textColorHighlight="@color/edittext_Highlight"
+                            android:textSize="@dimen/button_text_size" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

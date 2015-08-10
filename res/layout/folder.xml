@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.qing.browser.ui.launcher.Folder xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:visibility="gone" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="45dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="45dp"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dialog_title_height"
+            android:background="@drawable/dialog_title_bg"
+            android:gravity="center_vertical"
+            android:orientation="vertical" >
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#c64702" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="@dimen/white_zone_layout_margin"
+                android:layout_marginRight="@dimen/white_zone_layout_margin"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="5dp" >
+
+                <TextView
+                    android:id="@+id/folder_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="8dp"
+                    android:textColor="@color/title_textview"
+                    android:textSize="18dp" />
+
+                <Button
+                    android:id="@+id/folder_close"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/box_launcher_close"
+                    android:gravity="center_vertical" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <GridView
+            android:id="@+id/folder_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:cacheColorHint="#00000000"
+            android:drawSelectorOnTop="false"
+            android:listSelector="@drawable/grid_selector"
+            android:numColumns="4"
+            android:padding="5dp"
+            android:scrollbars="none"
+            android:verticalSpacing="8dip" />
+    </LinearLayout>
+
+</com.qing.browser.ui.launcher.Folder>

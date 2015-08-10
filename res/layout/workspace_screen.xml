@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.qing.browser.ui.launcher.CellLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:launcher="http://schemas.android.com/apk/res/com.qing.browser"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:hapticFeedbackEnabled="false"
+    launcher:cellHeight="@dimen/workspace_cell_height"
+    launcher:cellWidth="@dimen/workspace_cell_width"
+    launcher:longAxisCells="6"
+    launcher:longAxisPadding="0dip"
+    launcher:shortAxisCells="4"
+    launcher:shortAxisPadding="0dip" />

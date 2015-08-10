@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/all_view"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <include
+            android:id="@+id/top_bar_main"
+            layout="@layout/top_bar_main" />
+
+        <com.qing.browser.ui.launcher.Zone
+            android:id="@+id/top_zone"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/button_bar_height"
+            android:background="@drawable/zone_bg"
+            android:scaleType="center"
+            android:visibility="gone" >
+
+            <com.qing.browser.ui.launcher.SendZone
+                android:id="@+id/send_zone"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@drawable/zone_bg"
+                android:drawableTop="@drawable/send_zone"
+                android:gravity="center" />
+
+            <com.qing.browser.ui.launcher.DeleteZone
+                android:id="@+id/delete_zone"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@drawable/zone_bg"
+                android:drawableTop="@drawable/delete_zone"
+                android:gravity="center" />
+        </com.qing.browser.ui.launcher.Zone>
+
+        <LinearLayout
+            android:id="@+id/top_bar_browser"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/GoBtn"
+            android:background="@color/top_bar_bg"
+            android:orientation="vertical"
+            android:scaleType="fitXY"
+            android:visibility="gone"
+            android:weightSum="0.75" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <ImageButton
+                    android:id="@+id/ToolsBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="3dip"
+                    android:layout_marginRight="0dip"
+                    android:background="@drawable/button_bg_whiter_selector"
+                    android:src="@drawable/fav_icn_default" >
+                </ImageButton>
+
+                <AutoCompleteTextView
+                    android:id="@+id/UrlText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="0dip"
+                    android:layout_marginRight="0dip"
+                    android:layout_marginTop="3dip"
+                    android:layout_weight="0.75"
+                    android:dropDownHeight="wrap_content"
+                    android:dropDownWidth="fill_parent"
+                    android:inputType="textUri" >
+                </AutoCompleteTextView>
+
+                <Button
+                    android:id="@+id/GoBtn"
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="4dip"
+                    android:layout_marginRight="4dip"
+                    android:background="@drawable/button_bg_blue_selector"
+                    android:text="取消" >
+                </Button>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/findControls"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="@color/top_bar_bg"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="53dp"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/find_previous"
+                    android:layout_marginLeft="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_btn_find_prev" />
+
+                <ImageView
+                    android:id="@+id/find_next"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_btn_find_next" />
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <EditText
+                        android:id="@+id/find_value"
+                        android:layout_width="fill_parent"
+                        android:layout_height="35dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.75"
+                        android:background="@drawable/content_bg"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:hint="@string/SearchDialog.Hint"
+                        android:inputType="text"
+                        android:padding="3dp"
+                        android:singleLine="true"
+                        android:textColor="@color/textview"
+                        android:textColorHighlight="@color/edittext_Highlight"
+                        android:textColorHint="@color/textview_hint"
+                        android:textSize="16dip" >
+                    </EditText>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/find_close"
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="8dip"
+                    android:layout_marginRight="8dip"
+                    android:background="@drawable/button_bg_blue_selector"
+                    android:gravity="center"
+                    android:text="关闭"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <com.qing.browser.ui.launcher.Homespace
+            android:id="@+id/homespace"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/bottom"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/top_bar_main" >
+
+            <include
+                android:id="@+id/temp_laucher"
+                layout="@layout/temp_launcher" />
+
+            <include
+                android:id="@+id/tabspace"
+                layout="@layout/tabspace" />
+        </com.qing.browser.ui.launcher.Homespace>
+
+        <include
+            android:id="@+id/set_default_browser"
+            layout="@layout/set_default_browser" />
+
+        <include
+            android:id="@+id/bottom"
+            layout="@layout/bottom_bar" />
+
+        <include
+            android:id="@+id/top_bar_input"
+            layout="@layout/top_bar_input" />
+
+        <include
+            android:id="@+id/tabs_gallery"
+            layout="@layout/tabs_gallery" />
+    </RelativeLayout>
+
+    <WebView
+        android:id="@+id/snapshotwebview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:visibility="invisible" >
+    </WebView>
+
+</LinearLayout>

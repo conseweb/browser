@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical" >
+
+    <include layout="@layout/title_public" >
+    </include>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/iv_qr_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+            <EditText
+                android:id="@+id/tupianname_edit"
+                android:layout_width="240dip"
+                android:layout_height="@dimen/edit_height_singleLine"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dip"
+                android:background="@drawable/content_bg"
+                android:ems="10"
+                android:padding="5dp"
+                android:hint="请输入图片名字"
+                android:gravity="center_vertical"
+                android:textColor="@color/textview"
+                android:textColorHighlight="@color/edittext_Highlight"
+                android:textColorHint="@color/textview_hint"
+                android:textSize="17dip" />
+
+            <Button
+                android:id="@+id/baochunbutton"
+                android:layout_width="240dip"
+                android:layout_height="@dimen/button_layout_height"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="保存图片"
+                android:gravity="center"
+                android:textSize="@dimen/button_text_size"
+                android:textColor="@color/textview"
+                android:textColorHint="@color/textview_hint" 
+                android:background="@drawable/button_bg_whiter_selector"/>
+
+            <Button
+                android:id="@+id/chakanbutton"
+                android:layout_width="240dip"
+                android:layout_height="@dimen/button_layout_height"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:background="@drawable/button_bg_blue_selector"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="查看已存图片"
+                android:textColor="@color/white"
+                android:textSize="@dimen/button_text_size" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

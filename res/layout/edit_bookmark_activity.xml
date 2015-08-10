@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center" >
+
+    <LinearLayout
+        android:id="@+id/loading_linear"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:background="@color/white"
+        android:orientation="vertical" >
+
+        <include layout="@layout/title_dialog" />
+
+        <EditText
+            android:id="@+id/EditBookmarkActivity.TitleValue"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/edit_height_singleLine"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/content_bg"
+            android:hint="标题"
+            android:inputType="text"
+            android:padding="5dp"
+            android:textColor="@color/textview"
+            android:textColorHighlight="@color/edittext_Highlight"
+            android:textColorHint="@color/textview_hint" />
+
+        <EditText
+            android:id="@+id/EditBookmarkActivity.UrlValue"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/edit_height_singleLine"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/content_bg"
+            android:hint="网址"
+            android:inputType="textUri"
+            android:padding="5dp"
+            android:textColor="@color/textview"
+            android:textColorHighlight="@color/edittext_Highlight"
+            android:textColorHint="@color/textview_hint" />
+
+        <CheckBox
+            android:id="@+id/EditBookmarkActivity_addScreen"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_marginTop="5dp"
+            android:button="@null"
+            android:checked="true"
+            android:drawableLeft="@drawable/checkbox_s"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dip"
+            android:paddingTop="10dp"
+            android:text="同时添加到快捷书签"
+            android:textColor="@color/textview"
+            android:textSize="16.0dip" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:paddingTop="20dp" >
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1.0px"
+                android:background="@drawable/leba_shape_line" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/EditBookmarkActivity_BtnCancel"
+                    android:layout_width="0.0dip"
+                    android:layout_height="@dimen/button_layout_height"
+                    android:layout_weight="1.0"
+                    android:background="@drawable/button_bg_dialog_selector"
+                    android:gravity="center"
+                    android:text="取消"
+                    android:textColor="@color/textview"
+                    android:textSize="16dip"
+                    android:visibility="visible" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="fill_parent"
+                    android:background="@drawable/leba_shape_line" />
+
+                <Button
+                    android:id="@+id/EditBookmarkActivity_BtnOk"
+                    android:layout_width="0.0dip"
+                    android:layout_height="@dimen/button_layout_height"
+                    android:layout_weight="1.0"
+                    android:background="@drawable/button_bg_dialog_selector"
+                    android:gravity="center"
+                    android:text="确定"
+                    android:textColor="@color/textview_blue"
+                    android:textSize="16dip"
+                    android:visibility="visible" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

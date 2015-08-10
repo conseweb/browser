@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.qing.browser.ui.recent.RecentsPanelView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/recents_root"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="50dp" >
+
+    <FrameLayout
+        android:id="@+id/recents_bg_protect"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true" >
+
+        <com.qing.browser.ui.recent.RecentsVerticalScrollView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:dslv="http://schemas.android.com/apk/res/com.qing.browser"
+            android:id="@+id/recents_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|left"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:divider="@null"
+            android:fadingEdge="vertical"
+            android:fadingEdgeLength="@dimen/status_bar_height"
+            android:scrollbars="none"
+            android:stackFromBottom="true" >
+
+            <LinearLayout
+                android:id="@+id/recents_linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:orientation="vertical" >
+            </LinearLayout>
+        </com.qing.browser.ui.recent.RecentsVerticalScrollView>
+    </FrameLayout>
+
+</com.qing.browser.ui.recent.RecentsPanelView>

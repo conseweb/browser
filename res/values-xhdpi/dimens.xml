@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="weather_item_first_height">240dp</dimen>
+    <dimen name="LockPatternView_width_height">328dp</dimen>
+    <dimen name="Lock_Image_PaddingTop">25dp</dimen>
+
+</resources>

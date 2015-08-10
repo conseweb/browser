@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_title_bar"
+    android:layout_width="fill_parent"
+    android:layout_height="45dp"
+    android:layout_gravity="center_vertical"
+    android:background="@color/textview_blue"
+    android:paddingLeft="5.0dip"
+    android:paddingRight="5.0dip" >
+
+    <ImageView
+        android:id="@+id/item_back"
+        style="@style/title_bar_back_button_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/header_button_bg_back_selector_w" />
+
+    <TextView
+        android:id="@+id/item_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:maxWidth="150.0dip"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textSize="16.0dip" />
+
+    <TextView
+        android:id="@+id/title_search"
+        style="@style/title_bar_back_button_style"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:maxWidth="100.0dip"
+        android:minWidth="72.0dip"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textSize="16.0dip"
+        android:visibility="visible" >
+    </TextView>
+
+</LinearLayout>

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/page_bg"
+    android:visibility="gone" >
+
+    <LinearLayout
+        android:id="@+id/top_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="53dp"
+        android:background="@color/top_bar_bg"
+        android:gravity="center" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="12dp"
+            android:layout_weight="1"
+            android:background="@drawable/content_bg"
+            android:gravity="center_vertical" >
+
+            <LinearLayout
+                android:id="@+id/search_engine_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:clickable="true"
+                android:gravity="left" >
+
+                <ImageView
+                    android:id="@+id/search_engine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:paddingLeft="3dp"
+                    android:paddingRight="3dp"
+                    android:src="@drawable/btn_search_icon" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/more_ziti_bg" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/UrlText"
+                android:layout_width="0dip"
+                android:layout_height="35dp"
+                android:layout_gravity="center_vertical"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="输入网址或关键字"
+                android:layout_weight="4"
+                android:paddingLeft="5dp"
+                android:singleLine="true"
+                android:textColor="@color/textview"
+                android:textColorHighlight="@color/edittext_Highlight"
+                android:textColorHint="@color/textview_hint"
+                android:textSize="14dip" />
+            
+            <Button
+                android:id="@+id/Top_sao_yi_sao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/top_er_wei_ma" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/GoBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="4dip"
+            android:layout_marginRight="12dp"
+            android:background="@drawable/ic_btn_cancel"  >
+        </Button>
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1.0px"
+        android:id="@+id/view"
+        android:layout_below="@id/top_bar"
+        android:background="@drawable/leba_shape_line" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <ListView
+                android:id="@+id/key_listview"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:cacheColorHint="#00000000"
+                android:visibility="gone"
+                android:divider="@drawable/leba_shape_line"
+                android:dividerHeight="1.0px"
+                android:listSelector="@drawable/selector_list_item_white"
+                android:scrollbarStyle="outsideOverlay" />
+
+            <com.qing.browser.ui.KeywordsFlow
+                android:id="@+id/frameLayout1"
+                android:layout_width="fill_parent"
+                android:layout_height="450dip" >
+            </com.qing.browser.ui.KeywordsFlow>
+        </LinearLayout>
+    </ScrollView>
+
+    <com.qing.browser.ui.KeyboardLayout
+        android:id="@+id/key_input_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/inputbar_bg"
+        android:visibility="visible" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/input_http"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@drawable/actionbar_btn"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="http://"
+                android:textColor="@color/textview"
+                android:textSize="@dimen/button_text_size" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="fill_parent"
+                android:background="#1a1a1a" />
+
+            <Button
+                android:id="@+id/input_www"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@drawable/actionbar_btn"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="www."
+                android:textColor="@color/textview"
+                android:textSize="@dimen/button_text_size" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="fill_parent"
+                android:background="#1a1a1a" />
+
+            <Button
+                android:id="@+id/input_com"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@drawable/actionbar_btn"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text=".com"
+                android:textColor="@color/textview"
+                android:textSize="@dimen/button_text_size" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="fill_parent"
+                android:background="#1a1a1a" />
+
+            <Button
+                android:id="@+id/input_cn"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@drawable/actionbar_btn"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text=".cn"
+                android:textColor="@color/textview"
+                android:textSize="@dimen/button_text_size" />
+        </LinearLayout>
+    </com.qing.browser.ui.KeyboardLayout>
+
+</RelativeLayout>

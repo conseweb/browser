@@ -1,0 +1,309 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.qing.browser"
+    android:versionCode="1"
+    android:versionName="1.0.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="16" />
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+    <uses-permission android:name="android.permission.SET_WALLPAPER_HINTS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.BIND_APPWIDGET" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.android.browser.permission.READ_HISTORY_BOOKMARKS" />
+    <uses-permission android:name="com.android.browser.permission.WRITE_HISTORY_BOOKMARKS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+ <!-- 缓存资源优先存入SDcard -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+ <!-- 检测网络状态 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+ <!-- 获取mac地址作为用户的备用唯一标识 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+ <!-- 获取用户手机的IMEI，用来唯一的标识用户。 -->
+ 
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:name="com.qing.browser.ui.launcher.LauncherApplication"
+        android:icon="@drawable/ic_launcher_home"
+        android:label="@string/app_name"
+        android:manageSpaceActivity="com.qing.browser.activities.KongJianGuanLiActivity"
+        android:persistent="true"
+        android:theme="@style/AppTheme" >
+        <meta-data
+            android:name="CHANNEL" android:value="1000" >
+        </meta-data>
+        <activity
+            android:name="com.universe.galaxy.version.NewVersionActivity"
+            android:label="@string/app_name"
+            android:theme="@style/MyDialogStyle" >
+        </activity>
+        <activity
+            android:name="com.universe.galaxy.ad.YingYongXiaZaiActivity"
+            android:label=""
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <receiver
+            android:name="com.universe.galaxy.receiver.ConnectionChangeReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name="com.deta.global.PlatformService" >
+            <intent-filter>
+                <action android:name="com.deta.global.IPlatformService" >
+                </action>
+            </intent-filter>
+        </service>
+
+        <activity android:name="com.qing.browser.activities.WelcomePageActivity" >
+        </activity>
+
+        <!-- Launcher Begin -->
+        <activity
+            android:name="com.qing.browser.ui.launcher.Launcher"
+            android:configChanges="orientation|keyboardHidden|keyboard"
+            android:launchMode="singleTask"
+            android:screenOrientation="user"
+            android:stateNotNeeded="true"
+            android:windowSoftInputMode="adjustPan|stateHidden" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="http" />
+                <data android:scheme="https" />
+            </intent-filter>
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <data android:scheme="file" />
+                <data android:scheme="content" />
+                <data android:mimeType="text/html" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT" >
+                </action>
+            </intent-filter>
+        </activity>
+
+        <!-- The settings provider contains Home's data, like the workspace favorites -->
+        <provider
+            android:name="com.qing.browser.ui.launcher.LauncherProvider"
+            android:authorities="com.qing.browser.ui.launcher.settings"
+            android:exported="true" />
+        <provider
+            android:name="com.qing.browser.providers.BookmarksProvider"
+            android:authorities="com.qing.browser.providers.bookmarks"
+            android:exported="true" />
+        <provider
+            android:name="com.qing.browser.providers.HistoryProvider"
+            android:authorities="com.qing.browser.providers.history"
+            android:exported="true" />
+        <!-- Launcher end -->
+
+
+        <!-- Customer Begin -->
+        <activity android:name="com.qing.browser.activities.SettingActivity" >
+        </activity>
+        <activity android:name="com.qing.browser.ui.launcher.WelcomeActivity" >
+        </activity>
+        <activity android:name="com.qing.browser.activities.AboutActivity" >
+        </activity>
+        <activity
+            android:name="com.qing.browser.activities.EditBookmarkActivity"
+            android:theme="@style/waitdailog" >
+        </activity>
+        <activity
+            android:name="com.qing.browser.activities.ScreenSwitchDialogActivity"
+            android:theme="@style/MyDialogStyle" >
+        </activity>
+        <activity android:name="com.qing.browser.activities.DownloadsListActivity" >
+        </activity>
+        <activity android:name="com.qing.browser.activities.BookmarksHistoryActivity" >
+        </activity>
+        <activity android:name="com.qing.browser.activities.AddShortcutActivity" >
+        </activity>
+        <activity android:name=".user.PublicWebViewActivity" />
+        <activity android:name=".tongji.LiuLiangTongji" />
+        <activity android:name="com.qing.browser.activities.JianYiFanKuiActivity" >
+        </activity>
+        <activity
+            android:name="com.google.zxing.client.android.ErWeiMaListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/erweima" >
+        </activity>
+        <activity
+            android:name="com.google.zxing.client.android.ErWeiMaEntryActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/erweima" >
+        </activity>
+        <activity
+            android:name="com.google.zxing.client.android.ErWeiMaChaKanActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.google.zxing.client.android.ErWeiMaCreateActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.google.zxing.client.android.ErWeiMaJieGuoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ErWeiMa_Transparent"
+             >
+        </activity>
+        <activity
+            android:name="com.google.zxing.client.android.ErWeiMaTuPianLiuLANActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.google.zxing.client.android.ErWeiMaLiShilistActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.google.zxing.client.android.CaptureActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" >
+        </activity>
+        <activity
+            android:name="com.google.zxing.client.android.PreferencesActivity"
+            android:label="@string/preferences_name" >
+        </activity>
+        <activity android:name="com.google.zxing.client.android.encode.EncodeActivity" >
+            <intent-filter>
+                <action android:name="com.google.zxing.client.android.ENCODE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <!-- This allows us to handle the Share button in Contacts. -->
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/x-vcard" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.google.zxing.client.android.book.SearchBookContentsActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/sbc_name"
+            android:screenOrientation="landscape" >
+            <intent-filter>
+                <action android:name="com.google.zxing.client.android.SEARCH_BOOK_CONTENTS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.google.zxing.client.android.wifi.WifiActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/wa_name"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name="com.google.zxing.client.android.share.ShareActivity"
+            android:label="@string/share_name"
+            android:screenOrientation="user" >
+            <intent-filter>
+                <action android:name="com.google.zxing.client.android.SHARE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.google.zxing.client.android.share.BookmarkPickerActivity"
+            android:label="@string/bookmark_picker_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.PICK" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.google.zxing.client.android.share.AppPickerActivity"
+            android:label="@string/app_picker_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.PICK" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.google.zxing.client.android.HelpActivity"
+            android:screenOrientation="user" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.qing.browser.activities.KongJianGuanLiActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <receiver
+            android:name="com.qing.browser.receiver.QingConnectionChangeReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.qing.browser.receiver.AlarmReceiver"  />  
+        <receiver android:name="com.qing.browser.receiver.BootOrShutDownReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.ACTION_SHUTDOWN" />
+                <category android:name="android.intent.category.HOME" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" >
+        </service>
+        <service android:name="com.qing.browser.ui.FloatWindowService" />
+
+        <provider
+            android:name="com.qing.browser.utils.LocalHtmlProvider"
+            android:authorities="com.qing.browser.html" />
+    </application>
+
+</manifest>

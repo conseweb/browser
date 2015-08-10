@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical" >
+    
+	<include layout="@layout/title_public" />
+	
+    <ListView
+        android:id="@+id/shortList"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="10"
+        android:cacheColorHint="#00000000"
+        android:divider="@drawable/leba_shape_line"
+        android:dividerHeight="1.0px"
+        android:listSelector="@drawable/selector_list_item_white" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:layout_marginTop="10dip"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/xiaochu"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/button_layout_height"
+            android:layout_gravity="left"
+            android:layout_weight="1.0"
+            android:background="@drawable/button_bg_blue_selector"
+            android:gravity="center"
+            android:minWidth="100.0dip"
+            android:padding="8dp"
+            android:tag="max"
+            android:text="清除"
+            android:textColor="@color/white"
+            android:textSize="16.0dip" />
+    </LinearLayout>
+
+</LinearLayout>
