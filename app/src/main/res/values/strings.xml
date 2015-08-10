@@ -2,7 +2,7 @@
 
 <resources>
     
-    <string name="app_name">M1浏览器</string>
+    <string name="app_name">M6浏览器</string>
     <string name="Main.DownloadStartedMsg">开始下载</string>
     <string name="Main.DownloadFinishedMsg">完成下载</string>
     <string name="Commons.Ok">确定</string>
