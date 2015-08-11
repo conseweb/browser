@@ -16,12 +16,12 @@ import com.qing.browser.R;
 public class DateAdapter extends BaseAdapter {
 
 	private Context context;
-	/** 列表. */
+	/** 鍒楄〃. */
 	private List<GridButtonInfo> lstDate;
 	private TextView buttonTitle;
 	private ImageView buttonImage;
 
-	// 每页显示的Item个数
+	// 姣忛〉鏄剧ず鐨処tem涓暟
 	public static final int SIZE = 8;
 
 	public DateAdapter(Context mContext, List<GridButtonInfo> list, int page) {

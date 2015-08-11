@@ -23,9 +23,9 @@ import com.qing.browser.ui.launcher.Launcher;
 import com.qing.browser.utils.Constants;
 
 public class BookmarksHistoryActivity extends BaseActivity {
-	private int currentView = 0;// 当前视图
-	private ViewPager mPager;// 页卡内容
-	private List<View> listViews; // Tab页面列表
+	private int currentView = 0;// 褰撳墠瑙嗗浘
+	private ViewPager mPager;// 椤靛崱鍐呭
+	private List<View> listViews; // Tab椤甸潰鍒楄〃
 	private View viewpage1, viewpage2;
 	private TextView tv_bookmark, tv_history;
 	private LinearLayout tv_bookmark_layout, tv_history_layout;
@@ -51,7 +51,7 @@ public class BookmarksHistoryActivity extends BaseActivity {
 	}
 
 	/**
-	 * 更新当前页码
+	 * 鏇存柊褰撳墠椤电爜
 	 */
 	public void setCurPage(int page) {
 
@@ -82,7 +82,7 @@ public class BookmarksHistoryActivity extends BaseActivity {
 	}
 
 	/**
-	 * 初始化页卡内容ViewPager
+	 * 鍒濆鍖栭〉鍗″唴瀹筕iewPager
 	 */
 	private void InitViewPager() {
 		mPager = (ViewPager) findViewById(R.id.vPager);
@@ -115,7 +115,7 @@ public class BookmarksHistoryActivity extends BaseActivity {
 		mPager.setOnPageChangeListener(new MyOnPageChangeListener());
 		// mPager.setOnTouchListener(new OnTouchListener() {
 		// public boolean onTouch(View v, MotionEvent event) {
-		// return true;// 禁止滑动
+		// return true;// 绂佹婊戝姩
 		// }
 		//
 		// });
@@ -125,7 +125,7 @@ public class BookmarksHistoryActivity extends BaseActivity {
 	}
 
 	/**
-	 * 头标点击监听
+	 * 澶存爣鐐瑰嚮鐩戝惉
 	 */
 	public class MyOnClickListener implements View.OnClickListener {
 		private int index = 0;
@@ -141,7 +141,7 @@ public class BookmarksHistoryActivity extends BaseActivity {
 	};
 
 	/**
-	 * 实现页卡切换监听
+	 * 瀹炵幇椤靛崱鍒囨崲鐩戝惉
 	 */
 	public class MyOnPageChangeListener implements OnPageChangeListener {
 

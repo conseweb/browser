@@ -37,7 +37,7 @@ public class JianYiFanKuiActivity extends BaseActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.jian_yi_fan_kui);
 		item_title = (TextView) findViewById(R.id.item_title);
-		item_title.setText("½¨Òé·´À¡");
+		item_title.setText("å»ºè®®åé¦ˆ");
 		btn_back = (ImageView) findViewById(R.id.item_back);
 		btn_back.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
@@ -51,7 +51,7 @@ public class JianYiFanKuiActivity extends BaseActivity {
 		btn_ok.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				if (StringUtil.isNull(edit_content.getText().toString())) {
-					Toast.makeText(JianYiFanKuiActivity.this, "ÇëÊäÈë·´À¡ÄÚÈİ",
+					Toast.makeText(JianYiFanKuiActivity.this, "è¯·è¾“å…¥åé¦ˆå†…å®¹",
 							Toast.LENGTH_SHORT).show();
 					edit_content.requestFocus();
 					edit_content.setSelectAllOnFocus(true);
@@ -60,7 +60,7 @@ public class JianYiFanKuiActivity extends BaseActivity {
 
 				String email = edit_email.getText().toString();
 				if (!StringUtil.isNull(email) && !email.matches(regex)) {
-					Toast.makeText(JianYiFanKuiActivity.this, "ÇëÊäÈëÕıÈ·µÄÓÊÏä",
+					Toast.makeText(JianYiFanKuiActivity.this, "è¯·è¾“å…¥æ­£ç¡®çš„é‚®ç®±",
 							Toast.LENGTH_SHORT).show();
 					edit_email.requestFocus();
 					edit_email.setSelectAllOnFocus(true);
@@ -69,11 +69,11 @@ public class JianYiFanKuiActivity extends BaseActivity {
 
 				if (Tools.isConnectInternet(JianYiFanKuiActivity.this)) {
 					LoadDialog = new Loading_Dialog(JianYiFanKuiActivity.this);
-					LoadDialog.Loading_SetText("ÕıÔÚ¼ÓÔØÊı¾İ...");
+					LoadDialog.Loading_SetText("æ­£åœ¨åŠ è½½æ•°æ®...");
 					LoadDialog.Loading_ZhuanDong();
 					new Thread(new GetList_Thread()).start();
 				} else {
-					Toast.makeText(JianYiFanKuiActivity.this, "Çë¼ì²éÍøÂçÉèÖÃ",
+					Toast.makeText(JianYiFanKuiActivity.this, "è¯·æ£€æŸ¥ç½‘ç»œè®¾ç½®",
 							Toast.LENGTH_SHORT).show();
 				}
 			}
@@ -99,9 +99,9 @@ public class JianYiFanKuiActivity extends BaseActivity {
 				case 1:
 					dialogUtil = new DialogUtil.Builder(
 							JianYiFanKuiActivity.this)
-							.setTitleText("ÎÂÜ°ÌáÊ¾")
-							.setText("Ìá½»³É¹¦")
-							.setPositiveButton("È·¶¨",
+							.setTitleText("æ¸©é¦¨æç¤º")
+							.setText("æäº¤æˆåŠŸ")
+							.setPositiveButton("ç¡®å®š",
 									new View.OnClickListener() {
 										public void onClick(View v) {
 											dialogUtil.dismiss();

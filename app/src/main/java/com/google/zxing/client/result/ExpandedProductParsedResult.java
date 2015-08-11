@@ -30,7 +30,7 @@ import java.util.Hashtable;
 
 /**
  * @author Antonio Manuel Benjumea Conde, Servinform, S.A.
- * @author Agustín Delgado, Servinform, S.A.
+ * @author Agust铆n Delgado, Servinform, S.A.
  */
 public class ExpandedProductParsedResult extends ParsedResult {
 

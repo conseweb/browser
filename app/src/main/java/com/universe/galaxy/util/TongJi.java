@@ -72,13 +72,13 @@ public class TongJi {
 				if (msg != null) {
 					switch (msg.what) {
 					case 0:
-						// Ìá½»³É¹¦ É¾³ıÎÄ¼ş
-						Log.v("LS","ÓÃ»§²Ù×÷Í³¼Æ Ìá½»³É¹¦ É¾³ıÎÄ¼ş");
+						// æäº¤æˆåŠŸ åˆ é™¤æ–‡ä»¶
+						Log.v("LS","ç”¨æˆ·æ“ä½œç»Ÿè®¡ æäº¤æˆåŠŸ åˆ é™¤æ–‡ä»¶");
 						deleteTongJiFile();
 						break;
 					case 1:
-						// Ìá½»Ê§°Ü ÏÂ´Î¼ÌĞøÌá½»
-						Log.v("LS","ÓÃ»§²Ù×÷Í³¼Æ Ìá½»Ê§°Ü");
+						// æäº¤å¤±è´¥ ä¸‹æ¬¡ç»§ç»­æäº¤
+						Log.v("LS","ç”¨æˆ·æ“ä½œç»Ÿè®¡ æäº¤å¤±è´¥");
 						break;
 					}
 				}
@@ -95,209 +95,209 @@ public class TongJi {
 	
 	
 	/**
-	 * ×ÀÃæÇáä¯ÀÀÆ÷Æô¶¯
+	 * æ¡Œé¢è½»æµè§ˆå™¨å¯åŠ¨
 	 */
 	public static String d_qingliulanqi = "1";
 	
 	/**
-	 * Í¨ÖªÀ¸ ¸üĞÂ
+	 * é€šçŸ¥æ  æ›´æ–°
 	 */
 	public static String n_gengxin = "3_1";
 	
 	/**
-	 * Í¨ÖªÀ¸ ¹ã¸æ
+	 * é€šçŸ¥æ  å¹¿å‘Š
 	 */
 	public static String n_ad_2 = "3_2";
 	
 	/**
-	 * ×óÆÁÄ»
+	 * å·¦å±å¹•
 	 */
 	public static String m_zuopinggouwu = "4";
 	
 	/**
-	 * Ìí¼ÓÊéÇ©
+	 * æ·»åŠ ä¹¦ç­¾
 	 */
 	public static String m_tianjiashuqian = "5";
 	
 	/**
-	 * Ìí¼ÓÊéÇ© ÈÈÃÅ
+	 * æ·»åŠ ä¹¦ç­¾ çƒ­é—¨
 	 */
 	public static String s_remen = "5_1";
 	
 	/**
-	 * Ìí¼ÓÊéÇ© ×Ô¶¨Òå
+	 * æ·»åŠ ä¹¦ç­¾ è‡ªå®šä¹‰
 	 */
 	public static String s_zidingyi = "5_2";
 	
 	/**
-	 * Ìí¼ÓÊéÇ© ÀúÊ·
+	 * æ·»åŠ ä¹¦ç­¾ å†å²
 	 */
 	public static String s_lishi = "5_3";
 	
 	/**
-	 * É¨Ò»É¨   £¨µ÷µ½ÕâÀïÁË£©
+	 * æ‰«ä¸€æ‰«   ï¼ˆè°ƒåˆ°è¿™é‡Œäº†ï¼‰
 	 */
 	public static String m_saoyidao = "6";
 	
 	/**
-	 * É¨Ò»É¨ Ïà²á
+	 * æ‰«ä¸€æ‰« ç›¸å†Œ
 	 */
 	public static String s_saoyisao_xiangce = "6_1";
 	
 	/**
-	 * É¨Ò»É¨ ÎÒµÄ
+	 * æ‰«ä¸€æ‰« æˆ‘çš„
 	 */
 	public static String s_saoyisao_wode = "6_2";
 	
 	/**
-	 * É¨Ò»É¨ Éú³É¶şÎ¬Âë
+	 * æ‰«ä¸€æ‰« ç”ŸæˆäºŒç»´ç 
 	 */
 	public static String s_shengchengerweima = "6_3";
 	
 	/**
-	 * É¨Ò»É¨ É¨ÃèÀúÊ·
+	 * æ‰«ä¸€æ‰« æ‰«æå†å²
 	 */
 	public static String s_saomiaolishi = "6_4";
 	
 	/**
-	 * É¨Ò»É¨ Éú³ÉÀúÊ·
+	 * æ‰«ä¸€æ‰« ç”Ÿæˆå†å²
 	 */
 	public static String s_shengchenglishi = "6_5";
 	
 	
 	/**
-	 * ¶¥²¿ÊäÈëÍøÖ·»ò¹Ø¼ü×Ö
+	 * é¡¶éƒ¨è¾“å…¥ç½‘å€æˆ–å…³é”®å­—
 	 */
 	public static String m_wangzhi_guanjianzi = "7";
 	
 	/**
-	 * ¶¥²¿Ñ¡ÔñËÑË÷ÒıÇæ
+	 * é¡¶éƒ¨é€‰æ‹©æœç´¢å¼•æ“
 	 */
 	public static String m_xuanze_sousuo_yinqing = "8";
 	
 	/**
-	 * ¶¥²¿ÊéÇ©/ÀúÊ·
+	 * é¡¶éƒ¨ä¹¦ç­¾/å†å²
 	 */
 	public static String m_dingbu_shuqian_lishi = "9";
 	
 	/**
-	 * µ×²¿²Ëµ¥À¸
+	 * åº•éƒ¨èœå•æ 
 	 */
 	public static String m_dibu_caidan = "10";
 	
 	/**
-	 * µ×²¿²Ëµ¥À¸ È«ÆÁ
+	 * åº•éƒ¨èœå•æ  å…¨å±
 	 */
 	public static String s_dibu_quanping = "10_1";
 	
 	/**
-	 * µ×²¿²Ëµ¥À¸ ÊéÇ©/ÀúÊ·
+	 * åº•éƒ¨èœå•æ  ä¹¦ç­¾/å†å²
 	 */
 	public static String s_dibu_shuqian_lishi = "10_2";
 	
 	/**
-	 * ×Àµ×²¿²Ëµ¥À¸ ¼ÓÊéÇ©
+	 * æ¡Œåº•éƒ¨èœå•æ  åŠ ä¹¦ç­¾
 	 */
 	public static String s_dibu_jiashuqian = "10_3";
 	
 	/**
-	 * µ×²¿²Ëµ¥À¸ Ò¹¼ä
+	 * åº•éƒ¨èœå•æ  å¤œé—´
 	 */
 	public static String s_dibu_yejian = "10_4";
 	
 	/**
-	 * µ×²¿²Ëµ¥À¸ ·ÖÏí
+	 * åº•éƒ¨èœå•æ  åˆ†äº«
 	 */
 	public static String s_dibu_fenxiang = "10_5";
 	
 	/**
-	 * µ×²¿²Ëµ¥À¸ ÏÂÔØ
+	 * åº•éƒ¨èœå•æ  ä¸‹è½½
 	 */
 	public static String s_dibu_xiazai = "10_6";
 	
 	/**
-	 * µ×²¿²Ëµ¥À¸ ¸üĞÂ
+	 * åº•éƒ¨èœå•æ  æ›´æ–°
 	 */
 	public static String s_dibu_gengxin = "10_7";
 	
 	/**
-	 * µ×²¿²Ëµ¥À¸ ÍË³ö
+	 * åº•éƒ¨èœå•æ  é€€å‡º
 	 */
 	public static String s_dibu_tuichu = "10_8";
 	
 	/**
-	 * µ×²¿²Ëµ¥À¸ ÉèÖÃ
+	 * åº•éƒ¨èœå•æ  è®¾ç½®
 	 */
 	public static String s_dibu_shezhi = "10_9";
 	
 	/**
-	 * µ×²¿²Ëµ¥À¸ ÆÁÄ»
+	 * åº•éƒ¨èœå•æ  å±å¹•
 	 */
 	public static String s_dibu_pingmu = "10_10";
 	
 	/**
-	 * µ×²¿²Ëµ¥À¸ ·­Ò³Ä£Ê½
+	 * åº•éƒ¨èœå•æ  ç¿»é¡µæ¨¡å¼
 	 */
 	public static String s_dibu_yanyemoshi = "10_11";
 	
 	/**
-	 * µ×²¿²Ëµ¥À¸ ¸´ÖÆÁ´½Ó
+	 * åº•éƒ¨èœå•æ  å¤åˆ¶é“¾æ¥
 	 */
 	public static String s_dibu_fuzhilianjie = "10_12";
 	
 	/**
-	 * µ×²¿²Ëµ¥À¸ ÎŞºÛ
+	 * åº•éƒ¨èœå•æ  æ— ç—•
 	 */
 	public static String s_dibu_wuheng = "10_13";
 	
 	/**
-	 * µ×²¿²Ëµ¥À¸ ÎŞÍ¼
+	 * åº•éƒ¨èœå•æ  æ— å›¾
 	 */
 	public static String s_dibu_wutu = "10_14";
 	
 	/**
-	 * µ×²¿²Ëµ¥À¸ Ò³ÄÚ²éÕÒ
+	 * åº•éƒ¨èœå•æ  é¡µå†…æŸ¥æ‰¾
 	 */
 	public static String s_dibu_yeneichazhao = "10_15";
 	
 	/**
-	 * µ×²¿²Ëµ¥À¸ÉèÖÃ Çå³ıÊı¾İ
+	 * åº•éƒ¨èœå•æ è®¾ç½® æ¸…é™¤æ•°æ®
 	 */
 	public static String s_dibu_qingchu_shuju = "10_16";
 	
 	/**
-	 * µ×²¿²Ëµ¥À¸ÉèÖÃ Á÷Á¿Í³¼Æ
+	 * åº•éƒ¨èœå•æ è®¾ç½® æµé‡ç»Ÿè®¡
 	 */
 	public static String s_dibu_liuliang_tongji = "10_17";
 	
 	/**
-	 * µ×²¿²Ëµ¥À¸ÉèÖÃ ½¨Òé·´À¡
+	 * åº•éƒ¨èœå•æ è®¾ç½® å»ºè®®åé¦ˆ
 	 */
 	public static String s_dibu_jianyi_fankui = "10_18";
 	
 	/**
-	 * µ×²¿²Ëµ¥À¸ÉèÖÃ ĞÂÊÖÖ¸ÄÏ
+	 * åº•éƒ¨èœå•æ è®¾ç½® æ–°æ‰‹æŒ‡å—
 	 */
 	public static String s_dibu_xinshouzhinan = "10_19";
 	
 	/**
-	 * µ×²¿²Ëµ¥À¸ÉèÖÃ °ïÖú
+	 * åº•éƒ¨èœå•æ è®¾ç½® å¸®åŠ©
 	 */
 	public static String s_dibu_bangzhu = "10_20";
 	
 	
 	/**
-	 * ¹ã¸æ µ×²¿ºáÆÁ¹ã¸æ
+	 * å¹¿å‘Š åº•éƒ¨æ¨ªå±å¹¿å‘Š
 	 */
 	public static String m_guanggao_dibuhengping = "11";
 	
 	/**
-	 * ¹ã¸æ ÖĞ¼ä²åÆÁ¹ã¸æ
+	 * å¹¿å‘Š ä¸­é—´æ’å±å¹¿å‘Š
 	 */
 	public static String m_guanggao_zhongjianchaping = "12";
 	
 	/**
-	 * ¹Ø¼ü×Öµã»÷µÄ´ÎÊı
+	 * å…³é”®å­—ç‚¹å‡»çš„æ¬¡æ•°
 	 */
 	public static String m_guanjianzi = "13";
 	

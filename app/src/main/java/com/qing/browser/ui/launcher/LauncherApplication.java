@@ -37,7 +37,7 @@ public class LauncherApplication extends Application {
 	private static LauncherApplication mInstance = null;
 
 	public static final int CITY_LIST_SCUESS = 100;
-	private HashMap<String, Integer> mWeatherIcon;// ÌìÆøÍ¼±ê
+	private HashMap<String, Integer> mWeatherIcon;// å¤©æ°”å›¾æ ‡
 	public static int mNetWorkState;
 	private NotificationManager mNotificationManager;
 
@@ -162,7 +162,7 @@ public class LauncherApplication extends Application {
 			new Handler()) {
 		@Override
 		public void onChange(boolean selfChange) {
-			// Æô¶¯µÄÊ±ºòÖ»¼ÓÔØÒ»´Î
+			// å¯åŠ¨çš„æ—¶å€™åªåŠ è½½ä¸€æ¬¡
 			
 			if(LauncherModel.is_runing_Loader!=true){
 				CellLayout.update_screen = Launcher.mLauncher_ErWeiMa.getCurrentWorkspaceScreen();
@@ -201,7 +201,7 @@ public class LauncherApplication extends Application {
 	}
 
 	private List<Activity> activityList = new LinkedList<Activity>();
-	// Ìí¼ÓActivityµ½ÈİÆ÷ÖĞ
+	// æ·»åŠ Activityåˆ°å®¹å™¨ä¸­
 	public void addActivity(Activity activity) {
 		activityList.add(activity);
 	}

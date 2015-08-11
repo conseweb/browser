@@ -89,8 +89,15 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 22 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" exported="" name="android-support-v4" level="project" />
+    <orderEntry type="library" exported="" name="erweima" level="project" />
+    <orderEntry type="library" exported="" name="jsoup-1.6.3" level="project" />
+    <orderEntry type="library" exported="" name="nineoldandroids-2.4.0" level="project" />
     <orderEntry type="library" exported="" name="hugo-runtime-1.2.1" level="project" />
+    <orderEntry type="library" exported="" name="universal-image-loader-1.8.5-with-sources" level="project" />
     <orderEntry type="library" exported="" name="hugo-annotations-1.2.1" level="project" />
+    <orderEntry type="library" exported="" name="httpclient-4.2.5" level="project" />
+    <orderEntry type="library" exported="" name="httpmime-4.2.5" level="project" />
     <orderEntry type="library" exported="" name="aspectjrt-1.8.5" level="project" />
   </component>
 </module>

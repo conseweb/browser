@@ -293,8 +293,8 @@ public final class Launcher extends BaseActivity implements
 	// private ImageView mNextTabView;
 
 	// WebView
-	// ÊÇ·ñÖ§³Öä¯ÀÀÒ³Ãæ×óÓÒ»¬¶¯ÇĞ»»
-	// ÏÖ½×¶ÎÎ´ÊµÏÖ
+	// æ˜¯å¦æ”¯æŒæµè§ˆé¡µé¢å·¦å³æ»‘åŠ¨åˆ‡æ¢
+	// ç°é˜¶æ®µæœªå®ç°
 	public static boolean mutilPageFlag = false;
 	public static Tabspace mTabspace;
 	// private WebViewspace mWebViewspace;
@@ -327,17 +327,17 @@ public final class Launcher extends BaseActivity implements
 	// Popmenu
 	GridView gridview1, gridview2, gridview3;
 	ViewPager menuLayout;
-	private List<View> listViews; // TabÒ³ÃæÁĞ±í
+	private List<View> listViews; // Tabé¡µé¢åˆ—è¡¨
 	private PopupWindow popmenu;
 	private boolean menuShowed;
 	private View viewpage1, viewpage2;
 	private List<GridButtonInfo> lstDate1, lstDate2;
 	private View page_1, page_2;
 	private ImageView mainpage_1, mainpage_2, mainpage_3;
-	public String[] content1 = { "È«ÆÁ", "ÊéÇ©/ÀúÊ·", "¼ÓÊéÇ©", "Ò¹¼ä", "·ÖÏí", "ÏÂÔØ", "¸üĞÂ",
-			"ÍË³ö" };
-	public String[] content2 = { "ÉèÖÃ", "ÆÁÄ»", "·­Ò³Ä£Ê½", "¸´ÖÆÁ´½Ó", "ÎŞºÛ", "ÎŞÍ¼",
-			"Ò³ÄÚ²éÕÒ", "¹ØÓÚ" };
+	public String[] content1 = { "å…¨å±", "ä¹¦ç­¾/å†å²", "åŠ ä¹¦ç­¾", "å¤œé—´", "åˆ†äº«", "ä¸‹è½½", "æ›´æ–°",
+			"é€€å‡º" };
+	public String[] content2 = { "è®¾ç½®", "å±å¹•", "ç¿»é¡µæ¨¡å¼", "å¤åˆ¶é“¾æ¥", "æ— ç—•", "æ— å›¾",
+			"é¡µå†…æŸ¥æ‰¾", "å…³äº" };
 	private BaseAdapter gridviewPop1, gridviewPop2;
 	private RelativeLayout set_default_browser;
 	DialogImageUtil dialogimageutil;
@@ -373,11 +373,11 @@ public final class Launcher extends BaseActivity implements
 
 	private HideToolbarsRunnable mHideToolbarsRunnable;
 
-	// Main Container Ö÷ÈİÆ÷
-	// ÉèÖÃÎªÖ»°üº¬Á½¸ö×é¼ş workspaceºÍwebviewspace
+	// Main Container ä¸»å®¹å™¨
+	// è®¾ç½®ä¸ºåªåŒ…å«ä¸¤ä¸ªç»„ä»¶ workspaceå’Œwebviewspace
 	// private ViewFlipper mViewFlipper;
 
-	// Main Container Ö÷ÈİÆ÷
+	// Main Container ä¸»å®¹å™¨
 	public static Homespace mHomespace;
 	public static int CURRENT_SCREEN_WORKSPACE = 0;
 	public static int CURRENT_SCREEN_WORKSPACE_LEFT = 0;
@@ -386,9 +386,9 @@ public final class Launcher extends BaseActivity implements
 	public static int CURRENT_SCREEN_WORKSPACE_NOT = -1;
 	public static int CURRENT_SCREEN_TABSPACE = 1;
 
-	// Ö÷ÈİÆ÷ÊÖÊÆ
+	// ä¸»å®¹å™¨æ‰‹åŠ¿
 	private GestureDetector mGestureDetector;
-	// Ò³ÃæÇĞ»»·½Ê½ÉèÖÃ Ä¬ÈÏÎª»¬¶¯
+	// é¡µé¢åˆ‡æ¢æ–¹å¼è®¾ç½® é»˜è®¤ä¸ºæ»‘åŠ¨
 	private SwitchTabsMethod mSwitchTabsMethod = SwitchTabsMethod.FLING;
 
 	private enum SwitchTabsMethod {
@@ -466,9 +466,9 @@ public final class Launcher extends BaseActivity implements
 				Context.MODE_PRIVATE);
 		if (sp.getBoolean(Constants.PREFERENCES_SHOW_FULL_SCREEN, false)) {
 
-			requestWindowFeature(Window.FEATURE_NO_TITLE);// 1¡¢Òş²Ø±êÌâÀ¸
+			requestWindowFeature(Window.FEATURE_NO_TITLE);// 1ã€éšè—æ ‡é¢˜æ 
 			getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-					WindowManager.LayoutParams.FLAG_FULLSCREEN);// 2¡¢Òş²Ø×´Ì¬À¸
+					WindowManager.LayoutParams.FLAG_FULLSCREEN);// 2ã€éšè—çŠ¶æ€æ 
 		}
 
 		if (PROFILE_STARTUP) {
@@ -476,7 +476,7 @@ public final class Launcher extends BaseActivity implements
 					.getExternalStorageDirectory() + "/launcher");
 		}
 		
-		// ÕâÀï½øÈëÓ¦ÓÃÊ±ºòµÄÕ¹Ê¾Ò³Ãæ
+		// è¿™é‡Œè¿›å…¥åº”ç”¨æ—¶å€™çš„å±•ç¤ºé¡µé¢
 		startActivity(new Intent(Launcher.this, WelcomeActivity.class));
 		
 
@@ -505,7 +505,7 @@ public final class Launcher extends BaseActivity implements
 			android.os.Debug.stopMethodTracing();
 		}
 
-		// ¼ÓÔØ±£´æµÄÊéÇ©ĞÅÏ¢
+		// åŠ è½½ä¿å­˜çš„ä¹¦ç­¾ä¿¡æ¯
 		BookmarkMannager.loadMiddleScreen(Launcher.this);
 		BookmarkMannager.loadRightScreen(Launcher.this);
 
@@ -552,19 +552,19 @@ public final class Launcher extends BaseActivity implements
 			}
 		}, 5000);
 
-		// ·ÃÎÊÍ³¼Æ
+		// è®¿é—®ç»Ÿè®¡
 		if (Tools.isConnectInternet(Launcher.this)) {
 			new Thread(new GetSalenet_Thread()).start();
 		}
 		
-		// ÎŞĞ§ÍøÒ³¿ìÕÕ¶¨ÆÚÇå³ı¹ÜÀí Ã¿ÌìÇå³ıÒ»´Î?
+		// æ— æ•ˆç½‘é¡µå¿«ç…§å®šæœŸæ¸…é™¤ç®¡ç† æ¯å¤©æ¸…é™¤ä¸€æ¬¡?
 		checkSnapShotClean();
 
 		Intent i = getIntent();
 		if (i.getData() != null) {
 
 			if (i.getDataString().equals("saoyisao")
-					|| i.getDataString().equals("É¨Ò»É¨")) {
+					|| i.getDataString().equals("æ‰«ä¸€æ‰«")) {
 				if (i.getDataString().equals("saoyisao")) {
 				} else {
 				}
@@ -581,17 +581,17 @@ public final class Launcher extends BaseActivity implements
 		} else {
 		}
 
-		mLauncher_ErWeiMa = this;// ÓÃÓÚÆäËûÒ³ÃæÖ±½ÓÌí¼ÓÍøÒ³
+		mLauncher_ErWeiMa = this;// ç”¨äºå…¶ä»–é¡µé¢ç›´æ¥æ·»åŠ ç½‘é¡µ
 		CellLayout.update_screen = 0;
 
 		Tools.AddShortcut(Launcher.this);
 
-		// ¼ì²éÊÇ·ñÉèÖÃÎªÄ¬ÈÏä¯ÀÀÆ÷
+		// æ£€æŸ¥æ˜¯å¦è®¾ç½®ä¸ºé»˜è®¤æµè§ˆå™¨
 		checkDefaultBrowser();
 
-		// ×ó²àÍøÒ³¸üĞÂ¹æÔò
-		// ×ó²àÍøÒ³¸üĞÂ¹æÔò
-		// ×ó²àÍøÒ³¸üĞÂ¹æÔò
+		// å·¦ä¾§ç½‘é¡µæ›´æ–°è§„åˆ™
+		// å·¦ä¾§ç½‘é¡µæ›´æ–°è§„åˆ™
+		// å·¦ä¾§ç½‘é¡µæ›´æ–°è§„åˆ™
 		long one_webview_time = sp.getLong(Constants.ONE_WEBVIEW_TIME, 0);
 		long nowTime = new Date().getTime();
 		sp.edit().putLong(Constants.PREFERENCES_TIME, nowTime).commit();
@@ -605,10 +605,10 @@ public final class Launcher extends BaseActivity implements
 		}
 
 		
-		// ¼ÇÂ¼¹ã¸æÊ±¼ä
+		// è®°å½•å¹¿å‘Šæ—¶é—´
 		long ALL_AD_SHOW_TIME = sp.getLong(Constants.ALL_AD_SHOW_TIME, 0);
 		if (ALL_AD_SHOW_TIME == 0
-				|| (nowTime - ALL_AD_SHOW_TIME >= 24 * 60 * 60 * 1000/* 1Ìì */)) {
+				|| (nowTime - ALL_AD_SHOW_TIME >= 24 * 60 * 60 * 1000/* 1å¤© */)) {
 			Editor editor = sp.edit();
 			editor.putLong(Constants.ALL_AD_SHOW_TIME, nowTime);
 			editor.putInt(Constants.AD_HENGTIAO_SHOUCI, 0);
@@ -743,12 +743,12 @@ public final class Launcher extends BaseActivity implements
 		DownloadItem info = dao.query(Launcher.this);
 		if (info != null) {
 			dialogUtil = new DialogUtil.Builder(Launcher.this)
-					.setTitleText("ÎÂÜ°ÌáÊ¾").setText("ÓĞÏÂÔØÈÎÎñÕıÔÚ½øĞĞ£¬¼ÌĞøÍê³ÉÏÂÔØ£¿")
-					.setPositiveButton("¼ÌĞøÏÂÔØ", new View.OnClickListener() {
+					.setTitleText("æ¸©é¦¨æç¤º").setText("æœ‰ä¸‹è½½ä»»åŠ¡æ­£åœ¨è¿›è¡Œï¼Œç»§ç»­å®Œæˆä¸‹è½½ï¼Ÿ")
+					.setPositiveButton("ç»§ç»­ä¸‹è½½", new View.OnClickListener() {
 						public void onClick(View v) {
 							dialogUtil.dismiss();
 						}
-					}).setNegativeButton("²»£¬ÍË³ö", new View.OnClickListener() {
+					}).setNegativeButton("ä¸ï¼Œé€€å‡º", new View.OnClickListener() {
 						public void onClick(View v) {
 							dialogUtil.dismiss();
 							DownloadManager.getInstance().stopAllDownloadTask();
@@ -916,8 +916,8 @@ public final class Launcher extends BaseActivity implements
 								FloatWindowService.TYPE_TOOLMENU);
 
 					}
-					// TODO Çå³ıä¯ÀÀÒ³Ãæ£¬·µ»Ø×ÀÃæ
-					// Èç¹ûµ±Ç°ÏÔÊ¾Îª×ÀÃæ£¬Ôò½øÈëÍË³öÌáÊ¾Ò³Ãæ
+					// TODO æ¸…é™¤æµè§ˆé¡µé¢ï¼Œè¿”å›æ¡Œé¢
+					// å¦‚æœå½“å‰æ˜¾ç¤ºä¸ºæ¡Œé¢ï¼Œåˆ™è¿›å…¥é€€å‡ºæç¤ºé¡µé¢
 					mHomespace.setCurrentScreen(CURRENT_SCREEN_WORKSPACE);
 					mUrlEditText.removeTextChangedListener(mUrlTextWatcher);
 					mUrlEditText.setText("");
@@ -1022,7 +1022,7 @@ public final class Launcher extends BaseActivity implements
 				mFolders, shortid, screen);
 
 		folderInfo.shortid = shortid;
-		folderInfo.title = "ÎÄ¼ş¼Ğ";
+		folderInfo.title = "æ–‡ä»¶å¤¹";
 		folderInfo.itemIndex = index;
 		folderInfo.container = LauncherSettings.Favorites.CONTAINER_DESKTOP;
 		folderInfo.screen = screen;
@@ -1078,11 +1078,11 @@ public final class Launcher extends BaseActivity implements
 
 					if (!mInfo.activityInfo.packageName
 							.equals(info.packageName)) {
-						Toast.makeText(Launcher.this, "ÉèÖÃÄ¬ÈÏä¯ÀÀÆ÷Ê§°Ü",
+						Toast.makeText(Launcher.this, "è®¾ç½®é»˜è®¤æµè§ˆå™¨å¤±è´¥",
 								Toast.LENGTH_SHORT).show();
 						addTab(i.getDataString());
 					} else {
-						Toast.makeText(Launcher.this, "ÉèÖÃÄ¬ÈÏä¯ÀÀÆ÷³É¹¦",
+						Toast.makeText(Launcher.this, "è®¾ç½®é»˜è®¤æµè§ˆå™¨æˆåŠŸ",
 								Toast.LENGTH_SHORT).show();
 						if (SettingActivity.setDefault) {
 							startActivity(new Intent(Launcher.this,
@@ -1093,7 +1093,7 @@ public final class Launcher extends BaseActivity implements
 					e.printStackTrace();
 				}
 			} else if (i.getDataString().equals("saoyisao")
-					|| i.getDataString().equals("É¨Ò»É¨")) {
+					|| i.getDataString().equals("æ‰«ä¸€æ‰«")) {
 				if (i.getDataString().equals("saoyisao")) {
 				} else {
 				}
@@ -1214,7 +1214,7 @@ public final class Launcher extends BaseActivity implements
 			ShortcutInfo shortcutInfo = (ShortcutInfo) tag;
 			if (Constants.SHORTCUT_TIANQI.equals(shortcutInfo.url)) {
 				startActivity(new Intent(Launcher.this, CaptureActivity.class));
-			} else if ("Ìí¼Ó".equals(shortcutInfo.title)) {
+			} else if ("æ·»åŠ ".equals(shortcutInfo.title)) {
 				startActivity(new Intent(Launcher.this,
 						AddShortcutActivity.class));
 			} else if (Constants.SHORTCUT_ZHUANKE.equals(shortcutInfo.url)) {
@@ -1224,8 +1224,8 @@ public final class Launcher extends BaseActivity implements
 			}
 		} else if (tag instanceof FolderInfo) {
 			FolderInfo folderInfo = (FolderInfo) tag;
-			if ("×î³£·ÃÎÊ".equals(folderInfo.title)) {
-				// ´ò¿ªÎÄ¼ş¼Ğ
+			if ("æœ€å¸¸è®¿é—®".equals(folderInfo.title)) {
+				// æ‰“å¼€æ–‡ä»¶å¤¹
 				UserFolderInfo userFolderInfo = (UserFolderInfo) folderInfo;
 				userFolderInfo.contents.clear();
 				userFolderInfo.contents = BookmarksProviderWrapper
@@ -1234,7 +1234,7 @@ public final class Launcher extends BaseActivity implements
 				if (userFolderInfo.contents.size() > 0) {
 					handleFolderClick(folderInfo);
 				} else {
-					Toast.makeText(Launcher.this, "×î³£·ÃÎÊÖĞÎŞ¼ÇÂ¼", 1000).show();
+					Toast.makeText(Launcher.this, "æœ€å¸¸è®¿é—®ä¸­æ— è®°å½•", 1000).show();
 				}
 			} else {
 				// openFolder((FolderInfo) tag);
@@ -1356,7 +1356,7 @@ public final class Launcher extends BaseActivity implements
 
 		if (mWorkspace.allowLongPress()) {
 			if (view instanceof TextView) {
-				if (("Ìí¼Ó").equals(((TextView) view).getText())) {
+				if (("æ·»åŠ ").equals(((TextView) view).getText())) {
 					return true;
 				} else {
 					// User long pressed on an item
@@ -1415,7 +1415,7 @@ public final class Launcher extends BaseActivity implements
 					null);
 			mInput = (EditText) layout.findViewById(R.id.folder_name);
 			TextView title = (TextView) layout.findViewById(R.id.title);
-			title.setText("ÖØÃüÃûÎÄ¼ş¼Ğ");
+			title.setText("é‡å‘½åæ–‡ä»¶å¤¹");
 
 			Button ok = (Button) layout.findViewById(R.id.dialog_ok);
 			ok.setOnClickListener(new OnClickListener() {
@@ -1435,7 +1435,7 @@ public final class Launcher extends BaseActivity implements
 				}
 
 			});
-			Dialog dialog = new Dialog(Launcher.this, R.style.waitdailog);// ÕâÀïÓ¦ÓÃÁËÄãµÄ×Ô¶¨ÒåÑùÊ½
+			Dialog dialog = new Dialog(Launcher.this, R.style.waitdailog);// è¿™é‡Œåº”ç”¨äº†ä½ çš„è‡ªå®šä¹‰æ ·å¼
 
 			dialog.setContentView(layout);
 
@@ -1501,7 +1501,7 @@ public final class Launcher extends BaseActivity implements
 	 * 
 	 * Implementation of the method from LauncherModel.Callbacks.
 	 * 
-	 * 0 Çå³ıÈ«²¿£¬ 1Çå³ı×óÆÁÄ» £¬2 Çå³ıÓÒÆÁÄ»
+	 * 0 æ¸…é™¤å…¨éƒ¨ï¼Œ 1æ¸…é™¤å·¦å±å¹• ï¼Œ2 æ¸…é™¤å³å±å¹•
 	 * 
 	 */
 	public void startBinding(int flag) {
@@ -1703,7 +1703,7 @@ public final class Launcher extends BaseActivity implements
 
 	public ShortcutInfo AddItemAddShort() {
 		final ShortcutInfo info = new ShortcutInfo();
-		info.title = "Ìí¼Ó";
+		info.title = "æ·»åŠ ";
 		info.screen = 1;
 		info.itemType = LauncherSettings.Favorites.ITEM_TYPE_APPLICATION;
 		info.customIcon = true;
@@ -1748,7 +1748,7 @@ public final class Launcher extends BaseActivity implements
 	}
 
 	/**
-	 * GridViewµÄ¼àÌıÊÂ¼ş
+	 * GridViewçš„ç›‘å¬äº‹ä»¶
 	 */
 	public OnItemClickListener gridListener = new OnItemClickListener() {
 
@@ -1760,10 +1760,10 @@ public final class Launcher extends BaseActivity implements
 					.getItemAtPosition(arg2);
 
 			if (buttonInfo.getButtonTitle().equals(content1[0])) {
-				// È«ÆÁ
+				// å…¨å±
 				Editor editor = sp.edit();
 				if (sp.getBoolean(Constants.PREFERENCES_SHOW_FULL_SCREEN, false)) {
-					// ÍË³öÈ«ÆÁ
+					// é€€å‡ºå…¨å±
 					editor.putBoolean(Constants.PREFERENCES_SHOW_FULL_SCREEN,
 							false);
 					WindowManager.LayoutParams attr = getWindow()
@@ -1783,7 +1783,7 @@ public final class Launcher extends BaseActivity implements
 					}
 
 				} else {
-					// È«ÆÁ
+					// å…¨å±
 					editor.putBoolean(Constants.PREFERENCES_SHOW_FULL_SCREEN,
 							true);
 					WindowManager.LayoutParams lp = getWindow().getAttributes();
@@ -1809,12 +1809,12 @@ public final class Launcher extends BaseActivity implements
 
 				editor.commit();
 			} else if (buttonInfo.getButtonTitle().equals(content1[1])) {
-				// ÊéÇ©/ÀúÊ·
+				// ä¹¦ç­¾/å†å²
 				Intent i = new Intent(Launcher.this,
 						BookmarksHistoryActivity.class);
 				startActivityForResult(i, RESULT_OPEN_NEW_BOOKMARKS_HISTORY);
 			} else if (buttonInfo.getButtonTitle().equals(content1[2])) {
-				// Ìí¼ÓÊéÇ©
+				// æ·»åŠ ä¹¦ç­¾
 				Intent i = new Intent(Launcher.this, EditBookmarkActivity.class);
 				if ((CURRENT_SCREEN_TABSPACE == mHomespace.getCurrentScreen())) {
 
@@ -1837,7 +1837,7 @@ public final class Launcher extends BaseActivity implements
 				startActivity(i);
 
 			} else if (buttonInfo.getButtonTitle().equals(content1[3])) {
-				// Ò¹¼äÄ£Ê½
+				// å¤œé—´æ¨¡å¼
 				Editor editor = sp.edit();
 				if (sp.getBoolean(Constants.PREFERENCES_NIGHT_MODE, false)) {
 					editor.putBoolean(Constants.PREFERENCES_NIGHT_MODE, false);
@@ -1849,7 +1849,7 @@ public final class Launcher extends BaseActivity implements
 				editor.commit();
 
 			} else if (buttonInfo.getButtonTitle().equals(content1[4])) {
-				// ·ÖÏí
+				// åˆ†äº«
 				
 				if ((CURRENT_SCREEN_TABSPACE == mHomespace.getCurrentScreen())) {
 					WebViewspace mWebViewspace = (WebViewspace) mTabspace
@@ -1861,41 +1861,41 @@ public final class Launcher extends BaseActivity implements
 				} 
 
 			} else if (buttonInfo.getButtonTitle().equals(content1[5])) {
-				// ÏÂÔØ
+				// ä¸‹è½½
 				startActivity(new Intent(Launcher.this,
 						DownloadsListActivity.class));
 
 			} else if (buttonInfo.getButtonTitle().equals(content1[6])) {
-				// ¼ì²é¸üĞÂ
+				// æ£€æŸ¥æ›´æ–°
 				if (Tools.isConnectInternet(Launcher.this)) {
-					Toast.makeText(Launcher.this, "ÕıÔÚ¼ì²â£¬ÇëÉÔºó",
+					Toast.makeText(Launcher.this, "æ­£åœ¨æ£€æµ‹ï¼Œè¯·ç¨å",
 							Toast.LENGTH_SHORT).show();
 					ManuallyCheckVersion();
 				} else {
-					Toast.makeText(Launcher.this, "Çë¼ì²éÍøÂçÉèÖÃ", Toast.LENGTH_SHORT)
+					Toast.makeText(Launcher.this, "è¯·æ£€æŸ¥ç½‘ç»œè®¾ç½®", Toast.LENGTH_SHORT)
 							.show();
 				}
 			} else if (buttonInfo.getButtonTitle().equals(content1[7])) {
-				// ÍË³ö
+				// é€€å‡º
 				Quit();
 
 			} else if (buttonInfo.getButtonTitle().equals(content2[0])) {
-				// ÉèÖÃ
+				// è®¾ç½®
 				startActivityForResult(new Intent(Launcher.this,
 						SettingActivity.class),
 						RESULT_OPEN_NEW_BOOKMARKS_HISTORY);
 			} else if (buttonInfo.getButtonTitle().equals(content2[1])) {
-				// ÆÁÄ»
+				// å±å¹•
 				startActivity(new Intent(Launcher.this,
 						ScreenSwitchDialogActivity.class));
 
 			} else if (buttonInfo.getButtonTitle().equals(content2[2])) {
-				// ·­Ò³Ä£Ê½
+				// ç¿»é¡µæ¨¡å¼
 				if (CURRENT_SCREEN_TABSPACE == mHomespace.getCurrentScreen()
 						|| mWorkspace.getCurrentScreen() == 0) {
 					PageDownOrUpActivity = new PageDownOrUpActivity.Builder(
 							Launcher.this)
-							.setPositiveButton("È·¶¨",
+							.setPositiveButton("ç¡®å®š",
 									new View.OnClickListener() {
 										public void onClick(View v) {
 
@@ -1924,7 +1924,7 @@ public final class Launcher extends BaseActivity implements
 											PageDownOrUpActivity.dismiss();
 										}
 									})
-							.setNegativeButton("È¡Ïû",
+							.setNegativeButton("å–æ¶ˆ",
 									new View.OnClickListener() {
 										public void onClick(View v) {
 											PageDownOrUpActivity.dismiss();
@@ -1935,7 +1935,7 @@ public final class Launcher extends BaseActivity implements
 				}
 
 			} else if (buttonInfo.getButtonTitle().equals(content2[3])) {
-				// ¸´ÖÆÁ´½Ó
+				// å¤åˆ¶é“¾æ¥
 				if (CURRENT_SCREEN_TABSPACE == mHomespace.getCurrentScreen()) {
 					WebViewspace mWebViewspace = (WebViewspace) mTabspace
 							.getChildAt(mCurrentIndex);
@@ -1948,40 +1948,40 @@ public final class Launcher extends BaseActivity implements
 				}
 
 			} else if (buttonInfo.getButtonTitle().equals(content2[4])) {
-				// ÎŞºÛ
+				// æ— ç—•
 				Editor editor = sp.edit();
 				if (sp.getBoolean(Constants.PREFERENCES_INCOGNITO_MODE, false)) {
 					editor.putBoolean(Constants.PREFERENCES_INCOGNITO_MODE,
 							false);
-					Toast.makeText(Launcher.this, "ÒÑÇĞ»»µ½Õı³£Ä£Ê½",
+					Toast.makeText(Launcher.this, "å·²åˆ‡æ¢åˆ°æ­£å¸¸æ¨¡å¼",
 							Toast.LENGTH_SHORT).show();
 				} else {
 					editor.putBoolean(Constants.PREFERENCES_INCOGNITO_MODE,
 							true);
 
-					Toast.makeText(Launcher.this, "ÒÑÇĞ»»µ½ÎŞºÛÄ£Ê½",
+					Toast.makeText(Launcher.this, "å·²åˆ‡æ¢åˆ°æ— ç—•æ¨¡å¼",
 							Toast.LENGTH_SHORT).show();
 				}
 				editor.commit();
 			} else if (buttonInfo.getButtonTitle().equals(content2[5])) {
-				// ÎŞÍ¼
+				// æ— å›¾
 				Editor editor = sp.edit();
 				if (sp.getBoolean(Constants.PREFERENCES_BROWSER_ENABLE_IMAGES,
 						true)) {
 					editor.putBoolean(
 							Constants.PREFERENCES_BROWSER_ENABLE_IMAGES, false);
-					Toast.makeText(Launcher.this, "ÒÑÇĞ»»µ½ÎŞÍ¼£¬¸üÊ¡Á÷Á¿",
+					Toast.makeText(Launcher.this, "å·²åˆ‡æ¢åˆ°æ— å›¾ï¼Œæ›´çœæµé‡",
 							Toast.LENGTH_SHORT).show();
 				} else {
 					editor.putBoolean(
 							Constants.PREFERENCES_BROWSER_ENABLE_IMAGES, true);
-					Toast.makeText(Launcher.this, "ÒÑÇĞ»»µ½ÓĞÍ¼", Toast.LENGTH_SHORT)
+					Toast.makeText(Launcher.this, "å·²åˆ‡æ¢åˆ°æœ‰å›¾", Toast.LENGTH_SHORT)
 							.show();
 				}
 				editor.commit();
 				applyPreferences();
 			} else if (buttonInfo.getButtonTitle().equals(content2[6])) {
-				// Ò³ÄÚ²éÕÒ
+				// é¡µå†…æŸ¥æ‰¾
 				if (CURRENT_SCREEN_TABSPACE == mHomespace.getCurrentScreen()) {
 					startShowFindDialogRunnable();
 				}
@@ -1991,14 +1991,14 @@ public final class Launcher extends BaseActivity implements
 	};
 
 	/**
-	 * ÍË³ö
+	 * é€€å‡º
 	 */
 	private void Quit() {
 		if (sp.getBoolean(Constants.PREFERENCES_NIGHT_MODE, false)) {
-			// ÉèÖÃÆÁÄ»ÁÁ¶ÈÖµÎªÔ­À´µÄ
+			// è®¾ç½®å±å¹•äº®åº¦å€¼ä¸ºåŸæ¥çš„
 			setScreenBrightness((float) sp.getFloat(Constants.screenBrightness,
 					255.0F));
-			// ÉèÖÃµ±Ç°ÆÁÄ»ÁÁ¶ÈµÄÄ£Ê½ ÎªÔ­À´µÄ
+			// è®¾ç½®å½“å‰å±å¹•äº®åº¦çš„æ¨¡å¼ ä¸ºåŸæ¥çš„
 			setScreenMode(sp.getInt(Constants.screenMode, 0));
 
 		}
@@ -2026,10 +2026,10 @@ public final class Launcher extends BaseActivity implements
 		quitDialog = new QuitDialogActivity.Builder(Launcher.this)
 				.setCleanButton(new View.OnClickListener() {
 					public void onClick(View v) {
-						// Çå³ıÈ«²¿ä¯ÀÀ¼ÇÂ¼
+						// æ¸…é™¤å…¨éƒ¨æµè§ˆè®°å½•
 						// BookmarksProviderWrapper.clearHistory();
 
-						// Çå³ı±¾´Îä¯ÀÀ¼ÇÂ¼
+						// æ¸…é™¤æœ¬æ¬¡æµè§ˆè®°å½•
 						BookmarksProviderWrapper.cleanTheHistory(Launcher.this);
 
 						for (Object object : Controller.getInstance()
@@ -2039,13 +2039,13 @@ public final class Launcher extends BaseActivity implements
 								webView.clearHistory();
 							}
 						}
-						// ÍË³ö
+						// é€€å‡º
 						Quit();
 						quitDialog.dismiss();
 					}
 				}).setPositiveButton(new View.OnClickListener() {
 					public void onClick(View v) {
-						// ÍË³ö
+						// é€€å‡º
 						Quit();
 						quitDialog.dismiss();
 					}
@@ -2054,7 +2054,7 @@ public final class Launcher extends BaseActivity implements
 						quitDialog.dismiss();
 					}
 				}).create();
-		quitDialog.setCanceledOnTouchOutside(true);// µã»÷ÇøÓòÍâ¹Ø±Õ
+		quitDialog.setCanceledOnTouchOutside(true);// ç‚¹å‡»åŒºåŸŸå¤–å…³é—­
 		quitDialog.show();
 	}
 
@@ -2106,7 +2106,7 @@ public final class Launcher extends BaseActivity implements
 	}
 
 	/**
-	 * ¸üĞÂµ±Ç°Ò³Âë
+	 * æ›´æ–°å½“å‰é¡µç 
 	 */
 	public void setCurPage(int page) {
 
@@ -2183,10 +2183,10 @@ public final class Launcher extends BaseActivity implements
 
 			setDefault = false;
 			if (mInfo.activityInfo.packageName.equals(info.packageName)) {
-				Toast.makeText(Launcher.this, "ÉèÖÃ³É¹¦", Toast.LENGTH_SHORT)
+				Toast.makeText(Launcher.this, "è®¾ç½®æˆåŠŸ", Toast.LENGTH_SHORT)
 						.show();
 			} else {
-				Toast.makeText(Launcher.this, "ÉèÖÃÊ§°Ü", Toast.LENGTH_SHORT)
+				Toast.makeText(Launcher.this, "è®¾ç½®å¤±è´¥", Toast.LENGTH_SHORT)
 						.show();
 			}
 
@@ -2210,13 +2210,13 @@ public final class Launcher extends BaseActivity implements
 			e.printStackTrace();
 		}
 		if ("android".equals(mInfo.activityInfo.packageName)) {
-			// Ã»ÓĞÉèÖÃ¹ı£¬Ö±½ÓÉèÖÃ
-			Log.i("H", "Ã»ÓĞÉèÖÃ¹ı£¬Ö±½ÓÉèÖÃ  " + info.packageName + "  package:"
+			// æ²¡æœ‰è®¾ç½®è¿‡ï¼Œç›´æ¥è®¾ç½®
+			Log.i("H", "æ²¡æœ‰è®¾ç½®è¿‡ï¼Œç›´æ¥è®¾ç½®  " + info.packageName + "  package:"
 					+ mInfo.activityInfo.packageName);
 			dialogimageutil = new DialogImageUtil.Builder(Launcher.this)
-					.setTitleText("ÈçºÎÉèÖÃÄ¬ÈÏ")
+					.setTitleText("å¦‚ä½•è®¾ç½®é»˜è®¤")
 					.setImageResource(R.drawable.setdefault)
-					.setPositiveButton("È¥ÉèÖÃ", new View.OnClickListener() {
+					.setPositiveButton("å»è®¾ç½®", new View.OnClickListener() {
 						public void onClick(View v) {
 							startActivity(new Intent(Intent.ACTION_VIEW, Uri
 									.parse(SettingActivity.setDefaultFail)));
@@ -2226,17 +2226,17 @@ public final class Launcher extends BaseActivity implements
 					}).create();
 			dialogimageutil.show();
 		} else {
-			// ÒÑ¾­ÉèÖÃ¹ı£¬ÏÈÇå³ıÉèÖÃ
-			Log.i("H", "ÒÑ¾­ÉèÖÃ¹ı£¬ÏÈÇå³ıÉèÖÃ " + info.packageName + "  package:"
+			// å·²ç»è®¾ç½®è¿‡ï¼Œå…ˆæ¸…é™¤è®¾ç½®
+			Log.i("H", "å·²ç»è®¾ç½®è¿‡ï¼Œå…ˆæ¸…é™¤è®¾ç½® " + info.packageName + "  package:"
 					+ mInfo.activityInfo.packageName);
 			dialogimageutil = new DialogImageUtil.Builder(Launcher.this)
-					.setTitleText("ÇëÏÈÇå³ıÄ¬ÈÏÉèÖÃ")
+					.setTitleText("è¯·å…ˆæ¸…é™¤é»˜è®¤è®¾ç½®")
 					.setImageResource(R.drawable.cleandefault)
-					.setPositiveButton("È¥Çå³ı", new View.OnClickListener() {
+					.setPositiveButton("å»æ¸…é™¤", new View.OnClickListener() {
 						public void onClick(View v) {
 							cleanDefault = true;
 							Uri uri = Uri.parse("package:"
-									+ mInfo.activityInfo.packageName);// °üÃû£¬Ö¸¶¨¸ÃÓ¦ÓÃ
+									+ mInfo.activityInfo.packageName);// åŒ…åï¼ŒæŒ‡å®šè¯¥åº”ç”¨
 							Intent intent = new Intent(
 									"android.settings.APPLICATION_DETAILS_SETTINGS",
 									uri);
@@ -2315,7 +2315,7 @@ public final class Launcher extends BaseActivity implements
 					}
 				}
 
-				// Ö»ÊÇÎ´ÏÔÊ¾,Ó¦ÒÆ³ö°üº¬µÄView
+				// åªæ˜¯æœªæ˜¾ç¤º,åº”ç§»å‡ºåŒ…å«çš„View
 				mTabspace.removeAllViews();
 				mTabspace.setVisibility(View.GONE);
 
@@ -2340,9 +2340,9 @@ public final class Launcher extends BaseActivity implements
 				tabs_gallery.setVisibility(View.GONE);
 				tabs_gallery_Flag = false;
 				if (tabs_num > 9) {
-					Toast.makeText(Launcher.this, "´°¿ÚÊıÄ¿ÒÑ´ïµ½ÉÏÏŞ", 1000).show();
+					Toast.makeText(Launcher.this, "çª—å£æ•°ç›®å·²è¾¾åˆ°ä¸Šé™", 1000).show();
 				} else {
-					Toast.makeText(Launcher.this, "ĞÂ±êÇ©Ò³Ìí¼Ó", 1000).show();
+					Toast.makeText(Launcher.this, "æ–°æ ‡ç­¾é¡µæ·»åŠ ", 1000).show();
 					newTab();
 				}
 			}
@@ -2367,8 +2367,8 @@ public final class Launcher extends BaseActivity implements
 	}
 
 	public static void loadSnapShot(String url) {
-		// Ìí¼ÓÊéÇ©£¬ÅĞ¶ÏurlµØÖ·¿ÉÓÃĞÔ
-		// ·ÃÎÊURLµØÖ·£¬»ñÈ¡¿ìÕÕ
+		// æ·»åŠ ä¹¦ç­¾ï¼Œåˆ¤æ–­urlåœ°å€å¯ç”¨æ€§
+		// è®¿é—®URLåœ°å€ï¼Œè·å–å¿«ç…§
 		snapshotwebview.setWebViewClient(new WebViewClient() {
 
 			@Override
@@ -2382,15 +2382,15 @@ public final class Launcher extends BaseActivity implements
 	}
 
 	public static void loadSnapShot(String url, final int bookmarkid) {
-		// Ìí¼ÓÊéÇ©£¬ÅĞ¶ÏurlµØÖ·¿ÉÓÃĞÔ
-		// ·ÃÎÊURLµØÖ·£¬»ñÈ¡¿ìÕÕ
+		// æ·»åŠ ä¹¦ç­¾ï¼Œåˆ¤æ–­urlåœ°å€å¯ç”¨æ€§
+		// è®¿é—®URLåœ°å€ï¼Œè·å–å¿«ç…§
 		snapshotwebview.setWebViewClient(new WebViewClient() {
 
 			@Override
 			public void onPageFinished(WebView view, String url) {
 				Context context = LauncherApplication.getInstance();
 				catchSnapshot(view, url);
-				// ¸üĞÂbookmark
+				// æ›´æ–°bookmark
 				final ContentValues values = new ContentValues();
 				values.put(Browser.BookmarkColumns.URL, url);
 				values.put(BookmarksUtil.BookmarkColumns_SNAPSHOT,
@@ -2408,15 +2408,15 @@ public final class Launcher extends BaseActivity implements
 
 	public static void loadSnapShot(String url, final int launcherid,
 			final int bookmarkid) {
-		// Ìí¼ÓÊéÇ©£¬ÅĞ¶ÏurlµØÖ·¿ÉÓÃĞÔ
-		// ·ÃÎÊURLµØÖ·£¬»ñÈ¡¿ìÕÕ
+		// æ·»åŠ ä¹¦ç­¾ï¼Œåˆ¤æ–­urlåœ°å€å¯ç”¨æ€§
+		// è®¿é—®URLåœ°å€ï¼Œè·å–å¿«ç…§
 		snapshotwebview.setWebViewClient(new WebViewClient() {
 
 			@Override
 			public void onPageFinished(WebView view, String url) {
 				Context context = LauncherApplication.getInstance();
 				catchSnapshot(view, url);
-				// ¸üĞÂbookmark
+				// æ›´æ–°bookmark
 				final ContentValues values = new ContentValues();
 				values.put(Browser.BookmarkColumns.URL, url);
 				values.put(BookmarksUtil.BookmarkColumns_SNAPSHOT,
@@ -2424,7 +2424,7 @@ public final class Launcher extends BaseActivity implements
 				UUID uuid = UUID.nameUUIDFromBytes(url.getBytes());
 				values.put(BookmarksUtil.BookmarkColumns_UUID, uuid + "");
 				BookmarksUtil.update(context, values, bookmarkid);
-				// ¸üĞÂlauncher
+				// æ›´æ–°launcher
 				ShortcutInfo shortcutInfo = new ShortcutInfo();
 				shortcutInfo.id = launcherid;
 				shortcutInfo.url = url;
@@ -2439,7 +2439,7 @@ public final class Launcher extends BaseActivity implements
 	}
 
 	/**
-	 * È«ÆÁÏÂ ¹¤¾ßÀ¸Óë±êÌâÀ¸ÏÔÊ¾/Òş²Ø
+	 * å…¨å±ä¸‹ å·¥å…·æ ä¸æ ‡é¢˜æ æ˜¾ç¤º/éšè—
 	 */
 
 	public static void initBubbleView() {
@@ -2453,7 +2453,7 @@ public final class Launcher extends BaseActivity implements
 	}
 
 	/**
-	 * ³õÊ¼»¯ÍøÒ³²éÕÒ°´Å¥
+	 * åˆå§‹åŒ–ç½‘é¡µæŸ¥æ‰¾æŒ‰é’®
 	 */
 	private void initFindBar() {
 		mFindBar = (LinearLayout) findViewById(R.id.findControls);
@@ -2528,10 +2528,10 @@ public final class Launcher extends BaseActivity implements
 	}
 
 	/**
-	 * ³õÊ¼»¯¶¥²¿Bar
+	 * åˆå§‹åŒ–é¡¶éƒ¨Bar
 	 */
 	private void initTopBar() {
-		// ³õÊ¼»¯ µØÖ·À¸ºÍËÑË÷À¸
+		// åˆå§‹åŒ– åœ°å€æ å’Œæœç´¢æ 
 		top_bar_main = (LinearLayout) findViewById(R.id.top_bar_main);
 		top_bar_main_layout = (LinearLayout) top_bar_main
 				.findViewById(R.id.top_bar_main_layout);
@@ -2619,7 +2619,7 @@ public final class Launcher extends BaseActivity implements
 	}
 
 	/**
-	 * ³õÊ¼»¯¶¥²¿BarBrowser
+	 * åˆå§‹åŒ–é¡¶éƒ¨BarBrowser
 	 */
 	private void initTopBarBrowser() {
 		top_bar_browser = (LinearLayout) findViewById(R.id.top_bar_browser);
@@ -2633,13 +2633,13 @@ public final class Launcher extends BaseActivity implements
 	}
 
 	/**
-	 * ³õÊ¼»¯µ×²¿Bar
+	 * åˆå§‹åŒ–åº•éƒ¨Bar
 	 */
 	private void initBottomBar() {
 		if (popmenu != null && popmenu.isShowing()) {
 			popmenu.dismiss();
 		}
-		// ³õÊ¼»¯µ×²¿²Ëµ¥
+		// åˆå§‹åŒ–åº•éƒ¨èœå•
 		LinearLayout bottom_one = (LinearLayout) top_bar_main
 				.findViewById(R.id.bottom_one);
 		LinearLayout bottom_two = (LinearLayout) top_bar_main
@@ -2765,7 +2765,7 @@ public final class Launcher extends BaseActivity implements
 		bottom_bar_tabs.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
 
-				// ´æ´¢µ±Ç°Ò³ÃæËõÂÔÍ¼,ÊÇ·ñÊ¹ÓÃÊÓÇé¿ö¾ö¶¨
+				// å­˜å‚¨å½“å‰é¡µé¢ç¼©ç•¥å›¾,æ˜¯å¦ä½¿ç”¨è§†æƒ…å†µå†³å®š
 				HashMap<String, Object> bitmaphashmap = new HashMap<String, Object>();
 
 				Bitmap bitmap = getViewBitmap(mHomespace);
@@ -2774,7 +2774,7 @@ public final class Launcher extends BaseActivity implements
 
 				HashMap<String, Object> hashmap = new HashMap<String, Object>();
 
-				// ´æ´¢µ±Ç°tabÏÔÊ¾×´Ì¬ workspace false tabspace true
+				// å­˜å‚¨å½“å‰tabæ˜¾ç¤ºçŠ¶æ€ workspace false tabspace true
 				if (mTabspace.getChildVisibility(mCurrentIndex)) {
 					hashmap.put("isWebview", true);
 					WebViewspace mWebViewspace = (WebViewspace) mTabspace
@@ -2790,7 +2790,7 @@ public final class Launcher extends BaseActivity implements
 
 				if (CURRENT_SCREEN_WORKSPACE == mHomespace.getCurrentScreen()) {
 					hashmap.put("isHome", mWorkspace.getCurrentScreen());
-					bitmaphashmap.put("title", "Ö÷Ò³");
+					bitmaphashmap.put("title", "ä¸»é¡µ");
 				} else {
 					hashmap.put("isHome", CURRENT_SCREEN_WORKSPACE_NOT);
 				}
@@ -2826,10 +2826,10 @@ public final class Launcher extends BaseActivity implements
 	}
 
 	/**
-	 * ³õÊ¼»¯µ×²¿Bar
+	 * åˆå§‹åŒ–åº•éƒ¨Bar
 	 */
 	private void initBottomBarLand() {
-		// ³õÊ¼»¯µ×²¿²Ëµ¥
+		// åˆå§‹åŒ–åº•éƒ¨èœå•
 		if (popmenu != null && popmenu.isShowing()) {
 			popmenu.dismiss();
 		}
@@ -2951,7 +2951,7 @@ public final class Launcher extends BaseActivity implements
 		bottom_bar_tabs.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
 
-				// ´æ´¢µ±Ç°Ò³ÃæËõÂÔÍ¼,ÊÇ·ñÊ¹ÓÃÊÓÇé¿ö¾ö¶¨
+				// å­˜å‚¨å½“å‰é¡µé¢ç¼©ç•¥å›¾,æ˜¯å¦ä½¿ç”¨è§†æƒ…å†µå†³å®š
 				HashMap<String, Object> bitmaphashmap = new HashMap<String, Object>();
 
 				Bitmap bitmap = getViewBitmap(mHomespace);
@@ -2960,7 +2960,7 @@ public final class Launcher extends BaseActivity implements
 
 				HashMap<String, Object> hashmap = new HashMap<String, Object>();
 
-				// ´æ´¢µ±Ç°tabÏÔÊ¾×´Ì¬ workspace false tabspace true
+				// å­˜å‚¨å½“å‰tabæ˜¾ç¤ºçŠ¶æ€ workspace false tabspace true
 				if (mTabspace.getChildVisibility(mCurrentIndex)) {
 					hashmap.put("isWebview", true);
 					WebViewspace mWebViewspace = (WebViewspace) mTabspace
@@ -2975,7 +2975,7 @@ public final class Launcher extends BaseActivity implements
 
 				if (CURRENT_SCREEN_WORKSPACE == mHomespace.getCurrentScreen()) {
 					hashmap.put("isHome", mWorkspace.getCurrentScreen());
-					bitmaphashmap.put("title", "Ö÷Ò³");
+					bitmaphashmap.put("title", "ä¸»é¡µ");
 				} else {
 					hashmap.put("isHome", CURRENT_SCREEN_WORKSPACE_NOT);
 				}
@@ -3034,7 +3034,7 @@ public final class Launcher extends BaseActivity implements
 			tabs_num = mTabspace.getChildCount();
 		}
 		if (tabs_num > 9) {
-			Toast.makeText(Launcher.this, "À´µÄĞ¡»ï°éÌ«¶àÁË£¬ÓĞµã¼·", 1000).show();
+			Toast.makeText(Launcher.this, "æ¥çš„å°ä¼™ä¼´å¤ªå¤šäº†ï¼Œæœ‰ç‚¹æŒ¤", 1000).show();
 			text = "n";
 		} else {
 			text = String.valueOf(tabs_num);
@@ -3061,7 +3061,7 @@ public final class Launcher extends BaseActivity implements
 
 	public void addTabAndThumbnail(String url) {
 
-		// ´æ´¢µ±Ç°Ò³ÃæËõÂÔÍ¼,ÊÇ·ñÊ¹ÓÃÊÓÇé¿ö¾ö¶¨
+		// å­˜å‚¨å½“å‰é¡µé¢ç¼©ç•¥å›¾,æ˜¯å¦ä½¿ç”¨è§†æƒ…å†µå†³å®š
 		HashMap<String, Object> bitmaphashmap = new HashMap<String, Object>();
 
 		Bitmap bitmap = getViewBitmap(mHomespace);
@@ -3070,7 +3070,7 @@ public final class Launcher extends BaseActivity implements
 
 		HashMap<String, Object> hashmap = new HashMap<String, Object>();
 
-		// ´æ´¢µ±Ç°tabÏÔÊ¾×´Ì¬ workspace false tabspace true
+		// å­˜å‚¨å½“å‰tabæ˜¾ç¤ºçŠ¶æ€ workspace false tabspace true
 		if (mTabspace.getChildVisibility(mCurrentIndex)) {
 			hashmap.put("isWebview", true);
 			WebViewspace mWebViewspace = (WebViewspace) mTabspace
@@ -3086,7 +3086,7 @@ public final class Launcher extends BaseActivity implements
 
 		if (CURRENT_SCREEN_WORKSPACE == mHomespace.getCurrentScreen()) {
 			hashmap.put("isHome", mWorkspace.getCurrentScreen());
-			bitmaphashmap.put("title", "Ö÷Ò³");
+			bitmaphashmap.put("title", "ä¸»é¡µ");
 		} else {
 			hashmap.put("isHome", CURRENT_SCREEN_WORKSPACE_NOT);
 		}
@@ -3103,7 +3103,7 @@ public final class Launcher extends BaseActivity implements
 			mWebViewStates.add(mCurrentIndex, hashmap);
 		}
 
-		// ÉèÖÃTabspaceË÷ÒıÖµ
+		// è®¾ç½®Tabspaceç´¢å¼•å€¼
 
 		mCurrentIndex = mTabspace.getChildCount();
 
@@ -3120,7 +3120,7 @@ public final class Launcher extends BaseActivity implements
 	}
 
 	private void newTab() {
-		// ÉèÖÃTabspaceË÷ÒıÖµ
+		// è®¾ç½®Tabspaceç´¢å¼•å€¼
 
 		mCurrentIndex = mTabspace.getChildCount();
 		tabCurrentItem = mTabspace.getChildCount();
@@ -3138,7 +3138,7 @@ public final class Launcher extends BaseActivity implements
 	}
 
 	private void newTabAndThumbnail() {
-		// ´æ´¢µ±Ç°Ò³ÃæËõÂÔÍ¼,ÊÇ·ñÊ¹ÓÃÊÓÇé¿ö¾ö¶¨
+		// å­˜å‚¨å½“å‰é¡µé¢ç¼©ç•¥å›¾,æ˜¯å¦ä½¿ç”¨è§†æƒ…å†µå†³å®š
 		HashMap<String, Object> bitmaphashmap = new HashMap<String, Object>();
 
 		Bitmap bitmap = getViewBitmap(mHomespace);
@@ -3146,7 +3146,7 @@ public final class Launcher extends BaseActivity implements
 		bitmaphashmap.put("bitmap", bitmap);
 
 		HashMap<String, Object> hashmap = new HashMap<String, Object>();
-		// ´æ´¢µ±Ç°tabÏÔÊ¾×´Ì¬ workspace false tabspace true
+		// å­˜å‚¨å½“å‰tabæ˜¾ç¤ºçŠ¶æ€ workspace false tabspace true
 		if (mTabspace.getChildVisibility(mCurrentIndex)) {
 			hashmap.put("isWebview", true);
 			WebViewspace mWebViewspace = (WebViewspace) mTabspace
@@ -3161,7 +3161,7 @@ public final class Launcher extends BaseActivity implements
 
 		if (CURRENT_SCREEN_WORKSPACE == mHomespace.getCurrentScreen()) {
 			hashmap.put("isHome", mWorkspace.getCurrentScreen());
-			bitmaphashmap.put("title", "Ö÷Ò³");
+			bitmaphashmap.put("title", "ä¸»é¡µ");
 		} else {
 			hashmap.put("isHome", CURRENT_SCREEN_WORKSPACE_NOT);
 		}
@@ -3178,7 +3178,7 @@ public final class Launcher extends BaseActivity implements
 			mWebViewStates.add(mCurrentIndex, hashmap);
 		}
 
-		// ÉèÖÃTabspaceË÷ÒıÖµ
+		// è®¾ç½®Tabspaceç´¢å¼•å€¼
 		mCurrentIndex = mTabspace.getChildCount();
 
 		mUrlEditText.removeTextChangedListener(mUrlTextWatcher);
@@ -3216,7 +3216,7 @@ public final class Launcher extends BaseActivity implements
 	}
 
 	/**
-	 * Í·±êµã»÷¼àÌı
+	 * å¤´æ ‡ç‚¹å‡»ç›‘å¬
 	 */
 	public class MyOnClickListener implements View.OnClickListener {
 		private int index = 0;
@@ -3232,7 +3232,7 @@ public final class Launcher extends BaseActivity implements
 	};
 
 	/**
-	 * ÊµÏÖÒ³¿¨ÇĞ»»¼àÌı
+	 * å®ç°é¡µå¡åˆ‡æ¢ç›‘å¬
 	 */
 	public class MyOnPageChangeListener implements OnPageChangeListener {
 		public void onPageSelected(int arg0) {
@@ -3250,7 +3250,7 @@ public final class Launcher extends BaseActivity implements
 	}
 
 	/**
-	 * »ñÈ¡Android×´Ì¬À¸µÄ¸ß¶È
+	 * è·å–AndroidçŠ¶æ€æ çš„é«˜åº¦
 	 * 
 	 * @return
 	 */
@@ -3271,7 +3271,7 @@ public final class Launcher extends BaseActivity implements
 				.findViewById(R.id.layout_menu);
 
 		/**
-		 * 1.½â¾öÔÙ´Îµã»÷MENU¼üÎŞ·´Ó¦ÎÊÌâ 2.sub_viewÊÇPopupWindowµÄ×ÓView
+		 * 1.è§£å†³å†æ¬¡ç‚¹å‡»MENUé”®æ— ååº”é—®é¢˜ 2.sub_viewæ˜¯PopupWindowçš„å­View
 		 */
 		layout_menu.setFocusableInTouchMode(true);
 		layout_menu.setOnKeyListener(new OnKeyListener() {
@@ -3298,11 +3298,11 @@ public final class Launcher extends BaseActivity implements
 		WindowManager wm = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
 		Display display = wm.getDefaultDisplay();
 		display.getMetrics(dm);
-		// ´´½¨Ò»¸öPopuWidow¶ÔÏó
+		// åˆ›å»ºä¸€ä¸ªPopuWidowå¯¹è±¡
 		int rotation = this.getWindowManager().getDefaultDisplay()
 				.getRotation();
 
-		// ÊÖ»ú´¦ÓÚÕı³£×´Ì¬ »òÕß Ğı×ª180¶È
+		// æ‰‹æœºå¤„äºæ­£å¸¸çŠ¶æ€ æˆ–è€… æ—‹è½¬180åº¦
 		if (rotation == Surface.ROTATION_0 || rotation == Surface.ROTATION_180) {
 			popmenu = new PopupWindow(view, display.getWidth(),
 					top_bar_main.getHeight() * 3);
@@ -3310,21 +3310,21 @@ public final class Launcher extends BaseActivity implements
 			popmenu = new PopupWindow(view, display.getHeight(),
 					top_bar_main.getHeight() * 3);
 		}
-		// Ê¹Æä¾Û¼¯
+		// ä½¿å…¶èšé›†
 		popmenu.setFocusable(true);
-		// ÉèÖÃÔÊĞíÔÚÍâµã»÷ÏûÊ§
+		// è®¾ç½®å…è®¸åœ¨å¤–ç‚¹å‡»æ¶ˆå¤±
 		popmenu.setOutsideTouchable(true);
 
-		// Õâ¸öÊÇÎªÁËµã»÷¡°·µ»ØBack¡±Ò²ÄÜÊ¹ÆäÏûÊ§£¬²¢ÇÒ²¢²»»áÓ°ÏìÄãµÄ±³¾°
+		// è¿™ä¸ªæ˜¯ä¸ºäº†ç‚¹å‡»â€œè¿”å›Backâ€ä¹Ÿèƒ½ä½¿å…¶æ¶ˆå¤±ï¼Œå¹¶ä¸”å¹¶ä¸ä¼šå½±å“ä½ çš„èƒŒæ™¯
 		popmenu.setBackgroundDrawable(new BitmapDrawable());
 
 		if (rotation == Surface.ROTATION_0 || rotation == Surface.ROTATION_180) {
-			// ÉèÖÃlayoutÔÚPopupWindowÖĞÏÔÊ¾µÄÎ»ÖÃ
+			// è®¾ç½®layoutåœ¨PopupWindowä¸­æ˜¾ç¤ºçš„ä½ç½®
 			popmenu.showAtLocation(Launcher.this.findViewById(R.id.bottom),
 					Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0,
 					bottom_bar.getHeight());
 		} else {
-			// ÉèÖÃlayoutÔÚPopupWindowÖĞÏÔÊ¾µÄÎ»ÖÃ
+			// è®¾ç½®layoutåœ¨PopupWindowä¸­æ˜¾ç¤ºçš„ä½ç½®
 			popmenu.showAtLocation(
 					Launcher.this.findViewById(R.id.top_bar_main),
 					Gravity.RIGHT | Gravity.TOP, 0, top_bar_main.getHeight()
@@ -3334,7 +3334,7 @@ public final class Launcher extends BaseActivity implements
 	}
 
 	/**
-	 * ³õÊ¼»¯µ¯´°²Ëµ¥
+	 * åˆå§‹åŒ–å¼¹çª—èœå•
 	 */
 	private void initPopmenu(View view) {
 		menuLayout = (ViewPager) view.findViewById(R.id.vPager);
@@ -3355,7 +3355,7 @@ public final class Launcher extends BaseActivity implements
 		menuLayout.setOnPageChangeListener(new MyOnPageChangeListener());
 		// mPager.setOnTouchListener(new OnTouchListener() {
 		// public boolean onTouch(View v, MotionEvent event) {
-		// return true;// ½ûÖ¹»¬¶¯
+		// return true;// ç¦æ­¢æ»‘åŠ¨
 		// }
 		//
 		// });
@@ -3387,13 +3387,13 @@ public final class Launcher extends BaseActivity implements
 		lstDate1 = new ArrayList<GridButtonInfo>();
 		content1 = new String[] {
 				(false == (sp.getBoolean(
-						Constants.PREFERENCES_SHOW_FULL_SCREEN, false)) ? "È«ÆÁ"
-						: "ÍË³öÈ«ÆÁ"),
-				"ÊéÇ©/ÀúÊ·",
-				"¼ÓÊéÇ©",
+						Constants.PREFERENCES_SHOW_FULL_SCREEN, false)) ? "å…¨å±"
+						: "é€€å‡ºå…¨å±"),
+				"ä¹¦ç­¾/å†å²",
+				"åŠ ä¹¦ç­¾",
 				(true == (sp
-						.getBoolean(Constants.PREFERENCES_NIGHT_MODE, false)) ? "°×Ìì"
-						: "Ò¹¼ä"), "·ÖÏí", "ÏÂÔØ", "¸üĞÂ", "ÍË³ö" };
+						.getBoolean(Constants.PREFERENCES_NIGHT_MODE, false)) ? "ç™½å¤©"
+						: "å¤œé—´"), "åˆ†äº«", "ä¸‹è½½", "æ›´æ–°", "é€€å‡º" };
 		int[] imageDrawables1 = {
 				(false == (sp.getBoolean(
 						Constants.PREFERENCES_SHOW_FULL_SCREEN, false)) ? R.drawable.icon_fullscreen_normal
@@ -3418,15 +3418,15 @@ public final class Launcher extends BaseActivity implements
 		// 2
 		lstDate2 = new ArrayList<GridButtonInfo>();
 		content2 = new String[] {
-				"ÉèÖÃ",
-				"ÆÁÄ»",
-				"·­Ò³Ä£Ê½",
-				"¸´ÖÆÁ´½Ó",
+				"è®¾ç½®",
+				"å±å¹•",
+				"ç¿»é¡µæ¨¡å¼",
+				"å¤åˆ¶é“¾æ¥",
 				(false == (sp.getBoolean(Constants.PREFERENCES_INCOGNITO_MODE,
-						false)) ? "ÎŞºÛ" : "ÍË³öÎŞºÛ"),
+						false)) ? "æ— ç—•" : "é€€å‡ºæ— ç—•"),
 				(true == (sp.getBoolean(
-						Constants.PREFERENCES_BROWSER_ENABLE_IMAGES, true)) ? "ÎŞÍ¼"
-						: "ÓĞÍ¼"), "Ò³ÄÚ²éÕÒ" };
+						Constants.PREFERENCES_BROWSER_ENABLE_IMAGES, true)) ? "æ— å›¾"
+						: "æœ‰å›¾"), "é¡µå†…æŸ¥æ‰¾" };
 
 		int[] imageDrawables2 = {
 				R.drawable.icon_settings_normal,
@@ -3456,22 +3456,22 @@ public final class Launcher extends BaseActivity implements
 	}
 
 	/**
-	 * ÏÔÊ¾ËÑË÷ÒıÇæµ¯¿ò
+	 * æ˜¾ç¤ºæœç´¢å¼•æ“å¼¹æ¡†
 	 */
 	private void showSearWindow() {
 		SearWindow = new DialogSearchEngineUtil.Builder(Launcher.this).create();
-		SearWindow.setCanceledOnTouchOutside(true);// µã»÷ÇøÓòÍâ¹Ø±Õ
+		SearWindow.setCanceledOnTouchOutside(true);// ç‚¹å‡»åŒºåŸŸå¤–å…³é—­
 		SearWindow.show();
 
 	}
 
 	/**
-	 * µØÖ·ÊäÈëÀ¸ÏÔÊ¾Ğ§¹û²¼¾Ö °üº¬×Ô¶¯ÌáÊ¾ ÓÃ»§ÊäÈëµÄµØÖ·½«·µ»Øµ½ä¯ÀÀÆ÷µØÖ·À¸ÖĞ
+	 * åœ°å€è¾“å…¥æ æ˜¾ç¤ºæ•ˆæœå¸ƒå±€ åŒ…å«è‡ªåŠ¨æç¤º ç”¨æˆ·è¾“å…¥çš„åœ°å€å°†è¿”å›åˆ°æµè§ˆå™¨åœ°å€æ ä¸­
 	 */
 	private void initAddress() {
 
 		top_bar_input = (RelativeLayout) findViewById(R.id.top_bar_input);
-		// Ñ¡ÔñËÑË÷ÒıÇæ
+		// é€‰æ‹©æœç´¢å¼•æ“
 		search_engine = (ImageView) top_bar_input
 				.findViewById(R.id.search_engine);
 
@@ -3622,7 +3622,7 @@ public final class Launcher extends BaseActivity implements
 				adapter = new UrlSuggestionCursorAdapter(Launcher.this,
 						R.layout.url_autocomplete_line, input_cursor, from, to);
 				key_listview.setAdapter(adapter);
-				Tools.setListViewHeightBasedOnChildren(key_listview);// ÉèÖÃlistview¸ß¶È
+				Tools.setListViewHeightBasedOnChildren(key_listview);// è®¾ç½®listviewé«˜åº¦
 
 				if (adapter.getCount() != 0) {
 					key_listview.setVisibility(View.VISIBLE);
@@ -3683,7 +3683,7 @@ public final class Launcher extends BaseActivity implements
 
 					InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 					if (inputMethodManager.isActive()) {
-						// ¹Ø±ÕÊäÈë·¨
+						// å…³é—­è¾“å…¥æ³•
 						inputMethodManager.toggleSoftInput(
 								InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
 					}
@@ -3702,26 +3702,26 @@ public final class Launcher extends BaseActivity implements
 	}
 
 	/**
-	 * ³õÊ¼»¯ÊéÇ©·¢ËÍÇøÓò
+	 * åˆå§‹åŒ–ä¹¦ç­¾å‘é€åŒºåŸŸ
 	 */
 	private void initZone() {
 		mZone = (Zone) findViewById(R.id.top_zone);
 	}
 
 	/**
-	 * ³õÊ¼»¯ÊéÇ©·¢ËÍÇøÓò
+	 * åˆå§‹åŒ–ä¹¦ç­¾å‘é€åŒºåŸŸ
 	 */
 	private void initSendZone() {
 		mSendZone = (SendZone) findViewById(R.id.send_zone);
-		mSendZone.setText("·¢ËÍµ½×ÀÃæ");
+		mSendZone.setText("å‘é€åˆ°æ¡Œé¢");
 	}
 
 	/**
-	 * ³õÊ¼»¯ÊéÇ©É¾³ıÇøÓò
+	 * åˆå§‹åŒ–ä¹¦ç­¾åˆ é™¤åŒºåŸŸ
 	 */
 	private void initDeleteZone() {
 		mDeleteZone = (DeleteZone) findViewById(R.id.delete_zone);
-		mDeleteZone.setText("É¾³ı");
+		mDeleteZone.setText("åˆ é™¤");
 	}
 
 	private void initHomespace() {
@@ -3730,9 +3730,9 @@ public final class Launcher extends BaseActivity implements
 		mHomespace.SetOnViewChangeListener(new OnViewChangeListener() {
 			@Override
 			public void OnViewChange(int view) {
-				// ´¦Àíµ¼º½ºÍä¯ÀÀÒ³ÃæµÄÇĞ»»ÊÂ¼ş
+				// å¤„ç†å¯¼èˆªå’Œæµè§ˆé¡µé¢çš„åˆ‡æ¢äº‹ä»¶
 				if (CURRENT_SCREEN_WORKSPACE == view) {
-					// ÉèÖÃµ¼º½Ò³Ãæ
+					// è®¾ç½®å¯¼èˆªé¡µé¢
 					mUrlEditText.removeTextChangedListener(mUrlTextWatcher);
 					mUrlEditText.setText("");
 					mUrlEditText.addTextChangedListener(mUrlTextWatcher);
@@ -3760,7 +3760,7 @@ public final class Launcher extends BaseActivity implements
 					}
 
 				} else {
-					// ÉèÖÃä¯ÀÀÒ³Ãæ
+					// è®¾ç½®æµè§ˆé¡µé¢
 					WebViewspace mWebViewspace = (WebViewspace) mTabspace
 							.getChildAt(mCurrentIndex);
 					View childView = mWebViewspace.getChildAt(0);
@@ -3811,7 +3811,7 @@ public final class Launcher extends BaseActivity implements
 		final Workspace workspace = mWorkspace;
 		workspace.setHapticFeedbackEnabled(false);
 
-		// ³õÊ¼»¯ indicator
+		// åˆå§‹åŒ– indicator
 		final LinearLayout indicatorLayout = (LinearLayout) dragLayer
 				.findViewById(R.id.indicator);
 		mainpage_1 = (ImageView) indicatorLayout.findViewById(R.id.page_1);
@@ -3823,8 +3823,8 @@ public final class Launcher extends BaseActivity implements
 		mWorkspace.SetOnViewChangeListener(new OnViewChangeListener() {
 			@Override
 			public void OnViewChange(int view) {
-				// ´¦ÀíÏò×ó»¬¶¯Ê±£¬ÏÔÊ¾WebViewµÄÅĞ¶Ï
-				// µ±µ±Ç°Ò³ÃæÎªLauncher×îÓÒ²àÒ³Ãæ£¬ÔòÅĞ¶ÏÊÇ·ñÓĞWebViewĞèÒªÏÔÊ¾
+				// å¤„ç†å‘å·¦æ»‘åŠ¨æ—¶ï¼Œæ˜¾ç¤ºWebViewçš„åˆ¤æ–­
+				// å½“å½“å‰é¡µé¢ä¸ºLauncheræœ€å³ä¾§é¡µé¢ï¼Œåˆ™åˆ¤æ–­æ˜¯å¦æœ‰WebViewéœ€è¦æ˜¾ç¤º
 				if (view == 0) {
 
 					TongJi.AddAnalyticsData(TongJi.m_zuopinggouwu);
@@ -3935,7 +3935,7 @@ public final class Launcher extends BaseActivity implements
 
 		mHomespace.setWorkspace(workspace);
 
-		// ³õÊ¼»¯´ò¿ªÎÄ¼ş¼Ğ
+		// åˆå§‹åŒ–æ‰“å¼€æ–‡ä»¶å¤¹
 		mFolder = (Folder) dragLayer.findViewById(R.id.folder);
 
 		// Zone
@@ -4272,10 +4272,10 @@ public final class Launcher extends BaseActivity implements
 			@Override
 			public boolean onJsAlert(WebView view, String url, String message,
 					final JsResult result) {
-				// È·¶¨µ¯¿ò
+				// ç¡®å®šå¼¹æ¡†
 				dialogUtil = new DialogUtil.Builder(Launcher.this)
-						.setTitleText("ÎÂÜ°ÌáĞÑ").setText(message)
-						.setPositiveButton("È·¶¨", new View.OnClickListener() {
+						.setTitleText("æ¸©é¦¨æé†’").setText(message)
+						.setPositiveButton("ç¡®å®š", new View.OnClickListener() {
 							@Override
 							public void onClick(View v) {
 								dialogUtil.dismiss();
@@ -4289,16 +4289,16 @@ public final class Launcher extends BaseActivity implements
 			@Override
 			public boolean onJsConfirm(WebView view, String url,
 					String message, final JsResult result) {
-				// È·¶¨È¡Ïûµ¯¿ò
+				// ç¡®å®šå–æ¶ˆå¼¹æ¡†
 				dialogUtil = new DialogUtil.Builder(Launcher.this)
-						.setTitleText("ÎÂÜ°ÌáĞÑ").setText(message)
-						.setPositiveButton("È·¶¨", new View.OnClickListener() {
+						.setTitleText("æ¸©é¦¨æé†’").setText(message)
+						.setPositiveButton("ç¡®å®š", new View.OnClickListener() {
 							@Override
 							public void onClick(View v) {
 								dialogUtil.dismiss();
 								result.confirm();
 							}
-						}).setNegativeButton("È¡Ïû", new View.OnClickListener() {
+						}).setNegativeButton("å–æ¶ˆ", new View.OnClickListener() {
 							@Override
 							public void onClick(View v) {
 								dialogUtil.dismiss();
@@ -4320,7 +4320,7 @@ public final class Launcher extends BaseActivity implements
 							public void onClick(View v) {
 								String value = dialogeditUtil.GetEditText();
 								if (StringUtil.isNull(value)) {
-									Toast.makeText(Launcher.this, "ÇëÊäÈëÄÚÈİ",
+									Toast.makeText(Launcher.this, "è¯·è¾“å…¥å†…å®¹",
 											Toast.LENGTH_SHORT).show();
 									return;
 								}
@@ -4368,11 +4368,11 @@ public final class Launcher extends BaseActivity implements
 	}
 
 	public void createMutilCurrentWebView(String url, WebViewspace mWebViewspace) {
-		// Èç¹ûµ±Ç°webview²»ÊÇ×îºóÒ»¸ö,
-		// ÔòÒÆ³ımWebViewCurrentIndexÖ®ºóµÄwebview,²¢Ìí¼Óµ±Ç°webview
+		// å¦‚æœå½“å‰webviewä¸æ˜¯æœ€åä¸€ä¸ª,
+		// åˆ™ç§»é™¤mWebViewCurrentIndexä¹‹åçš„webview,å¹¶æ·»åŠ å½“å‰webview
 		if (mWebViewCurrentIndex < mWebViewspace.getChildCount() - 1) {
 			mWebViewCurrentIndex++;
-			// ÒÆ³ımWebViewCurrentIndexÖ®ºóµÄwebview
+			// ç§»é™¤mWebViewCurrentIndexä¹‹åçš„webview
 			mWebViewspace.removeViews(mWebViewCurrentIndex,
 					mWebViewspace.getChildCount() - mWebViewCurrentIndex);
 			//
@@ -4540,10 +4540,10 @@ public final class Launcher extends BaseActivity implements
 			@Override
 			public boolean onJsAlert(WebView view, String url, String message,
 					final JsResult result) {
-				// È·¶¨µ¯¿ò
+				// ç¡®å®šå¼¹æ¡†
 				dialogUtil = new DialogUtil.Builder(Launcher.this)
-						.setTitleText("ÎÂÜ°ÌáĞÑ").setText(message)
-						.setPositiveButton("È·¶¨", new View.OnClickListener() {
+						.setTitleText("æ¸©é¦¨æé†’").setText(message)
+						.setPositiveButton("ç¡®å®š", new View.OnClickListener() {
 							@Override
 							public void onClick(View v) {
 								dialogUtil.dismiss();
@@ -4557,16 +4557,16 @@ public final class Launcher extends BaseActivity implements
 			@Override
 			public boolean onJsConfirm(WebView view, String url,
 					String message, final JsResult result) {
-				// È·¶¨È¡Ïûµ¯¿ò
+				// ç¡®å®šå–æ¶ˆå¼¹æ¡†
 				dialogUtil = new DialogUtil.Builder(Launcher.this)
-						.setTitleText("ÎÂÜ°ÌáĞÑ").setText(message)
-						.setPositiveButton("È·¶¨", new View.OnClickListener() {
+						.setTitleText("æ¸©é¦¨æé†’").setText(message)
+						.setPositiveButton("ç¡®å®š", new View.OnClickListener() {
 							@Override
 							public void onClick(View v) {
 								dialogUtil.dismiss();
 								result.confirm();
 							}
-						}).setNegativeButton("È¡Ïû", new View.OnClickListener() {
+						}).setNegativeButton("å–æ¶ˆ", new View.OnClickListener() {
 							@Override
 							public void onClick(View v) {
 								dialogUtil.dismiss();
@@ -4588,7 +4588,7 @@ public final class Launcher extends BaseActivity implements
 							public void onClick(View v) {
 								String value = dialogeditUtil.GetEditText();
 								if (StringUtil.isNull(value)) {
-									Toast.makeText(Launcher.this, "ÇëÊäÈëÄÚÈİ",
+									Toast.makeText(Launcher.this, "è¯·è¾“å…¥å†…å®¹",
 											Toast.LENGTH_SHORT).show();
 									return;
 								}
@@ -4681,32 +4681,32 @@ public final class Launcher extends BaseActivity implements
 		Controller.getInstance().setWebViewList(mWebViews);
 
 		initAllView();
-		// ³õÊ¼»¯¶¥²¿
+		// åˆå§‹åŒ–é¡¶éƒ¨
 		initTopBar();
 
 		int rotation = this.getWindowManager().getDefaultDisplay()
 				.getRotation();
 		if (rotation == Surface.ROTATION_0 || rotation == Surface.ROTATION_180) {
-			// ³õÊ¼»¯µ×²¿
+			// åˆå§‹åŒ–åº•éƒ¨
 			initBottomBar();
 		} else {
 			initBottomBarLand();
 		}
 
-		// ³õÊ¼»¯µØÖ·À¸ÊäÈë
+		// åˆå§‹åŒ–åœ°å€æ è¾“å…¥
 		initAddress();
 
-		// ³õÊ¼»¯ÍøÒ³ÄÚÈİ²éÕÒ°´Å¥
+		// åˆå§‹åŒ–ç½‘é¡µå†…å®¹æŸ¥æ‰¾æŒ‰é’®
 		initFindBar();
 
 		initZone();
 
 		initSendZone();
-		// ³õÊ¼»¯ÊéÇ©É¾³ı°´Å¥
+		// åˆå§‹åŒ–ä¹¦ç­¾åˆ é™¤æŒ‰é’®
 		initDeleteZone();
-		// ³õÊ¼»¯TopBar Browser
+		// åˆå§‹åŒ–TopBar Browser
 		initTopBarBrowser();
-		// ³õÊ¼»¯TabsGallery
+		// åˆå§‹åŒ–TabsGallery
 		initTabsGallery();
 
 		initSnapShotWebView();
@@ -4714,7 +4714,7 @@ public final class Launcher extends BaseActivity implements
 		initHomespace();
 		// initWebViewspace();
 
-		// ³õÊ¼»¯ÉèÖÃÎªÄ¬ÈÏä¯ÀÀÆ÷ÌáĞÑUI
+		// åˆå§‹åŒ–è®¾ç½®ä¸ºé»˜è®¤æµè§ˆå™¨æé†’UI
 		initsetDefaultBrowser();
 
 	}
@@ -4764,7 +4764,7 @@ public final class Launcher extends BaseActivity implements
 	}
 
 	/**
-	 * ´ò¿ªÍøÖ·
+	 * æ‰“å¼€ç½‘å€
 	 */
 	public void addTab(String url) {
 		if (mFindDialogVisible) {
@@ -4795,7 +4795,7 @@ public final class Launcher extends BaseActivity implements
 			hideKeyboard(true);
 		}
 
-		// ÅĞ¶ÏTabÊÇ·ñÎª´ò¿ªµÄ
+		// åˆ¤æ–­Tabæ˜¯å¦ä¸ºæ‰“å¼€çš„
 		if (mCurrentIndex <= mTabspace.getChildCount() - 1) {
 			WebViewspace mWebViewspace = (WebViewspace) mTabspace
 					.getChildAt(mCurrentIndex);
@@ -5160,7 +5160,7 @@ public final class Launcher extends BaseActivity implements
 		WebIconDatabase.getInstance().retainIconForPageUrl(
 				mCurrentWebView.getUrl());
 
-		// ³¢ÊÔ¹ıÌí¼Ó5ÃëÑÓÊ±,ÒÀÈ»ÎŞ·¨»ñÈ¡¼ÓÔØÍ¼Æ¬µÄÍøÒ³µÄ¿ìÕÕ
+		// å°è¯•è¿‡æ·»åŠ 5ç§’å»¶æ—¶,ä¾ç„¶æ— æ³•è·å–åŠ è½½å›¾ç‰‡çš„ç½‘é¡µçš„å¿«ç…§
 		catchSnapshot(mCurrentWebView, url);
 	}
 
@@ -5187,7 +5187,7 @@ public final class Launcher extends BaseActivity implements
 				Tools.storeInSD(Tools.toRoundCorner(mBitmap, 10), snapMD5
 						+ ".png");
 			}
-			// Õë¶ÔÊÖ¶¯Ìí¼ÓµÄÊéÇ©£¬¶ÔurlµØÖ·½øĞĞÔÙ¼Ó¹¤
+			// é’ˆå¯¹æ‰‹åŠ¨æ·»åŠ çš„ä¹¦ç­¾ï¼Œå¯¹urlåœ°å€è¿›è¡Œå†åŠ å·¥
 			Context context = LauncherApplication.getInstance();
 			new Thread(new SnapshotUpdaterRunnable(context, view.getUrl(),
 					view.getOriginalUrl(), snapMD5)).start();
@@ -5424,11 +5424,11 @@ public final class Launcher extends BaseActivity implements
 	}
 
 	/**
-	 * Ê×ÏÈ£¬ÎÒÃÇ»­µÄ½çÃæµÄ´óĞ¡¿ÉÄÜÔÚ²»Í¬ÆÁÄ»ÏÂÊÇ²»Í¬µÄ£¬ÔòĞèÒª»ñµÃÆÁÄ»´óĞ¡
+	 * é¦–å…ˆï¼Œæˆ‘ä»¬ç”»çš„ç•Œé¢çš„å¤§å°å¯èƒ½åœ¨ä¸åŒå±å¹•ä¸‹æ˜¯ä¸åŒçš„ï¼Œåˆ™éœ€è¦è·å¾—å±å¹•å¤§å°
 	 */
 
 	/**
-	 * @returnÆÁÄ»µÄ¿í¶È
+	 * @returnå±å¹•çš„å®½åº¦
 	 */
 	public static int getScreenWidth(Context context) {
 		DisplayMetrics dm = new DisplayMetrics();
@@ -5440,7 +5440,7 @@ public final class Launcher extends BaseActivity implements
 
 	/**
 	 * 
-	 * @returnÆÁÄ»µÄ¸ß¶È
+	 * @returnå±å¹•çš„é«˜åº¦
 	 */
 	public static int getScreenHeight(Context context) {
 		DisplayMetrics dm = new DisplayMetrics();
@@ -5459,8 +5459,8 @@ public final class Launcher extends BaseActivity implements
 	}
 
 	/**
-	 * ÉèÖÃµ±Ç°ÆÁÄ»ÁÁ¶ÈµÄÄ£Ê½ SCREEN_BRIGHTNESS_MODE_AUTOMATIC=1 Îª×Ô¶¯µ÷½ÚÆÁÄ»ÁÁ¶È
-	 * SCREEN_BRIGHTNESS_MODE_MANUAL=0 ÎªÊÖ¶¯µ÷½ÚÆÁÄ»ÁÁ¶È
+	 * è®¾ç½®å½“å‰å±å¹•äº®åº¦çš„æ¨¡å¼ SCREEN_BRIGHTNESS_MODE_AUTOMATIC=1 ä¸ºè‡ªåŠ¨è°ƒèŠ‚å±å¹•äº®åº¦
+	 * SCREEN_BRIGHTNESS_MODE_MANUAL=0 ä¸ºæ‰‹åŠ¨è°ƒèŠ‚å±å¹•äº®åº¦
 	 */
 	private void setScreenMode(int value) {
 		Settings.System.putInt(getContentResolver(),
@@ -5468,7 +5468,7 @@ public final class Launcher extends BaseActivity implements
 	}
 
 	/**
-	 * ÉèÖÃµ±Ç°ÆÁÄ»ÁÁ¶ÈÖµ 0--255£¬²¢Ê¹Ö®ÉúĞ§
+	 * è®¾ç½®å½“å‰å±å¹•äº®åº¦å€¼ 0--255ï¼Œå¹¶ä½¿ä¹‹ç”Ÿæ•ˆ
 	 */
 	private void setScreenBrightness(float value) {
 		Window mWindow = getWindow();
@@ -5477,13 +5477,13 @@ public final class Launcher extends BaseActivity implements
 		mParams.screenBrightness = f;
 		mWindow.setAttributes(mParams);
 
-		// ±£´æÉèÖÃµÄÆÁÄ»ÁÁ¶ÈÖµ
+		// ä¿å­˜è®¾ç½®çš„å±å¹•äº®åº¦å€¼
 		Settings.System.putInt(getContentResolver(),
 				Settings.System.SCREEN_BRIGHTNESS, (int) value);
 	}
 
 	/**
-	 * ÊÖ¶¯¼ì²â¸üĞÂ
+	 * æ‰‹åŠ¨æ£€æµ‹æ›´æ–°
 	 */
 	public void ManuallyCheckVersion() {
 		final String versionName = Tools.getVersion(Launcher.this);
@@ -5504,7 +5504,7 @@ public final class Launcher extends BaseActivity implements
 							startActivity(notificationIntent);
 
 						} else if (versionName.equals(newVersion)) {
-							Toast.makeText(Launcher.this, "ÄúµÄÒÑ¾­ÊÇ×îĞÂ°æ±¾",
+							Toast.makeText(Launcher.this, "æ‚¨çš„å·²ç»æ˜¯æœ€æ–°ç‰ˆæœ¬",
 									Toast.LENGTH_SHORT).show();
 						}
 						break;
@@ -5590,7 +5590,7 @@ public final class Launcher extends BaseActivity implements
 						}
 
 						keywordsFlow.setDuration(800l);
-						// Ìí¼Ó
+						// æ·»åŠ 
 						feedKeywordsFlow(keywordsFlow, keywords, bitmapURLS);
 						keywordsFlow.go2Show(KeywordsFlow.ANIMATION_IN);
 
@@ -5685,7 +5685,7 @@ public final class Launcher extends BaseActivity implements
 				String json = URLUtil.getInstance().getJson(
 						ConstantsUrl.getSALENET, poststring);
 
-				Log.v("LS","Ã¿´Î½øµÄÍ³¼Æ json=="+json);
+				Log.v("LS","æ¯æ¬¡è¿›çš„ç»Ÿè®¡ json=="+json);
 				
 				if (StringUtil.isNull(json)) {
 					Message msg = new Message();
@@ -5716,7 +5716,7 @@ public final class Launcher extends BaseActivity implements
 
 	private void checkDefaultBrowser() {
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-		Date curDate = new Date(System.currentTimeMillis());// »ñÈ¡µ±Ç°Ê±¼ä
+		Date curDate = new Date(System.currentTimeMillis());// è·å–å½“å‰æ—¶é—´
 		String str = formatter.format(curDate);
 		Log.d("H",
 				"onCreate str=" + str + " last="
@@ -5793,15 +5793,15 @@ public final class Launcher extends BaseActivity implements
 		List<Map<String, String>> list = new ArrayList<Map<String, String>>();
 
 		Map<String, String> map = new HashMap<String, String>();
-		map.put("text", "´ò¿ªÁ´½Ó");
+		map.put("text", "æ‰“å¼€é“¾æ¥");
 		list.add(map);
 
 		map = new HashMap<String, String>();
-		map.put("text", "·ÖÏíÁ´½Ó");
+		map.put("text", "åˆ†äº«é“¾æ¥");
 		list.add(map);
 
 		map = new HashMap<String, String>();
-		map.put("text", "¸´ÖÆÁ´½Ó");
+		map.put("text", "å¤åˆ¶é“¾æ¥");
 		list.add(map);
 
 		SimpleAdapter adapter = new SimpleAdapter(Launcher.this, list,
@@ -5816,19 +5816,19 @@ public final class Launcher extends BaseActivity implements
 				HashMap<String, String> map = (HashMap<String, String>) listView
 						.getItemAtPosition(position);
 				String text = map.get("text");
-				if ("´ò¿ªÁ´½Ó".equals(text)) {
+				if ("æ‰“å¼€é“¾æ¥".equals(text)) {
 					addTabAndThumbnail(result.getExtra());
-				} else if ("·ÖÏíÁ´½Ó".equals(text)) {
-					// ·ÖÏíÁ´½Ó
-				} else if ("¸´ÖÆÁ´½Ó".equals(text)) {
+				} else if ("åˆ†äº«é“¾æ¥".equals(text)) {
+					// åˆ†äº«é“¾æ¥
+				} else if ("å¤åˆ¶é“¾æ¥".equals(text)) {
 					ApplicationUtils.copyTextToClipboard(Launcher.this,
 							result.getExtra(),
 							getString(R.string.Commons_UrlCopyToastMessage));
-				} else if ("±£´æÍ¼Æ¬".equals(text)) {
-					// ±£´æÍ¼Æ¬
+				} else if ("ä¿å­˜å›¾ç‰‡".equals(text)) {
+					// ä¿å­˜å›¾ç‰‡
 					new DownloadAppIn(result.getExtra(), Launcher.this);
 
-				} else if ("²é¿´Í¼Æ¬".equals(text)) {
+				} else if ("æŸ¥çœ‹å›¾ç‰‡".equals(text)) {
 					WebViewspace mmWebViewspace = (WebViewspace) mTabspace
 							.getChildAt(mCurrentIndex);
 					View mchildView = mmWebViewspace.getChildAt(0);
@@ -5836,8 +5836,8 @@ public final class Launcher extends BaseActivity implements
 							.findViewById(R.id.webview);
 					mmCustomWebView.loadUrl(result.getExtra());
 					// addTab(result.getExtra());
-				} else if ("·ÖÏíÍ¼Æ¬".equals(text)) {
-					// ·ÖÏíÍ¼Æ¬
+				} else if ("åˆ†äº«å›¾ç‰‡".equals(text)) {
+					// åˆ†äº«å›¾ç‰‡
 				}
 				contextMenuPopWindow.dismiss();
 			}
@@ -5845,29 +5845,29 @@ public final class Launcher extends BaseActivity implements
 		});
 		switch (type) {
 		case WebView.HitTestResult.PHONE_TYPE:
-			// ´¦Àí²¦ºÅ
+			// å¤„ç†æ‹¨å·
 			break;
 		case WebView.HitTestResult.EMAIL_TYPE:
-			// ´¦ÀíEmail
+			// å¤„ç†Email
 			break;
 		case WebView.HitTestResult.GEO_TYPE:
 			// TODO
 			break;
 		case WebView.HitTestResult.SRC_ANCHOR_TYPE:
-			// ³¬Á´½Ó
+			// è¶…é“¾æ¥
 			break;
 		case WebView.HitTestResult.SRC_IMAGE_ANCHOR_TYPE:
 		case WebView.HitTestResult.IMAGE_TYPE:
 			map = new HashMap<String, String>();
-			map.put("text", "±£´æÍ¼Æ¬");
+			map.put("text", "ä¿å­˜å›¾ç‰‡");
 			list.add(map);
 
 			map = new HashMap<String, String>();
-			map.put("text", "²é¿´Í¼Æ¬");
+			map.put("text", "æŸ¥çœ‹å›¾ç‰‡");
 			list.add(map);
 
 			map = new HashMap<String, String>();
-			map.put("text", "·ÖÏíÍ¼Æ¬");
+			map.put("text", "åˆ†äº«å›¾ç‰‡");
 			list.add(map);
 			break;
 		default:
@@ -6056,10 +6056,10 @@ public final class Launcher extends BaseActivity implements
 			@Override
 			public boolean onJsAlert(WebView view, String url, String message,
 					final JsResult result) {
-				// È·¶¨µ¯¿ò
+				// ç¡®å®šå¼¹æ¡†
 				dialogUtil = new DialogUtil.Builder(Launcher.this)
-						.setTitleText("ÎÂÜ°ÌáĞÑ").setText(message)
-						.setPositiveButton("È·¶¨", new View.OnClickListener() {
+						.setTitleText("æ¸©é¦¨æé†’").setText(message)
+						.setPositiveButton("ç¡®å®š", new View.OnClickListener() {
 							@Override
 							public void onClick(View v) {
 								dialogUtil.dismiss();
@@ -6073,16 +6073,16 @@ public final class Launcher extends BaseActivity implements
 			@Override
 			public boolean onJsConfirm(WebView view, String url,
 					String message, final JsResult result) {
-				// È·¶¨È¡Ïûµ¯¿ò
+				// ç¡®å®šå–æ¶ˆå¼¹æ¡†
 				dialogUtil = new DialogUtil.Builder(Launcher.this)
-						.setTitleText("ÎÂÜ°ÌáĞÑ").setText(message)
-						.setPositiveButton("È·¶¨", new View.OnClickListener() {
+						.setTitleText("æ¸©é¦¨æé†’").setText(message)
+						.setPositiveButton("ç¡®å®š", new View.OnClickListener() {
 							@Override
 							public void onClick(View v) {
 								dialogUtil.dismiss();
 								result.confirm();
 							}
-						}).setNegativeButton("È¡Ïû", new View.OnClickListener() {
+						}).setNegativeButton("å–æ¶ˆ", new View.OnClickListener() {
 							@Override
 							public void onClick(View v) {
 								dialogUtil.dismiss();
@@ -6104,7 +6104,7 @@ public final class Launcher extends BaseActivity implements
 							public void onClick(View v) {
 								String value = dialogeditUtil.GetEditText();
 								if (StringUtil.isNull(value)) {
-									Toast.makeText(Launcher.this, "ÇëÊäÈëÄÚÈİ",
+									Toast.makeText(Launcher.this, "è¯·è¾“å…¥å†…å®¹",
 											Toast.LENGTH_SHORT).show();
 									return;
 								}
@@ -6134,7 +6134,7 @@ public final class Launcher extends BaseActivity implements
 
 		tabs_gallery.setVisibility(View.GONE);
 
-		// TODO ºáÊúÆÁÇĞ»»ÖØĞÂ¼ÓÔØ²¼¾Ö
+		// TODO æ¨ªç«–å±åˆ‡æ¢é‡æ–°åŠ è½½å¸ƒå±€
 		tabs_gallery = (RelativeLayout) findViewById(R.id.tabs_gallery);
 		tabs_gallery.removeView(mRecentsPanelView);
 		mRecentsPanelView = (RecentsPanelView) LayoutInflater.from(this)
@@ -6180,7 +6180,7 @@ public final class Launcher extends BaseActivity implements
 	}
 
 	/**
-	 * ÏÔÊ¾Ìí¼ÓÊéÇ©ÁĞ±í
+	 * æ˜¾ç¤ºæ·»åŠ ä¹¦ç­¾åˆ—è¡¨
 	 */
 	private void showAddBookmark() {
 		boolean isBookmark;
@@ -6202,11 +6202,11 @@ public final class Launcher extends BaseActivity implements
 		GridView search_engine_pop_gridview = (GridView) view
 				.findViewById(R.id.search_engine_pop_gridview);
 		search_engine_pop_gridview.setNumColumns(1);
-		String[] itemSub = { "Ìí¼ÓÊéÇ©", "·¢ËÍÖÁ×ÀÃæ", "½øÈëÊéÇ©/ÀúÊ·" };
+		String[] itemSub = { "æ·»åŠ ä¹¦ç­¾", "å‘é€è‡³æ¡Œé¢", "è¿›å…¥ä¹¦ç­¾/å†å²" };
 		if (isBookmark) {
-			itemSub[0] = "É¾³ıÊéÇ©";
+			itemSub[0] = "åˆ é™¤ä¹¦ç­¾";
 		} else {
-			itemSub[0] = "Ìí¼ÓÊéÇ©";
+			itemSub[0] = "æ·»åŠ ä¹¦ç­¾";
 		}
 
 		final int[] imageSub = { R.drawable.search_baidu,
@@ -6270,11 +6270,11 @@ public final class Launcher extends BaseActivity implements
 												One_webView.getUrl().toString(),
 												true, One_webView.getFavicon(),
 												snapshot);
-										Toast.makeText(Launcher.this, "ÒÑÌí¼ÓÊéÇ©",
+										Toast.makeText(Launcher.this, "å·²æ·»åŠ ä¹¦ç­¾",
 												Toast.LENGTH_SHORT).show();
 									} else {
 										Toast.makeText(Launcher.this,
-												"µ±Ç°ÍøÖ·²»·ûºÏ¹æ·¶", Toast.LENGTH_SHORT)
+												"å½“å‰ç½‘å€ä¸ç¬¦åˆè§„èŒƒ", Toast.LENGTH_SHORT)
 												.show();
 									}
 								} else {
@@ -6298,11 +6298,11 @@ public final class Launcher extends BaseActivity implements
 														.toString(), true,
 												mCustomWebView.getFavicon(),
 												snapshot);
-										Toast.makeText(Launcher.this, "ÒÑÌí¼ÓÊéÇ©",
+										Toast.makeText(Launcher.this, "å·²æ·»åŠ ä¹¦ç­¾",
 												Toast.LENGTH_SHORT).show();
 									} else {
 										Toast.makeText(Launcher.this,
-												"µ±Ç°ÍøÖ·²»·ûºÏ¹æ·¶", Toast.LENGTH_SHORT)
+												"å½“å‰ç½‘å€ä¸ç¬¦åˆè§„èŒƒ", Toast.LENGTH_SHORT)
 												.show();
 									}
 								}
@@ -6316,7 +6316,7 @@ public final class Launcher extends BaseActivity implements
 										.getTitle().toString(), One_webView
 										.getFavicon(), One_webView.getUrl()
 										.toString());
-								Toast.makeText(Launcher.this, "ÒÑ·¢ËÍµ½×ÀÃæ",
+								Toast.makeText(Launcher.this, "å·²å‘é€åˆ°æ¡Œé¢",
 										Toast.LENGTH_SHORT).show();
 							} else {
 								WebViewspace mWebViewspace = (WebViewspace) mTabspace
@@ -6328,7 +6328,7 @@ public final class Launcher extends BaseActivity implements
 										mCustomWebView.getTitle().toString(),
 										mCustomWebView.getFavicon(),
 										mCustomWebView.getUrl().toString());
-								Toast.makeText(Launcher.this, "ÒÑ·¢ËÍµ½×ÀÃæ",
+								Toast.makeText(Launcher.this, "å·²å‘é€åˆ°æ¡Œé¢",
 										Toast.LENGTH_SHORT).show();
 							}
 
@@ -6353,19 +6353,19 @@ public final class Launcher extends BaseActivity implements
 		WindowManager wm = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
 		Display display = wm.getDefaultDisplay();
 		display.getMetrics(dm);
-		// ´´½¨Ò»¸öPopuWidow¶ÔÏó
+		// åˆ›å»ºä¸€ä¸ªPopuWidowå¯¹è±¡
 		ShowBookmark = new PopupWindow(view, 220, top_bar_main.getHeight() * 2);
 
-		// Ê¹Æä¾Û¼¯
+		// ä½¿å…¶èšé›†
 		ShowBookmark.setFocusable(true);
 
-		// ÉèÖÃÔÊĞíÔÚÍâµã»÷ÏûÊ§
+		// è®¾ç½®å…è®¸åœ¨å¤–ç‚¹å‡»æ¶ˆå¤±
 		ShowBookmark.setOutsideTouchable(true);
 
-		// Õâ¸öÊÇÎªÁËµã»÷¡°·µ»ØBack¡±Ò²ÄÜÊ¹ÆäÏûÊ§£¬²¢ÇÒ²¢²»»áÓ°ÏìÄãµÄ±³¾°
+		// è¿™ä¸ªæ˜¯ä¸ºäº†ç‚¹å‡»â€œè¿”å›Backâ€ä¹Ÿèƒ½ä½¿å…¶æ¶ˆå¤±ï¼Œå¹¶ä¸”å¹¶ä¸ä¼šå½±å“ä½ çš„èƒŒæ™¯
 		ShowBookmark.setBackgroundDrawable(new BitmapDrawable());
 
-		// ÉèÖÃlayoutÔÚPopupWindowÖĞÏÔÊ¾µÄÎ»ÖÃ
+		// è®¾ç½®layoutåœ¨PopupWindowä¸­æ˜¾ç¤ºçš„ä½ç½®
 		ShowBookmark.showAsDropDown(addbookmark, -5, 10);
 
 	}
@@ -6414,7 +6414,7 @@ public final class Launcher extends BaseActivity implements
 	}
 
 	public long getData() {
-		// TrafficStatsÀà¸ù¾İÓ¦ÓÃµÄUID»ñÈ¡µ½Á÷Á¿µÄÏà¹ØÊı¾İ
+		// TrafficStatsç±»æ ¹æ®åº”ç”¨çš„UIDè·å–åˆ°æµé‡çš„ç›¸å…³æ•°æ®
 		try {
 			PackageManager packageManager = getPackageManager();
 			ApplicationInfo ai = packageManager.getApplicationInfo(
@@ -6429,7 +6429,7 @@ public final class Launcher extends BaseActivity implements
 			return recv + sent;
 
 		} catch (NameNotFoundException e) {
-			Log.e("H", "¹Ø»ú¼àÌı  " + e.toString());
+			Log.e("H", "å…³æœºç›‘å¬  " + e.toString());
 			return 0;
 		}
 	}
@@ -6440,10 +6440,10 @@ public final class Launcher extends BaseActivity implements
 				LiuLiangTongji.NetworkStatus_Not);
 		switch (NetworkStatus) {
 		case ConnectivityManager.TYPE_MOBILE:
-			// ÉÏ´ÎÊÇÊı¾İÁ¬½Ó
+			// ä¸Šæ¬¡æ˜¯æ•°æ®è¿æ¥
 
 			Log.d("H",
-					"ÍË³ö ±¾´Î 3GÊ¹ÓÃÁ÷Á¿ w="
+					"é€€å‡º æœ¬æ¬¡ 3Gä½¿ç”¨æµé‡ w="
 							+ LiuLiangTongji.getDataStr(LiuLiangTongji.temp)
 							+ " getData()="
 							+ LiuLiangTongji.getDataStr(getData()));
@@ -6453,7 +6453,7 @@ public final class Launcher extends BaseActivity implements
 			}
 
 			Log.d("H",
-					"ÍË³ö ±¾´Î 3GÊ¹ÓÃÁ÷Á¿"
+					"é€€å‡º æœ¬æ¬¡ 3Gä½¿ç”¨æµé‡"
 							+ LiuLiangTongji.getDataStr(LiuLiangTongji.temp));
 			sp.edit()
 					.putLong(
@@ -6474,10 +6474,10 @@ public final class Launcher extends BaseActivity implements
 			break;
 
 		case ConnectivityManager.TYPE_WIFI:
-			// ÉÏ´ÎÊÇwifiÁ¬½Ó
+			// ä¸Šæ¬¡æ˜¯wifiè¿æ¥
 
 			Log.d("H",
-					"ÍË³ö ±¾´Î WIFIÊ¹ÓÃÁ÷Á¿ w="
+					"é€€å‡º æœ¬æ¬¡ WIFIä½¿ç”¨æµé‡ w="
 							+ LiuLiangTongji.getDataStr(LiuLiangTongji.temp)
 							+ " getData()="
 							+ LiuLiangTongji.getDataStr(getData()));
@@ -6485,7 +6485,7 @@ public final class Launcher extends BaseActivity implements
 				LiuLiangTongji.temp = getData() - LiuLiangTongji.temp;
 			}
 			Log.d("H",
-					"ÍË³ö ±¾´Î WIFIÊ¹ÓÃÁ÷Á¿"
+					"é€€å‡º æœ¬æ¬¡ WIFIä½¿ç”¨æµé‡"
 							+ LiuLiangTongji.getDataStr(LiuLiangTongji.temp));
 			sp.edit()
 					.putLong(
@@ -6506,7 +6506,7 @@ public final class Launcher extends BaseActivity implements
 			break;
 
 		default:
-			// ÉÏ´ÎÎ´Á¬½Ó
+			// ä¸Šæ¬¡æœªè¿æ¥
 			LiuLiangTongji.temp = getData();
 
 		}
@@ -6521,7 +6521,7 @@ public final class Launcher extends BaseActivity implements
 
 		HashMap<String, Object> hashmap = new HashMap<String, Object>();
 
-		// ´æ´¢µ±Ç°tabÏÔÊ¾×´Ì¬ workspace false tabspace true
+		// å­˜å‚¨å½“å‰tabæ˜¾ç¤ºçŠ¶æ€ workspace false tabspace true
 
 		if (mTabspace.getChildVisibility(mCurrentIndex)) {
 			hashmap.put("isWebview", true);
@@ -6538,7 +6538,7 @@ public final class Launcher extends BaseActivity implements
 
 		if (CURRENT_SCREEN_WORKSPACE == mHomespace.getCurrentScreen()) {
 			hashmap.put("isHome", mWorkspace.getCurrentScreen());
-			bitmaphashmap.put("title", "Ö÷Ò³");
+			bitmaphashmap.put("title", "ä¸»é¡µ");
 		} else {
 			hashmap.put("isHome", CURRENT_SCREEN_WORKSPACE_NOT);
 		}
@@ -6555,7 +6555,7 @@ public final class Launcher extends BaseActivity implements
 			mWebViewStates.add(mCurrentIndex, hashmap);
 		}
 
-		// ÉèÖÃTabspaceË÷ÒıÖµ
+		// è®¾ç½®Tabspaceç´¢å¼•å€¼
 
 		mCurrentIndex = mTabspace.getChildCount();
 		add_ad_tab_index = mTabspace.getChildCount();
@@ -6588,11 +6588,11 @@ public final class Launcher extends BaseActivity implements
 		}
 	}
 
-	// ´´½¨Handler¶ÔÏó
+	// åˆ›å»ºHandlerå¯¹è±¡
 	Handler AD_TAB_handler = new Handler();
-	// ĞÂ½¨Ò»¸öÏß³Ì¶ÔÏó
+	// æ–°å»ºä¸€ä¸ªçº¿ç¨‹å¯¹è±¡
 	Runnable updateThread = new Runnable() {
-		// ½«ÒªÖ´ĞĞµÄ²Ù×÷Ğ´ÔÚÏß³Ì¶ÔÏóµÄrun·½·¨µ±ÖĞ
+		// å°†è¦æ‰§è¡Œçš„æ“ä½œå†™åœ¨çº¿ç¨‹å¯¹è±¡çš„runæ–¹æ³•å½“ä¸­
 		@Override
 		public void run() {
 			waitingTime--;
@@ -6618,7 +6618,7 @@ public final class Launcher extends BaseActivity implements
 
 			switch (msg.what) {
 			case Constants.AD_HENGTIAO_FLAG:
-				// ºáÌõµ×²¿¹ã¸æ
+				// æ¨ªæ¡åº•éƒ¨å¹¿å‘Š
 				if (ADview != null) {
 					JSONObject jsonObj;
 					String picURL = "";
@@ -6719,7 +6719,7 @@ public final class Launcher extends BaseActivity implements
 				}
 				break;
 			case Constants.AD_CHAPING_FLAG:
-				// ²åÆÁ¹ã¸æ
+				// æ’å±å¹¿å‘Š
 
 				JSONObject jsonObj;
 				String picURL = "";
@@ -6824,12 +6824,12 @@ public final class Launcher extends BaseActivity implements
 
 				break;
 			case Constants.AD_XINZENG_FLAG:
-				// ÔöÆÁ¹ã¸æ
+				// å¢å±å¹¿å‘Š
 
 				break;
 
 			case 0:
-				// »ñÈ¡´íÎó
+				// è·å–é”™è¯¯
 				break;
 
 			}
@@ -6855,9 +6855,9 @@ public final class Launcher extends BaseActivity implements
 	public String getSDPath() {
 		File sdDir = null;
 		boolean sdCardExist = Environment.getExternalStorageState().equals(
-				android.os.Environment.MEDIA_MOUNTED); // ÅĞ¶Ïsd¿¨ÊÇ·ñ´æÔÚ
+				android.os.Environment.MEDIA_MOUNTED); // åˆ¤æ–­sdå¡æ˜¯å¦å­˜åœ¨
 		if (sdCardExist) {
-			sdDir = Environment.getExternalStorageDirectory();// »ñÈ¡¸úÄ¿Â¼
+			sdDir = Environment.getExternalStorageDirectory();// è·å–è·Ÿç›®å½•
 		}
 		if (sdDir == null)
 			return null;
@@ -6865,7 +6865,7 @@ public final class Launcher extends BaseActivity implements
 	}
 
 	/**
-	 * ±£´æ¹ã¸æÍ¼Æ¬
+	 * ä¿å­˜å¹¿å‘Šå›¾ç‰‡
 	 */
 	public boolean saveFile(Bitmap bm, String fileName) throws IOException {
 
@@ -6891,7 +6891,7 @@ public final class Launcher extends BaseActivity implements
 		return true;
 	}
 
-	/** ÅĞ¶ÏSD¿¨ÖĞÓĞÃ»ÓĞ¹ã¸æ×ÊÔ´Í¼Æ¬ */
+	/** åˆ¤æ–­SDå¡ä¸­æœ‰æ²¡æœ‰å¹¿å‘Šèµ„æºå›¾ç‰‡ */
 	private String getADImage(String imagename) {
 
 		File dirFile1 = new File(ErWeiMaChaKanActivity.getSDPath() + "/Qing/");
@@ -6910,7 +6910,7 @@ public final class Launcher extends BaseActivity implements
 		File mFile = new File(imagePath);
 		File[] files = mFile.listFiles();
 
-		/* ½«ËùÓĞÎÄ¼ş´æÈëArrayListÖĞ */
+		/* å°†æ‰€æœ‰æ–‡ä»¶å­˜å…¥ArrayListä¸­ */
 		for (int i = 0; i < files.length; i++) {
 			File file = files[i];
 			if (file.getName().equals(imagename))
@@ -6927,7 +6927,7 @@ public final class Launcher extends BaseActivity implements
 				getApplicationContext(), 0, intent,
 				PendingIntent.FLAG_UPDATE_CURRENT);
 
-		// 1·ÖÖÓºó·¢ËÍ¹ã²¥£¬È»ºóÃ¿¸ô1Ğ¡Ê±ÃëÖØ¸´·¢¹ã²¥
+		// 1åˆ†é’Ÿåå‘é€å¹¿æ’­ï¼Œç„¶åæ¯éš”1å°æ—¶ç§’é‡å¤å‘å¹¿æ’­
 		int triggerAtTime = (int) (System.currentTimeMillis() + 60 * 1000);
 		int interval = 60 * 60 * 1000;
 
@@ -6939,14 +6939,14 @@ public final class Launcher extends BaseActivity implements
 	private void checkSnapShotClean() {
 
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-		Date curDate = new Date(System.currentTimeMillis());// »ñÈ¡µ±Ç°Ê±¼ä
+		Date curDate = new Date(System.currentTimeMillis());// è·å–å½“å‰æ—¶é—´
 		String str = formatter.format(curDate);
 		try {
 			if (Tools.ConverToDate(
 					(sp.getString(Constants.snaplastUpdateTime, "2014-01-01")),
 					"yyyy-MM-dd").before(Tools.ConverToDate(str, "yyyy-MM-dd"))) {
 				new Thread(new SnapShotClean_Thread()).start();
-				// ±£´æÈÕÆÚ
+				// ä¿å­˜æ—¥æœŸ
 				sp.edit().putString(Constants.snaplastUpdateTime, str).commit();
 			}
 		} catch (Exception e) {
@@ -6957,7 +6957,7 @@ public final class Launcher extends BaseActivity implements
 	class SnapShotClean_Thread implements Runnable {
 		public void run() {
 			List<String> filesList = IOUtils.getSnapshotFileList();
-			// ¶ÁÈ¡Êı¾İ¿âÖĞÊı¾İ
+			// è¯»å–æ•°æ®åº“ä¸­æ•°æ®
 			List<String> launcherList = getSnapshotDbList(Launcher.this);
 
 			List<String> bookmarkList = getBookmarkDbList(Launcher.this);

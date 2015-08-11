@@ -38,7 +38,7 @@ public class ErWeiMaChaKanActivity extends BaseActivity {
 		setContentView(R.layout.er_wei_ma_cha_kan);
 
 		textView = (TextView) findViewById(R.id.item_title);
-		textView.setText("¶şÎ¬ÂëÍ¼Æ¬");
+		textView.setText("äºŒç»´ç å›¾ç‰‡");
 		item_back = (ImageView) findViewById(R.id.item_back);
 		item_back.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
@@ -60,7 +60,7 @@ public class ErWeiMaChaKanActivity extends BaseActivity {
 					intent.putExtra("String", "tupianliulan");
 					startActivity(intent);
 				}else{
-					Toast.makeText(ErWeiMaChaKanActivity.this, "SD¿¨ÒÑĞ¶ÔØ»ò²»´æÔÚ", 1000).show();
+					Toast.makeText(ErWeiMaChaKanActivity.this, "SDå¡å·²å¸è½½æˆ–ä¸å­˜åœ¨", 1000).show();
 				}
 			}
 		});
@@ -83,16 +83,16 @@ public class ErWeiMaChaKanActivity extends BaseActivity {
 								Toast.makeText(ErWeiMaChaKanActivity.this, "/sdcard/Qing/erweima/"
 										+ tupianname_edit.getText()
 										.toString() + ".png"
-								+ "ÒÑ¾­Éú³É", 1000).show();
+								+ "å·²ç»ç”Ÿæˆ", 1000).show();
 							}else {
-								Toast.makeText(ErWeiMaChaKanActivity.this, "SD¿¨ÒÑĞ¶ÔØ»ò²»´æÔÚ", 1000).show();
+								Toast.makeText(ErWeiMaChaKanActivity.this, "SDå¡å·²å¸è½½æˆ–ä¸å­˜åœ¨", 1000).show();
 							}
 						} catch (IOException e) {
-							Log.v("L", "³ö´í¿©~~");
+							Log.v("L", "å‡ºé”™å’¯~~");
 							e.printStackTrace();
 						}
 					} else {
-						Toast.makeText(ErWeiMaChaKanActivity.this, "ÇëÊäÈëÍ¼Æ¬µÄÃû×Ö", 1000).show();
+						Toast.makeText(ErWeiMaChaKanActivity.this, "è¯·è¾“å…¥å›¾ç‰‡çš„åå­—", 1000).show();
 					}
 				}
 			});
@@ -106,9 +106,9 @@ public class ErWeiMaChaKanActivity extends BaseActivity {
 	public static String getSDPath() {
 		File sdDir = null;
 		boolean sdCardExist = Environment.getExternalStorageState().equals(
-				android.os.Environment.MEDIA_MOUNTED); // ÅĞ¶Ïsd¿¨ÊÇ·ñ´æÔÚ
+				android.os.Environment.MEDIA_MOUNTED); // åˆ¤æ–­sdå¡æ˜¯å¦å­˜åœ¨
 		if (sdCardExist) {
-			sdDir = Environment.getExternalStorageDirectory();// »ñÈ¡¸úÄ¿Â¼
+			sdDir = Environment.getExternalStorageDirectory();// è·å–è·Ÿç›®å½•
 		}
 		if(sdDir ==null)
 			return null;
@@ -116,7 +116,7 @@ public class ErWeiMaChaKanActivity extends BaseActivity {
 	}
 
 	/**
-	 * ±£´æÎÄ¼ş
+	 * ä¿å­˜æ–‡ä»¶
 	 * 
 	 * @param bm
 	 * @param fileName

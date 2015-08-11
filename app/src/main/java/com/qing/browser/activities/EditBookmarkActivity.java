@@ -48,16 +48,16 @@ public class EditBookmarkActivity extends BaseActivity {
 		mOkButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				// Ìí¼ÓÊéÇ©ÅĞ¶ÏÌõ¼ş
+				// æ·»åŠ ä¹¦ç­¾åˆ¤æ–­æ¡ä»¶
 				if ("".equals(mTitleEditText.getText().toString())) {
-					Toast.makeText(EditBookmarkActivity.this, "Íü¼ÇÊäÈëÊéÇ©±êÌâÁË",
+					Toast.makeText(EditBookmarkActivity.this, "å¿˜è®°è¾“å…¥ä¹¦ç­¾æ ‡é¢˜äº†",
 							Toast.LENGTH_SHORT).show();
 					return;
 				}
 				if (UrlUtils.CheckUrl(mUrlEditText.getText().toString())) {
 					setAsBookmark();
 				} else {
-					Toast.makeText(EditBookmarkActivity.this, "µ±Ç°ÍøÖ·²»·ûºÏ¹æ·¶",
+					Toast.makeText(EditBookmarkActivity.this, "å½“å‰ç½‘å€ä¸ç¬¦åˆè§„èŒƒ",
 							Toast.LENGTH_SHORT).show();
 				}
 			}
@@ -92,9 +92,9 @@ public class EditBookmarkActivity extends BaseActivity {
 		}
 
 		if (mRowId == -1) {
-			dialog_title.setText("Ìí¼ÓÊéÇ©");
+			dialog_title.setText("æ·»åŠ ä¹¦ç­¾");
 		} else {
-			dialog_title.setText("±à¼­ÊéÇ©");
+			dialog_title.setText("ç¼–è¾‘ä¹¦ç­¾");
 		}
 	}
 
@@ -132,13 +132,13 @@ public class EditBookmarkActivity extends BaseActivity {
 
 			Uri result = LauncherModel.addItemToDatabase(this, info, true);
 			if (result != null) {
-				// »ñÈ¡itemµÄid
+				// è·å–itemçš„id
 				lanucherid = Integer.parseInt(result.getPathSegments().get(1));
 			}
 			Launcher.loadSnapShot(mUrlEditText.getText().toString(),
 					lanucherid, bookmarkid);
 		} else {
-			// »ñÈ¡Ìí¼ÓÊı¾İ¿âµÄid,ÓÃÓÚ»ñÈ¡¿ìÕÕÊ±¸üĞÂ
+			// è·å–æ·»åŠ æ•°æ®åº“çš„id,ç”¨äºè·å–å¿«ç…§æ—¶æ›´æ–°
 
 			Launcher.loadSnapShot(mUrlEditText.getText().toString(), bookmarkid);
 

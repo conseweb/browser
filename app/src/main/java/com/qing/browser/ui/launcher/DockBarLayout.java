@@ -75,7 +75,7 @@ public class DockBarLayout extends ViewGroup implements DropTarget, DragSource,
 
 	public DockBarLayout(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
-		mPortrait = this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT;// ĞÂÔö´úÂë
+		mPortrait = this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT;// æ–°å¢ä»£ç 
 		TypedArray a = context.obtainStyledAttributes(attrs,
 				R.styleable.CellLayout, defStyle, 0);
 
@@ -249,7 +249,7 @@ public class DockBarLayout extends ViewGroup implements DropTarget, DragSource,
 		for (int i = 0; i < count; i++) {
 			View child = getChildAt(i);
 			if (child.getVisibility() != GONE) {
-				// ÅĞ¶ÏchildÊÇShortcut or UserFolder
+				// åˆ¤æ–­childæ˜¯Shortcut or UserFolder
 				if (child instanceof ShortcutIcon) {
 					final ItemInfo info = (ItemInfo) child.getTag();
 					int p = i;// info.itemIndex;
@@ -336,8 +336,8 @@ public class DockBarLayout extends ViewGroup implements DropTarget, DragSource,
 	public void onDrop(DragSource source, int x, int y, int xOffset,
 			int yOffset, DragView dragView, Object dragInfo) {
 		// TODO Auto-generated method stub
-		// ĞèÒª´¦ÀíÍÏ¶¯Î»ÖÃºÍ×Ô¶¯Éú³ÉÎÄ¼ş¼ĞĞ§¹û
-		// Ö÷ÒªÊÇÒ»Ğ©ÌØÊâÇé¿öµÄÅĞ¶Ï
+		// éœ€è¦å¤„ç†æ‹–åŠ¨ä½ç½®å’Œè‡ªåŠ¨ç”Ÿæˆæ–‡ä»¶å¤¹æ•ˆæœ
+		// ä¸»è¦æ˜¯ä¸€äº›ç‰¹æ®Šæƒ…å†µçš„åˆ¤æ–­
 		onDropExternal(x - xOffset, y - yOffset, dragInfo);
 	}
 
@@ -363,11 +363,11 @@ public class DockBarLayout extends ViewGroup implements DropTarget, DragSource,
 	@Override
 	public boolean acceptDrop(DragSource source, int x, int y, int xOffset,
 			int yOffset, DragView dragView, Object dragInfo) {
-		// ½ÓÊÕÊ²Ã´ÀàĞÍµÄÍ¼±ê
-		// ÅĞ¶Ï½ÓÊÕÊıÁ¿
+		// æ¥æ”¶ä»€ä¹ˆç±»å‹çš„å›¾æ ‡
+		// åˆ¤æ–­æ¥æ”¶æ•°é‡
 		if (this.getChildCount() >= 4) {
 			// Context context = LauncherApplication.getInstance();
-			// Toast.makeText(context, "µ×²¿Ì«¼·ÁË£¬ÔÚÉÏÃæºôÎüĞÂÏÊ¿ÕÆø°É", 1000).show();
+			// Toast.makeText(context, "åº•éƒ¨å¤ªæŒ¤äº†ï¼Œåœ¨ä¸Šé¢å‘¼å¸æ–°é²œç©ºæ°”å§", 1000).show();
 			return false;
 		} else {
 			return true;
@@ -384,7 +384,7 @@ public class DockBarLayout extends ViewGroup implements DropTarget, DragSource,
 
 	@Override
 	public boolean onLongClick(View v) {
-		// TODO ´¦Àí¶àÖÖÇé¿ö
+		// TODO å¤„ç†å¤šç§æƒ…å†µ
 		// ItemInfo itemInfo = (ItemInfo) v.getTag();
 		// if (itemInfo.itemIndex < 3) {
 		//
@@ -454,7 +454,7 @@ public class DockBarLayout extends ViewGroup implements DropTarget, DragSource,
 	}
 
 	/*
-	 * ´«Èëx×ø±ê£¬ÅĞ¶ÏĞÂÍ¼±êµÄÎ»ÖÃ£¬´Ë´¦½öÅĞ¶ÏÊúÆÁ ÅĞ¶ÏÖØ¸´Çé¿ö£¬×öÉú³ÉÎÄ¼ş¼ĞĞ§¹û Î»ÖÃ¼ÆËã¾«¶ÈÒ»°ã£¬ÈçÒªÇó¸ß£¬ÔÙµ÷Õû
+	 * ä¼ å…¥xåæ ‡ï¼Œåˆ¤æ–­æ–°å›¾æ ‡çš„ä½ç½®ï¼Œæ­¤å¤„ä»…åˆ¤æ–­ç«–å± åˆ¤æ–­é‡å¤æƒ…å†µï¼Œåšç”Ÿæˆæ–‡ä»¶å¤¹æ•ˆæœ ä½ç½®è®¡ç®—ç²¾åº¦ä¸€èˆ¬ï¼Œå¦‚è¦æ±‚é«˜ï¼Œå†è°ƒæ•´
 	 */
 	public int getLocation(int x) {
 

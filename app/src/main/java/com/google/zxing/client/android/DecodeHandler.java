@@ -68,7 +68,7 @@ final class DecodeHandler extends Handler {
    * @param height The height of the preview frame.
    */
   private void decode(byte[] data, int width, int height) {
-	byte[] rotatedData = new byte[data.length];		//ÁÖË¶ ÊúÆÁÄ»¸Ä¶¯
+	byte[] rotatedData = new byte[data.length];		//æ—ç¡• ç«–å±å¹•æ”¹åŠ¨
 	for (int y = 0; y < height; y++) {
 		for (int x = 0; x < width; x++)
 			rotatedData[x * height + height - y - 1] = data[x + y * width];
@@ -77,7 +77,7 @@ final class DecodeHandler extends Handler {
     System.out.println("decode...."+data.length+"\twidth:"+width+"\theight:"+height);
     Result rawResult = null;
     PlanarYUVLuminanceSource source = CameraManager.get().buildLuminanceSource(rotatedData, height, width);
-   //PlanarYUVLuminanceSource source = CameraManager.get().buildLuminanceSource(data, width, height);      ÁÖË¶ĞŞ¸Ä
+   //PlanarYUVLuminanceSource source = CameraManager.get().buildLuminanceSource(data, width, height);      æ—ç¡•ä¿®æ”¹
     BinaryBitmap bitmap = new BinaryBitmap(new HybridBinarizer(source));
     try {
       rawResult = multiFormatReader.decodeWithState(bitmap);

@@ -99,7 +99,7 @@ public class Folder extends LinearLayout implements DragSource, DropTarget,
 		} else if (Constants.SHORTCUT_ZHUANKE.equals(shortcutInfo.url)) {
 			mLauncher
 					.startActivity(new Intent(mLauncher, SettingActivity.class));
-		} else if ("É¨Ò»É¨".equals(shortcutInfo.title)) {
+		} else if ("æ‰«ä¸€æ‰«".equals(shortcutInfo.title)) {
 			mLauncher
 					.startActivity(new Intent(mLauncher, CaptureActivity.class));
 		} else {
@@ -114,7 +114,7 @@ public class Folder extends LinearLayout implements DragSource, DropTarget,
 	}
 
 	public boolean onLongClick(View v) {
-		// ´¦Àí×î³£·ÃÎÊ ÎÄ¼ş¼ĞÖØÃüÃûÎÊÌâ
+		// å¤„ç†æœ€å¸¸è®¿é—® æ–‡ä»¶å¤¹é‡å‘½åé—®é¢˜
 		if (mInfo.container != -200) {
 			mLauncher.closeFolder(this);
 			mLauncher.showRenameDialog(mInfo);

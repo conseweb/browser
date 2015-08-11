@@ -7,57 +7,57 @@ package com.qing.browser.utils;
 public class Constants {
 
 	/**
-	 * ²úÆ·±êÊ¶
+	 * äº§å“æ ‡è¯†
 	 */
 	public static final String PROD = "100";
 
 	/**
-	 * Preferences ÎÄ¼şÃû
+	 * Preferences æ–‡ä»¶å
 	 */
 	public static final String PREFERENCES_NAME = "Qing";
 
 	/**
-	 * SharedPreferences ´æ´¢Ãû³Æ
+	 * SharedPreferences å­˜å‚¨åç§°
 	 */
 	public static final String MANU_DEFAULT_EXT_NAME = "MANU_DEFAULT_EXT_NAME";
 
 	/**
-	 * SharedPreferences ´æ´¢Ãû³Æ
+	 * SharedPreferences å­˜å‚¨åç§°
 	 */
 	public static final String MANU_NAME_DEFAULT_EXT_NAME = "MANU_NAME_DEFAULT_EXT_NAME";
 
 	/**
-	 * »úĞÍ±àÂë½ØÈ¡³¤¶È
+	 * æœºå‹ç¼–ç æˆªå–é•¿åº¦
 	 */
 	public static final int MACH_LENGTH = 15;
 	
 	/**
-	 * SharedPreferences ´æ´¢Ãû³Æ
+	 * SharedPreferences å­˜å‚¨åç§°
 	 */
 	public static final String MACH_DEFAULT_EXT_NAME = "MACH_DEFAULT_EXT_NAME";
 
 	/**
-	 * ÆÁÄ»°æ±¾
+	 * å±å¹•ç‰ˆæœ¬
 	 */
 	public static final String SCREEN_VERSION = "1.0.0";
 
 	/**
-	 * ¸üĞÂID
+	 * æ›´æ–°ID
 	 */
 	public static final int UPDATE_VERSION_MIDDLE = 0;
 	/**
-	 * SharedPreferences ´æ´¢Ãû³Æ
+	 * SharedPreferences å­˜å‚¨åç§°
 	 */
 	public static final String UPDATE_VERSION_NAME_MIDDLE = "UPDATE_VERSION_NAME_MIDDLE";
 
 	public static final String UPDATE_VERSION_NAME_MIDDLE_UPDATETIME = "UPDATE_VERSION_NAME_MIDDLE_UPDATETIME";
 
 	/**
-	 * ¸üĞÂID
+	 * æ›´æ–°ID
 	 */
 	public static final int UPDATE_VERSION_RIGHT = 0;
 	/**
-	 * SharedPreferences ´æ´¢Ãû³Æ
+	 * SharedPreferences å­˜å‚¨åç§°
 	 */
 	public static final String UPDATE_VERSION_NAME_RIGHT = "UPDATE_VERSION_NAME_RIGHT";
 
@@ -65,11 +65,11 @@ public class Constants {
 
 	public static final long UPDATE_TIME_INTERVAL = 24 * 60 * 60 * 1000;
 	/**
-	 * ¸üĞÂID
+	 * æ›´æ–°ID
 	 */
 	public static final int UPDATE_VERSION_FAXIAN = 0;
 	/**
-	 * SharedPreferences ´æ´¢Ãû³Æ
+	 * SharedPreferences å­˜å‚¨åç§°
 	 */
 	public static final String UPDATE_VERSION_NAME_FAXIAN = "UPDATE_VERSION_NAME_FAXIAN";
 
@@ -78,7 +78,7 @@ public class Constants {
 	public static final String RightScreenJsonString = "RightScreenJsonString";
 
 	/**
-	 * ÊÇ·ñÔÊĞíÏòSD¿¨ÖĞĞ´ÈÕÖ¾
+	 * æ˜¯å¦å…è®¸å‘SDå¡ä¸­å†™æ—¥å¿—
 	 */
 	public static final boolean WRITE_LOG_SD_CARD = true;
 
@@ -87,32 +87,32 @@ public class Constants {
 	public static boolean UnlockForgetPassword = false;
 
 	/**
-	 * ÏÂÔØÎÄ¼şÁÙÊ±ºó×ºÃû
+	 * ä¸‹è½½æ–‡ä»¶ä¸´æ—¶åç¼€å
 	 */
 	public static final String DownLoadFileName = ".cache";
 
 	/**
-	 * Èí¼ş°æ±¾¸üĞÂ
+	 * è½¯ä»¶ç‰ˆæœ¬æ›´æ–°
 	 */
 	public static final String VERSION_INFO = "VERSION_INFO";
 	
 	/**
-	 * ¸úĞÂ°Ù·Ö±È
+	 * è·Ÿæ–°ç™¾åˆ†æ¯”
 	 */
 	public static final int DOWN_STEP = 1;
 
 	/**
-	 * ÏÂÔØ¸üĞÂ ÑÓ³ÙÊ±¼ä
+	 * ä¸‹è½½æ›´æ–° å»¶è¿Ÿæ—¶é—´
 	 */
 	public static final int DOWN_DELAY_TIME = 500;
 	
 	/**
-	 * ÉèÖÃ×ÖÌå´óĞ¡
+	 * è®¾ç½®å­—ä½“å¤§å°
 	 */
 	public static final String FontSize = "FontSize";
 	
 
-	// ///////////Í¨ĞÅĞ­Òé×Ö¶Î¶¨Òå/////////////////
+	// ///////////é€šä¿¡åè®®å­—æ®µå®šä¹‰/////////////////
 	public static final String VTIT = "VTIT";
 
 	public static final String VNUM = "VNUM";
@@ -126,24 +126,24 @@ public class Constants {
 	public static final String CMFL = "CMFL";
 
 	/**
-	 * webView ¼ÓÔØurl
+	 * webView åŠ è½½url
 	 */
 	public static final String WEB_VIEW_URL = "WEB_VIEW_URL";
 
 	/**
-	 * ²Ëµ¥Ãû³Æ
+	 * èœå•åç§°
 	 */
 	public static final String MENU_NAME = "MENU_NAME";
 	
 	/**
-	 * cookieÀàĞÍ
+	 * cookieç±»å‹
 	 */
 	public static final String CookieType = "CookieType";
 	public static final int CookieTypeNull = 0;
 	public static final int CookieTypeLogin = 1;
 	public static final int CookieTypeShop = 2;
 	
-	// //////////////////Í¨ĞÅĞ­Òé×Ö¶Î¶¨Òå½áÊø/////////////
+	// //////////////////é€šä¿¡åè®®å­—æ®µå®šä¹‰ç»“æŸ/////////////
  
 	public static final String Turn_Page_Kye = "Turn_Page_Kye";
 	public static final String Turn_Page_VolumeKey = "Turn_Page_VolumeKey";
@@ -161,11 +161,11 @@ public class Constants {
 	public static final int BOOKMARK_THUMBNAIL_HEIGHT_FACTOR = 60;
 
 	/**
-	 * ÉÏ´Î¼ì²éÊÇ·ñÉèÖÃÎªÄ¬ÈÏä¯ÀÀÆ÷Ê±¼ä
+	 * ä¸Šæ¬¡æ£€æŸ¥æ˜¯å¦è®¾ç½®ä¸ºé»˜è®¤æµè§ˆå™¨æ—¶é—´
 	 */
 	public static final String lastUpdateTime = "lastUpdateTime";
 	/**
-	 * ÊÇ·ñ¼¤»î true ÒÑ¼¤»î
+	 * æ˜¯å¦æ¿€æ´» true å·²æ¿€æ´»
 	 */
 	public static final String Salenet = "salenet";
 
@@ -189,7 +189,7 @@ public class Constants {
 	public static final String URL_SEARCH_DANGDANG = "http://m.dangdang.com/gw_search.php?key=%s";
 	public static final String URL_SEARCH_TAOBAO = "http://s.m.taobao.com/search.htm?q=%s";
 	public static final String URL_SEARCH_XINLANG = "http://search.sina.com.cn/?q=%s&c=news";
-	public static final String URL_SEARCH_YAMAXUN = "http://www.amazon.cn/gp/aw/s/ref=is_box_?__mk_zh_CN=ÑÇÂíÑ·ÍøÕ¾&k=%s";
+	public static final String URL_SEARCH_YAMAXUN = "http://www.amazon.cn/gp/aw/s/ref=is_box_?__mk_zh_CN=äºšé©¬é€Šç½‘ç«™&k=%s";
 
 	/**
 	 * User agents.
@@ -198,34 +198,34 @@ public class Constants {
 	public static String USER_AGENT_DESKTOP = "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/534.7 (KHTML, like Gecko) Chrome/7.0.517.44 Safari/534.7";
 
 	/**
-	 * µ±Ç°ÆÁÄ»ÁÁ¶ÈµÄÄ£Ê½
+	 * å½“å‰å±å¹•äº®åº¦çš„æ¨¡å¼
 	 */
 	public static final String screenMode = "screenMode";
 
 	/**
-	 * µ±Ç°ÆÁÄ»ÁÁ¶ÈÖµ 0--255
+	 * å½“å‰å±å¹•äº®åº¦å€¼ 0--255
 	 */
 	public static final String screenBrightness = "screenBrightness";
 	
-	public static String memid = "memid";; //ÓÃ»§ID
+	public static String memid = "memid";; //ç”¨æˆ·ID
 	public static boolean tuiguangflag;
 	
 	/**
 	 * Preferences.
 	 */
-	public static final String PREFERENCES_TIME = "PREFERENCES_TIME";//µ±Ç°´ò¿ªä¯ÀÀÆ÷Ê±¼ä
-	public static final String PREFERENCES_NIGHT_MODE = "Night_mode";// Ò¹¼äÄ£Ê½
-	public static final String PREFERENCES_INCOGNITO_MODE = "incognito_mode";// ÎŞºÛ
+	public static final String PREFERENCES_TIME = "PREFERENCES_TIME";//å½“å‰æ‰“å¼€æµè§ˆå™¨æ—¶é—´
+	public static final String PREFERENCES_NIGHT_MODE = "Night_mode";// å¤œé—´æ¨¡å¼
+	public static final String PREFERENCES_INCOGNITO_MODE = "incognito_mode";// æ— ç—•
 	public static final String PREFERENCES_GENERAL_HOME_PAGE = "GeneralHomePage";
 	public static final String PREFERENCES_GENERAL_SEARCH_URL = "GeneralSearchUrl";
 	public static final String PREFERENCES_GENERAL_SWITCH_TABS_METHOD = "GeneralSwitchTabMethod";
-	public static final String PREFERENCES_SHOW_FULL_SCREEN = "GeneralFullScreen";// È«ÆÁ
-	public static final String PREFERENCES_BROWSER_ENABLE_IMAGES = "BrowserEnableImages";// ÎŞÍ¼
-	public static final String PREFERENCES_BROWSER_ENABLE_WIFI_IMAGES = "BrowserEnableWifiImages";// ½öÔÚwifiÏÂÏÔÊ¾Í¼Æ¬
-	public static final String PREFERENCES_BROWSER_ENABLE_FORM_DATA = "BrowserEnableFormData";// ¼Ç×¡±íµ¥Êı¾İ
-	public static final String PREFERENCES_BROWSER_ENABLE_COOKIES = "BrowserEnableCookies";// ½ÓÊÕcookies
-	public static final String PREFERENCES_BROWSER_DOWNLOAD_NOT_WIFI_REMIND = "DownloadNotWifiRemind";//·Çwifi»·¾³ÏÂÔØÎÄ¼şÌáĞÑ
-	public static final String PREFERENCES_SCREEN_ORIENTATION = "GeneralScreenOrientation";// ÆÁÄ»·½Ïò  ÊúÆÁ0 ºáÆÁ1 ¸úËæÏµÍ³2  
+	public static final String PREFERENCES_SHOW_FULL_SCREEN = "GeneralFullScreen";// å…¨å±
+	public static final String PREFERENCES_BROWSER_ENABLE_IMAGES = "BrowserEnableImages";// æ— å›¾
+	public static final String PREFERENCES_BROWSER_ENABLE_WIFI_IMAGES = "BrowserEnableWifiImages";// ä»…åœ¨wifiä¸‹æ˜¾ç¤ºå›¾ç‰‡
+	public static final String PREFERENCES_BROWSER_ENABLE_FORM_DATA = "BrowserEnableFormData";// è®°ä½è¡¨å•æ•°æ®
+	public static final String PREFERENCES_BROWSER_ENABLE_COOKIES = "BrowserEnableCookies";// æ¥æ”¶cookies
+	public static final String PREFERENCES_BROWSER_DOWNLOAD_NOT_WIFI_REMIND = "DownloadNotWifiRemind";//éwifiç¯å¢ƒä¸‹è½½æ–‡ä»¶æé†’
+	public static final String PREFERENCES_SCREEN_ORIENTATION = "GeneralScreenOrientation";// å±å¹•æ–¹å‘  ç«–å±0 æ¨ªå±1 è·Ÿéšç³»ç»Ÿ2  
 	
 	
 	public static final String PREFERENCES_GENERAL_BARS_DURATION = "GeneralBarsDuration";
@@ -262,28 +262,28 @@ public class Constants {
 	public static final String PREFERENCE_BOOKMARKS_DATABASE = "PREFERENCE_BOOKMARKS_DATABASE";
 
 	/**
-	 * ĞÂ°æÒıµ¼Ò³ÃæÏÔÊ¾
+	 * æ–°ç‰ˆå¼•å¯¼é¡µé¢æ˜¾ç¤º
 	 */
 	public static final String WelcomePageShow_sp = "WelcomePageShow";
-	public static final int WelcomePageShow = 1;//ĞèÒªÏÔÊ¾ Öµ+1
+	public static final int WelcomePageShow = 1;//éœ€è¦æ˜¾ç¤º å€¼+1
 	
 	/**
-	 * ÊÇ·ñÏÔÊ¾ĞÂÓÃ»§Àñ°üµ¯¿ò ¿´µ±Ç°°æ±¾ºÅ
+	 * æ˜¯å¦æ˜¾ç¤ºæ–°ç”¨æˆ·ç¤¼åŒ…å¼¹æ¡† çœ‹å½“å‰ç‰ˆæœ¬å·
 	 */
 	public static final String newUserDialogShow = "newUserDialogShow";
 	
 	/**
-	 * ÊÇ·ñĞèÒª¸üĞÂÌìÆøÊı¾İ¿â-Ñ¡Ôñ³ÇÊĞ
+	 * æ˜¯å¦éœ€è¦æ›´æ–°å¤©æ°”æ•°æ®åº“-é€‰æ‹©åŸå¸‚
 	 */
 	public static final String UPDATE_WEATHER_DATABASE = "UPDATA_WEATHER_DATABASE";
 	
 	/**
-	 * ÅĞ¶ÏÊÇ·ñµÚÒ»´Î Æô¶¯
+	 * åˆ¤æ–­æ˜¯å¦ç¬¬ä¸€æ¬¡ å¯åŠ¨
 	 */
 	public static final String IS_FIRST = "IS_FIRST";
 	
 	/**
-	 * ±£´æ ±¾µØÍøÒ³µÄÊ±¼ä 
+	 * ä¿å­˜ æœ¬åœ°ç½‘é¡µçš„æ—¶é—´ 
 	 */
 	public static final String ONE_WEBVIEW_TIME = "ONE_WEBVIEW_TIME";
 	
@@ -298,54 +298,54 @@ public class Constants {
 	public static final String SHORTCUT_LAUNCHER="command:launcher";
 
 	/**
-	 * ¹ã¸æÍ³Ò»µÄÊ±¼ä¿ØÖÆ  Ò»Ìì¼ä¸ô¡£
+	 * å¹¿å‘Šç»Ÿä¸€çš„æ—¶é—´æ§åˆ¶  ä¸€å¤©é—´éš”ã€‚
 	 */
 	public static final String ALL_AD_SHOW_TIME = "ALL_AD_SHOW_TIME";
 	
 	/**
-	 * ¼ÇÂ¼µ×²¿ºáÌõ¹ã¸æ¼ä¸ô´ÎÊı
+	 * è®°å½•åº•éƒ¨æ¨ªæ¡å¹¿å‘Šé—´éš”æ¬¡æ•°
 	 */
 	public static final String AD_HENGTIAO_SHOUCI = "AD_HENGTIAO_SHOUCI";
 	
 	/**
-	 * ¼ÇÂ¼ÖĞ¼ä²åÆÁ¹ã¸æ¼ä¸ô´ÎÊı
+	 * è®°å½•ä¸­é—´æ’å±å¹¿å‘Šé—´éš”æ¬¡æ•°
 	 */
 	public static final String AD_CHAPING_SHOUCI = "AD_CHAPING_SHOUCI";
 	
 	/**
-	 * ĞÂÔöÒ³Ãæ¹ã¸æ¼ä¸ô´ÎÊı
+	 * æ–°å¢é¡µé¢å¹¿å‘Šé—´éš”æ¬¡æ•°
 	 */
 	public static final String AD_XINZENG_SHOUCI = "AD_XINZENG_SHOUCI";
 	
 	/**
-	 * µ×²¿ºáÌõ¹ã¸æ±ê¼Ç
+	 * åº•éƒ¨æ¨ªæ¡å¹¿å‘Šæ ‡è®°
 	 */
 	public static final int AD_HENGTIAO_FLAG = 101;
 	
 	/**
-	 * ÖĞ¼ä²åÆÁ¹ã¸æ±ê¼Ç
+	 * ä¸­é—´æ’å±å¹¿å‘Šæ ‡è®°
 	 */
 	public static final int AD_CHAPING_FLAG = 102;
 	
 	/**
-	 * ĞÂÔöÒ³Ãæ¹ã¸æ±ê¼Ç
+	 * æ–°å¢é¡µé¢å¹¿å‘Šæ ‡è®°
 	 */
 	public static final int AD_XINZENG_FLAG = 103;
 	
 	/**
-	 * ¹ã¸æÍ¼Æ¬´óĞ¡ÀàĞÍ 70*70£¨Ğ¡Í¼Æ¬£©
+	 * å¹¿å‘Šå›¾ç‰‡å¤§å°ç±»å‹ 70*70ï¼ˆå°å›¾ç‰‡ï¼‰
 	 */
 	public static final int AD_SMALL_PIC_FLAG = 1;
 	
 	/**
-	 * ¹ã¸æÍ¼Æ¬´óĞ¡ÀàĞÍ  ´óÍ¼Æ¬
+	 * å¹¿å‘Šå›¾ç‰‡å¤§å°ç±»å‹  å¤§å›¾ç‰‡
 	 */
 	public static final int AD_BIG_PIC_FLAG = 2;
 	
 	public static final String UPDATE_AD_SWEEP_UPDATETIME="UPDATE_AD_SWEEP_UPDATETIME";
 
 	/**
-	 * ÉÏ´Î¼ì²éÎŞĞ§ÍøÒ³¿ìÕÕÊ±¼ä
+	 * ä¸Šæ¬¡æ£€æŸ¥æ— æ•ˆç½‘é¡µå¿«ç…§æ—¶é—´
 	 */
 	public static final String snaplastUpdateTime = "snaplastUpdateTime";
 	

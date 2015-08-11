@@ -28,41 +28,41 @@ import android.graphics.drawable.Drawable;
  * Various utilities shared amongst the Launcher's classes.
  */
 public final class Utilities {
-	// drawable×ª»»³Ébitmap
+	// drawableè½¬æ¢æˆbitmap
 	public static Bitmap drawableToBitmap(Drawable drawable) {
-		int width = drawable.getIntrinsicWidth();// È¡drawableµÄ³¤¿í
+		int width = drawable.getIntrinsicWidth();// å–drawableçš„é•¿å®½
 		int height = drawable.getIntrinsicHeight();
 		Bitmap.Config config = drawable.getOpacity() != PixelFormat.OPAQUE ? Bitmap.Config.ARGB_8888
-				: Bitmap.Config.RGB_565;// È¡drawableµÄÑÕÉ«¸ñÊ½
-		Bitmap bitmap = Bitmap.createBitmap(width, height, config);// ½¨Á¢¶ÔÓ¦bitmap
-		Canvas canvas = new Canvas(bitmap);// ½¨Á¢¶ÔÓ¦bitmapµÄ»­²¼
+				: Bitmap.Config.RGB_565;// å–drawableçš„é¢œè‰²æ ¼å¼
+		Bitmap bitmap = Bitmap.createBitmap(width, height, config);// å»ºç«‹å¯¹åº”bitmap
+		Canvas canvas = new Canvas(bitmap);// å»ºç«‹å¯¹åº”bitmapçš„ç”»å¸ƒ
 		drawable.setBounds(0, 0, width, height);
-		drawable.draw(canvas);// °ÑdrawableÄÚÈİ»­µ½»­²¼ÖĞ
+		drawable.draw(canvas);// æŠŠdrawableå†…å®¹ç”»åˆ°ç”»å¸ƒä¸­
 		return bitmap;
 	}
 
-	public static Bitmap drawableToBitmap(int resId) // drawable ×ª»»³Ébitmap
+	public static Bitmap drawableToBitmap(int resId) // drawable è½¬æ¢æˆbitmap
 	{
 		Context context = LauncherApplication.getInstance();
 		Resources res = context.getResources();
 		Drawable drawable = res.getDrawable(resId);
-		int width = drawable.getIntrinsicWidth();// È¡drawableµÄ³¤¿í
+		int width = drawable.getIntrinsicWidth();// å–drawableçš„é•¿å®½
 		int height = drawable.getIntrinsicHeight();
 		Bitmap.Config config = drawable.getOpacity() != PixelFormat.OPAQUE ? Bitmap.Config.ARGB_8888
-				: Bitmap.Config.RGB_565;// È¡drawableµÄÑÕÉ«¸ñÊ½
-		Bitmap bitmap = Bitmap.createBitmap(width, height, config);// ½¨Á¢¶ÔÓ¦bitmap
-		Canvas canvas = new Canvas(bitmap);// ½¨Á¢¶ÔÓ¦bitmapµÄ»­²¼
+				: Bitmap.Config.RGB_565;// å–drawableçš„é¢œè‰²æ ¼å¼
+		Bitmap bitmap = Bitmap.createBitmap(width, height, config);// å»ºç«‹å¯¹åº”bitmap
+		Canvas canvas = new Canvas(bitmap);// å»ºç«‹å¯¹åº”bitmapçš„ç”»å¸ƒ
 		drawable.setBounds(0, 0, width, height);
-		drawable.draw(canvas);// °ÑdrawableÄÚÈİ»­µ½»­²¼ÖĞ
+		drawable.draw(canvas);// æŠŠdrawableå†…å®¹ç”»åˆ°ç”»å¸ƒä¸­
 		return bitmap;
 	}
 
-	public static int getIconResourcesSize(int resId) // drawable ×ª»»³Ébitmap
+	public static int getIconResourcesSize(int resId) // drawable è½¬æ¢æˆbitmap
 	{
 		Context context = LauncherApplication.getInstance();
 		Resources res = context.getResources();
 		Drawable drawable = res.getDrawable(resId);
-		int width = drawable.getIntrinsicWidth();// È¡drawableµÄ³¤¿í
+		int width = drawable.getIntrinsicWidth();// å–drawableçš„é•¿å®½
 		int height = drawable.getIntrinsicHeight();
 		return width;
 	}

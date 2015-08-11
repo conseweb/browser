@@ -39,18 +39,18 @@ import com.qing.browser.utils.Tools;
 import com.universe.galaxy.util.StringUtil;
 
 /**
- * ÏÂÔØ¹ÜÀí
+ * ä¸‹è½½ç®¡ç†
  **/
 public class DownloadManager {
 
-	// ÏÂÔØ×´Ì¬£ºÕı³££¬ÔİÍ££¬ÏÂÔØÖĞ£¬ÒÑÏÂÔØ£¬ÅÅ¶ÓÖĞ
+	// ä¸‹è½½çŠ¶æ€ï¼šæ­£å¸¸ï¼Œæš‚åœï¼Œä¸‹è½½ä¸­ï¼Œå·²ä¸‹è½½ï¼Œæ’é˜Ÿä¸­
 	public static final int DOWNLOAD_STATE_NORMAL = 0x00;
 	public static final int DOWNLOAD_STATE_PAUSE = 0x01;
 	public static final int DOWNLOAD_STATE_DOWNLOADING = 0x02;
 	public static final int DOWNLOAD_STATE_FINISH = 0x03;
 	public static final int DOWNLOAD_STATE_WAITING = 0x04;
 
-	// ÓÃÀ´¹ÜÀíËùÓĞÏÂÔØÈÎÎñ
+	// ç”¨æ¥ç®¡ç†æ‰€æœ‰ä¸‹è½½ä»»åŠ¡
 	private ArrayList<HashMap<String, Object>> taskList = new ArrayList<HashMap<String, Object>>();
 
 	private final static Object syncObj = new Object();
@@ -69,7 +69,7 @@ public class DownloadManager {
 	private final static int ThreadCount = 3;
 
 	private DownloadManager() {
-		// ×î¶àÖ»ÄÜÍ¬Ê±ÏÂÔØ3¸öÈÎÎñ£¬ÆäÓàµÄÈÎÎñÅÅ¶ÓµÈ´ı
+		// æœ€å¤šåªèƒ½åŒæ—¶ä¸‹è½½3ä¸ªä»»åŠ¡ï¼Œå…¶ä½™çš„ä»»åŠ¡æ’é˜Ÿç­‰å¾…
 		executorService = Executors.newFixedThreadPool(ThreadCount);
 		mNotification = new Notification();
 	}
@@ -84,7 +84,7 @@ public class DownloadManager {
 		return instance;
 	}
 
-	// ¿ªÊ¼ÏÂÔØ£¬´´½¨Ò»¸öÏÂÔØÏß³Ì
+	// å¼€å§‹ä¸‹è½½ï¼Œåˆ›å»ºä¸€ä¸ªä¸‹è½½çº¿ç¨‹
 	public void beginDownload(DownloadItem item) {
 		if (executorService.isShutdown()) {
 			Log.e("H", "beginDownload executorService.isShutdown()");
@@ -131,13 +131,13 @@ public class DownloadManager {
 				Constants.PREFERENCES_BROWSER_DOWNLOAD_NOT_WIFI_REMIND, true)) {
 			if (1 != Tools.getConnectionMethod(mContext)) {
 				dialogUtil = new DialogUtil.Builder(mContext)
-						.setTitleText("ÎÂÜ°ÌáÊ¾").setText("µ±Ç°ÍøÂç²»ÊÇwifi£¬¼ÌĞøÏÂÔØ£¿")
-						.setPositiveButton("È·¶¨", new View.OnClickListener() {
+						.setTitleText("æ¸©é¦¨æç¤º").setText("å½“å‰ç½‘ç»œä¸æ˜¯wifiï¼Œç»§ç»­ä¸‹è½½ï¼Ÿ")
+						.setPositiveButton("ç¡®å®š", new View.OnClickListener() {
 							public void onClick(View v) {
 								dialogUtil.dismiss();
 								beginDownload(item);
 							}
-						}).setNegativeButton("È¡Ïû", new View.OnClickListener() {
+						}).setNegativeButton("å–æ¶ˆ", new View.OnClickListener() {
 							public void onClick(View v) {
 								mNotificationManager.cancelAll();
 								dialogUtil.dismiss();
@@ -160,7 +160,7 @@ public class DownloadManager {
 			if (filename.equals(taskList.get(i).get("name"))) {
 				DownloadTask task = (DownloadTask) taskList.get(i).get(
 						"DownloadTask");
-				// ¿ÉÒÔÔÚÕâÀï×öÆäËûµÄ´¦Àí
+				// å¯ä»¥åœ¨è¿™é‡Œåšå…¶ä»–çš„å¤„ç†
 				task.stopTask();
 			}
 		}
@@ -171,18 +171,18 @@ public class DownloadManager {
 		for (int i = 0; i < taskList.size(); i++) {
 			DownloadTask task = (DownloadTask) taskList.get(i).get(
 					"DownloadTask");
-			// ¿ÉÒÔÔÚÕâÀï×öÆäËûµÄ´¦Àí
+			// å¯ä»¥åœ¨è¿™é‡Œåšå…¶ä»–çš„å¤„ç†
 			task.stopTask();
 
 		}
-		// »áÍ£Ö¹ÕıÔÚ½øĞĞµÄÈÎÎñºÍ¾Ü¾ø½ÓÊÜĞÂµÄÈÎÎñ
+		// ä¼šåœæ­¢æ­£åœ¨è¿›è¡Œçš„ä»»åŠ¡å’Œæ‹’ç»æ¥å—æ–°çš„ä»»åŠ¡
 		executorService.shutdownNow();
 		mNotificationManager.cancelAll();
 	}
 
-	// ÏÂÔØÈÎÎñ
+	// ä¸‹è½½ä»»åŠ¡
 	class DownloadTask implements Runnable {
-		private String localfile;// ±£´æÂ·¾¶
+		private String localfile;// ä¿å­˜è·¯å¾„
 		private int startPos = 0;
 		private int endPos;
 		private int compeleteSize;
@@ -219,7 +219,7 @@ public class DownloadManager {
 			message.obj = info;
 			message.what = 5;
 			mHandler.sendMessage(message);
-			Log.i("H", "DownloadTask ÏÂÔØÊ§°Ü" + info.getFileName());
+			Log.i("H", "DownloadTask ä¸‹è½½å¤±è´¥" + info.getFileName());
 		}
 		
 		public void downloadFail() {
@@ -234,7 +234,7 @@ public class DownloadManager {
 			message.obj = info;
 			message.what = 2;
 			mHandler.sendMessage(message);
-			Log.i("H", "DownloadTask ÏÂÔØÊ§°Ü" + info.getFileName());
+			Log.i("H", "DownloadTask ä¸‹è½½å¤±è´¥" + info.getFileName());
 		}
 
 		public void downloadSuccess() {
@@ -245,7 +245,7 @@ public class DownloadManager {
 			message.what = 0;
 			mHandler.sendMessage(message);
 			taskList.remove(this);
-			Log.i("H", "DownloadTask ÏÂÔØÍê³É" + info.getFileName());
+			Log.i("H", "DownloadTask ä¸‹è½½å®Œæˆ" + info.getFileName());
 		}
 
 		public void run() {
@@ -275,11 +275,11 @@ public class DownloadManager {
 				if (connection.getResponseCode() == HttpURLConnection.HTTP_NOT_FOUND)
 					return;
 
-				// Èç¹ûÊÖ»ú¿Õ¼ä²»×ã£¬ÔòÌáÊ¾²»ÏÂÔØ¡£
+				// å¦‚æœæ‰‹æœºç©ºé—´ä¸è¶³ï¼Œåˆ™æç¤ºä¸ä¸‹è½½ã€‚
 				if (connection.getContentLength() / 1024 > Tools
 						.getSDFreeSize()) {
 					info.setCompeleteSize(0);
-					info.setErrorMessage("ÊÖ»úÄÚ´æ²»×ã");
+					info.setErrorMessage("æ‰‹æœºå†…å­˜ä¸è¶³");
 					info.setdownloadID((int) Thread.currentThread().getId());
 					message = mHandler.obtainMessage();
 					message.what = 3;
@@ -299,7 +299,7 @@ public class DownloadManager {
 
 				randomAccessFile = new RandomAccessFile(localfile, "rwd");
 				randomAccessFile.seek(startPos + compeleteSize);
-				// ½«ÒªÏÂÔØµÄÎÄ¼şĞ´µ½±£´æÔÚ±£´æÂ·¾¶ÏÂµÄÎÄ¼şÖĞ
+				// å°†è¦ä¸‹è½½çš„æ–‡ä»¶å†™åˆ°ä¿å­˜åœ¨ä¿å­˜è·¯å¾„ä¸‹çš„æ–‡ä»¶ä¸­
 				byte[] buffer = new byte[4096];
 				int length = -1;
 
@@ -313,7 +313,7 @@ public class DownloadManager {
 					randomAccessFile.write(buffer, 0, length);
 					compeleteSize += length;
 
-					// ÓÃÏûÏ¢½«ÏÂÔØĞÅÏ¢´«¸ø½ø¶ÈÌõ£¬¶Ô½ø¶ÈÌõ½øĞĞ¸üĞÂ
+					// ç”¨æ¶ˆæ¯å°†ä¸‹è½½ä¿¡æ¯ä¼ ç»™è¿›åº¦æ¡ï¼Œå¯¹è¿›åº¦æ¡è¿›è¡Œæ›´æ–°
 					if (updateCount == 0
 							|| (downloadCount * 100
 									/ connection.getContentLength() - Constants.DOWN_STEP) >= updateCount) {
@@ -321,7 +321,7 @@ public class DownloadManager {
 
 						Thread.sleep(Constants.DOWN_DELAY_TIME);
 
-						// ÕıÔÚÏÂÔØ
+						// æ­£åœ¨ä¸‹è½½
 						info.setDownloadState(DOWNLOAD_STATE_DOWNLOADING);
 						info.setCompeleteSize(compeleteSize);
 						info.setProgress(compeleteSize * 100 / endPos);
@@ -334,7 +334,7 @@ public class DownloadManager {
 						if (compeleteSize * 100 / endPos == 100) {
 							downloadSuccess();
 						}
-						// TODO ÔİÍ£
+						// TODO æš‚åœ
 						if (!isWorking) {
 							try {
 								is.close();
@@ -344,7 +344,7 @@ public class DownloadManager {
 								connection.disconnect();
 							} catch (Exception e) {
 								downloadFail();
-								Log.e("H", "DownloadTask ÔİÍ£ " + e.toString());
+								Log.e("H", "DownloadTask æš‚åœ " + e.toString());
 							}
 						}
 					}
@@ -395,7 +395,7 @@ public class DownloadManager {
 						+ info.getdownloadID();
 				switch (msg.what) {
 				case 0:
-					// TODO ÏÂÔØÍê³É ÏÂÔØÎÄ¼şÖØÃüÃû
+					// TODO ä¸‹è½½å®Œæˆ ä¸‹è½½æ–‡ä»¶é‡å‘½å
 					File downloadFolder = IOUtils.getDownloadFolder();
 					File from = new File(downloadFolder, info.getFileName());
 					File to = new File(downloadFolder, info.getFileName()
@@ -404,13 +404,13 @@ public class DownloadManager {
 
 					String contentType = "",
 					suffix = "",
-					prompt = "ÏÂÔØ³É¹¦";
+					prompt = "ä¸‹è½½æˆåŠŸ";
 					suffix = StringUtil.getSuffixOfFileName(filename);
 					contentType = StringUtil.getHttpContentType(suffix);
 					if (StringUtil.isNull(contentType)) {
-						prompt += "£¬Î´ÖªµÄÎÄ¼şÀàĞÍ";
+						prompt += "ï¼ŒæœªçŸ¥çš„æ–‡ä»¶ç±»å‹";
 					} else if (".apk".equals(suffix)) {
-						prompt += "£¬µã»÷°²×°";
+						prompt += "ï¼Œç‚¹å‡»å®‰è£…";
 					}
 
 					Uri uri = Uri.fromFile(to);
@@ -434,18 +434,18 @@ public class DownloadManager {
 					if (".apk".equals(suffix)) {
 						openFile(to);
 					}
-					// É¾³ıÊı¾İ¿â¼ÇÂ¼
+					// åˆ é™¤æ•°æ®åº“è®°å½•
 					dao.delete(info.getUrl());
 					EventController.getInstance().fireDownloadEvent(
 							EventConstants.EVT_DOWNLOAD_ON_FINISHED, info);
 					break;
 				case 1:
-					// TODO ÕıÔÚÏÂÔØ
+					// TODO æ­£åœ¨ä¸‹è½½
 					int updateCount = info.getProgress();
 					contentView = new RemoteViews(mContext.getPackageName(),
 							R.layout.notification_item);
 					contentView.setTextViewText(R.id.notificationPercent,
-							"ÕıÔÚÏÂÔØ" + updateCount + "%");
+							"æ­£åœ¨ä¸‹è½½" + updateCount + "%");
 					contentView.setTextViewText(R.id.name, filename);
 					contentView.setProgressBar(R.id.notificationProgress, 100,
 							updateCount, false);
@@ -458,14 +458,14 @@ public class DownloadManager {
 							EventConstants.EVT_DOWNLOAD_ON_PROGRESS, info);
 					break;
 				case 2:
-					// TODO ÏÂÔØÔİÍ£¡¢Ê§°Ü
+					// TODO ä¸‹è½½æš‚åœã€å¤±è´¥
 					Log.d("H",
-							"mHandler ÔİÍ£" + info.getFileName() + " "
+							"mHandler æš‚åœ" + info.getFileName() + " "
 									+ info.getdownloadID());
 					contentView = new RemoteViews(mContext.getPackageName(),
 							R.layout.notification_item);
 					contentView
-							.setTextViewText(R.id.notificationPercent, "ÒÑÔİÍ£");
+							.setTextViewText(R.id.notificationPercent, "å·²æš‚åœ");
 
 					mNotification.contentView = contentView;
 					mNotification.contentIntent = pendingIntent;
@@ -474,12 +474,12 @@ public class DownloadManager {
 							EventConstants.EVT_DOWNLOAD_ON_PAUSE, info);
 					break;
 				case 3:
-					// TODO ÊÖ»ú¿Õ¼ä²»×ã£¬ÔòÌáÊ¾²»ÏÂÔØ¡£
-					Log.d("H", "mHandler ÊÖ»ú¿Õ¼ä²»×ã" + info.getFileName());
+					// TODO æ‰‹æœºç©ºé—´ä¸è¶³ï¼Œåˆ™æç¤ºä¸ä¸‹è½½ã€‚
+					Log.d("H", "mHandler æ‰‹æœºç©ºé—´ä¸è¶³" + info.getFileName());
 					contentView = new RemoteViews(mContext.getPackageName(),
 							R.layout.notification_item_finish);
 					contentView.setTextViewText(R.id.notificationPercent,
-							"ÊÖ»ú¿Õ¼ä²»×ã£¬ÏÂÔØÊ§°Ü");
+							"æ‰‹æœºç©ºé—´ä¸è¶³ï¼Œä¸‹è½½å¤±è´¥");
 					mNotification.contentView = contentView;
 					mNotification.contentIntent = pendingIntent;
 					mNotificationManager.cancel(mNotificationID);
@@ -488,14 +488,14 @@ public class DownloadManager {
 							EventConstants.EVT_DOWNLOAD_ON_PAUSE, info);
 					break;
 				case 4:
-					// ¿ªÊ¼ÏÂÔØ
+					// å¼€å§‹ä¸‹è½½
 
 					dao.updataInfos(info.getCompeleteSize(),
 							DOWNLOAD_STATE_DOWNLOADING, info.getUrl());
 					dao.closeDb();
 					startTime = System.currentTimeMillis();
 					Log.d("H",
-							"¿ªÊ¼ÏÂÔØ " + info.getFileName() + " "
+							"å¼€å§‹ä¸‹è½½ " + info.getFileName() + " "
 									+ info.getdownloadID());
 
 					contentView = new RemoteViews(mContext.getPackageName(),
@@ -504,7 +504,7 @@ public class DownloadManager {
 							0, false);
 
 					mNotification.icon = android.R.drawable.stat_sys_download;
-					mNotification.tickerText = "ÕıÔÚÏÂÔØ";
+					mNotification.tickerText = "æ­£åœ¨ä¸‹è½½";
 					mNotification.contentView = contentView;
 					mNotification.contentIntent = pendingIntent;
 
@@ -514,14 +514,14 @@ public class DownloadManager {
 					break;
 					
 				case 5:
-					Toast.makeText(mContext, "Á¬½Ó³¬Ê±£¬ÇëÖØÊÔ£¡", Toast.LENGTH_SHORT).show();
+					Toast.makeText(mContext, "è¿æ¥è¶…æ—¶ï¼Œè¯·é‡è¯•ï¼", Toast.LENGTH_SHORT).show();
 					Log.d("H",
-							"mHandler Á¬½Ó³¬Ê±ÔİÍ£" + info.getFileName() + " "
+							"mHandler è¿æ¥è¶…æ—¶æš‚åœ" + info.getFileName() + " "
 									+ info.getdownloadID());
 					contentView = new RemoteViews(mContext.getPackageName(),
 							R.layout.notification_item);
 					contentView
-							.setTextViewText(R.id.notificationPercent, "Á¬½Ó³¬Ê±ÒÑÔİÍ£");
+							.setTextViewText(R.id.notificationPercent, "è¿æ¥è¶…æ—¶å·²æš‚åœ");
 					mNotification.contentView = contentView;
 					mNotification.contentIntent = pendingIntent;
 					mNotificationManager.notify(mNotificationID, mNotification);

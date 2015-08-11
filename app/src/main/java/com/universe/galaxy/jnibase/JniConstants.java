@@ -14,7 +14,7 @@ public class JniConstants {
 		return jniConstants;
 	}
 
-	// Ó¦ÓÃ¶¯Ì¬¿â
+	// åº”ç”¨åŠ¨æ€åº“
 	static {
 		try {
 			System.loadLibrary("Galaxy_Constans");
@@ -22,5 +22,5 @@ public class JniConstants {
 		}
 	}
 
-	// ÉùÃ÷±¾µØ´úÂëº¯Êı ¨C ±ØĞëÆ¥ÅäAndroid.mkÖĞ¶ÔÓ¦Ô´ÎÄ¼ş LOCAL_SRC_FILESÖµ
+	// å£°æ˜æœ¬åœ°ä»£ç å‡½æ•° â€“ å¿…é¡»åŒ¹é…Android.mkä¸­å¯¹åº”æºæ–‡ä»¶ LOCAL_SRC_FILESå€¼
 }

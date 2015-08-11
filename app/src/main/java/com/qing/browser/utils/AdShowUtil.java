@@ -21,10 +21,10 @@ public class AdShowUtil implements Runnable {
 	
 	/**
 	 * ad_flag 
-	 * 101£ºµ×²¿ºáÌõ¹ã¸æ   102£º²åÆÁ¹ã¸æ   103£º´ú±íĞÂÔöÒ³Ãæ¹ã¸æ
+	 * 101ï¼šåº•éƒ¨æ¨ªæ¡å¹¿å‘Š   102ï¼šæ’å±å¹¿å‘Š   103ï¼šä»£è¡¨æ–°å¢é¡µé¢å¹¿å‘Š
 	 * 
-	 * ¶ÔÓ¦µÄÍ¼Æ¬´óĞ¡
-	 * 1:70*70   2:´óÍ¼
+	 * å¯¹åº”çš„å›¾ç‰‡å¤§å°
+	 * 1:70*70   2:å¤§å›¾
 	 */
 	public static AdShowUtil getInstance(Context context,
 			Handler handler,int ad_flag) {
@@ -71,7 +71,7 @@ public class AdShowUtil implements Runnable {
 				} catch (JSONException e) {
 					e.printStackTrace();
 				}
-				//Log.v("LS","¹ã¸æÇëÇóµÄ½á¹û=="+result);
+				//Log.v("LS","å¹¿å‘Šè¯·æ±‚çš„ç»“æœ=="+result);
 			}
 		} catch (Exception ex) {
 			ex.printStackTrace();

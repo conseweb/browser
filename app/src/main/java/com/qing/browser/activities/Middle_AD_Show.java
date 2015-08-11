@@ -55,7 +55,7 @@ public class Middle_AD_Show extends Dialog {
 		if (OPENClickListener != null) {
 			OPENButton.setOnClickListener(OPENClickListener);
 		}else{
-			OPENButton.setText("Á¢¼´¹Ø±Õ");
+			OPENButton.setText("ç«‹å³å…³é—­");
 			OPENButton.setOnClickListener(dismissListener);
 		}
 	}

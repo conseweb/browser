@@ -244,7 +244,7 @@ public class BookmarksProviderWrapper {
 
 	public static Bitmap zuHeBitMap(Bitmap bitmap2, Context context) {
 
-		// 防止出现Immutable bitmap passed to Canvas constructor错误
+		// 闃叉鍑虹幇Immutable bitmap passed to Canvas constructor閿欒
 		Bitmap bitmap1 = BitmapFactory.decodeResource(context.getResources(),
 				R.drawable.hotseat_browser_bg).copy(Bitmap.Config.ARGB_8888,
 				true);
@@ -272,7 +272,7 @@ public class BookmarksProviderWrapper {
 		canvas.drawBitmap(bitmap2, Math.abs(w - w_2) / 2,
 				Math.abs(h - h_2) / 2, paint);
 		canvas.save(Canvas.ALL_SAVE_FLAG);
-		// 存储新合成的图片
+		// 瀛樺偍鏂板悎鎴愮殑鍥剧墖
 		canvas.restore();
 
 		return newBitmap;
@@ -533,7 +533,7 @@ public class BookmarksProviderWrapper {
 	}
 
 	/**
-	 * 清除本次浏览记录
+	 * 娓呴櫎鏈娴忚璁板綍
 	 */
 	public static void cleanTheHistory(Context context) {
 

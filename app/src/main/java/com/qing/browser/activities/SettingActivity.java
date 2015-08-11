@@ -45,7 +45,7 @@ public class SettingActivity extends BaseActivity {
 	PackageManager pm;
 	public static boolean setDefault = false;
 	public boolean cleanDefault = false;
-	private String[] itemTimes = { "Ğ¡ºÅ×ÖÌå", "ÖĞºÅ×ÖÌå", "´óºÅ×ÖÌå", "³¬´óºÅ×ÖÌå" };
+	private String[] itemTimes = { "å°å·å­—ä½“", "ä¸­å·å­—ä½“", "å¤§å·å­—ä½“", "è¶…å¤§å·å­—ä½“" };
 	private int FontSize = 0;
 	private final static String helpUrl = "http://www.baidu.com";
 	DialogListUtil builder;
@@ -55,7 +55,7 @@ public class SettingActivity extends BaseActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.setting);
 		TextView item_title = (TextView) findViewById(R.id.item_title);
-		item_title.setText("ÉèÖÃ");
+		item_title.setText("è®¾ç½®");
 		ImageView btn_back = (ImageView) findViewById(R.id.item_back);
 		btn_back.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
@@ -121,7 +121,7 @@ public class SettingActivity extends BaseActivity {
 				.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 					public void onCheckedChanged(CompoundButton buttonView,
 							boolean isChecked) {
-						// ½öÔÚwifiÏÂÏÔÊ¾Í¼Æ¬
+						// ä»…åœ¨wifiä¸‹æ˜¾ç¤ºå›¾ç‰‡
 						sp.edit()
 								.putBoolean(
 										Constants.PREFERENCES_BROWSER_ENABLE_WIFI_IMAGES,
@@ -134,7 +134,7 @@ public class SettingActivity extends BaseActivity {
 					@Override
 					public void onCheckedChanged(CompoundButton buttonView,
 							boolean isChecked) {
-						// ·Çwifi»·¾³ÏÂÔØÎÄ¼şÌáĞÑ
+						// éwifiç¯å¢ƒä¸‹è½½æ–‡ä»¶æé†’
 						sp.edit()
 								.putBoolean(
 										Constants.PREFERENCES_BROWSER_DOWNLOAD_NOT_WIFI_REMIND,
@@ -152,7 +152,7 @@ public class SettingActivity extends BaseActivity {
 					@Override
 					public void onCheckedChanged(CompoundButton buttonView,
 							boolean isChecked) {
-						// ½ÓÊÕcookies
+						// æ¥æ”¶cookies
 						sp.edit()
 								.putBoolean(
 										Constants.PREFERENCES_BROWSER_ENABLE_COOKIES,
@@ -166,7 +166,7 @@ public class SettingActivity extends BaseActivity {
 					@Override
 					public void onCheckedChanged(CompoundButton buttonView,
 							boolean isChecked) {
-						// ¼Ç×¡±íµ¥Êı¾İ
+						// è®°ä½è¡¨å•æ•°æ®
 						sp.edit()
 								.putBoolean(
 										Constants.PREFERENCES_BROWSER_ENABLE_FORM_DATA,
@@ -187,9 +187,9 @@ public class SettingActivity extends BaseActivity {
 				break;
 
 			case R.id.seting_textSize:
-				// ÉèÖÃ×ÖÌå´óĞ¡
+				// è®¾ç½®å­—ä½“å¤§å°
 				builder = new DialogListUtil.Builder(SettingActivity.this)
-						.setTitleText("ÉèÖÃ×ÖÌå").setItems(itemTimes)
+						.setTitleText("è®¾ç½®å­—ä½“").setItems(itemTimes)
 						.setlistListener(new OnItemClickListener() {
 							public void onItemClick(AdapterView<?> arg0,
 									View arg1, int arg2, long arg3) {
@@ -205,33 +205,33 @@ public class SettingActivity extends BaseActivity {
 				break;
 
 			case R.id.seting_jianyifankui:
-				// ½¨Òé·´À¡
+				// å»ºè®®åé¦ˆ
 				startActivity(new Intent(SettingActivity.this,
 						JianYiFanKuiActivity.class));
 				break;
 			case R.id.seting_xinshouzhinan:
-				// ĞÂÊÖÖ¸ÄÏ
+				// æ–°æ‰‹æŒ‡å—
 				startActivity(new Intent(SettingActivity.this,
 						WelcomePageActivity.class));
 				break;
 			case R.id.seting_bangzhu:
-				// °ïÖú
+				// å¸®åŠ©
 				Intent intent = new Intent(SettingActivity.this,
 						PublicWebViewActivity.class);
 				intent.putExtra(Constants.WEB_VIEW_URL, helpUrl);
-				intent.putExtra(Constants.MENU_NAME, "°ïÖú");
+				intent.putExtra(Constants.MENU_NAME, "å¸®åŠ©");
 				startActivity(intent);
 
 				break;
 
 			case R.id.seting_guanyu:
-				// ¹ØÓÚÎÒÃÇ
+				// å…³äºæˆ‘ä»¬
 				startActivity(new Intent(SettingActivity.this,
 						AboutActivity.class));
 				break;
 			case R.id.checkBox_seting_default:
 
-				// ÉèÖÃÎªÄ¬ÈÏä¯ÀÀÆ÷
+				// è®¾ç½®ä¸ºé»˜è®¤æµè§ˆå™¨
 				Intent i = (new Intent(Intent.ACTION_VIEW,
 						Uri.parse(setDefaultFail)));
 				pm = getPackageManager();
@@ -244,10 +244,10 @@ public class SettingActivity extends BaseActivity {
 				}
 
 				if (!mInfo.activityInfo.packageName.equals(info.packageName)) {
-					// ÉèÖÃÎªÄ¬ÈÏ
+					// è®¾ç½®ä¸ºé»˜è®¤
 					setDefault();
 				} else {
-					// È¡ÏûÄ¬ÈÏÉèÖÃ
+					// å–æ¶ˆé»˜è®¤è®¾ç½®
 					seting_default_select
 							.setImageResource(R.drawable.checkbox_unselect);
 					PackageManager packageManager = getPackageManager();
@@ -259,7 +259,7 @@ public class SettingActivity extends BaseActivity {
 				
 			case R.id.seting_liuliang:
 				
-				//TODO ²é¿´Á÷Á¿Ê±ÏÈ±£´æÊı¾İ
+				//TODO æŸ¥çœ‹æµé‡æ—¶å…ˆä¿å­˜æ•°æ®
 				saveLiuLiangData();
 				startActivity(new Intent(SettingActivity.this,
 						LiuLiangTongji.class));
@@ -286,13 +286,13 @@ public class SettingActivity extends BaseActivity {
 		if (setDefault) {
 			setDefault = false;
 			if (mInfo.activityInfo.packageName.equals(info.packageName)) {
-				Toast.makeText(SettingActivity.this, "ÉèÖÃ³É¹¦", Toast.LENGTH_SHORT)
+				Toast.makeText(SettingActivity.this, "è®¾ç½®æˆåŠŸ", Toast.LENGTH_SHORT)
 						.show();
 
 				seting_default_select
 						.setImageResource(R.drawable.checkbox_selected);
 			} else {
-				Toast.makeText(SettingActivity.this, "ÉèÖÃÊ§°Ü", Toast.LENGTH_SHORT)
+				Toast.makeText(SettingActivity.this, "è®¾ç½®å¤±è´¥", Toast.LENGTH_SHORT)
 						.show();
 
 				seting_default_select
@@ -312,13 +312,13 @@ public class SettingActivity extends BaseActivity {
 		mInfo = pm.resolveActivity(i, 0);
 
 		if ("android".equals(mInfo.activityInfo.packageName)) {
-			// Ã»ÓĞÉèÖÃ¹ı£¬Ö±½ÓÉèÖÃ
-			Log.i("H", "Ã»ÓĞÉèÖÃ¹ı£¬Ö±½ÓÉèÖÃ  " + info.packageName + "  package:"
+			// æ²¡æœ‰è®¾ç½®è¿‡ï¼Œç›´æ¥è®¾ç½®
+			Log.i("H", "æ²¡æœ‰è®¾ç½®è¿‡ï¼Œç›´æ¥è®¾ç½®  " + info.packageName + "  package:"
 					+ mInfo.activityInfo.packageName);
 			dialogimageutil = new DialogImageUtil.Builder(SettingActivity.this)
-					.setTitleText("ÈçºÎÉèÖÃÄ¬ÈÏ")
+					.setTitleText("å¦‚ä½•è®¾ç½®é»˜è®¤")
 					.setImageResource(R.drawable.setdefault)
-					.setPositiveButton("È¥ÉèÖÃ", new View.OnClickListener() {
+					.setPositiveButton("å»è®¾ç½®", new View.OnClickListener() {
 						public void onClick(View v) {
 							startActivity(new Intent(Intent.ACTION_VIEW, Uri
 									.parse(setDefaultFail)));
@@ -328,17 +328,17 @@ public class SettingActivity extends BaseActivity {
 					}).create();
 			dialogimageutil.show();
 		} else {
-			// ÒÑ¾­ÉèÖÃ¹ı£¬ÏÈÇå³ıÉèÖÃ
-			Log.i("H", "ÒÑ¾­ÉèÖÃ¹ı£¬ÏÈÇå³ıÉèÖÃ " + info.packageName + "  package:"
+			// å·²ç»è®¾ç½®è¿‡ï¼Œå…ˆæ¸…é™¤è®¾ç½®
+			Log.i("H", "å·²ç»è®¾ç½®è¿‡ï¼Œå…ˆæ¸…é™¤è®¾ç½® " + info.packageName + "  package:"
 					+ mInfo.activityInfo.packageName);
 			dialogimageutil = new DialogImageUtil.Builder(SettingActivity.this)
-					.setTitleText("ÇëÏÈÇå³ıÄ¬ÈÏÉèÖÃ")
+					.setTitleText("è¯·å…ˆæ¸…é™¤é»˜è®¤è®¾ç½®")
 					.setImageResource(R.drawable.cleandefault)
-					.setPositiveButton("È¥Çå³ı", new View.OnClickListener() {
+					.setPositiveButton("å»æ¸…é™¤", new View.OnClickListener() {
 						public void onClick(View v) {
 							cleanDefault = true;
 							Uri uri = Uri.parse("package:"
-									+ mInfo.activityInfo.packageName);// °üÃû£¬Ö¸¶¨¸ÃÓ¦ÓÃ
+									+ mInfo.activityInfo.packageName);// åŒ…åï¼ŒæŒ‡å®šè¯¥åº”ç”¨
 							Intent intent = new Intent(
 									"android.settings.APPLICATION_DETAILS_SETTINGS",
 									uri);
@@ -353,7 +353,7 @@ public class SettingActivity extends BaseActivity {
 	}
 	
 	public long getData() {
-		// TrafficStatsÀà¸ù¾İÓ¦ÓÃµÄUID»ñÈ¡µ½Á÷Á¿µÄÏà¹ØÊı¾İ
+		// TrafficStatsç±»æ ¹æ®åº”ç”¨çš„UIDè·å–åˆ°æµé‡çš„ç›¸å…³æ•°æ®
 		try {
 			PackageManager packageManager = getPackageManager();
 			ApplicationInfo ai = packageManager.getApplicationInfo(
@@ -368,7 +368,7 @@ public class SettingActivity extends BaseActivity {
 			return recv + sent;
 
 		} catch (NameNotFoundException e) {
-			Log.e("H", "²é¿´Á÷Á¿  " + e.toString());
+			Log.e("H", "æŸ¥çœ‹æµé‡  " + e.toString());
 			return 0;
 		}
 	}
@@ -379,10 +379,10 @@ public class SettingActivity extends BaseActivity {
 				LiuLiangTongji.NetworkStatus_Not);
 		switch (NetworkStatus) {
 		case ConnectivityManager.TYPE_MOBILE:
-			// ÉÏ´ÎÊÇÊı¾İÁ¬½Ó
+			// ä¸Šæ¬¡æ˜¯æ•°æ®è¿æ¥
 
 			Log.d("H",
-					"²é¿´ ±¾´Î 3GÊ¹ÓÃÁ÷Á¿ w="
+					"æŸ¥çœ‹ æœ¬æ¬¡ 3Gä½¿ç”¨æµé‡ w="
 							+ LiuLiangTongji.getDataStr(LiuLiangTongji.temp)
 							+ " getData()="
 							+ LiuLiangTongji.getDataStr(getData()));
@@ -392,7 +392,7 @@ public class SettingActivity extends BaseActivity {
 			}
 			
 			Log.d("H",
-					"²é¿´ ±¾´Î 3GÊ¹ÓÃÁ÷Á¿"
+					"æŸ¥çœ‹ æœ¬æ¬¡ 3Gä½¿ç”¨æµé‡"
 							+ LiuLiangTongji.getDataStr(LiuLiangTongji.temp));
 			sp.edit()
 					.putLong(
@@ -413,10 +413,10 @@ public class SettingActivity extends BaseActivity {
 			break;
 
 		case ConnectivityManager.TYPE_WIFI:
-			// ÉÏ´ÎÊÇwifiÁ¬½Ó
+			// ä¸Šæ¬¡æ˜¯wifiè¿æ¥
 
 			Log.d("H",
-					"²é¿´ ±¾´Î WIFIÊ¹ÓÃÁ÷Á¿ w="
+					"æŸ¥çœ‹ æœ¬æ¬¡ WIFIä½¿ç”¨æµé‡ w="
 							+ LiuLiangTongji.getDataStr(LiuLiangTongji.temp)
 							+ " getData()="
 							+ LiuLiangTongji.getDataStr(getData()));
@@ -424,7 +424,7 @@ public class SettingActivity extends BaseActivity {
 				LiuLiangTongji.temp = getData() - LiuLiangTongji.temp;
 			}
 			Log.d("H",
-					"²é¿´ ±¾´Î WIFIÊ¹ÓÃÁ÷Á¿"
+					"æŸ¥çœ‹ æœ¬æ¬¡ WIFIä½¿ç”¨æµé‡"
 							+ LiuLiangTongji.getDataStr(LiuLiangTongji.temp));
 			sp.edit()
 					.putLong(
@@ -445,7 +445,7 @@ public class SettingActivity extends BaseActivity {
 			break;
 
 		default:
-			// ÉÏ´ÎÎ´Á¬½Ó
+			// ä¸Šæ¬¡æœªè¿æ¥
 			LiuLiangTongji.temp = getData();
 
 		}

@@ -71,7 +71,7 @@ public class CustomWebViewClient extends WebViewClient {
 		sp = mLauncher.getSharedPreferences(Constants.PREFERENCES_NAME,
 				Context.MODE_PRIVATE);
 		
-		//ÏÔÊ¾¹ã¸æ
+		//æ˜¾ç¤ºå¹¿å‘Š
 		if(mLauncher.ADshowflag==0&&AdErrorflag){
 			mLauncher.ADshowflag =1;
 			int AD_HENGTIAO_SHOUCI = sp.getInt(Constants.AD_HENGTIAO_SHOUCI, 0);
@@ -87,28 +87,28 @@ public class CustomWebViewClient extends WebViewClient {
 			editor.commit();
 			
 			if((AD_HENGTIAO_SHOUCI+1)==3||(AD_HENGTIAO_SHOUCI+1)==11||(AD_HENGTIAO_SHOUCI+1)==18){
-				//ºáÌõ ¿ªÊ¼3´Î  ¼ä¸ô8´Î  ÉÏÏŞ3¸ö
+				//æ¨ªæ¡ å¼€å§‹3æ¬¡  é—´éš”8æ¬¡  ä¸Šé™3ä¸ª
 				Thread thread = new Thread(AdShowUtil.getInstance(mLauncher,
 						mLauncher.AD_handler,Constants.AD_HENGTIAO_FLAG));
 				thread.start();
 			}
 			
 			if((AD_CHAPING_SHOUCI+1)==5||(AD_CHAPING_SHOUCI+1)==13){
-				//²åÆÁ ¿ªÊ¼5´Î ¼ä¸ô8´Î ÉÏÏŞ2¸ö¡£
+				//æ’å± å¼€å§‹5æ¬¡ é—´éš”8æ¬¡ ä¸Šé™2ä¸ªã€‚
 				Thread thread = new Thread(AdShowUtil.getInstance(mLauncher,
 						mLauncher.AD_handler,Constants.AD_CHAPING_FLAG));
 				thread.start();
 			}
 			
 			/*if((AD_XINZENG_SHOUCI+1)==7||(AD_XINZENG_SHOUCI+1)==19){
-				//ĞÂÔö ¿ªÊ¼7´Î ¼ä¸ô12´Î ÉÏÏŞ2¸ö¡£
+				//æ–°å¢ å¼€å§‹7æ¬¡ é—´éš”12æ¬¡ ä¸Šé™2ä¸ªã€‚
 				Message msg = new Message();
 				msg.obj = "";
 				msg.what = 103;
 				mLauncher.AD_handler.sendMessage(msg);
 			}*/
 		}
-		//¹ã¸æ½áÊø
+		//å¹¿å‘Šç»“æŸ
 		
 		super.onPageFinished(view, url);
 	}
@@ -136,7 +136,7 @@ public class CustomWebViewClient extends WebViewClient {
 		AdErrorflag = false;
 		
 		if(errorCode == -10){
-			return;				//²»ÊÜÖ§³ÖµÄURI·½°¸
+			return;				//ä¸å—æ”¯æŒçš„URIæ–¹æ¡ˆ
 		}
 		if(RelativeLayoutWebView!=null){
 			 final CustomWebView WebView = (CustomWebView) RelativeLayoutWebView

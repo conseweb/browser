@@ -32,7 +32,7 @@ public class WebPageSave {
 
 	public static void saveWebPage(final Context context, String url,
 			final String storagePath, final String title) {
-		// urlÍøÖ·×÷ÎªÊäÈëÔ´
+		// urlç½‘å€ä½œä¸ºè¾“å…¥æº
 		try {
 			final Document doc = Jsoup.connect(url).timeout(60000).get();
 			new Thread() {
@@ -48,11 +48,11 @@ public class WebPageSave {
 						e.printStackTrace();
 						if (e instanceof UnknownHostException
 								|| e instanceof SocketTimeoutException) {
-							// ÎŞÍøÂç
+							// æ— ç½‘ç»œ
 						} else if (e instanceof MalformedURLException) {
-							// ÎŞĞ§URL
+							// æ— æ•ˆURL
 						} else {
-							// ÄÚ²¿´íÎó
+							// å†…éƒ¨é”™è¯¯
 						}
 					}
 				}

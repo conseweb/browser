@@ -40,7 +40,7 @@ public class ErWeiMaCreateActivity extends BaseActivity {
 		setContentView(R.layout.er_wei_ma_create);
 
 		titlename = (TextView) findViewById(R.id.item_title);
-		titlename.setText("Éú³É¶şÎ¬Âë");
+		titlename.setText("ç”ŸæˆäºŒç»´ç ");
 
 		ImageView item_back = (ImageView) findViewById(R.id.item_back);
 		item_back.setOnClickListener(new OnClickListener() {
@@ -63,67 +63,67 @@ public class ErWeiMaCreateActivity extends BaseActivity {
 		if (bundle != null) {
 			if (this.getIntent().hasExtra("String")) {
 				if (bundle.getString("String").equals("wenbenbutton")) {
-					titlename.setText("ÎÄ±¾¶şÎ¬Âë");
-					qrStrEditText.setHint("ÇëÊäÈëÄÚÈİ");
+					titlename.setText("æ–‡æœ¬äºŒç»´ç ");
+					qrStrEditText.setHint("è¯·è¾“å…¥å†…å®¹");
 					qrStrEditText.getLayoutParams().height =120;
 				} else if (bundle.getString("String").equals("duanxinbutton")) {
-					titlename.setText("¶ÌĞÅ¶şÎ¬Âë");
-					qrStrEditText.setHint("¶ÌĞÅºÅÂë");
+					titlename.setText("çŸ­ä¿¡äºŒç»´ç ");
+					qrStrEditText.setHint("çŸ­ä¿¡å·ç ");
 					qrStrEditText2.setVisibility(View.VISIBLE);
-					qrStrEditText2.setHint("¶ÌĞÅÄÚÈİ");
+					qrStrEditText2.setHint("çŸ­ä¿¡å†…å®¹");
 					qrStrEditText2.getLayoutParams().height =120;
 					publicString1 = "SMSTO:";
 				} else if (bundle.getString("String").equals("URLbutton")) {
-					titlename.setText("ÍøÖ·¶şÎ¬Âë");
-					qrStrEditText.setHint("ÇëÊäÈëÍøÖ·");
+					titlename.setText("ç½‘å€äºŒç»´ç ");
+					qrStrEditText.setHint("è¯·è¾“å…¥ç½‘å€");
 					qrStrEditText.getLayoutParams().height =120;
 					publicString1 = "http://";
 				} else if (bundle.getString("String").equals("telbutton")) {
-					titlename.setText("µç»°¶şÎ¬Âë");
-					qrStrEditText.setHint("ÇëÊäÈëµç»°ºÅÂë");
+					titlename.setText("ç”µè¯äºŒç»´ç ");
+					qrStrEditText.setHint("è¯·è¾“å…¥ç”µè¯å·ç ");
 					qrStrEditText.getLayoutParams().height =120;
 					publicString1 = "TEL:";
 				} else if (bundle.getString("String").equals("mingpianbutton")) {
-					titlename.setText("ÃûÆ¬¶şÎ¬Âë");
+					titlename.setText("åç‰‡äºŒç»´ç ");
 					publicString1 = "BEGIN:VCARD%0AVERSION:3.0%0AN:";
-					qrStrEditText.setHint("ĞÕÃû");
+					qrStrEditText.setHint("å§“å");
 					qrStrEditText.getLayoutParams().height =55;
 					
 					qrStrEditText2.setVisibility(View.VISIBLE);
-					qrStrEditText2.setHint("µç×ÓÓÊÏä");
+					qrStrEditText2.setHint("ç”µå­é‚®ç®±");
 					qrStrEditText2.getLayoutParams().height =55;
 					
 					lianxidianhua.setVisibility(View.VISIBLE);
-					lianxidianhua.setHint("ÁªÏµºÅÂë");
+					lianxidianhua.setHint("è”ç³»å·ç ");
 					lianxidianhua.getLayoutParams().height =55;
 					
 					lianxidizhi.setVisibility(View.VISIBLE);
-					lianxidizhi.setHint("ÁªÏµµØÖ·");
+					lianxidizhi.setHint("è”ç³»åœ°å€");
 					//lianxidizhi.getLayoutParams().height =32;
 					
 					gongsimingzi.setVisibility(View.VISIBLE);
-					gongsimingzi.setHint("¹«Ë¾Ãû×Ö");
+					gongsimingzi.setHint("å…¬å¸åå­—");
 					//gongsimingzi.getLayoutParams().height =32;
 					
 					gongsizhiwei.setVisibility(View.VISIBLE);
-					gongsizhiwei.setHint("¹«Ë¾Ö°Î»");
+					gongsizhiwei.setHint("å…¬å¸èŒä½");
 					gongsizhiwei.getLayoutParams().height =55;
 					
 					zhuyedizhi.setVisibility(View.VISIBLE);
-					zhuyedizhi.setHint("Ö÷Ò³µØÖ·");
+					zhuyedizhi.setHint("ä¸»é¡µåœ°å€");
 					//zhuyedizhi.getLayoutParams().height =32;
 					
 					qrStrEditText3.setVisibility(View.VISIBLE);
-					qrStrEditText3.setHint("±¸×¢");
+					qrStrEditText3.setHint("å¤‡æ³¨");
 					publicString1 = "BEGIN:VCARD";
 					
 				} else if (bundle.getString("String").equals("youjianbutton")) {
-					titlename.setText("ÓÊ¼ş¶şÎ¬Âë");
-					qrStrEditText.setHint("ÊÕ¼şÈË");
+					titlename.setText("é‚®ä»¶äºŒç»´ç ");
+					qrStrEditText.setHint("æ”¶ä»¶äºº");
 					qrStrEditText2.setVisibility(View.VISIBLE);
-					qrStrEditText2.setHint("±êÌâ");
+					qrStrEditText2.setHint("æ ‡é¢˜");
 					qrStrEditText3.setVisibility(View.VISIBLE);
-					qrStrEditText3.setHint("ÓÊ¼şÄÚÈİ");
+					qrStrEditText3.setHint("é‚®ä»¶å†…å®¹");
 					qrStrEditText3.getLayoutParams().height =120;
 					publicString1 = "MATMSG:TO:";
 				}
@@ -145,7 +145,7 @@ public class ErWeiMaCreateActivity extends BaseActivity {
 								if (!StringUtil.isNull(qrStrEditText.getText().toString())) {
 									contentString = publicString1+ qrStrEditText.getText().toString();
 								} else {
-									Toast.makeText(ErWeiMaCreateActivity.this,"ÇëÊäÈëÄÚÈİ", 1000).show();
+									Toast.makeText(ErWeiMaCreateActivity.this,"è¯·è¾“å…¥å†…å®¹", 1000).show();
 								}
 							} else if (bundle.getString("String").equals("duanxinbutton")) {
 								if (!StringUtil.isNull(qrStrEditText.getText().toString())) {
@@ -153,16 +153,16 @@ public class ErWeiMaCreateActivity extends BaseActivity {
 										contentString = publicString1+ qrStrEditText.getText().toString()
 												+ ":"+ qrStrEditText2.getText().toString();
 									} else {
-										Toast.makeText(ErWeiMaCreateActivity.this,"ÇëÊäÈë¶ÌĞÅÄÚÈİ", 1000).show();
+										Toast.makeText(ErWeiMaCreateActivity.this,"è¯·è¾“å…¥çŸ­ä¿¡å†…å®¹", 1000).show();
 									}
 								} else {
-									Toast.makeText(ErWeiMaCreateActivity.this,"ÇëÊäÈë¶ÌĞÅºÅÂë", 1000).show();
+									Toast.makeText(ErWeiMaCreateActivity.this,"è¯·è¾“å…¥çŸ­ä¿¡å·ç ", 1000).show();
 								}
 							} else if (bundle.getString("String").equals("URLbutton")) {
 								if (!StringUtil.isNull(qrStrEditText.getText().toString())) {
 									contentString = publicString1+ qrStrEditText.getText().toString();
 								} else {
-									Toast.makeText(ErWeiMaCreateActivity.this,"ÇëÊäÈëÍøÖ·", 1000).show();
+									Toast.makeText(ErWeiMaCreateActivity.this,"è¯·è¾“å…¥ç½‘å€", 1000).show();
 								}
 							} else if (bundle.getString("String").equals(
 									"telbutton")) {
@@ -170,7 +170,7 @@ public class ErWeiMaCreateActivity extends BaseActivity {
 										.toString())) {
 									contentString = publicString1+ qrStrEditText.getText().toString();
 								} else {
-									Toast.makeText(ErWeiMaCreateActivity.this,"ÇëÊäÈëºÅÂë", 1000).show();
+									Toast.makeText(ErWeiMaCreateActivity.this,"è¯·è¾“å…¥å·ç ", 1000).show();
 								}
 							} else if (bundle.getString("String").equals(
 									"mingpianbutton")) {
@@ -184,7 +184,7 @@ public class ErWeiMaCreateActivity extends BaseActivity {
 										+'\n'+"END:VCARD"
 										;
 								} else {
-									Toast.makeText(ErWeiMaCreateActivity.this,"ÇëÊäÈëÃûÆ¬Ãû×Ö", 1000).show();
+									Toast.makeText(ErWeiMaCreateActivity.this,"è¯·è¾“å…¥åç‰‡åå­—", 1000).show();
 								}
 							} else if (bundle.getString("String").equals("youjianbutton")) {
 								if (!StringUtil.isNull(qrStrEditText.getText().toString())) {
@@ -193,18 +193,18 @@ public class ErWeiMaCreateActivity extends BaseActivity {
 												+ ";SUB:"+ qrStrEditText2.getText().toString()
 												+ ";BODY:"+ qrStrEditText3.getText().toString() + ";;";
 									} else {
-										Toast.makeText(ErWeiMaCreateActivity.this,"ÇëÊäÈëÓÊÏäÄÚÈİ", 1000).show();
+										Toast.makeText(ErWeiMaCreateActivity.this,"è¯·è¾“å…¥é‚®ç®±å†…å®¹", 1000).show();
 									}
 
 								} else {
-									Toast.makeText(ErWeiMaCreateActivity.this,"ÇëÊäÈëÓÊÏäÊÕ¼şÈË", 1000).show();
+									Toast.makeText(ErWeiMaCreateActivity.this,"è¯·è¾“å…¥é‚®ç®±æ”¶ä»¶äºº", 1000).show();
 								}
 							}
 						}
 					}
 
 					if (!contentString.equals("")) {
-						// ¸ù¾İ×Ö·û´®Éú³É¶şÎ¬ÂëÍ¼Æ¬²¢ÏÔÊ¾ÔÚ½çÃæÉÏ£¬µÚ¶ş¸ö²ÎÊıÎªÍ¼Æ¬µÄ´óĞ¡£¨350*350£©
+						// æ ¹æ®å­—ç¬¦ä¸²ç”ŸæˆäºŒç»´ç å›¾ç‰‡å¹¶æ˜¾ç¤ºåœ¨ç•Œé¢ä¸Šï¼Œç¬¬äºŒä¸ªå‚æ•°ä¸ºå›¾ç‰‡çš„å¤§å°ï¼ˆ350*350ï¼‰
 						qrCodeBitmap = EncodingHandler.createQRCode(
 								contentString, 350);
 
@@ -213,7 +213,7 @@ public class ErWeiMaCreateActivity extends BaseActivity {
 						startActivity(intent);
 
 					} else {
-						Toast.makeText(ErWeiMaCreateActivity.this,"ÇëÊäÈëÄÚÈİ", 1000).show();
+						Toast.makeText(ErWeiMaCreateActivity.this,"è¯·è¾“å…¥å†…å®¹", 1000).show();
 					}
 
 				} catch (WriterException e) {

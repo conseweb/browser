@@ -45,14 +45,14 @@ public class BookmarkMannager {
 		public void handleMessage(Message msg) {
 			switch (msg.what) {
 			case 0:
-				// Í¨Öª¸üĞÂÍ¼±ê
+				// é€šçŸ¥æ›´æ–°å›¾æ ‡
 				break;
 			case 1:
 				int id = msg.getData().getInt("id");
 				Log.i(TAG, "update ID:" + id);
 				break;
 			case -1:
-				// ÏÔÊ¾ÏÂÔØ´íÎóĞÅÏ¢
+				// æ˜¾ç¤ºä¸‹è½½é”™è¯¯ä¿¡æ¯
 				Log.i(TAG, "Error");
 				break;
 			}
@@ -79,7 +79,7 @@ public class BookmarkMannager {
 			if (nowVersion >= Integer.valueOf(vid)) {
 				return;
 			}
-			// ±£´æ¸üĞÂ°æ±¾
+			// ä¿å­˜æ›´æ–°ç‰ˆæœ¬
 			Tools.setMiddleUpdateVersion(context, Integer.valueOf(vid));
 
 			mMiddleItems.clear();
@@ -88,17 +88,17 @@ public class BookmarkMannager {
 				JSONObject bmJsonObject = (JSONObject) bmJsonArray.opt(i);
 				int flag = bmJsonObject.optInt("flag");
 				if (flag == 0) {
-					// ¿ì½İ·½Ê½
+					// å¿«æ·æ–¹å¼
 					addShortcut(bmJsonObject, 1);
 				} else if (flag == 1) {
-					// ÎÄ¼ş¼Ğ
+					// æ–‡ä»¶å¤¹
 					int id = addFolder(bmJsonObject, 1);
 					addShortcutToFolder(bmJsonObject.toString(), id, 1);
 				}
 
 			}
 
-			// ¶Ôitems ½øĞĞÅÅĞò
+			// å¯¹items è¿›è¡Œæ’åº
 			orderMiddleItems();
 			Launcher.mMiddleCustomItems_flag = true;
 		} catch (JSONException e) {
@@ -115,10 +115,10 @@ public class BookmarkMannager {
 				if (msg != null) {
 					switch (msg.what) {
 					case 0:
-						// ÎŞ¸üĞÂ
+						// æ— æ›´æ–°
 						break;
 					case 1:
-						// ¸üĞÂ
+						// æ›´æ–°
 
 						try {
 							if (msg.obj != null) {
@@ -146,10 +146,10 @@ public class BookmarkMannager {
 											.opt(i);
 									int flag = bmJsonObject.optInt("flag");
 									if (flag == 0) {
-										// ¿ì½İ·½Ê½
+										// å¿«æ·æ–¹å¼
 										addShortcut(bmJsonObject, 1);
 									} else if (flag == 1) {
-										// ÎÄ¼ş¼Ğ
+										// æ–‡ä»¶å¤¹
 										int id = addFolder(bmJsonObject, 1);
 										addShortcutToFolder(
 												bmJsonObject.toString(), id, 1);
@@ -157,7 +157,7 @@ public class BookmarkMannager {
 
 								}
 
-								// ÏÂÔØÍ¼Æ¬
+								// ä¸‹è½½å›¾ç‰‡
 								new UpdateImg(addlist, 3, Imagehandler).start();
 							}
 						} catch (Exception e) {
@@ -193,7 +193,7 @@ public class BookmarkMannager {
 			if (nowVersion >= Integer.valueOf(vid)) {
 				return;
 			}
-			// ±£´æ¸üĞÂ°æ±¾
+			// ä¿å­˜æ›´æ–°ç‰ˆæœ¬
 			Tools.setRightUpdateVersion(context, Integer.valueOf(vid));
 
 			mRightItems.clear();
@@ -202,17 +202,17 @@ public class BookmarkMannager {
 				JSONObject bmJsonObject = (JSONObject) bmJsonArray.opt(i);
 				int flag = bmJsonObject.optInt("flag");
 				if (flag == 0) {
-					// ¿ì½İ·½Ê½
+					// å¿«æ·æ–¹å¼
 					addShortcut(bmJsonObject, 2);
 				} else if (flag == 1) {
-					// ÎÄ¼ş¼Ğ
+					// æ–‡ä»¶å¤¹
 					int id = addFolder(bmJsonObject, 2);
 					addShortcutToFolder(bmJsonObject.toString(), id, 2);
 				}
 
 			}
 
-			// ¶Ôitems ½øĞĞÅÅĞò
+			// å¯¹items è¿›è¡Œæ’åº
 			orderRightItems();
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
@@ -228,10 +228,10 @@ public class BookmarkMannager {
 				if (msg != null) {
 					switch (msg.what) {
 					case 0:
-						// ÎŞ¸üĞÂ
+						// æ— æ›´æ–°
 						break;
 					case 1:
-						// ¸üĞÂ
+						// æ›´æ–°
 						try {
 							if (msg.obj != null) {
 								JSONObject o = (JSONObject) msg.obj;
@@ -258,10 +258,10 @@ public class BookmarkMannager {
 											.opt(i);
 									int flag = bmJsonObject.optInt("flag");
 									if (flag == 0) {
-										// ¿ì½İ·½Ê½
+										// å¿«æ·æ–¹å¼
 										addShortcut(bmJsonObject, 2);
 									} else if (flag == 1) {
-										// ÎÄ¼ş¼Ğ
+										// æ–‡ä»¶å¤¹
 										int id = addFolder(bmJsonObject, 2);
 										addShortcutToFolder(
 												bmJsonObject.toString(), id, 2);
@@ -269,7 +269,7 @@ public class BookmarkMannager {
 
 								}
 
-								// ÏÂÔØÍ¼Æ¬
+								// ä¸‹è½½å›¾ç‰‡
 								new UpdateImg(addlist, 3, Imagehandler).start();
 							}
 						} catch (Exception e) {
@@ -294,13 +294,13 @@ public class BookmarkMannager {
 
 		int count = LauncherModel.QueryCount(context, 1, false);
 
-		// ÅÅĞòºó£¬±éÀú¸øitemIndex¸³Öµ
-		// Ğ´ÈëÊı¾İ¿â
+		// æ’åºåï¼Œéå†ç»™itemIndexèµ‹å€¼
+		// å†™å…¥æ•°æ®åº“
 		for (int i = 0; i < mMiddleItems.size(); i++) {
 			ItemInfo itemInfo = mMiddleItems.get(i);
 
-			// ÅÅĞò´¦Àí
-			// ÏÈ»ñÈ¡µ±Ç°ÆÁÄ»ÖĞ×î´óµÄË÷ÒıÖµ£¬ÒÔ´ÎÎª±ê×¼+i
+			// æ’åºå¤„ç†
+			// å…ˆè·å–å½“å‰å±å¹•ä¸­æœ€å¤§çš„ç´¢å¼•å€¼ï¼Œä»¥æ¬¡ä¸ºæ ‡å‡†+i
 			itemInfo.itemIndex = count + i;
 			switch (itemInfo.itemType) {
 			case LauncherSettings.Favorites.ITEM_TYPE_APPLICATION:
@@ -330,8 +330,8 @@ public class BookmarkMannager {
 				LauncherModel.SHORTCUT_INDEX_COMPARATOR_APP_DESC);
 
 		LauncherModel.deleteRightItemToDatabase(context, false);
-		// ÅÅĞòºó£¬±éÀú¸øitemIndex¸³Öµ
-		// Ğ´ÈëÊı¾İ¿â
+		// æ’åºåï¼Œéå†ç»™itemIndexèµ‹å€¼
+		// å†™å…¥æ•°æ®åº“
 		for (int i = 0; i < mRightItems.size(); i++) {
 			ItemInfo itemInfo = mRightItems.get(i);
 			itemInfo.itemIndex = i;
@@ -369,7 +369,7 @@ public class BookmarkMannager {
 		String pic = jsonObject.optString("pic");
 
 		String picMD5 = Tools.generateMD5(pic);
-		// ÅĞ¶ÏÍ¼Æ¬ÊÇ·ñÒÑ´æÔÚ
+		// åˆ¤æ–­å›¾ç‰‡æ˜¯å¦å·²å­˜åœ¨
 		if (!checkFile(picMD5)) {
 			Attach attach = new Attach();
 			attach.setId(jsonObject.optInt("id"));
@@ -412,7 +412,7 @@ public class BookmarkMannager {
 				info.iconUrl = img;
 				String picMD5 = Tools.generateMD5(img);
 				info.iconResource = picMD5;
-				// ÅĞ¶ÏÍ¼Æ¬ÊÇ·ñÒÑ´æÔÚ
+				// åˆ¤æ–­å›¾ç‰‡æ˜¯å¦å·²å­˜åœ¨
 				if (!checkFile(picMD5)) {
 					Attach attach = new Attach();
 					attach.setId(o.optInt("id"));
@@ -459,7 +459,7 @@ public class BookmarkMannager {
 		String picMD5 = Tools.generateMD5(pic);
 		info.iconResource = picMD5;
 
-		// ÅĞ¶ÏÍ¼Æ¬ÊÇ·ñÒÑ´æÔÚ
+		// åˆ¤æ–­å›¾ç‰‡æ˜¯å¦å·²å­˜åœ¨
 		if (!checkFile(picMD5)) {
 
 			Attach attach = new Attach();

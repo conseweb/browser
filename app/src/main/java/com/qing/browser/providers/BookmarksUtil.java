@@ -203,7 +203,7 @@ public class BookmarksUtil {
 	}
 
 	/**
-	 * ¸ù¾İuuid²éÕÒÊÇ·ñÓĞ¼ÇÂ¼
+	 * æ ¹æ®uuidæŸ¥æ‰¾æ˜¯å¦æœ‰è®°å½•
 	 */
 	public static boolean findUUID_isBookmark(Context context, String uuid) {
 		final ContentResolver cr = context.getContentResolver();
@@ -226,7 +226,7 @@ public class BookmarksUtil {
 	}
 
 	/**
-	 * ¸ù¾İuuid²éÕÒÊÇ·ñÓĞ¼ÇÂ¼
+	 * æ ¹æ®uuidæŸ¥æ‰¾æ˜¯å¦æœ‰è®°å½•
 	 */
 	public static boolean findUUID(Context context, String uuid) {
 		final ContentResolver cr = context.getContentResolver();
@@ -311,7 +311,7 @@ public class BookmarksUtil {
 				icon.getBitmap().compress(Bitmap.CompressFormat.PNG, 100, os);
 				values.put(Browser.BookmarkColumns.FAVICON, os.toByteArray());
 			} catch (Exception e) {
-				Log.e("H", "±£´æÊéÇ© " + e);
+				Log.e("H", "ä¿å­˜ä¹¦ç­¾ " + e);
 			}
 		}
 		if (snapshot != null) {
@@ -327,13 +327,13 @@ public class BookmarksUtil {
 
 		if (bookmarkExist) {
 
-			Log.i("H", "±£´æÊéÇ©   update");
+			Log.i("H", "ä¿å­˜ä¹¦ç­¾   update");
 			final ContentResolver cr = context.getContentResolver();
 			String whereClause = BookmarkColumns_UUID + " = '" + uuid + "'";
 			cr.update(BookmarksProvider.CONTENT_URI, values, whereClause, null);
 		} else {
 			bookmarkid = insert(context, values);
-			Log.i("H", "±£´æÊéÇ©  insert  bookmarkid=" + bookmarkid);
+			Log.i("H", "ä¿å­˜ä¹¦ç­¾  insert  bookmarkid=" + bookmarkid);
 		}
 
 		return bookmarkid;

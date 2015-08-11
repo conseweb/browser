@@ -41,7 +41,7 @@ public class QuitDialogActivity extends Dialog {
     	super.onCreate(savedInstanceState);
 		this.setContentView(R.layout.dialog_quit_page);
 		TextView dialog_title = (TextView)findViewById(R.id.dialog_title);
-		dialog_title.setText("ÍË³ö");
+		dialog_title.setText("é€€å‡º");
         mOkButton = (Button) findViewById(R.id.dialog_ok);
         mCancelButton = (Button) findViewById(R.id.dialog_cancel);
 		mCleanButton = (Button)findViewById(R.id.dialog_ok_clean);

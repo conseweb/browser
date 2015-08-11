@@ -40,7 +40,7 @@ public class BookmarkRightUtil implements Runnable {
 						ConstantsUrl.BOOKMARK_ACTION_PROTOCOL, poststring);
 				JSONObject jsonObject = new JSONObject(json);
 				if (STATUS_NULL.equals(jsonObject.optString(STATUS_KEY))) {
-					// ÎÞ¸üÐÂ
+					// æ— æ›´æ–°
 					Message msg = new Message();
 					msg.obj = STATUS_NULL;
 					msg.what = 0;

@@ -33,20 +33,20 @@ public class AlarmReceiver extends BroadcastReceiver {
 				+ calendar.get(Calendar.MINUTE) + ":"
 				+ calendar.get(Calendar.SECOND);
 
-		// ±£´æÁ÷Á¿Êı¾İ
+		// ä¿å­˜æµé‡æ•°æ®
 		saveData();
 
-		// µ±ÌìÁ÷Á¿ÇåÁã
+		// å½“å¤©æµé‡æ¸…é›¶
 
 		if (calendar.get(Calendar.HOUR_OF_DAY) == 23) {
-			Log.d("H", "AlarmReceiver  ½ñÈÕÁ÷Á¿ÇåÁã  µ±Ç°Ê±¼ä£º" + nowStr);
+			Log.d("H", "AlarmReceiver  ä»Šæ—¥æµé‡æ¸…é›¶  å½“å‰æ—¶é—´ï¼š" + nowStr);
 			sp.edit().putLong(LiuLiangTongji.G_Today, 0).commit();
 			sp.edit().putLong(LiuLiangTongji.W_Today, 0).commit();
 		}
 
 		if (calendar.get(Calendar.DAY_OF_MONTH) == 1) {
-			// µ±ÔÂÁ÷Á¿ÇåÁã
-			Log.d("H", "AlarmReceiver ±¾ÔÂÁ÷Á¿ÇåÁã µ±Ç°Ê±¼ä£º" + nowStr);
+			// å½“æœˆæµé‡æ¸…é›¶
+			Log.d("H", "AlarmReceiver æœ¬æœˆæµé‡æ¸…é›¶ å½“å‰æ—¶é—´ï¼š" + nowStr);
 			sp.edit().putLong(LiuLiangTongji.G_Month, 0).commit();
 			sp.edit().putLong(LiuLiangTongji.W_Month, 0).commit();
 
@@ -54,7 +54,7 @@ public class AlarmReceiver extends BroadcastReceiver {
 	}
 
 	public long getData() {
-		// TrafficStatsÀà¸ù¾İÓ¦ÓÃµÄUID»ñÈ¡µ½Á÷Á¿µÄÏà¹ØÊı¾İ
+		// TrafficStatsç±»æ ¹æ®åº”ç”¨çš„UIDè·å–åˆ°æµé‡çš„ç›¸å…³æ•°æ®
 		try {
 			ApplicationInfo ai = packageManager.getApplicationInfo(
 					"com.qing.browser", PackageManager.GET_ACTIVITIES);
@@ -82,13 +82,13 @@ public class AlarmReceiver extends BroadcastReceiver {
 
 		switch (NetworkStatus) {
 		case ConnectivityManager.TYPE_MOBILE:
-			// ÉÏ´ÎÊÇÊı¾İÁ¬½Ó
+			// ä¸Šæ¬¡æ˜¯æ•°æ®è¿æ¥
 
 			if (0 != LiuLiangTongji.temp) {
 				LiuLiangTongji.temp = getData() - LiuLiangTongji.temp;
 			}
 			Log.d("H",
-					"AlarmReceiver ±¾´Î 3GÊ¹ÓÃÁ÷Á¿£º"
+					"AlarmReceiver æœ¬æ¬¡ 3Gä½¿ç”¨æµé‡ï¼š"
 							+ LiuLiangTongji.getDataStr(LiuLiangTongji.temp));
 
 			sp.edit()
@@ -110,12 +110,12 @@ public class AlarmReceiver extends BroadcastReceiver {
 			break;
 
 		case ConnectivityManager.TYPE_WIFI:
-			// ÉÏ´ÎÊÇwifiÁ¬½Ó
+			// ä¸Šæ¬¡æ˜¯wifiè¿æ¥
 			if (0 != LiuLiangTongji.temp) {
 				LiuLiangTongji.temp = getData() - LiuLiangTongji.temp;
 			}
 			Log.d("H",
-					"AlarmReceiver±¾´Î WifiÊ¹ÓÃÁ÷Á¿£º"
+					"AlarmReceiveræœ¬æ¬¡ Wifiä½¿ç”¨æµé‡ï¼š"
 							+ LiuLiangTongji.getDataStr(LiuLiangTongji.temp));
 			sp.edit()
 					.putLong(
@@ -136,7 +136,7 @@ public class AlarmReceiver extends BroadcastReceiver {
 			break;
 
 		default:
-			// ÉÏ´ÎÎ´Á¬½Ó
+			// ä¸Šæ¬¡æœªè¿æ¥
 			LiuLiangTongji.temp = getData();
 
 		}

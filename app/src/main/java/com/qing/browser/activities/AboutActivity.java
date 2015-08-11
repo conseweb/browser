@@ -20,7 +20,7 @@ public class AboutActivity extends BaseActivity {
 		setContentView(R.layout.about_activity);
 
 		TextView item_title = (TextView) findViewById(R.id.item_title);
-		item_title.setText("¹ØÓÚ");
+		item_title.setText("å…³äºŽ");
 
 		ImageView item_back = (ImageView)findViewById(R.id.item_back);
 		item_back.setOnClickListener(new OnClickListener() {

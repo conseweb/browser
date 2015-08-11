@@ -40,7 +40,7 @@ public class KeyboardLayout extends RelativeLayout {
 				mListener.onKeyBoardStateChange(KEYBOARD_STATE_INIT);
 			}
 		} else {
-			mHeight = mHeight < b ? b : mHeight;// È¡×î´ó
+			mHeight = mHeight < b ? b : mHeight;// å–æœ€å¤§
 		}
 		if (mHasInit && mHeight > b) {
 			mHasKeybord = true;

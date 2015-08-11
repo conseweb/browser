@@ -39,7 +39,7 @@ public class LiuLiangTongji extends BaseActivity {
 		setContentView(R.layout.liuliangtongji);
 
 		item_title = (TextView) findViewById(R.id.item_title);
-		item_title.setText("Á÷Á¿Í³¼Æ");
+		item_title.setText("æµé‡ç»Ÿè®¡");
 
 		item_back = (ImageView) findViewById(R.id.item_back);
 		item_back.setOnClickListener(new OnClickListener() {
@@ -59,14 +59,14 @@ public class LiuLiangTongji extends BaseActivity {
 		total_3g = (TextView) findViewById(R.id.total_3g);
 		total_wifi = (TextView) findViewById(R.id.total_wifi);
 
-		Log.d("H", "2G3GÁ÷Á¿Í³¼Æ£º½ñÈÕ£º"
-				+ getDataStr(sp.getLong(G_Today, 0)).toString() + " ±¾ÔÂ£º"
-				+ getDataStr(sp.getLong(G_Total, 0)).toString() + " ×Ü¼Æ£º"
+		Log.d("H", "2G3Gæµé‡ç»Ÿè®¡ï¼šä»Šæ—¥ï¼š"
+				+ getDataStr(sp.getLong(G_Today, 0)).toString() + " æœ¬æœˆï¼š"
+				+ getDataStr(sp.getLong(G_Total, 0)).toString() + " æ€»è®¡ï¼š"
 				+ getDataStr(sp.getLong(G_Month, 0)).toString());
 
-		Log.d("H", "WIFIÁ÷Á¿Í³¼Æ£º½ñÈÕ£º"
-				+ getDataStr(sp.getLong(W_Today, 0)).toString() + " ±¾ÔÂ£º"
-				+ getDataStr(sp.getLong(W_Month, 0)).toString() + " ×Ü¼Æ£º"
+		Log.d("H", "WIFIæµé‡ç»Ÿè®¡ï¼šä»Šæ—¥ï¼š"
+				+ getDataStr(sp.getLong(W_Today, 0)).toString() + " æœ¬æœˆï¼š"
+				+ getDataStr(sp.getLong(W_Month, 0)).toString() + " æ€»è®¡ï¼š"
 				+ getDataStr(sp.getLong(W_Total, 0)).toString());
 
 		today_3g.setText(getDataStr(sp.getLong(G_Today, 0)).toString());
@@ -86,17 +86,17 @@ public class LiuLiangTongji extends BaseActivity {
 			long sent = TrafficStats.getUidTxBytes(ai.uid);
 
 			if (recv < 0 || sent < 0) {
-				total_str = "×Ü¼Æ£º-";
+				total_str = "æ€»è®¡ï¼š-";
 			}else{ 
-				total_str = "×Ü¼Æ£º" + getDataStr(recv + sent).toString();
+				total_str = "æ€»è®¡ï¼š" + getDataStr(recv + sent).toString();
 			} 
 			
 		} catch (NameNotFoundException e) {
-			Log.e("H", "Á÷Á¿Í³¼Æ " + e.toString());
-			total_str = "×Ü¼Æ£º-";
+			Log.e("H", "æµé‡ç»Ÿè®¡ " + e.toString());
+			total_str = "æ€»è®¡ï¼š-";
 		}
 
-		Log.d("H", "Á÷Á¿Í³¼Æ " + total_str); 
+		Log.d("H", "æµé‡ç»Ÿè®¡ " + total_str); 
 		
 		btn_clean_data = (Button) findViewById(R.id.btn_clean_data);
 		btn_clean_data.setOnClickListener(new OnClickListener() {

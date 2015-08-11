@@ -16,27 +16,27 @@ import com.qing.browser.utils.Constants;
 public class MyWindowManager {
 
 	/**
-	 * ·­Ò³Ğü¸¡´°ViewµÄÊµÀı
+	 * ç¿»é¡µæ‚¬æµ®çª—Viewçš„å®ä¾‹
 	 */
 	private static FloatWindowTurnthepageView TurnthepageWindow;
 	private static LayoutParams TurnthepageWindowParams;
 
 	/**
-	 * ÓÃÓÚ¿ØÖÆÔÚÆÁÄ»ÉÏÌí¼Ó»òÒÆ³ıĞü¸¡´°
+	 * ç”¨äºæ§åˆ¶åœ¨å±å¹•ä¸Šæ·»åŠ æˆ–ç§»é™¤æ‚¬æµ®çª—
 	 */
 	private static WindowManager mWindowManager;
 
 	/**
-	 * È«ÆÁ¹¤¾ß²Ëµ¥View
+	 * å…¨å±å·¥å…·èœå•View
 	 */
 	private static FloatWindowToolView floatwindowtoolview;
 	private static LayoutParams toolWindowParams;
 
 	/**
-	 * ´´½¨Ò»¸öÈ«ÆÁ²Ëµ¥Ğü¸¡´°¡£Î»ÖÃÎªÆÁÄ»ÕıÖĞ¼ä¡£
+	 * åˆ›å»ºä¸€ä¸ªå…¨å±èœå•æ‚¬æµ®çª—ã€‚ä½ç½®ä¸ºå±å¹•æ­£ä¸­é—´ã€‚
 	 * 
 	 * @param context
-	 *            ±ØĞëÎªÓ¦ÓÃ³ÌĞòµÄContext.
+	 *            å¿…é¡»ä¸ºåº”ç”¨ç¨‹åºçš„Context.
 	 */
 	public static void createToolWindow(Context context) {
 		WindowManager windowManager = getWindowManager(context);
@@ -65,10 +65,10 @@ public class MyWindowManager {
 	}
 
 	/**
-	 * ½«È«ÆÁ²Ëµ¥Ğü¸¡´°´ÓÆÁÄ»ÉÏÒÆ³ı¡£
+	 * å°†å…¨å±èœå•æ‚¬æµ®çª—ä»å±å¹•ä¸Šç§»é™¤ã€‚
 	 * 
 	 * @param context
-	 *            ±ØĞëÎªÓ¦ÓÃ³ÌĞòµÄContext.
+	 *            å¿…é¡»ä¸ºåº”ç”¨ç¨‹åºçš„Context.
 	 */
 	public static void removeToolWindow(Context context) {
 		if (floatwindowtoolview != null) {
@@ -80,10 +80,10 @@ public class MyWindowManager {
 	}
 
 	/**
-	 * ´´½¨Ò»¸ö·­Ò³Ğü¸¡´°¡£³õÊ¼Î»ÖÃÎªÆÁÄ»µÄÓÒ²¿ÖĞ¼äÎ»ÖÃ¡£
+	 * åˆ›å»ºä¸€ä¸ªç¿»é¡µæ‚¬æµ®çª—ã€‚åˆå§‹ä½ç½®ä¸ºå±å¹•çš„å³éƒ¨ä¸­é—´ä½ç½®ã€‚
 	 * 
 	 * @param context
-	 *            ±ØĞëÎªÓ¦ÓÃ³ÌĞòµÄContext.
+	 *            å¿…é¡»ä¸ºåº”ç”¨ç¨‹åºçš„Context.
 	 */
 	public static void createTurePageWindow(Context context) {
 		WindowManager windowManager = getWindowManager(context);
@@ -113,10 +113,10 @@ public class MyWindowManager {
 	}
 
 	/**
-	 * ½«·­Ò³Ğü¸¡´°´ÓÆÁÄ»ÉÏÒÆ³ı¡£
+	 * å°†ç¿»é¡µæ‚¬æµ®çª—ä»å±å¹•ä¸Šç§»é™¤ã€‚
 	 * 
 	 * @param context
-	 *            ±ØĞëÎªÓ¦ÓÃ³ÌĞòµÄContext.
+	 *            å¿…é¡»ä¸ºåº”ç”¨ç¨‹åºçš„Context.
 	 */
 	public static void removeTurePageWindow(Context context) {
 		if (TurnthepageWindow != null) {
@@ -127,11 +127,11 @@ public class MyWindowManager {
 	}
 
 	/**
-	 * Èç¹ûWindowManager»¹Î´´´½¨£¬Ôò´´½¨Ò»¸öĞÂµÄWindowManager·µ»Ø¡£·ñÔò·µ»Øµ±Ç°ÒÑ´´½¨µÄWindowManager¡£
+	 * å¦‚æœWindowManagerè¿˜æœªåˆ›å»ºï¼Œåˆ™åˆ›å»ºä¸€ä¸ªæ–°çš„WindowManagerè¿”å›ã€‚å¦åˆ™è¿”å›å½“å‰å·²åˆ›å»ºçš„WindowManagerã€‚
 	 * 
 	 * @param context
-	 *            ±ØĞëÎªÓ¦ÓÃ³ÌĞòµÄContext.
-	 * @return WindowManagerµÄÊµÀı£¬ÓÃÓÚ¿ØÖÆÔÚÆÁÄ»ÉÏÌí¼Ó»òÒÆ³ıĞü¸¡´°¡£
+	 *            å¿…é¡»ä¸ºåº”ç”¨ç¨‹åºçš„Context.
+	 * @return WindowManagerçš„å®ä¾‹ï¼Œç”¨äºæ§åˆ¶åœ¨å±å¹•ä¸Šæ·»åŠ æˆ–ç§»é™¤æ‚¬æµ®çª—ã€‚
 	 */
 	private static WindowManager getWindowManager(Context context) {
 		if (mWindowManager == null) {

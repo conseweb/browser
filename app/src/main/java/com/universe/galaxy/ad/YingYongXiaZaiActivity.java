@@ -94,14 +94,14 @@ public class YingYongXiaZaiActivity extends Activity {
 				Download.DownLoadFile(url);
 				finish();
 			} else {
-				Toast.makeText(YingYongXiaZaiActivity.this, "SD卡未就绪",
+				Toast.makeText(YingYongXiaZaiActivity.this, "SD鍗℃湭灏辩华",
 						Toast.LENGTH_SHORT).show();
 			}
 		}
 
 	}
 
-	// 加载页面
+	// 鍔犺浇椤甸潰
 	WebChromeClient webchromeclient = new WebChromeClient() {
 		public void onProgressChanged(WebView view, int progress) {
 			YingYongXiaZaiActivity.this.setProgress(progress);
@@ -153,7 +153,7 @@ public class YingYongXiaZaiActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				if (bangdan.equals("")) {
-					Toast.makeText(YingYongXiaZaiActivity.this, "暂不提供服务",
+					Toast.makeText(YingYongXiaZaiActivity.this, "鏆備笉鎻愪緵鏈嶅姟",
 							Toast.LENGTH_SHORT).show();
 				} else {
 					Uri uri = Uri.parse(bangdan);
@@ -262,7 +262,7 @@ public class YingYongXiaZaiActivity extends Activity {
 	@Override
 	public void onWindowFocusChanged(boolean hasFocus) {
 		// if (webimage != null) {
-		// Log.v("L", "转动函数");
+		// Log.v("L", "杞姩鍑芥暟");
 		// Object ob = webimage.getBackground();
 		// anim = (AnimationDrawable) ob;
 		// anim.start();
@@ -277,7 +277,7 @@ public class YingYongXiaZaiActivity extends Activity {
 			linear_webview.setVisibility(View.GONE);
 			webView.clearCache(true);
 			webView.destroy();
-			Log.i("AAA", "销毁webView");
+			Log.i("AAA", "閿�姣亀ebView");
 			webView = null;
 		}
 		super.onDestroy();

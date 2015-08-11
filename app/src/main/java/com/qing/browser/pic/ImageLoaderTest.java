@@ -60,7 +60,7 @@ public class ImageLoaderTest {
  
 	
 	/**
-	 * ×ª»»³ÉÔ²½Ç
+	 * è½¬æ¢æˆåœ†è§’
 	 * 
 	 * @param bmp
 	 * @param roundPx
@@ -74,16 +74,16 @@ public class ImageLoaderTest {
 		final int color = Color.RED;//0xff424242;
 		final Paint paint = new Paint();
 		
-		// µÃµ½ÓëÍ¼ÏñÏàÍ¬´óĞ¡µÄÇøÓò ÓÉ¹¹ÔìµÄËÄ¸öÖµ¾ö¶¨ÇøÓòµÄÎ»ÖÃÒÔ¼°´óĞ¡
+		// å¾—åˆ°ä¸å›¾åƒç›¸åŒå¤§å°çš„åŒºåŸŸ ç”±æ„é€ çš„å››ä¸ªå€¼å†³å®šåŒºåŸŸçš„ä½ç½®ä»¥åŠå¤§å°
 		final Rect rect = new Rect(0, 0, bmp.getWidth(), bmp.getHeight());
 		final RectF rectF = new RectF(rect);
-		final float roundPx = 50;// ÖµÔ½´ó½Ç¶ÈÔ½Ã÷ÏÔ
+		final float roundPx = 50;// å€¼è¶Šå¤§è§’åº¦è¶Šæ˜æ˜¾
 
 		paint.setAntiAlias(true);
 		canvas.drawARGB(0, 0, 0, 0);
 		paint.setColor(color);
 		
-		// drawRoundRectµÄµÚ2,3¸ö²ÎÊıÒ»ÑùÔò»­µÄÊÇÕıÔ²µÄÒ»½Ç£¬Èç¹ûÊıÖµ²»Í¬ÔòÊÇÍÖÔ²µÄÒ»½Ç
+		// drawRoundRectçš„ç¬¬2,3ä¸ªå‚æ•°ä¸€æ ·åˆ™ç”»çš„æ˜¯æ­£åœ†çš„ä¸€è§’ï¼Œå¦‚æœæ•°å€¼ä¸åŒåˆ™æ˜¯æ¤­åœ†çš„ä¸€è§’
 		canvas.drawRoundRect(rectF, roundPx, roundPx, paint);
 
 		paint.setXfermode(new PorterDuffXfermode(Mode.SRC_IN));
@@ -274,7 +274,7 @@ public class ImageLoaderTest {
 	}
 	
 	/**
-	 * ¼ÆËãÍ¼Æ¬µÄËõ·ÅÖµ
+	 * è®¡ç®—å›¾ç‰‡çš„ç¼©æ”¾å€¼
 	 * 
 	 * @param options
 	 * @param reqWidth
@@ -310,7 +310,7 @@ public class ImageLoaderTest {
 
 	
 	/**
-	 * ¸ù¾İÂ·¾¶»ñµÃÍ¼Æ¬²¢Ñ¹Ëõ·µ»ØbitmapÓÃÓÚÏÔÊ¾
+	 * æ ¹æ®è·¯å¾„è·å¾—å›¾ç‰‡å¹¶å‹ç¼©è¿”å›bitmapç”¨äºæ˜¾ç¤º
 	 * 
 	 * @param imagesrc
 	 * @return

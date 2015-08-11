@@ -5,77 +5,77 @@ import com.qing.browser.jnibase.JniConstants;
 public class ConstantsUrl {
 
 /*	*//**
-	 * ÊéÇ©ÄÚÈİ½Ó¿Ú
+	 * ä¹¦ç­¾å†…å®¹æ¥å£
 	 *//*
 	public static final String BOOKMARK_ACTION_PROTOCOL = JniConstants
 			.getJniBOOKMARKACTIONPROTOCOL();
 
 	*//**
-	 * ×óÆÁÄ»ÍøÖ·µ¼º½
+	 * å·¦å±å¹•ç½‘å€å¯¼èˆª
 	 *//*
 	public static final String ONE_WEBVIEW_URL = JniConstants.getJnigetONE_WEBVIEW_URL();
 
 	*//**
-	 * ¹ã¸æÇëÇó½Ó¿Ú
+	 * å¹¿å‘Šè¯·æ±‚æ¥å£
 	 *//*
 	public static final String getADSHOW = JniConstants.getJnigetADSHOW();
 	
 	*//**
-	 * ¹Ø¼ü×Ö ËÑË÷
+	 * å…³é”®å­— æœç´¢
 	 *//*
 	public static final String GETKEY_WORD_SEARCH = JniConstants
 			.getJnigetGETKEY_WORD_SEARCHL();*/
 	
 	/**
-	 * ÊéÇ©ÄÚÈİ½Ó¿Ú
+	 * ä¹¦ç­¾å†…å®¹æ¥å£
 	 */
 	public static final String BOOKMARK_ACTION_PROTOCOL = 
 			"http://115.28.72.152:8181/protocol/v1/bookMarkAction?";
 
 	/**
-	 * ×óÆÁÄ»ÍøÖ·µ¼º½
+	 * å·¦å±å¹•ç½‘å€å¯¼èˆª
 	 */
 	public static final String ONE_WEBVIEW_URL = 
 			"http://m.3600.com/";
 
 	/**
-	 * ¹ã¸æÇëÇó½Ó¿Ú
+	 * å¹¿å‘Šè¯·æ±‚æ¥å£
 	 */
 	public static final String getADSHOW = 
 			"http://115.28.72.152:8181/protocol/pagead?";
 	
 	/**
-	 * ¹Ø¼ü×Ö ËÑË÷
+	 * å…³é”®å­— æœç´¢
 	 */
 	public static final String GETKEY_WORD_SEARCH = 
 			"http://115.28.72.152:8181/protocol/v1/showKeyWord?";
 	
 	/**
-	 * »ñÈ¡¹ã¸æĞÅÏ¢µØÖ·
+	 * è·å–å¹¿å‘Šä¿¡æ¯åœ°å€
 	 */
 	public static final String  ADVERTISING_DOMAIN_QING = 
 			"http://115.28.72.152:8181/protocol/ad?";
 	
 	/**
-	 * ¸üĞÂ°æ±¾
+	 * æ›´æ–°ç‰ˆæœ¬
 	 */
 	public static final String  CHECKVERSION = 
 			"http://115.28.72.152:8181/protocol/upVer?type=0";
 	
 	/**
-	 * ÓÃ»§Í³¼Æ
+	 * ç”¨æˆ·ç»Ÿè®¡
 	 */
 	public static final String YONG_HU_TONG_JI_URL = 
 			"http://115.28.72.152:8181/protocol/v1/saveAccessDetail";
 	
 	/**
-	 * Ã¿´Î ´ò¿ªÈí¼ş
+	 * æ¯æ¬¡ æ‰“å¼€è½¯ä»¶
 	 */
 	public static final String getSALENET = 
 			"http://115.28.72.152:8181/protocol/salenet?";
 	
 	/**
-	 * ÄÚÖÃ ·ÃÎÊÒ»´Î ³É¹¦ºó²»·ÃÎÊ
+	 * å†…ç½® è®¿é—®ä¸€æ¬¡ æˆåŠŸåä¸è®¿é—®
 	 */
 	public static final String getSALENETSETUP = 
 			"http://115.28.72.152:8181/protocol/salenetsetup?";

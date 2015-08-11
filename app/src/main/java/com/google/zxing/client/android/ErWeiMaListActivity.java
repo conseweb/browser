@@ -26,7 +26,7 @@ public class ErWeiMaListActivity extends BaseActivity {
 
 	private Button item_back = null;
 	private ErWeiMaAdapter mAdapter;
-	String[] item = { "Éú³É¶şÎ¬Âë","É¨ÃèÀúÊ·", "Éú³ÉÀúÊ·"};
+	String[] item = { "ç”ŸæˆäºŒç»´ç ","æ‰«æå†å²", "ç”Ÿæˆå†å²"};
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +72,7 @@ public class ErWeiMaListActivity extends BaseActivity {
 						startActivity(intent);
 					} else {
 						Toast.makeText(ErWeiMaListActivity.this,
-								"SD¿¨ÒÑĞ¶ÔØ»ò²»´æÔÚ.", 1000).show();
+								"SDå¡å·²å¸è½½æˆ–ä¸å­˜åœ¨.", 1000).show();
 					}
 				}
 

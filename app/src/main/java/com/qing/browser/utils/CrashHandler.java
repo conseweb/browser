@@ -31,7 +31,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 /**
- * UncaughtException´¦ÀíÀà,µ±³ÌĞò·¢ÉúUncaughtÒì³£µÄÊ±ºò,ÓĞ¸ÃÀàÀ´½Ó¹Ü³ÌĞò,²¢¼ÇÂ¼·¢ËÍ´íÎó±¨¸æ.
+ * UncaughtExceptionå¤„ç†ç±»,å½“ç¨‹åºå‘ç”ŸUncaughtå¼‚å¸¸çš„æ—¶å€™,æœ‰è¯¥ç±»æ¥æ¥ç®¡ç¨‹åº,å¹¶è®°å½•å‘é€é”™è¯¯æŠ¥å‘Š.
  * 
  * @author user
  * 
@@ -40,22 +40,22 @@ public class CrashHandler implements UncaughtExceptionHandler {
 	
 	public static final String TAG = "CrashHandler";
 	
-	//ÏµÍ³Ä¬ÈÏµÄUncaughtException´¦ÀíÀà 
+	//ç³»ç»Ÿé»˜è®¤çš„UncaughtExceptionå¤„ç†ç±» 
 	private Thread.UncaughtExceptionHandler mDefaultHandler;
-	//³ÌĞòµÄContext¶ÔÏó
+	//ç¨‹åºçš„Contextå¯¹è±¡
 	private Context mContext;
-	//ÓÃÀ´´æ´¢Éè±¸ĞÅÏ¢ºÍÒì³£ĞÅÏ¢
+	//ç”¨æ¥å­˜å‚¨è®¾å¤‡ä¿¡æ¯å’Œå¼‚å¸¸ä¿¡æ¯
 	private Map<String, String> infos = new HashMap<String, String>();
 
-	//ÓÃÓÚ¸ñÊ½»¯ÈÕÆÚ,×÷ÎªÈÕÖ¾ÎÄ¼şÃûµÄÒ»²¿·Ö
+	//ç”¨äºæ ¼å¼åŒ–æ—¥æœŸ,ä½œä¸ºæ—¥å¿—æ–‡ä»¶åçš„ä¸€éƒ¨åˆ†
 	private DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");
 
  
  
-    //CrashHandlerÊµÀı       
+    //CrashHandlerå®ä¾‹       
     private static CrashHandler instance;    
 	
-	/** »ñÈ¡CrashHandlerÊµÀı ,µ¥ÀıÄ£Ê½ */      
+	/** è·å–CrashHandlerå®ä¾‹ ,å•ä¾‹æ¨¡å¼ */      
     public static CrashHandler getInstance() {      
         if(instance == null)  
             instance = new CrashHandler();     
@@ -63,26 +63,26 @@ public class CrashHandler implements UncaughtExceptionHandler {
     }
 
 	/**
-	 * ³õÊ¼»¯
+	 * åˆå§‹åŒ–
 	 * 
 	 * @param context
 	 */
 	public void init(Context context) {
 		mContext = context;
-		//»ñÈ¡ÏµÍ³Ä¬ÈÏµÄUncaughtException´¦ÀíÆ÷
+		//è·å–ç³»ç»Ÿé»˜è®¤çš„UncaughtExceptionå¤„ç†å™¨
 		mDefaultHandler = Thread.getDefaultUncaughtExceptionHandler();
-		//ÉèÖÃ¸ÃCrashHandlerÎª³ÌĞòµÄÄ¬ÈÏ´¦ÀíÆ÷
+		//è®¾ç½®è¯¥CrashHandlerä¸ºç¨‹åºçš„é»˜è®¤å¤„ç†å™¨
 		Thread.setDefaultUncaughtExceptionHandler(this);
 	}
     
 	
 	/**
-	 * µ±UncaughtException·¢ÉúÊ±»á×ªÈë¸Ãº¯ÊıÀ´´¦Àí
+	 * å½“UncaughtExceptionå‘ç”Ÿæ—¶ä¼šè½¬å…¥è¯¥å‡½æ•°æ¥å¤„ç†
 	 */
 	@Override
 	public void uncaughtException(Thread thread, Throwable ex) {
 		if (!handleException(ex) && mDefaultHandler != null) {
-			//Èç¹ûÓÃ»§Ã»ÓĞ´¦ÀíÔòÈÃÏµÍ³Ä¬ÈÏµÄÒì³£´¦ÀíÆ÷À´´¦Àí
+			//å¦‚æœç”¨æˆ·æ²¡æœ‰å¤„ç†åˆ™è®©ç³»ç»Ÿé»˜è®¤çš„å¼‚å¸¸å¤„ç†å™¨æ¥å¤„ç†
 			mDefaultHandler.uncaughtException(thread, ex);
 		} else {
 			try {
@@ -90,7 +90,7 @@ public class CrashHandler implements UncaughtExceptionHandler {
 			} catch (InterruptedException e) {
 				Log.e(TAG, "error : ", e);
 			}
-			//ÍË³ö³ÌĞò
+			//é€€å‡ºç¨‹åº
 			android.os.Process.killProcess(android.os.Process.myPid());
 			System.exit(1);
 		}
@@ -98,35 +98,35 @@ public class CrashHandler implements UncaughtExceptionHandler {
 
 	
 	/**
-	 * ×Ô¶¨Òå´íÎó´¦Àí,ÊÕ¼¯´íÎóĞÅÏ¢ ·¢ËÍ´íÎó±¨¸æµÈ²Ù×÷¾ùÔÚ´ËÍê³É.
+	 * è‡ªå®šä¹‰é”™è¯¯å¤„ç†,æ”¶é›†é”™è¯¯ä¿¡æ¯ å‘é€é”™è¯¯æŠ¥å‘Šç­‰æ“ä½œå‡åœ¨æ­¤å®Œæˆ.
 	 * 
 	 * @param ex
-	 * @return true:Èç¹û´¦ÀíÁË¸ÃÒì³£ĞÅÏ¢;·ñÔò·µ»Øfalse.
+	 * @return true:å¦‚æœå¤„ç†äº†è¯¥å¼‚å¸¸ä¿¡æ¯;å¦åˆ™è¿”å›false.
 	 */
 	private boolean handleException(Throwable ex) {
 		if (ex == null) {
 			return false;
 		}
-		//Ê¹ÓÃToastÀ´ÏÔÊ¾Òì³£ĞÅÏ¢
+		//ä½¿ç”¨Toastæ¥æ˜¾ç¤ºå¼‚å¸¸ä¿¡æ¯
 		new Thread() {
 			@Override
 			public void run() {
 				Looper.prepare();
-				//TODO ¹Ø±ÕToastÒì³£ÏûÏ¢
-//				Toast.makeText(mContext, "ºÜ±§Ç¸,³ÌĞò³öÏÖÒì³£,¼´½«ÍË³ö.", Toast.LENGTH_LONG).show();
+				//TODO å…³é—­Toastå¼‚å¸¸æ¶ˆæ¯
+//				Toast.makeText(mContext, "å¾ˆæŠ±æ­‰,ç¨‹åºå‡ºç°å¼‚å¸¸,å³å°†é€€å‡º.", Toast.LENGTH_LONG).show();
 				Looper.loop();
 			}
 		}.start();
-		//ÊÕ¼¯Éè±¸²ÎÊıĞÅÏ¢ 
+		//æ”¶é›†è®¾å¤‡å‚æ•°ä¿¡æ¯ 
 		collectDeviceInfo(mContext);
 		
-		 //±£´æÈÕÖ¾ÎÄ¼ş        
+		 //ä¿å­˜æ—¥å¿—æ–‡ä»¶        
         saveCatchInfo2File(ex); 
 		return true;
 	}
 	
 	/**
-	 * ÊÕ¼¯Éè±¸²ÎÊıĞÅÏ¢
+	 * æ”¶é›†è®¾å¤‡å‚æ•°ä¿¡æ¯
 	 * @param ctx
 	 */
 	public void collectDeviceInfo(Context ctx) {
@@ -157,7 +157,7 @@ public class CrashHandler implements UncaughtExceptionHandler {
 	
 	
 	/**
-	 * ÍøÂçÊÇ·ñ¿ÉÓÃ
+	 * ç½‘ç»œæ˜¯å¦å¯ç”¨
 	 * 
 	 * @param context
 	 * @return
@@ -183,7 +183,7 @@ public class CrashHandler implements UncaughtExceptionHandler {
 	@SuppressWarnings("unused")
     private void sendErrorMail(Context _context , /*String content*/ String filePath ) {
 		Intent sendIntent = new Intent(Intent.ACTION_SEND);
-//		Intent sendIntent = new Intent("com.google.android.gm.action.AUTO_SEND"); //GmailÖ§³Ö×Ô¶¯·¢ËÍ 3.0ÒÔÉÏ
+//		Intent sendIntent = new Intent("com.google.android.gm.action.AUTO_SEND"); //Gmailæ”¯æŒè‡ªåŠ¨å‘é€ 3.0ä»¥ä¸Š
 		sendIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		String subject = "Error Description";
 		String body = "Sorry for your inconvenience .\nWe assure you that we will solve this problem as soon possible." 
@@ -205,10 +205,10 @@ public class CrashHandler implements UncaughtExceptionHandler {
 	
      
     /**   
-     * ±£´æ´íÎóĞÅÏ¢µ½ÎÄ¼şÖĞ   
+     * ä¿å­˜é”™è¯¯ä¿¡æ¯åˆ°æ–‡ä»¶ä¸­   
      *    
      * @param ex   
-     * @return  ·µ»ØÎÄ¼şÃû³Æ,±ãÓÚ½«ÎÄ¼ş´«ËÍµ½·şÎñÆ÷   
+     * @return  è¿”å›æ–‡ä»¶åç§°,ä¾¿äºå°†æ–‡ä»¶ä¼ é€åˆ°æœåŠ¡å™¨   
      */      
     private String saveCatchInfo2File(Throwable ex) {      
               
@@ -248,7 +248,7 @@ public class CrashHandler implements UncaughtExceptionHandler {
                 File f = new File(dir, fileName);
                 FileOutputStream fos = new FileOutputStream(f);      
                 fos.write(sb.toString().getBytes());    
-                //·¢ËÍ¸ø¿ª·¢ÈËÔ±   
+                //å‘é€ç»™å¼€å‘äººå‘˜   
                 sendCrashLog2PM(  fileName);  
                 fos.close();      
             }      
@@ -260,13 +260,13 @@ public class CrashHandler implements UncaughtExceptionHandler {
     }      
       
     /** 
-     * ½«²¶»ñµÄµ¼ÖÂ±ÀÀ£µÄ´íÎóĞÅÏ¢·¢ËÍ¸ø¿ª·¢ÈËÔ± 
+     * å°†æ•è·çš„å¯¼è‡´å´©æºƒçš„é”™è¯¯ä¿¡æ¯å‘é€ç»™å¼€å‘äººå‘˜ 
      *  
-     * Ä¿Ç°Ö»½«logÈÕÖ¾±£´æÔÚsdcard ºÍÊä³öµ½LogCatÖĞ£¬²¢Î´·¢ËÍ¸øºóÌ¨¡£ 
+     * ç›®å‰åªå°†logæ—¥å¿—ä¿å­˜åœ¨sdcard å’Œè¾“å‡ºåˆ°LogCatä¸­ï¼Œå¹¶æœªå‘é€ç»™åå°ã€‚ 
      */  
     private void sendCrashLog2PM(String fileName){  
         if(!new File(fileName).exists()){  
-            Log.d("CrashHandler", "ÈÕÖ¾ÎÄ¼ş²»´æÔÚ£¡");  
+            Log.d("CrashHandler", "æ—¥å¿—æ–‡ä»¶ä¸å­˜åœ¨ï¼");  
             return;  
         }
         
@@ -281,7 +281,7 @@ public class CrashHandler implements UncaughtExceptionHandler {
             while(true){  
                 s = reader.readLine();  
                 if(s == null) break;  
-                //ÓÉÓÚÄ¿Ç°ÉĞÎ´È·¶¨ÒÔºÎÖÖ·½Ê½·¢ËÍ£¬ËùÒÔÏÈ´ò³ölogÈÕÖ¾¡£   
+                //ç”±äºç›®å‰å°šæœªç¡®å®šä»¥ä½•ç§æ–¹å¼å‘é€ï¼Œæ‰€ä»¥å…ˆæ‰“å‡ºlogæ—¥å¿—ã€‚   
                 Log.i("info", s.toString());
                 
             }
@@ -290,7 +290,7 @@ public class CrashHandler implements UncaughtExceptionHandler {
             e.printStackTrace();  
         } catch (IOException e) {  
             e.printStackTrace();  
-        }finally{   // ¹Ø±ÕÁ÷   
+        }finally{   // å…³é—­æµ   
             try {  
                 reader.close();  
                 fis.close();  

@@ -29,7 +29,7 @@ public class ImageNumberView extends ImageView {
 		super(context, set);
 	}
 
-	// »­Í¼Àà
+	// ç”»å›¾ç±»
 	// public void onDraw(Canvas canvas)
 	// {
 	//
@@ -70,14 +70,14 @@ public class ImageNumberView extends ImageView {
 	// }
 
 	/**
-	 * ÔÚ¸ø¶¨µÄÍ¼Æ¬µÄÓÒÉÏ½Ç¼ÓÉÏÁªÏµÈËÊıÁ¿¡£ÊıÁ¿ÓÃºìÉ«±íÊ¾
+	 * åœ¨ç»™å®šçš„å›¾ç‰‡çš„å³ä¸Šè§’åŠ ä¸Šè”ç³»äººæ•°é‡ã€‚æ•°é‡ç”¨çº¢è‰²è¡¨ç¤º
 	 * 
 	 * @param icon
-	 *            ¸ø¶¨µÄÍ¼Æ¬
-	 * @return ´øÁªÏµÈËÊıÁ¿µÄÍ¼Æ¬
+	 *            ç»™å®šçš„å›¾ç‰‡
+	 * @return å¸¦è”ç³»äººæ•°é‡çš„å›¾ç‰‡
 	 */
 	public Bitmap generatorContactCountIcon(Bitmap icon, int number) {
-		// ³õÊ¼»¯»­²¼
+		// åˆå§‹åŒ–ç”»å¸ƒ
 		// int
 		// iconSize=(int)getResources().getDimension(android.R.dimen.app_icon_size);
 		// Log.d(TAG, "the icon size is "+iconSize);
@@ -88,19 +88,19 @@ public class ImageNumberView extends ImageView {
 				icon.getHeight(), Config.ARGB_8888);
 		Canvas canvas = new Canvas(contactIcon);
 
-		// ¿½±´Í¼Æ¬
+		// æ‹·è´å›¾ç‰‡
 		Paint iconPaint = new Paint();
-		iconPaint.setDither(true);// ·À¶¶¶¯
-		iconPaint.setFilterBitmap(true);// ÓÃÀ´¶ÔBitmap½øĞĞÂË²¨´¦Àí£¬ÕâÑù£¬µ±ÄãÑ¡ÔñDrawableÊ±£¬»áÓĞ¿¹¾â³İµÄĞ§¹û
+		iconPaint.setDither(true);// é˜²æŠ–åŠ¨
+		iconPaint.setFilterBitmap(true);// ç”¨æ¥å¯¹Bitmapè¿›è¡Œæ»¤æ³¢å¤„ç†ï¼Œè¿™æ ·ï¼Œå½“ä½ é€‰æ‹©Drawableæ—¶ï¼Œä¼šæœ‰æŠ—é”¯é½¿çš„æ•ˆæœ
 		Rect src = new Rect(0, 0, icon.getWidth(), icon.getHeight());
 		Rect dst = new Rect(0, 0, icon.getWidth(), icon.getHeight());
 		canvas.drawBitmap(icon, src, dst, iconPaint);
 
-		// ÔÚÍ¼Æ¬ÉÏ´´½¨Ò»¸ö¸²¸ÇµÄÁªÏµÈË¸öÊı
+		// åœ¨å›¾ç‰‡ä¸Šåˆ›å»ºä¸€ä¸ªè¦†ç›–çš„è”ç³»äººä¸ªæ•°
 		int contacyCount = number;
 		Bitmap bmp = BitmapFactory.decodeResource(res,
 				R.drawable.hotseat_browser_bg);
-		// ÆôÓÃ¿¹¾â³İºÍÊ¹ÓÃÉè±¸µÄÎÄ±¾×Ö¾à
+		// å¯ç”¨æŠ—é”¯é½¿å’Œä½¿ç”¨è®¾å¤‡çš„æ–‡æœ¬å­—è·
 		Paint countPaint = new Paint(Paint.ANTI_ALIAS_FLAG
 				| Paint.DEV_KERN_TEXT_FLAG);
 		// countPaint.setColor(Color.parseColor("#f63003"));
@@ -108,7 +108,7 @@ public class ImageNumberView extends ImageView {
 		countPaint.setTextSize(35);
 		countPaint.setTypeface(Typeface.DEFAULT_BOLD);
 		countPaint.setAntiAlias(true);
-		// countPaint.setShadowLayer (5, 3, 3, 0xFF000000);//¼ÓÒõÓ°
+		// countPaint.setShadowLayer (5, 3, 3, 0xFF000000);//åŠ é˜´å½±
 		canvas.drawBitmap(bmp, 135, 1, countPaint);
 		canvas.drawText(String.valueOf(contacyCount), 143, 35, countPaint);
 		return contactIcon;

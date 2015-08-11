@@ -27,50 +27,50 @@ public class RecentsVerticalScrollView extends ScrollView {
 	private RecentsCallback mCallback;
 	protected int mLastScrollPosition;
 	/**
-	 * ÈÏÎªÊÇÓÃ»§»¬¶¯µÄ×îĞ¡¾àÀë
+	 * è®¤ä¸ºæ˜¯ç”¨æˆ·æ»‘åŠ¨çš„æœ€å°è·ç¦»
 	 */
 	private int mSlop;
 	/**
-	 * »¬¶¯µÄ×îĞ¡ËÙ¶È
+	 * æ»‘åŠ¨çš„æœ€å°é€Ÿåº¦
 	 */
 	private int mMinFlingVelocity;
 	/**
-	 * »¬¶¯µÄ×î´óËÙ¶È
+	 * æ»‘åŠ¨çš„æœ€å¤§é€Ÿåº¦
 	 */
 	private int mMaxFlingVelocity;
 	/**
-	 * Ö´ĞĞ¶¯»­µÄÊ±¼ä
+	 * æ‰§è¡ŒåŠ¨ç”»çš„æ—¶é—´
 	 */
 	protected long mAnimationTime = 150;
 	/**
-	 * ÓÃÀ´±ê¼ÇÓÃ»§ÊÇ·ñÕıÔÚ»¬¶¯ÖĞ
+	 * ç”¨æ¥æ ‡è®°ç”¨æˆ·æ˜¯å¦æ­£åœ¨æ»‘åŠ¨ä¸­
 	 */
 	private boolean mSwiping;
 	/**
-	 * »¬¶¯ËÙ¶È¼ì²âÀà
+	 * æ»‘åŠ¨é€Ÿåº¦æ£€æµ‹ç±»
 	 */
 	private VelocityTracker mVelocityTracker;
 	/**
-	 * ÊÖÖ¸°´ÏÂµÄposition
+	 * æ‰‹æŒ‡æŒ‰ä¸‹çš„position
 	 */
 	private int mDownPosition;
 	/**
-	 * °´ÏÂµÄitem¶ÔÓ¦µÄView
+	 * æŒ‰ä¸‹çš„itemå¯¹åº”çš„View
 	 */
 	private View mDownView;
 	private float mDownX;
 	private float mDownY;
 	/**
-	 * itemµÄ¿í¶È
+	 * itemçš„å®½åº¦
 	 */
 	private int mViewWidth;
 	/**
-	 * µ±ListViewµÄItem»¬³ö½çÃæ»Øµ÷µÄ½Ó¿Ú
+	 * å½“ListViewçš„Itemæ»‘å‡ºç•Œé¢å›è°ƒçš„æ¥å£
 	 */
 	private OnDismissCallback onDismissCallback;
 
 	/**
-	 * ÉèÖÃÉ¾³ı»Øµ÷½Ó¿Ú
+	 * è®¾ç½®åˆ é™¤å›è°ƒæ¥å£
 	 * 
 	 * @param onDismissCallback
 	 */
@@ -83,8 +83,8 @@ public class RecentsVerticalScrollView extends ScrollView {
 
 		ViewConfiguration vc = ViewConfiguration.get(context);
 		mSlop = vc.getScaledTouchSlop();
-		mMinFlingVelocity = vc.getScaledMinimumFlingVelocity() * 8; // »ñÈ¡»¬¶¯µÄ×îĞ¡ËÙ¶È
-		mMaxFlingVelocity = vc.getScaledMaximumFlingVelocity(); // »ñÈ¡»¬¶¯µÄ×î´óËÙ¶È
+		mMinFlingVelocity = vc.getScaledMinimumFlingVelocity() * 8; // è·å–æ»‘åŠ¨çš„æœ€å°é€Ÿåº¦
+		mMaxFlingVelocity = vc.getScaledMaximumFlingVelocity(); // è·å–æ»‘åŠ¨çš„æœ€å¤§é€Ÿåº¦
 	}
 
 	private int scrollPositionOfMostRecent() {
@@ -160,7 +160,7 @@ public class RecentsVerticalScrollView extends ScrollView {
 			float deltaX = ev.getX() - mDownX;
 			float deltaY = ev.getY() - mDownY;
 
-			// X·½Ïò»¬¶¯µÄ¾àÀë´óÓÚmSlop²¢ÇÒY·½Ïò»¬¶¯µÄ¾àÀëĞ¡ÓÚmSlop£¬±íÊ¾¿ÉÒÔ»¬¶¯
+			// Xæ–¹å‘æ»‘åŠ¨çš„è·ç¦»å¤§äºmSlopå¹¶ä¸”Yæ–¹å‘æ»‘åŠ¨çš„è·ç¦»å°äºmSlopï¼Œè¡¨ç¤ºå¯ä»¥æ»‘åŠ¨
 			if (Math.abs(deltaX) > mSlop && Math.abs(deltaY) < mSlop) {
 				return true;
 			}
@@ -187,7 +187,7 @@ public class RecentsVerticalScrollView extends ScrollView {
 	}
 
 	/**
-	 * °´ÏÂÊÂ¼ş´¦Àí
+	 * æŒ‰ä¸‹äº‹ä»¶å¤„ç†
 	 * 
 	 * @param ev
 	 * @return
@@ -208,7 +208,7 @@ public class RecentsVerticalScrollView extends ScrollView {
 			mViewWidth = mDownView.getWidth();
 		}
 
-		// ¼ÓÈëËÙ¶È¼ì²â
+		// åŠ å…¥é€Ÿåº¦æ£€æµ‹
 		mVelocityTracker = VelocityTracker.obtain();
 		mVelocityTracker.addMovement(ev);
 	}
@@ -228,7 +228,7 @@ public class RecentsVerticalScrollView extends ScrollView {
 	}
 
 	/**
-	 * ´¦ÀíÊÖÖ¸»¬¶¯µÄ·½·¨
+	 * å¤„ç†æ‰‹æŒ‡æ»‘åŠ¨çš„æ–¹æ³•
 	 * 
 	 * @param ev
 	 * @return
@@ -241,11 +241,11 @@ public class RecentsVerticalScrollView extends ScrollView {
 		float deltaX = ev.getX() - mDownX;
 		float deltaY = ev.getY() - mDownY;
 
-		// X·½Ïò»¬¶¯µÄ¾àÀë´óÓÚmSlop²¢ÇÒY·½Ïò»¬¶¯µÄ¾àÀëĞ¡ÓÚmSlop£¬±íÊ¾¿ÉÒÔ»¬¶¯
+		// Xæ–¹å‘æ»‘åŠ¨çš„è·ç¦»å¤§äºmSlopå¹¶ä¸”Yæ–¹å‘æ»‘åŠ¨çš„è·ç¦»å°äºmSlopï¼Œè¡¨ç¤ºå¯ä»¥æ»‘åŠ¨
 		if (Math.abs(deltaX) > mSlop && Math.abs(deltaY) < mSlop) {
 			mSwiping = true;
 
-			// µ±ÊÖÖ¸»¬¶¯item,È¡ÏûitemµÄµã»÷ÊÂ¼ş£¬²»È»ÎÒÃÇ»¬¶¯ItemÒ²°éËæ×Åitemµã»÷ÊÂ¼şµÄ·¢Éú
+			// å½“æ‰‹æŒ‡æ»‘åŠ¨item,å–æ¶ˆitemçš„ç‚¹å‡»äº‹ä»¶ï¼Œä¸ç„¶æˆ‘ä»¬æ»‘åŠ¨Itemä¹Ÿä¼´éšç€itemç‚¹å‡»äº‹ä»¶çš„å‘ç”Ÿ
 			MotionEvent cancelEvent = MotionEvent.obtain(ev);
 			cancelEvent
 					.setAction(MotionEvent.ACTION_CANCEL
@@ -254,9 +254,9 @@ public class RecentsVerticalScrollView extends ScrollView {
 		}
 
 		if (mSwiping) {
-			// ¸úË­ÊÖÖ¸ÒÆ¶¯item
+			// è·Ÿè°æ‰‹æŒ‡ç§»åŠ¨item
 			ViewHelper.setTranslationX(mDownView, deltaX);
-			// Í¸Ã÷¶È½¥±ä
+			// é€æ˜åº¦æ¸å˜
 			ViewHelper.setAlpha(
 					mDownView,
 					Math.max(
@@ -264,7 +264,7 @@ public class RecentsVerticalScrollView extends ScrollView {
 							Math.min(1f, 1f - 2f * Math.abs(deltaX)
 									/ mViewWidth)));
 
-			// ÊÖÖ¸»¬¶¯µÄÊ±ºò,·µ»Øtrue£¬±íÊ¾SwipeDismissListView×Ô¼º´¦ÀíonTouchEvent,ÆäËûµÄ¾Í½»¸ø¸¸ÀàÀ´´¦Àí
+			// æ‰‹æŒ‡æ»‘åŠ¨çš„æ—¶å€™,è¿”å›trueï¼Œè¡¨ç¤ºSwipeDismissListViewè‡ªå·±å¤„ç†onTouchEvent,å…¶ä»–çš„å°±äº¤ç»™çˆ¶ç±»æ¥å¤„ç†
 			return true;
 		}
 
@@ -273,7 +273,7 @@ public class RecentsVerticalScrollView extends ScrollView {
 	}
 
 	/**
-	 * ÊÖÖ¸Ì§ÆğµÄÊÂ¼ş´¦Àí
+	 * æ‰‹æŒ‡æŠ¬èµ·çš„äº‹ä»¶å¤„ç†
 	 * 
 	 * @param ev
 	 */
@@ -284,20 +284,20 @@ public class RecentsVerticalScrollView extends ScrollView {
 
 		float deltaX = ev.getX() - mDownX;
 
-		// Í¨¹ı»¬¶¯µÄ¾àÀë¼ÆËã³öX,Y·½ÏòµÄËÙ¶È
+		// é€šè¿‡æ»‘åŠ¨çš„è·ç¦»è®¡ç®—å‡ºX,Yæ–¹å‘çš„é€Ÿåº¦
 		mVelocityTracker.computeCurrentVelocity(1000);
 		float velocityX = Math.abs(mVelocityTracker.getXVelocity());
 		float velocityY = Math.abs(mVelocityTracker.getYVelocity());
 
-		boolean dismiss = false; // itemÊÇ·ñÒª»¬³öÆÁÄ»
-		boolean dismissRight = false;// ÊÇ·ñÍùÓÒ±ßÉ¾³ı
+		boolean dismiss = false; // itemæ˜¯å¦è¦æ»‘å‡ºå±å¹•
+		boolean dismissRight = false;// æ˜¯å¦å¾€å³è¾¹åˆ é™¤
 
-		// µ±ÍÏ¶¯itemµÄ¾àÀë´óÓÚitemµÄÒ»°ë£¬item»¬³öÆÁÄ»
+		// å½“æ‹–åŠ¨itemçš„è·ç¦»å¤§äºitemçš„ä¸€åŠï¼Œitemæ»‘å‡ºå±å¹•
 		if (Math.abs(deltaX) > mViewWidth / 2) {
 			dismiss = true;
 			dismissRight = deltaX > 0;
 
-			// ÊÖÖ¸ÔÚÆÁÄ»»¬¶¯µÄËÙ¶ÈÔÚÄ³¸ö·¶Î§ÄÚ£¬Ò²Ê¹µÃitem»¬³öÆÁÄ»
+			// æ‰‹æŒ‡åœ¨å±å¹•æ»‘åŠ¨çš„é€Ÿåº¦åœ¨æŸä¸ªèŒƒå›´å†…ï¼Œä¹Ÿä½¿å¾—itemæ»‘å‡ºå±å¹•
 		} else if (mMinFlingVelocity <= velocityX
 				&& velocityX <= mMaxFlingVelocity && velocityY < velocityX) {
 			dismiss = true;
@@ -307,22 +307,22 @@ public class RecentsVerticalScrollView extends ScrollView {
 		if (dismiss) {
 			ViewPropertyAnimator.animate(mDownView)
 					.translationX(dismissRight ? mViewWidth : -mViewWidth)
-					// XÖá·½ÏòµÄÒÆ¶¯¾àÀë
+					// Xè½´æ–¹å‘çš„ç§»åŠ¨è·ç¦»
 					.alpha(0).setDuration(mAnimationTime)
 					.setListener(new AnimatorListenerAdapter() {
 						@Override
 						public void onAnimationEnd(Animator animation) {
-							// Item»¬³ö½çÃæÖ®ºóÖ´ĞĞÉ¾³ı
+							// Itemæ»‘å‡ºç•Œé¢ä¹‹åæ‰§è¡Œåˆ é™¤
 							performDismiss(mDownView, mDownPosition);
 						}
 					});
 		} else {
-			// ½«item»¬¶¯ÖÁ¿ªÊ¼Î»ÖÃ
+			// å°†itemæ»‘åŠ¨è‡³å¼€å§‹ä½ç½®
 			ViewPropertyAnimator.animate(mDownView).translationX(0).alpha(1)
 					.setDuration(mAnimationTime).setListener(null);
 		}
 
-		// ÒÆ³ıËÙ¶È¼ì²â
+		// ç§»é™¤é€Ÿåº¦æ£€æµ‹
 		if (mVelocityTracker != null) {
 			mVelocityTracker.recycle();
 			mVelocityTracker = null;
@@ -332,15 +332,15 @@ public class RecentsVerticalScrollView extends ScrollView {
 	}
 
 	/**
-	 * ÔÚ´Ë·½·¨ÖĞÖ´ĞĞitemÉ¾³ıÖ®ºó£¬ÆäËûµÄitemÏòÉÏ»òÕßÏòÏÂ¹ö¶¯µÄ¶¯»­£¬²¢ÇÒ½«position»Øµ÷µ½·½·¨onDismiss()ÖĞ
+	 * åœ¨æ­¤æ–¹æ³•ä¸­æ‰§è¡Œitemåˆ é™¤ä¹‹åï¼Œå…¶ä»–çš„itemå‘ä¸Šæˆ–è€…å‘ä¸‹æ»šåŠ¨çš„åŠ¨ç”»ï¼Œå¹¶ä¸”å°†positionå›è°ƒåˆ°æ–¹æ³•onDismiss()ä¸­
 	 * 
 	 * @param dismissView
 	 * @param dismissPosition
 	 */
 	private void performDismiss(final View dismissView,
 			final int dismissPosition) {
-		final ViewGroup.LayoutParams lp = dismissView.getLayoutParams();// »ñÈ¡itemµÄ²¼¾Ö²ÎÊı
-		final int originalHeight = dismissView.getHeight();// itemµÄ¸ß¶È
+		final ViewGroup.LayoutParams lp = dismissView.getLayoutParams();// è·å–itemçš„å¸ƒå±€å‚æ•°
+		final int originalHeight = dismissView.getHeight();// itemçš„é«˜åº¦
 
 		ValueAnimator animator = ValueAnimator.ofInt(originalHeight, 0)
 				.setDuration(mAnimationTime);
@@ -353,8 +353,8 @@ public class RecentsVerticalScrollView extends ScrollView {
 					onDismissCallback.onDismiss(dismissView, dismissPosition);
 				}
 
-				// Õâ¶Î´úÂëºÜÖØÒª£¬ÒòÎªÎÒÃÇ²¢Ã»ÓĞ½«item´ÓListViewÖĞÒÆ³ı£¬¶øÊÇ½«itemµÄ¸ß¶ÈÉèÖÃÎª0
-				// ËùÒÔÎÒÃÇÔÚ¶¯»­Ö´ĞĞÍê±ÏÖ®ºó½«itemÉèÖÃ»ØÀ´
+				// è¿™æ®µä»£ç å¾ˆé‡è¦ï¼Œå› ä¸ºæˆ‘ä»¬å¹¶æ²¡æœ‰å°†itemä»ListViewä¸­ç§»é™¤ï¼Œè€Œæ˜¯å°†itemçš„é«˜åº¦è®¾ç½®ä¸º0
+				// æ‰€ä»¥æˆ‘ä»¬åœ¨åŠ¨ç”»æ‰§è¡Œå®Œæ¯•ä¹‹åå°†itemè®¾ç½®å›æ¥
 				ViewHelper.setAlpha(dismissView, 1f);
 				ViewHelper.setTranslationX(dismissView, 0);
 				ViewGroup.LayoutParams lp = dismissView.getLayoutParams();
@@ -367,7 +367,7 @@ public class RecentsVerticalScrollView extends ScrollView {
 		animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
 			@Override
 			public void onAnimationUpdate(ValueAnimator valueAnimator) {
-				// Õâ¶Î´úÂëµÄĞ§¹ûÊÇListViewÉ¾³ıÄ³itemÖ®ºó£¬ÆäËûµÄitemÏòÉÏ»¬¶¯µÄĞ§¹û
+				// è¿™æ®µä»£ç çš„æ•ˆæœæ˜¯ListViewåˆ é™¤æŸitemä¹‹åï¼Œå…¶ä»–çš„itemå‘ä¸Šæ»‘åŠ¨çš„æ•ˆæœ
 				lp.height = (Integer) valueAnimator.getAnimatedValue();
 				dismissView.setLayoutParams(lp);
 			}

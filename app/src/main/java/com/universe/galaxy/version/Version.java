@@ -51,12 +51,12 @@ public class Version {
 		NotificationManager mNotificationManager = (NotificationManager) context
 				.getSystemService(ns);
 		int icon = android.R.drawable.stat_notify_sync;
-		CharSequence tickerText = "ÓĞĞÂ°æ±¾Ğè´ıÉı¼¶£¬Éı¼¶Ó®´ó½±";
+		CharSequence tickerText = "æœ‰æ–°ç‰ˆæœ¬éœ€å¾…å‡çº§ï¼Œå‡çº§èµ¢å¤§å¥–";
 		long when = System.currentTimeMillis();
 
 		Notification notification = new Notification(icon, tickerText, when);
-		CharSequence contentTitle = "rubyä¯ÀÀÆ÷Ğè¸üĞÂÉı¼¶£¬ĞÂÌåÑéĞÂ¾ªÏ²";
-		CharSequence contentText = "µã»÷²é¿´!";
+		CharSequence contentTitle = "rubyæµè§ˆå™¨éœ€æ›´æ–°å‡çº§ï¼Œæ–°ä½“éªŒæ–°æƒŠå–œ";
+		CharSequence contentText = "ç‚¹å‡»æŸ¥çœ‹!";
 		notification.flags = Notification.FLAG_AUTO_CANCEL;
 
 		PendingIntent contentIntent = PendingIntent.getActivity(context, 0,

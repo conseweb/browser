@@ -34,13 +34,13 @@ public class CellLayout extends ViewGroup implements DropTarget, DragSource,
 
 	protected int scroll = 0;
 
-	private float mLastMotionY;// ×îºóµã»÷µÄµã
+	private float mLastMotionY;// æœ€åç‚¹å‡»çš„ç‚¹
 	// private GestureDetector detector;
-	int move = 0;// ÒÆ¶¯¾àÀë
-	int MAXMOVE = 450;// ×î´óÔÊĞíµÄÒÆ¶¯¾àÀë
+	int move = 0;// ç§»åŠ¨è·ç¦»
+	int MAXMOVE = 450;// æœ€å¤§å…è®¸çš„ç§»åŠ¨è·ç¦»
 	private Scroller mScroller;
-	int up_excess_move = 0;// ÍùÉÏ¶àÒÆµÄ¾àÀë
-	int down_excess_move = 0;// ÍùÏÂ¶àÒÆµÄ¾àÀë
+	int up_excess_move = 0;// å¾€ä¸Šå¤šç§»çš„è·ç¦»
+	int down_excess_move = 0;// å¾€ä¸‹å¤šç§»çš„è·ç¦»
 
 	public static int animT = 150;
 	protected ArrayList<Integer> newPositions = new ArrayList<Integer>();
@@ -76,10 +76,10 @@ public class CellLayout extends ViewGroup implements DropTarget, DragSource,
 //	public static boolean IconMove = false;
 	private OnLongClickListener mLongClickListener;
 	
-	/*ÓÃÀ´¸üĞÂÊı¾İÓÃ  
-	 * 0£ºÔòÈ«²¿¸üĞÂ   
-	 * 1£º¸üĞÂ×óÆÁÊı¾İ
-	 * 2£º¸üĞÂÓÒÆÁÄ»µÄÊı¾İ
+	/*ç”¨æ¥æ›´æ–°æ•°æ®ç”¨  
+	 * 0ï¼šåˆ™å…¨éƒ¨æ›´æ–°   
+	 * 1ï¼šæ›´æ–°å·¦å±æ•°æ®
+	 * 2ï¼šæ›´æ–°å³å±å¹•çš„æ•°æ®
 	 * */
 	public static int update_screen = 0;   
 	
@@ -110,7 +110,7 @@ public class CellLayout extends ViewGroup implements DropTarget, DragSource,
 		mShortAxisPadding = a.getDimensionPixelSize(
 				R.styleable.CellLayout_shortAxisPadding, 10);
 
-		// ×Ô¶¯µ÷Õû Ã¿ĞĞÊéÇ©¸öÊı
+		// è‡ªåŠ¨è°ƒæ•´ æ¯è¡Œä¹¦ç­¾ä¸ªæ•°
 
 		mShortAxisCells = a.getInt(R.styleable.CellLayout_shortAxisCells, 4);
 		mLongAxisCells = a.getInt(R.styleable.CellLayout_longAxisCells, 5);
@@ -119,7 +119,7 @@ public class CellLayout extends ViewGroup implements DropTarget, DragSource,
 
 		setAlwaysDrawnWithCacheEnabled(false);
 		mScroller = new Scroller(context);
-		// »ñµÃ¿ÉÒÔÈÏÎªÊÇ¹ö¶¯µÄ¾àÀë
+		// è·å¾—å¯ä»¥è®¤ä¸ºæ˜¯æ»šåŠ¨çš„è·ç¦»
 		final ViewConfiguration configuration = ViewConfiguration.get(context);
 		mTouchSlop = configuration.getScaledTouchSlop();
 	}
@@ -178,7 +178,7 @@ public class CellLayout extends ViewGroup implements DropTarget, DragSource,
 		switch (action & MotionEvent.ACTION_MASK) {
 		case MotionEvent.ACTION_DOWN:
 
-			// »ñÈ¡µ±Ç°µã»÷·½·¨´íÎó£¬Î´´¦Àí»¬¶¯ÆÁÄ»
+			// è·å–å½“å‰ç‚¹å‡»æ–¹æ³•é”™è¯¯ï¼Œæœªå¤„ç†æ»‘åŠ¨å±å¹•
 			final Rect frame = mRect;
 
 			final int count = getChildCount();
@@ -189,7 +189,7 @@ public class CellLayout extends ViewGroup implements DropTarget, DragSource,
 				if ((child.getVisibility()) == VISIBLE
 						|| child.getAnimation() != null) {
 					child.getHitRect(frame);
-					// moveÎªÉÏÏÂ»¬¶¯Æ«ÒÆÁ¿
+					// moveä¸ºä¸Šä¸‹æ»‘åŠ¨åç§»é‡
 					if (frame.contains(x, y + move)) {
 						view = child;
 						break;
@@ -204,7 +204,7 @@ public class CellLayout extends ViewGroup implements DropTarget, DragSource,
 
 			final int yDiff = (int) Math.abs(y - mLastMotionY);
 			boolean yMoved = yDiff > mTouchSlop;
-			// ÅĞ¶ÏÊÇ·ñÊÇÒÆ¶¯
+			// åˆ¤æ–­æ˜¯å¦æ˜¯ç§»åŠ¨
 			if (!yMoved) {
 				break;
 			} else {
@@ -248,29 +248,29 @@ public class CellLayout extends ViewGroup implements DropTarget, DragSource,
 
 			final int yDiff = (int) Math.abs(y - mLastMotionY);
 			boolean yMoved = yDiff > mTouchSlop;
-			// ÅĞ¶ÏÊÇ·ñÊÇÒÆ¶¯
+			// åˆ¤æ–­æ˜¯å¦æ˜¯ç§»åŠ¨
 			if (!yMoved) {
 				break;
 			}
 
-			// ËæÊÖÖ¸ ÍÏ¶¯µÄ´úÂë
+			// éšæ‰‹æŒ‡ æ‹–åŠ¨çš„ä»£ç 
 			int deltaY = 0;
 			deltaY = (int) (mLastMotionY - y);
 			mLastMotionY = y;
 			if (deltaY < 0) {
-				// ÏÂÒÆ
-				// ÅĞ¶ÏÉÏÒÆ ÊÇ·ñ»¬¹ıÍ·
+				// ä¸‹ç§»
+				// åˆ¤æ–­ä¸Šç§» æ˜¯å¦æ»‘è¿‡å¤´
 				if (up_excess_move == 0) {
 					if (move >= 0) {
 						int move_this = Math.max(-move, deltaY);
 						move = move + move_this;
 						scrollBy(0, move_this);
-					} else if (move == 0) {// Èç¹ûÒÑ¾­ÊÇ×î¶¥¶Ë ¼ÌĞøÍùÏÂÀ­
+					} else if (move == 0) {// å¦‚æœå·²ç»æ˜¯æœ€é¡¶ç«¯ ç»§ç»­å¾€ä¸‹æ‹‰
 						// down_excess_move = down_excess_move - deltaY / 2;//
-						// ¼ÇÂ¼ÏÂ¶àÍùÏÂÀ­µÄÖµ
+						// è®°å½•ä¸‹å¤šå¾€ä¸‹æ‹‰çš„å€¼
 						// scrollBy(0, deltaY / 2);
 					}
-				} else if (up_excess_move > 0)// Ö®Ç°ÓĞÉÏÒÆ¹ıÍ·
+				} else if (up_excess_move > 0)// ä¹‹å‰æœ‰ä¸Šç§»è¿‡å¤´
 				{
 					if (up_excess_move >= (-deltaY)) {
 						up_excess_move = up_excess_move + deltaY;
@@ -281,7 +281,7 @@ public class CellLayout extends ViewGroup implements DropTarget, DragSource,
 					}
 				}
 			} else if (deltaY > 0) {
-				// ÉÏÒÆ
+				// ä¸Šç§»
 				if (down_excess_move == 0) {
 					if (MAXMOVE - move >= 0) {
 						int move_this = Math.min(MAXMOVE - move, deltaY);
@@ -306,15 +306,15 @@ public class CellLayout extends ViewGroup implements DropTarget, DragSource,
 
 			break;
 		case MotionEvent.ACTION_UP:
-			// ¶à¹öÊÇ¸ºÊı ¼ÇÂ¼µ½moveÀï
+			// å¤šæ»šæ˜¯è´Ÿæ•° è®°å½•åˆ°moveé‡Œ
 			if (up_excess_move > 0) {
-				// ¶à¹öÁË Òªµ¯»ØÈ¥
+				// å¤šæ»šäº† è¦å¼¹å›å»
 				scrollBy(0, -up_excess_move);
 				invalidate();
 				up_excess_move = 0;
 			}
 			if (down_excess_move > 0) {
-				// ¶à¹öÁË Òªµ¯»ØÈ¥
+				// å¤šæ»šäº† è¦å¼¹å›å»
 				scrollBy(0, down_excess_move);
 				invalidate();
 				down_excess_move = 0;
@@ -430,7 +430,7 @@ public class CellLayout extends ViewGroup implements DropTarget, DragSource,
 		for (int i = 0; i < count; i++) {
 			View child = getChildAt(i);
 			if (child.getVisibility() != GONE) {
-				// ÅĞ¶ÏchildÊÇShortcut or UserFolder
+				// åˆ¤æ–­childæ˜¯Shortcut or UserFolder
 				if (child instanceof ShortcutIcon) {
 
 					final ItemInfo info = (ItemInfo) child.getTag();
@@ -539,7 +539,7 @@ public class CellLayout extends ViewGroup implements DropTarget, DragSource,
 		showAddShortcut();
 		 
 		if(mDragInfo != null){
-			Log.d("H", "CellLayout onDropCompleted ÎÄ¼ş¼ĞÒÆ¶¯ lastTarget=" + lastTarget);
+			Log.d("H", "CellLayout onDropCompleted æ–‡ä»¶å¤¹ç§»åŠ¨ lastTarget=" + lastTarget);
 			if(lastTarget == -1){ return;}
 			update();	 
 		}
@@ -579,7 +579,7 @@ public class CellLayout extends ViewGroup implements DropTarget, DragSource,
 	}
 
 	private void update(){
-		// ÅÅĞò·½·¨ÓĞÎÊÌâ£¬ĞèÒªµ÷Õû
+		// æ’åºæ–¹æ³•æœ‰é—®é¢˜ï¼Œéœ€è¦è°ƒæ•´
 		ArrayList<View> children = new ArrayList<View>();
 		for (int i = 0; i < getChildCount(); i++) {
 			getChildAt(i).clearAnimation();
@@ -618,7 +618,7 @@ public class CellLayout extends ViewGroup implements DropTarget, DragSource,
 	@Override
 	public void onDrop(DragSource source, int x, int y, int xOffset,
 			int yOffset, DragView dragView, Object dragInfo) {
-		// ÅĞ¶ÏÊÇ·ñÀ´×Ô×ÀÃæ
+		// åˆ¤æ–­æ˜¯å¦æ¥è‡ªæ¡Œé¢
 		if (source != this) {
 			onDropExternal(x, y, dragInfo);
 		} else {
@@ -637,7 +637,7 @@ public class CellLayout extends ViewGroup implements DropTarget, DragSource,
 	@Override
 	public void onDragOver(DragSource source, int x, int y, int xOffset,
 			int yOffset, DragView dragView, Object dragInfo) {
-		// moveÎªÉÏÏÂ»¬¶¯Æ«ÒÆÁ¿
+		// moveä¸ºä¸Šä¸‹æ»‘åŠ¨åç§»é‡
 		ItemInfo dragItemInfo = (ItemInfo) dragInfo;
 		int target = getTargetFromCoor(x, y + move);
 		if(target==0||target==-1||lastTarget != target){
@@ -830,7 +830,7 @@ public class CellLayout extends ViewGroup implements DropTarget, DragSource,
 	}
 
 	/*
-	 * ³¤°´ºó,¿ªÊ¼ÍÏ¶¯
+	 * é•¿æŒ‰å,å¼€å§‹æ‹–åŠ¨
 	 */
 	public void startDrag(View child) {
 
@@ -842,12 +842,12 @@ public class CellLayout extends ViewGroup implements DropTarget, DragSource,
 
 		ItemInfo iteminfo = (ItemInfo) child.getTag();
 
-		// ´¦ÀíÓÒÆÁÍÏ¶¯³åÍ»
+		// å¤„ç†å³å±æ‹–åŠ¨å†²çª
 		if (iteminfo.screen == Launcher.CURRENT_SCREEN_WORKSPACE_RIGHT) {
 			Homespace.isRightScreenDrag = true;
 		}
 
-		// ÉèÖÃ ÍÏ¶¯ViewµÄË÷ÒıÖµ
+		// è®¾ç½® æ‹–åŠ¨Viewçš„ç´¢å¼•å€¼
 		dragged = iteminfo.itemIndex;
 		lastTarget = dragged;
 		// mDragInfo = cellInfo;
@@ -861,7 +861,7 @@ public class CellLayout extends ViewGroup implements DropTarget, DragSource,
 	@Override
 	public void computeScroll() {
 		if (mScroller.computeScrollOffset()) {
-			// ·µ»Øµ±Ç°¹ö¶¯X·½ÏòµÄÆ«ÒÆ
+			// è¿”å›å½“å‰æ»šåŠ¨Xæ–¹å‘çš„åç§»
 			scrollTo(0, mScroller.getCurrY());
 			postInvalidate();
 		}
@@ -883,7 +883,7 @@ public class CellLayout extends ViewGroup implements DropTarget, DragSource,
 			if (iteminfo.screen != Launcher.CURRENT_SCREEN_WORKSPACE_MIDDLE) {
 				break;
 			}
-			if ("Ìí¼Ó".equals(iteminfo.title)) {
+			if ("æ·»åŠ ".equals(iteminfo.title)) {
 				addView.setVisibility(View.GONE);
 				break;
 			}
@@ -897,7 +897,7 @@ public class CellLayout extends ViewGroup implements DropTarget, DragSource,
 			if (iteminfo.screen != Launcher.CURRENT_SCREEN_WORKSPACE_MIDDLE) {
 				break;
 			}
-			if ("Ìí¼Ó".equals(iteminfo.title)) {
+			if ("æ·»åŠ ".equals(iteminfo.title)) {
 				addView.setVisibility(View.VISIBLE);
 				break;
 			}

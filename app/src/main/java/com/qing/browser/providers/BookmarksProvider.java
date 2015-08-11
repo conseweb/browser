@@ -170,10 +170,10 @@ public class BookmarksProvider extends ContentProvider {
 		@Override
 		public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 			if (newVersion <= oldVersion) {
-				// Êý¾Ý¿â²»Éý¼¶
+				// æ•°æ®åº“ä¸å‡çº§
 				return;
 			} else {
-				Log.i("H", " BookmarksDataBaseUtil ÊéÇ©Êý¾Ý¿âÉý¼¶  oldVersion="
+				Log.i("H", " BookmarksDataBaseUtil ä¹¦ç­¾æ•°æ®åº“å‡çº§  oldVersion="
 						+ oldVersion + " newVersion=" + newVersion);
 				// 1, Rename table.
 				db.execSQL("ALTER TABLE " + BOOKMARKS_TABLE

@@ -39,7 +39,7 @@ import com.qing.browser.R;
 import com.qing.browser.activities.BaseActivity;
 
 /**
- * ImageSwitcherºÍGalleryÈçºÎÕ¹Ê¾SD¿¨ÖĞµÄ×ÊÔ´Í¼Æ¬
+ * ImageSwitcherå’ŒGalleryå¦‚ä½•å±•ç¤ºSDå¡ä¸­çš„èµ„æºå›¾ç‰‡
  */
 
 public class ErWeiMaTuPianLiuLANActivity extends BaseActivity implements
@@ -62,7 +62,7 @@ public class ErWeiMaTuPianLiuLANActivity extends BaseActivity implements
 		setContentView(R.layout.er_wei_ma_tu_pian_liu_lan);
 
 		textView = (TextView) findViewById(R.id.item_title);
-		textView.setText("ÀúÊ·Í¼Æ¬ä¯ÀÀ");
+		textView.setText("å†å²å›¾ç‰‡æµè§ˆ");
 		item_back = (ImageView) findViewById(R.id.item_back);
 		tupianname = (TextView) findViewById(R.id.tupianname);
 		neirong = (TextView) findViewById(R.id.neirong);
@@ -75,46 +75,46 @@ public class ErWeiMaTuPianLiuLANActivity extends BaseActivity implements
 		imagePathList = getImagePathFromSD();
 		list = imagePathList.toArray(new String[imagePathList.size()]);
 
-		/* Éè¶¨Switcher */
+		/* è®¾å®šSwitcher */
 		mSwitcher = (ImageSwitcher) findViewById(R.id.switcher);
 		mSwitcher.setFactory(this);
-		/* Éè¶¨ÔØÈëSwitcherµÄÄ£Ê½ */
+		/* è®¾å®šè½½å…¥Switcherçš„æ¨¡å¼ */
 		mSwitcher.setInAnimation(AnimationUtils.loadAnimation(this,
 				android.R.anim.fade_in));
-		/* Éè¶¨Êä³öSwitcherµÄÄ£Ê½ */
+		/* è®¾å®šè¾“å‡ºSwitcherçš„æ¨¡å¼ */
 		mSwitcher.setOutAnimation(AnimationUtils.loadAnimation(this,
 				android.R.anim.fade_out));
 		mSwitcher.setOnClickListener(new OnClickListener() {
 
 			public void onClick(View v) {
-				//µã»÷ÁËImageSwitchÉÏµÄÍ¼Æ¬
+				//ç‚¹å‡»äº†ImageSwitchä¸Šçš„å›¾ç‰‡
 
 			}
 
 		});
 
 		mGallery = (Gallery) findViewById(R.id.mygallery);
-		/* ĞÂÔö¼¸ImageAdapter²¢Éè¶¨¸øGallery¶ÔÏó */
+		/* æ–°å¢å‡ ImageAdapterå¹¶è®¾å®šç»™Galleryå¯¹è±¡ */
 		mGallery.setAdapter(new ImageAdapter(this, getImagePathFromSD()));
 
 		mGallery.setOnItemSelectedListener(this);
 
-		/* Éè¶¨Ò»¸öitemclickListenerÊÂ¼ş */
+		/* è®¾å®šä¸€ä¸ªitemclickListeneräº‹ä»¶ */
 		mGallery.setOnItemClickListener(new OnItemClickListener() {
 			public void onItemClick(AdapterView<?> parent, View v,
 					int position, long id) {
-						//µã»÷ÁËGalleryÉÏµÄÍ¼Æ¬  ÏÂÃæÕâ¸ö
+						//ç‚¹å‡»äº†Galleryä¸Šçš„å›¾ç‰‡  ä¸‹é¢è¿™ä¸ª
 			}
 		});
 
 	}
 
-	/** ´ÓSD¿¨ÖĞ»ñÈ¡×ÊÔ´Í¼Æ¬µÄÂ·¾¶ */
+	/** ä»SDå¡ä¸­è·å–èµ„æºå›¾ç‰‡çš„è·¯å¾„ */
 	private List<String> getImagePathFromSD() {
-		/* Éè¶¨Ä¿Ç°ËùÔÚÂ·¾¶ */
+		/* è®¾å®šç›®å‰æ‰€åœ¨è·¯å¾„ */
 		List<String> it = new ArrayList<String>();
 
-		// ¸ù¾İ×Ô¼ºµÄĞèÇó¶ÁÈ¡SDCardÖĞµÄ×ÊÔ´Í¼Æ¬µÄÂ·¾¶
+		// æ ¹æ®è‡ªå·±çš„éœ€æ±‚è¯»å–SDCardä¸­çš„èµ„æºå›¾ç‰‡çš„è·¯å¾„
 		String imagePath = Environment.getExternalStorageDirectory().toString()
 				+ "/Qing/erweima";
 
@@ -123,7 +123,7 @@ public class ErWeiMaTuPianLiuLANActivity extends BaseActivity implements
 		File mFile = new File(imagePath);
 		File[] files = mFile.listFiles();
 
-		/* ½«ËùÓĞÎÄ¼ş´æÈëArrayListÖĞ */
+		/* å°†æ‰€æœ‰æ–‡ä»¶å­˜å…¥ArrayListä¸­ */
 		for (int i = 0; i < files.length; i++) {
 			File file = files[i];
 			if (checkIsImageFile(file.getPath()))
@@ -132,16 +132,16 @@ public class ErWeiMaTuPianLiuLANActivity extends BaseActivity implements
 		return it;
 	}
 
-	/** ÅĞ¶ÏÊÇ·ñÏàÓ¦µÄÍ¼Æ¬¸ñÊ½ */
+	/** åˆ¤æ–­æ˜¯å¦ç›¸åº”çš„å›¾ç‰‡æ ¼å¼ */
 	private boolean checkIsImageFile(String fName) {
 		boolean isImageFormat;
 
-		/* È¡µÃÀ©Õ¹Ãû */
+		/* å–å¾—æ‰©å±•å */
 		String end = fName
 				.substring(fName.lastIndexOf(".") + 1, fName.length())
 				.toLowerCase();
 
-		/* °´À©Õ¹ÃûµÄÀàĞÍ¾ö¶¨MimeType */
+		/* æŒ‰æ‰©å±•åçš„ç±»å‹å†³å®šMimeType */
 		if (end.equals("png") || end.equals("jpeg")) {
 			isImageFormat = true;
 		} else {
@@ -150,67 +150,67 @@ public class ErWeiMaTuPianLiuLANActivity extends BaseActivity implements
 		return isImageFormat;
 	}
 
-	/* ¸ÄĞ´BaseAdapter×Ô¶¨ÒåÒ»ImageAdapter class */
+	/* æ”¹å†™BaseAdapterè‡ªå®šä¹‰ä¸€ImageAdapter class */
 	public class ImageAdapter extends BaseAdapter {
-		/* ÉùÃ÷±äÁ¿ */
+		/* å£°æ˜å˜é‡ */
 		int mGalleryItemBackground;
 		private Context mContext;
 		private List<String> lis;
 
-		/* ImageAdapterµÄ¹¹Ôì·û */
+		/* ImageAdapterçš„æ„é€ ç¬¦ */
 		public ImageAdapter(Context c, List<String> li) {
 			mContext = c;
 			lis = li;
 			/*
-			 * Ê¹ÓÃres/values/attrs.xmlÖĞµÄ<declare-styleable>¶¨Òå µÄGalleryÊôĞÔ.
+			 * ä½¿ç”¨res/values/attrs.xmlä¸­çš„<declare-styleable>å®šä¹‰ çš„Galleryå±æ€§.
 			 */
 			TypedArray mTypeArray = obtainStyledAttributes(R.styleable.Gallery);
 
-			/* È¡µÃGalleryÊôĞÔµÄIndex id */
+			/* å–å¾—Galleryå±æ€§çš„Index id */
 			mGalleryItemBackground = mTypeArray.getResourceId(
 					R.styleable.Gallery_android_galleryItemBackground, 0);
-			/* ÈÃ¶ÔÏóµÄstyleableÊôĞÔÄÜ¹»·´¸´Ê¹ÓÃ */
+			/* è®©å¯¹è±¡çš„styleableå±æ€§èƒ½å¤Ÿåå¤ä½¿ç”¨ */
 			mTypeArray.recycle();
 		}
 
-		/* ÖØĞ´µÄ·½·¨getCount,´«»ØÍ¼Æ¬ÊıÄ¿ */
+		/* é‡å†™çš„æ–¹æ³•getCount,ä¼ å›å›¾ç‰‡æ•°ç›® */
 		public int getCount() {
 			return lis.size();
 		}
 
-		/* ÖØĞ´µÄ·½·¨getItem,´«»Øposition */
+		/* é‡å†™çš„æ–¹æ³•getItem,ä¼ å›position */
 		public Object getItem(int position) {
 			return position;
 		}
 
-		/* ÖØĞ´µÄ·½·¨getItemId,´«²¢position */
+		/* é‡å†™çš„æ–¹æ³•getItemId,ä¼ å¹¶position */
 		public long getItemId(int position) {
 			return position;
 		}
 
-		/* ÖØĞ´·½·¨getView,´«²¢¼¸View¶ÔÏó */
+		/* é‡å†™æ–¹æ³•getView,ä¼ å¹¶å‡ Viewå¯¹è±¡ */
 		public View getView(int position, View convertView, ViewGroup parent) {
-			/* ²úÉúImageView¶ÔÏó */
+			/* äº§ç”ŸImageViewå¯¹è±¡ */
 			ImageView i = new ImageView(mContext);
-			/* Éè¶¨Í¼Æ¬¸øimageView¶ÔÏó */
+			/* è®¾å®šå›¾ç‰‡ç»™imageViewå¯¹è±¡ */
 			Bitmap bm = BitmapFactory.decodeFile(lis.get(position).toString());
 			
 			i.setImageBitmap(bm);
 			/*
-			 * ÖØĞÂÉè¶¨Í¼Æ¬µÄ¿í¸ß i.setScaleType(ImageView.ScaleType.FIT_XY);
-			 * ÖØĞÂÉè¶¨LayoutµÄ¿í¸ß i.setLayoutParams(new Gallery.LayoutParams(136,
+			 * é‡æ–°è®¾å®šå›¾ç‰‡çš„å®½é«˜ i.setScaleType(ImageView.ScaleType.FIT_XY);
+			 * é‡æ–°è®¾å®šLayoutçš„å®½é«˜ i.setLayoutParams(new Gallery.LayoutParams(136,
 			 * 88));
 			 */
 
-			i.setAdjustViewBounds(true); // ÔÊĞíµ÷Õû±ß¿ò
-			// Éè¶¨µ×²¿»­ÀÈ£¬×ÔÊÊÓ¦´óĞ¡
+			i.setAdjustViewBounds(true); // å…è®¸è°ƒæ•´è¾¹æ¡†
+			// è®¾å®šåº•éƒ¨ç”»å»Šï¼Œè‡ªé€‚åº”å¤§å°
 			i.setLayoutParams(new Gallery.LayoutParams(
 					LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
-			// ÉèÖÃ»­ÀÈ±³¾°
+			// è®¾ç½®ç”»å»ŠèƒŒæ™¯
 
-			/* Éè¶¨Gallery±³¾°Í¼ */
+			/* è®¾å®šGalleryèƒŒæ™¯å›¾ */
 			i.setBackgroundResource(mGalleryItemBackground);
-			/* ´«»ØimageView¶ÔÏó */
+			/* ä¼ å›imageViewå¯¹è±¡ */
 			return i;
 		}
 	}
@@ -258,7 +258,7 @@ public class ErWeiMaTuPianLiuLANActivity extends BaseActivity implements
 				
 					} catch (com.google.zxing.NotFoundException e) {
 						fis.close();
-						Toast.makeText(ErWeiMaTuPianLiuLANActivity.this,"Í¼Æ¬Î´É¨Ãè³É¹¦", 1000).show();
+						Toast.makeText(ErWeiMaTuPianLiuLANActivity.this,"å›¾ç‰‡æœªæ‰«ææˆåŠŸ", 1000).show();
 						finish();
 						e.printStackTrace();
 					}

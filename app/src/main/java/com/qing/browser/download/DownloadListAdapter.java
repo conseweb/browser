@@ -107,7 +107,7 @@ public class DownloadListAdapter extends BaseAdapter {
 		return position;
 	}
 
-	// ¸Ä±äÏÂÔØ°´Å¥µÄÑùÊ½
+	// æ”¹å˜ä¸‹è½½æŒ‰é’®çš„æ ·å¼
 	private void changeBtnStyle(ImageView btn, boolean enable) {
 		if (enable) {
 			btn.setImageResource(R.drawable.download_ing);
@@ -172,19 +172,19 @@ public class DownloadListAdapter extends BaseAdapter {
 		
 		switch (item.getDownloadState()) {
 		case DownloadManager.DOWNLOAD_STATE_NORMAL:
-			holder.stopButton.setText("ÏÂÔØ");
+			holder.stopButton.setText("ä¸‹è½½");
 			this.changeBtnStyle(holder.downimage, true);
 			break;
 		case DownloadManager.DOWNLOAD_STATE_DOWNLOADING:
-			holder.stopButton.setText("ÔİÍ£");
+			holder.stopButton.setText("æš‚åœ");
 			this.changeBtnStyle(holder.downimage, true);
 			break;
 		case DownloadManager.DOWNLOAD_STATE_WAITING:
-			holder.stopButton.setText("µÈ´ı");
+			holder.stopButton.setText("ç­‰å¾…");
 			this.changeBtnStyle(holder.downimage, true);
 			break;
 		case DownloadManager.DOWNLOAD_STATE_PAUSE:
-			holder.stopButton.setText("¼ÌĞø");
+			holder.stopButton.setText("ç»§ç»­");
 			this.changeBtnStyle(holder.downimage, false);
 			break;
 		}
@@ -201,7 +201,7 @@ public class DownloadListAdapter extends BaseAdapter {
 				case DownloadManager.DOWNLOAD_STATE_DOWNLOADING:
 				case DownloadManager.DOWNLOAD_STATE_WAITING:
 					changeBtnStyle(holder.downimage, false);
-					holder.stopButton.setText("¼ÌĞø");
+					holder.stopButton.setText("ç»§ç»­");
 					holder.progressBar.setProgress(item.getProgress());
 					downloadManager.stopDownloadItem(item.getFileName());
 					break;
@@ -210,11 +210,11 @@ public class DownloadListAdapter extends BaseAdapter {
 					if (Tools.isConnectInternet(mContext)) {
 						
 						changeBtnStyle(holder.downimage, true);
-						holder.stopButton.setText("µÈ´ı");
+						holder.stopButton.setText("ç­‰å¾…");
 						holder.progressBar.setProgress(item.getProgress());
 						downloadManager.startDownload(item, mContext);
 					} else {
-						Toast.makeText(mContext, "Çë¼ì²éÍøÂçÉèÖÃ", Toast.LENGTH_SHORT)
+						Toast.makeText(mContext, "è¯·æ£€æŸ¥ç½‘ç»œè®¾ç½®", Toast.LENGTH_SHORT)
 								.show();
 					}
 					break;

@@ -1,7 +1,7 @@
 package com.universe.galaxy.util;
 
 /**
- * ÃüÁî´«ÊäÊ±¹¤¾ßÀà£¬²Î¿¼¡¶j2meRssÍ¨Ñ¶Ğ­Òé.doc¡·
+ * å‘½ä»¤ä¼ è¾“æ—¶å·¥å…·ç±»ï¼Œå‚è€ƒã€Šj2meRssé€šè®¯åè®®.docã€‹
  * <p>Title: </p>
  * <p>Description: </p>
  * <p>Copyright: Copyright (c) 2006</p>
@@ -12,7 +12,7 @@ package com.universe.galaxy.util;
 public class TransferUtils {
   /**
    * Comment for <code>trans</code>
-   * ×Ö·û´®×ªÒåÊı×é
+   * å­—ç¬¦ä¸²è½¬ä¹‰æ•°ç»„
    */
   private static String[][] trans = new String[][] {
       // this should be replace last when decoding,
@@ -58,27 +58,27 @@ public class TransferUtils {
 
   private static String[][] transForTmp = new String[][] {
       {
-      "%", "£¥"}
+      "%", "ï¼…"}
       , {
-      ",", "£¬"}
+      ",", "ï¼Œ"}
       , {
-      ";", "£»"}
+      ";", "ï¼›"}
       , {
-      "#", "¾®"}
+      "#", "äº•"}
       , {
       "&", "\\$"}
       , {
       "\\|", "1"}
       , {
-      "\\[", "¡¾"}
+      "\\[", "ã€"}
       , {
-      "]", "¡¿"}
+      "]", "ã€‘"}
   };
 
 
 
   /**
-   * ĞéÄâ»ú±àÂë
+   * è™šæ‹Ÿæœºç¼–ç 
    */
   /*private static String enc;
   static {
@@ -109,7 +109,7 @@ public class TransferUtils {
   }
 
   /**
-   * ĞÅÏ¢±àÂë
+   * ä¿¡æ¯ç¼–ç 
    * @param str
    * @return
    */
@@ -140,7 +140,7 @@ public class TransferUtils {
   }
 
   /**
-   * ĞÅÏ¢½âÂë
+   * ä¿¡æ¯è§£ç 
    * @param str
    * @return
    */
@@ -169,10 +169,10 @@ public class TransferUtils {
     return decodeString(str);
   }
   /**
-   * ¸ù¾İhttp²ÎÊı»ñÈ¡ÕûĞÎÊıÖµ
-   * @param value Öµ
-   * @param default_val Ä¬ÈÏÖµ
-   * @param name ²ÎÊıÃû³Æ
+   * æ ¹æ®httpå‚æ•°è·å–æ•´å½¢æ•°å€¼
+   * @param value å€¼
+   * @param default_val é»˜è®¤å€¼
+   * @param name å‚æ•°åç§°
    * @return
    * @throws IllegalParameterException
    */
@@ -197,10 +197,10 @@ public class TransferUtils {
   }
 */
   /**
-   * ¸ù¾İhttp²ÎÊı»ñÈ¡¸¡µãĞÍÊıÖµ
-   * @param value Öµ
-   * @param default_val Ä¬ÈÏÖµ
-   * @param name ²ÎÊıÃû³Æ
+   * æ ¹æ®httpå‚æ•°è·å–æµ®ç‚¹å‹æ•°å€¼
+   * @param value å€¼
+   * @param default_val é»˜è®¤å€¼
+   * @param name å‚æ•°åç§°
    * @return
    * @throws IllegalParameterException
    */
@@ -227,7 +227,7 @@ public class TransferUtils {
   }
 */
   /**
-   * htmlÄÚÈİ½øĞĞ±àÂë¹ıÂË
+   * htmlå†…å®¹è¿›è¡Œç¼–ç è¿‡æ»¤
    * @param ml
    * @return
    * @throws LTException
@@ -237,9 +237,9 @@ public class TransferUtils {
   }*/
 
   /**
-   * htmlÄÚÈİ½øĞĞ±àÂë¹ıÂË£¬½ØÎ²
+   * htmlå†…å®¹è¿›è¡Œç¼–ç è¿‡æ»¤ï¼Œæˆªå°¾
    * @param ml
-   * @param truncLen ±£Áô³¤¶È£¬byteÎª²Î¿¼
+   * @param truncLen ä¿ç•™é•¿åº¦ï¼Œbyteä¸ºå‚è€ƒ
    * @return
    * @throws LTException
    */

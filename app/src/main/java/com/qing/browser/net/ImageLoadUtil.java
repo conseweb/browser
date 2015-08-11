@@ -73,7 +73,7 @@ public class ImageLoadUtil implements Runnable {
 			}
 			Message msg = new Message();
 			msg.what = 0;
-			handler.sendMessage(msg);// ·¢ËÍÏûÏ¢
+			handler.sendMessage(msg);// å‘é€æ¶ˆæ¯
 		} catch (Exception e) {
 			Log.e("UpdateImg run ", e.getMessage());
 		}
@@ -81,7 +81,7 @@ public class ImageLoadUtil implements Runnable {
 
 	public Bitmap getHttpBitmap(Attach attach) {
 		Bitmap bitmap = null;
-		// ÏÂÔØµÄÄ¿±êÎÄ¼şÔÚ·şÎñÆ÷ÉÏµÄµØÖ·
+		// ä¸‹è½½çš„ç›®æ ‡æ–‡ä»¶åœ¨æœåŠ¡å™¨ä¸Šçš„åœ°å€
 		int size = Utilities
 				.getIconResourcesSize(R.drawable.ic_launcher_folder);
 		HttpGet httpGet = new HttpGet(attach.getUrl());
@@ -101,7 +101,7 @@ public class ImageLoadUtil implements Runnable {
 				Message msg = new Message();
 				msg.what = 1;
 				msg.getData().putInt("id", attach.getId());
-				handler.sendMessage(msg);// ·¢ËÍÏûÏ¢
+				handler.sendMessage(msg);// å‘é€æ¶ˆæ¯
 			} else {
 				httpNum--;
 			}

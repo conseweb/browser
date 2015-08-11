@@ -13,10 +13,10 @@ import android.widget.Scroller;
 public class MenuLayout extends ViewGroup {
 
 	private static final String TAG = "ScrollLayout";
-	private VelocityTracker mVelocityTracker; // ÓÃÓÚÅÐ¶ÏË¦¶¯ÊÖÊÆ
-	private static final int SNAP_VELOCITY = 100; // XÖáËÙ¶È»ùÖµ£¬´óÓÚ¸ÃÖµÊ±½øÐÐÇÐ»»
-	private Scroller mScroller; // »¬¶¯¿ØÖÆ
-	private int mCurScreen; // µ±Ç°Ò³ÃæÎªµÚ¼¸ÆÁ
+	private VelocityTracker mVelocityTracker; // ç”¨äºŽåˆ¤æ–­ç”©åŠ¨æ‰‹åŠ¿
+	private static final int SNAP_VELOCITY = 100; // Xè½´é€Ÿåº¦åŸºå€¼ï¼Œå¤§äºŽè¯¥å€¼æ—¶è¿›è¡Œåˆ‡æ¢
+	private Scroller mScroller; // æ»‘åŠ¨æŽ§åˆ¶
+	private int mCurScreen; // å½“å‰é¡µé¢ä¸ºç¬¬å‡ å±
 	private int mDefaultScreen = 0;
 	private float mLastMotionX;
 	private float mLastMotionY;
@@ -90,7 +90,7 @@ public class MenuLayout extends ViewGroup {
 		snapToScreen(destScreen);
 	}
 
-	// Ê¹ÆÁÄ»ÒÆ¶¯µ½µÚwhichScreen+1ÆÁ
+	// ä½¿å±å¹•ç§»åŠ¨åˆ°ç¬¬whichScreen+1å±
 	public void snapToScreen(int whichScreen) {
 
 		if (getScrollX() != (whichScreen * getWidth())) {
@@ -145,7 +145,7 @@ public class MenuLayout extends ViewGroup {
 					mVelocityTracker.addMovement(event);
 				}
 				mLastMotionX = x;
-				// ÕýÏò»òÕß¸ºÏòÒÆ¶¯£¬ÆÁÄ»¸úËæÊÖÖ¸ÒÆ¶¯
+				// æ­£å‘æˆ–è€…è´Ÿå‘ç§»åŠ¨ï¼Œå±å¹•è·Ÿéšæ‰‹æŒ‡ç§»åŠ¨
 				scrollBy(deltaX, 0);
 			}
 			break;
@@ -156,10 +156,10 @@ public class MenuLayout extends ViewGroup {
 			if (mVelocityTracker != null) {
 				mVelocityTracker.addMovement(event);
 				mVelocityTracker.computeCurrentVelocity(1000);
-				// µÃµ½XÖá·½ÏòÊÖÖ¸ÒÆ¶¯ËÙ¶È
+				// å¾—åˆ°Xè½´æ–¹å‘æ‰‹æŒ‡ç§»åŠ¨é€Ÿåº¦
 				velocityX = (int) mVelocityTracker.getXVelocity();
 			}
-			// velocityXÎªÕýÖµËµÃ÷ÊÖÖ¸ÏòÓÒ»¬¶¯£¬Îª¸ºÖµËµÃ÷ÊÖÖ¸Ïò×ó»¬¶¯
+			// velocityXä¸ºæ­£å€¼è¯´æ˜Žæ‰‹æŒ‡å‘å³æ»‘åŠ¨ï¼Œä¸ºè´Ÿå€¼è¯´æ˜Žæ‰‹æŒ‡å‘å·¦æ»‘åŠ¨
 			if (velocityX > SNAP_VELOCITY && mCurScreen > 0) {
 				// Fling enough to move left
 				Log.e(TAG, "snap left");
@@ -218,11 +218,11 @@ public class MenuLayout extends ViewGroup {
 	}
 
 	private boolean IsCanMove(int deltaX) {
-		// deltaX<0ËµÃ÷ÊÖÖ¸ÏòÓÒ»®
+		// deltaX<0è¯´æ˜Žæ‰‹æŒ‡å‘å³åˆ’
 		if (getScrollX() <= 0 && deltaX < 0) {
 			return false;
 		}
-		// deltaX>0ËµÃ÷ÊÖÖ¸Ïò×ó»®
+		// deltaX>0è¯´æ˜Žæ‰‹æŒ‡å‘å·¦åˆ’
 		if (getScrollX() >= (getChildCount() - 1) * getWidth() && deltaX > 0) {
 			return false;
 		}

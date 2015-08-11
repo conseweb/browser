@@ -89,7 +89,7 @@ public class Tools {
 	}
 
 	/**
-	 * »ñÈ¡Ö¸¶¨ÎÄ¼ş´óĞ¡
+	 * è·å–æŒ‡å®šæ–‡ä»¶å¤§å°
 	 * 
 	 * @param f
 	 * @return
@@ -103,7 +103,7 @@ public class Tools {
 			size = fis.available();
 		} else {
 			file.createNewFile();
-			Log.e("»ñÈ¡ÎÄ¼ş´óĞ¡", "ÎÄ¼ş²»´æÔÚ!");
+			Log.e("è·å–æ–‡ä»¶å¤§å°", "æ–‡ä»¶ä¸å­˜åœ¨!");
 		}
 		return size;
 	}
@@ -133,7 +133,7 @@ public class Tools {
 	}
 
 	/**
-	 * »ñÈ¡IMEI´®ºÅ Returns the unique device ID, for example, the IMEI for GSM and
+	 * è·å–IMEIä¸²å· Returns the unique device ID, for example, the IMEI for GSM and
 	 * the MEID for CDMA phones. Return null if device ID is not available.
 	 * 
 	 * @param context
@@ -168,7 +168,7 @@ public class Tools {
 		return packageInfo == null ? "100" : packageInfo.versionName;
 	}
 
-	// ÅĞ¶ÏÍøÂçÊÇ·ñ¿ÉÓÃ
+	// åˆ¤æ–­ç½‘ç»œæ˜¯å¦å¯ç”¨
 	public static boolean isConnectInternet(Context context) {
 		ConnectivityManager conManager = (ConnectivityManager) context
 				.getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -185,14 +185,14 @@ public class Tools {
 	}
 
 	/**
-	 * »ñÈ¡ÊÖ»úÏµÍ³µÄ°æ±¾
+	 * è·å–æ‰‹æœºç³»ç»Ÿçš„ç‰ˆæœ¬
 	 */
 	public static String getSystembVersion() {
 		return android.os.Build.VERSION.RELEASE;
 	}
 
 	/**
-	 * »ñÈ¡ÊÖ»úµÄÓïÑÔ
+	 * è·å–æ‰‹æœºçš„è¯­è¨€
 	 */
 	public static String getLanguage() {
 		String language = Locale.getDefault().getLanguage();
@@ -200,7 +200,7 @@ public class Tools {
 	}
 
 	/**
-	 * »ñÈ¡ÆÁÄ»³ß´ç
+	 * è·å–å±å¹•å°ºå¯¸
 	 */
 	public static String getDisplayInfo(Context context) {
 		DisplayMetrics dm = new DisplayMetrics();
@@ -216,7 +216,7 @@ public class Tools {
 	}
 
 	/**
-	 * »ñÈ¡ÊÖ»úºÅÂë
+	 * è·å–æ‰‹æœºå·ç 
 	 */
 	public static String getNativeNumber(Context context) {
 		String nativeNumber = "";
@@ -227,21 +227,21 @@ public class Tools {
 	}
 
 	/**
-	 * »ñÈ¡ÔËĞĞÉÌ
+	 * è·å–è¿è¡Œå•†
 	 */
 	public static String getProviders(Context context) {
 		String providers = "0";
 		TelephonyManager telephonyManager = (TelephonyManager) context
 				.getSystemService(Context.TELEPHONY_SERVICE);
 		String simOperator = telephonyManager.getSimOperator();
-		// IMSIºÅÇ°Ãæ3Î»460ÊÇ¹ú¼Ò£¬½ô½Ó×ÅºóÃæ2Î»00 02ÊÇÖĞ¹úÒÆ¶¯£¬01ÊÇÖĞ¹úÁªÍ¨£¬03ÊÇÖĞ¹úµçĞÅ¡£
+		// IMSIå·å‰é¢3ä½460æ˜¯å›½å®¶ï¼Œç´§æ¥ç€åé¢2ä½00 02æ˜¯ä¸­å›½ç§»åŠ¨ï¼Œ01æ˜¯ä¸­å›½è”é€šï¼Œ03æ˜¯ä¸­å›½ç”µä¿¡ã€‚
 		if (simOperator != null) {
 			if (simOperator.equals("46000") || simOperator.equals("46002")) {
-				providers = "1"; // "ÖĞ¹úÒÆ¶¯";
+				providers = "1"; // "ä¸­å›½ç§»åŠ¨";
 			} else if (simOperator.equals("46001")) {
-				providers = "2"; // "ÖĞ¹úÁªÍ¨";
+				providers = "2"; // "ä¸­å›½è”é€š";
 			} else if (simOperator.equals("46003")) {
-				providers = "3"; // "ÖĞ¹úµçĞÅ";
+				providers = "3"; // "ä¸­å›½ç”µä¿¡";
 			}
 		}
 		return providers;
@@ -266,14 +266,14 @@ public class Tools {
 	}
 
 	/**
-	 * »ñÈ¡ÆÁÄ»°æ±¾
+	 * è·å–å±å¹•ç‰ˆæœ¬
 	 */
 	public static String getScreenVersion(Context context) {
 		return Constants.SCREEN_VERSION;
 	}
 
 	/**
-	 * »ñÈ¡¸üĞÂ±àºÅ
+	 * è·å–æ›´æ–°ç¼–å·
 	 */
 	public static void setMiddleUpdateVersion(Context context, int value) {
 		SharedPreferences sp = context.getSharedPreferences(
@@ -284,7 +284,7 @@ public class Tools {
 	}
 
 	/**
-	 * »ñÈ¡¸üĞÂÊ±¼ä
+	 * è·å–æ›´æ–°æ—¶é—´
 	 */
 	public static void setMiddleUpdateTime(Context context, long value) {
 		SharedPreferences sp = context.getSharedPreferences(
@@ -310,7 +310,7 @@ public class Tools {
 	}
 
 	/**
-	 * »ñÈ¡¸üĞÂ±àºÅ
+	 * è·å–æ›´æ–°ç¼–å·
 	 */
 	public static void setRightUpdateVersion(Context context, int value) {
 		SharedPreferences sp = context.getSharedPreferences(
@@ -321,7 +321,7 @@ public class Tools {
 	}
 
 	/**
-	 * »ñÈ¡¸üĞÂÊ±¼ä
+	 * è·å–æ›´æ–°æ—¶é—´
 	 */
 	public static void setRightUpdateTime(Context context, long value) {
 		SharedPreferences sp = context.getSharedPreferences(
@@ -347,7 +347,7 @@ public class Tools {
 	}
 
 	/**
-	 * »ñÈ¡¸üĞÂ±àºÅ
+	 * è·å–æ›´æ–°ç¼–å·
 	 */
 	public static void setFaxianUpdateVersion(Context context, int value) {
 		SharedPreferences sp = context.getSharedPreferences(
@@ -359,7 +359,7 @@ public class Tools {
 	}
 
 	/**
-	 * »ñÈ¡¸üĞÂ±àºÅ
+	 * è·å–æ›´æ–°ç¼–å·
 	 */
 	public static int getMiddleUpdateVersion(Context context) {
 		SharedPreferences sp = context.getSharedPreferences(
@@ -370,7 +370,7 @@ public class Tools {
 	}
 
 	/**
-	 * »ñÈ¡¸üĞÂ±àºÅ
+	 * è·å–æ›´æ–°ç¼–å·
 	 */
 	public static int getRightUpdateVersion(Context context) {
 		SharedPreferences sp = context.getSharedPreferences(
@@ -381,7 +381,7 @@ public class Tools {
 	}
 
 	/**
-	 * »ñÈ¡¸üĞÂ±àºÅ
+	 * è·å–æ›´æ–°ç¼–å·
 	 */
 	public static int getFaxianUpdateVersion(Context context) {
 		SharedPreferences sp = context.getSharedPreferences(
@@ -429,13 +429,13 @@ public class Tools {
 	}
 
 	/**
-	 * ×é×°POST×Ö´®
+	 * ç»„è£…POSTå­—ä¸²
 	 * 
 	 * @param context
 	 * @return
 	 */
 	public static String getPoststring(Context context) {
-		// ÏÈÉè¶¨¹«¹²ÄÚÈİ,·µ»ØString
+		// å…ˆè®¾å®šå…¬å…±å†…å®¹,è¿”å›String
 		String postString = "";
 		String imei = getIMEI(context);
 		String imsi = getIMSI(context);
@@ -466,7 +466,7 @@ public class Tools {
 	}
 
 	/**
-	 * ÅĞ¶ÏÁªÍø·½Ê½WIFI GPRS WIFI 1 GPRS 2
+	 * åˆ¤æ–­è”ç½‘æ–¹å¼WIFI GPRS WIFI 1 GPRS 2
 	 */
 	public static int getConnectionMethod(Context context) {
 		int method = 0;
@@ -508,7 +508,7 @@ public class Tools {
 	}
 
 	/**
-	 * »ñÈ¡listview item¸ß¶È
+	 * è·å–listview itemé«˜åº¦
 	 * 
 	 * @param listView
 	 */
@@ -521,7 +521,7 @@ public class Tools {
 		int totalHeight = 0;
 		for (int i = 0; i < listAdapter.getCount(); i++) {
 			View listItem = listAdapter.getView(i, null, listView);
-			// ListViewµÄÃ¿¸öItem±ØĞëÊÇLinearLayout£¬²»ÄÜÊÇÆäËûµÄ£¬ÒòÎªÆäËûµÄLayout(ÈçRelativeLayout)Ã»ÓĞÖØĞ´onMeasure()£¬ÕâÀïonMeasure()Ê±Å×³öÒì³£¡£
+			// ListViewçš„æ¯ä¸ªItemå¿…é¡»æ˜¯LinearLayoutï¼Œä¸èƒ½æ˜¯å…¶ä»–çš„ï¼Œå› ä¸ºå…¶ä»–çš„Layout(å¦‚RelativeLayout)æ²¡æœ‰é‡å†™onMeasure()ï¼Œè¿™é‡ŒonMeasure()æ—¶æŠ›å‡ºå¼‚å¸¸ã€‚
 			listItem.measure(0, 0);
 
 			totalHeight += listItem.getMeasuredHeight();
@@ -536,7 +536,7 @@ public class Tools {
 	}
 
 	/**
-	 * °Ñ×Ö·û´®×ªÎªÈÕÆÚ
+	 * æŠŠå­—ç¬¦ä¸²è½¬ä¸ºæ—¥æœŸ
 	 */
 	public static Date ConverToDate(String strDate, String str)
 			throws Exception {
@@ -545,7 +545,7 @@ public class Tools {
 	}
 
 	/**
-	 * °ÑÈÕÆÚ×ª»»Îª×Ö´®
+	 * æŠŠæ—¥æœŸè½¬æ¢ä¸ºå­—ä¸²
 	 */
 	public static String ConverToStr(Date StrDate, String str) throws Exception {
 		DateFormat df = new SimpleDateFormat(str);
@@ -554,24 +554,24 @@ public class Tools {
 	}
 
 	/**
-	 * ²é¿´SD¿¨µÄÊ£Óà¿Õ¼ä
+	 * æŸ¥çœ‹SDå¡çš„å‰©ä½™ç©ºé—´
 	 */
 	public static long getSDFreeSize() {
-		// È¡µÃSD¿¨ÎÄ¼şÂ·¾¶
+		// å–å¾—SDå¡æ–‡ä»¶è·¯å¾„
 		File path = Environment.getExternalStorageDirectory();
 		StatFs sf = new StatFs(path.getPath());
-		// »ñÈ¡µ¥¸öÊı¾İ¿éµÄ´óĞ¡(Byte)
+		// è·å–å•ä¸ªæ•°æ®å—çš„å¤§å°(Byte)
 		long blockSize = sf.getBlockSize();
-		// ¿ÕÏĞµÄÊı¾İ¿éµÄÊıÁ¿
+		// ç©ºé—²çš„æ•°æ®å—çš„æ•°é‡
 		long freeBlocks = sf.getAvailableBlocks();
-		// ·µ»ØSD¿¨¿ÕÏĞ´óĞ¡
-		// return freeBlocks * blockSize; //µ¥Î»Byte
-		return (freeBlocks * blockSize) / 1024; // µ¥Î»KB
-		// return (freeBlocks * blockSize)/1024 /1024; //µ¥Î»MB
+		// è¿”å›SDå¡ç©ºé—²å¤§å°
+		// return freeBlocks * blockSize; //å•ä½Byte
+		return (freeBlocks * blockSize) / 1024; // å•ä½KB
+		// return (freeBlocks * blockSize)/1024 /1024; //å•ä½MB
 	}
 
 	/**
-	 * Ö»ÔÚµÚÒ»´Î´´½¨¿ì½İ·½Ê½
+	 * åªåœ¨ç¬¬ä¸€æ¬¡åˆ›å»ºå¿«æ·æ–¹å¼
 	 */
 	public static void AddShortcut(Context context) {
 		SharedPreferences sp = context.getSharedPreferences(
@@ -588,13 +588,13 @@ public class Tools {
 	}
 
 	/**
-	 * ´´½¨×ÀÃæ¿ì½İ·½Ê½
+	 * åˆ›å»ºæ¡Œé¢å¿«æ·æ–¹å¼
 	 */
 	public static void shortcutCreate(Context context) {
 
 		Intent shortcut = new Intent(
 				"com.android.launcher.action.INSTALL_SHORTCUT");
-		// ²»ÔÊĞíÖØ½¨
+		// ä¸å…è®¸é‡å»º
 		shortcut.putExtra("duplicate", false);
 		shortcut.putExtra(Intent.EXTRA_SHORTCUT_NAME,
 				context.getString(R.string.app_name));
@@ -612,20 +612,20 @@ public class Tools {
 		
 		shortcut.putExtra(Intent.EXTRA_SHORTCUT_INTENT, intent);
 
-		// ·¢ËÍ¹ã²¥
+		// å‘é€å¹¿æ’­
 		context.sendBroadcast(shortcut);
 
 	}
 
 	/**
-	 * ´´½¨É¨Ò»É¨¿ì½İ·½Ê½
+	 * åˆ›å»ºæ‰«ä¸€æ‰«å¿«æ·æ–¹å¼
 	 */
 	public static void shortcutCreateSaoYiSao(Context context, int resId,
 			int resourceId, Class<?> cls) {
 
 		Intent shortcut = new Intent(
 				"com.android.launcher.action.INSTALL_SHORTCUT");
-		// ²»ÔÊĞíÖØ½¨
+		// ä¸å…è®¸é‡å»º
 		shortcut.putExtra("duplicate", false);
 		shortcut.putExtra(Intent.EXTRA_SHORTCUT_NAME, context.getString(resId));
 		shortcut.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE,
@@ -640,7 +640,7 @@ public class Tools {
 
 		shortcut.putExtra(Intent.EXTRA_SHORTCUT_INTENT, intent);
 
-		// ·¢ËÍ¹ã²¥
+		// å‘é€å¹¿æ’­
 		context.sendBroadcast(shortcut);
 	}
 
@@ -654,11 +654,11 @@ public class Tools {
 				} catch (final Exception e) {
 					if (e instanceof UnknownHostException
 							|| e instanceof SocketTimeoutException) {
-						// ÎŞÍøÂç
+						// æ— ç½‘ç»œ
 					} else if (e instanceof MalformedURLException) {
-						// ÎŞĞ§URL
+						// æ— æ•ˆURL
 					} else {
-						// ÄÚ²¿´íÎó
+						// å†…éƒ¨é”™è¯¯
 					}
 				}
 			}
@@ -666,14 +666,14 @@ public class Tools {
 	}
 
 	/**
-	 * ´´½¨×ÀÃæ¿ì½İ·½Ê½
+	 * åˆ›å»ºæ¡Œé¢å¿«æ·æ–¹å¼
 	 */
 	public static void shortcutCreate(Context context, String title,
 			Bitmap bitmap, String url) {
 
 		Intent shortcut = new Intent(
 				"com.android.launcher.action.INSTALL_SHORTCUT");
-		// ²»ÔÊĞíÖØ½¨
+		// ä¸å…è®¸é‡å»º
 		shortcut.putExtra("duplicate", false);
 		shortcut.putExtra(Intent.EXTRA_SHORTCUT_NAME, title);
 
@@ -691,7 +691,7 @@ public class Tools {
 		intent.setData(uri);
 		shortcut.putExtra(Intent.EXTRA_SHORTCUT_INTENT, intent);
 
-		// ·¢ËÍ¹ã²¥
+		// å‘é€å¹¿æ’­
 		context.sendBroadcast(shortcut);
 
 	}
@@ -720,13 +720,13 @@ public class Tools {
 	}
 
 	/**
-	 * °ÑÍ¼Æ¬±ä³ÉÔ²½Ç
+	 * æŠŠå›¾ç‰‡å˜æˆåœ†è§’
 	 * 
 	 * @param bitmap
-	 *            ĞèÒªĞŞ¸ÄµÄÍ¼Æ¬
+	 *            éœ€è¦ä¿®æ”¹çš„å›¾ç‰‡
 	 * @param pixels
-	 *            Ô²½ÇµÄ»¡¶È
-	 * @return Ô²½ÇÍ¼Æ¬
+	 *            åœ†è§’çš„å¼§åº¦
+	 * @return åœ†è§’å›¾ç‰‡
 	 */
 	public static Bitmap toRoundCorner(Bitmap bitmap, int pixels) {
 		int border = 2;
@@ -757,7 +757,7 @@ public class Tools {
 	}
 
 	/**
-	 * Í¼Æ¬²¹³ä
+	 * å›¾ç‰‡è¡¥å……
 	 * 
 	 */
 	public static Bitmap toCorner(Bitmap bitmap, int Width, int Height) {

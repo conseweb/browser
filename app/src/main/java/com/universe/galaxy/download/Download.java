@@ -30,7 +30,7 @@ public class Download {
 				.getSystemService(ns);
 		Notification notification = new Notification();
 		notification.icon = android.R.drawable.stat_sys_download;
-		notification.tickerText = "¿ªÊ¼ÏÂÔØ";
+		notification.tickerText = "å¼€å§‹ä¸‹è½½";
 		notification.flags = Notification.FLAG_AUTO_CANCEL;
 		RemoteViews contentView = new RemoteViews(context.getPackageName(),
 				R.layout.notification_item);
@@ -57,14 +57,14 @@ public class Download {
 			@Override
 			public void handleMessage(Message msg) {
 				if (msg != null) {
-					String fileName = "", contentType = "", suffix = "", prompt = "ÏÂÔØ³É¹¦";
+					String fileName = "", contentType = "", suffix = "", prompt = "ä¸‹è½½æˆåŠŸ";
 					switch (msg.what) {
 					case 0:
 						fileName = (String) msg.obj;
 						suffix = StringUtil.getSuffixOfFileName(fileName);
 						contentType = StringUtil.getHttpContentType(suffix);
 						if (StringUtil.isNull(contentType))
-							prompt += "£¬Î´ÖªµÄÎÄ¼şÀàĞÍ";
+							prompt += "ï¼ŒæœªçŸ¥çš„æ–‡ä»¶ç±»å‹";
 						File file = new File(StringUtil.getPath(suffix)
 								+ fileName);
 						Uri uri = Uri.fromFile(file);
@@ -90,10 +90,10 @@ public class Download {
 						nManager.notify(id, n);
 						break;
 					case 2:
-						n.setLatestEventInfo(context, fileName, "ÏÂÔØÊ§°Ü", pi);
+						n.setLatestEventInfo(context, fileName, "ä¸‹è½½å¤±è´¥", pi);
 						break;
 					default:
-						n.setLatestEventInfo(context, fileName, "ÏÂÔØÊ§°Ü", pi);
+						n.setLatestEventInfo(context, fileName, "ä¸‹è½½å¤±è´¥", pi);
 						break;
 					}
 				}

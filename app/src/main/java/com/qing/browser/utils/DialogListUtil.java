@@ -58,7 +58,7 @@ public class DialogListUtil extends Dialog {
 			dialogTitleView.setText(dialogTitle);
 		} else {
 			dialogTitleView.setVisibility(View.VISIBLE);
-			dialogTitleView.setText("Œ¬‹∞Ã· æ");
+			dialogTitleView.setText("Ê∏©È¶®ÊèêÁ§∫");
 		}
 		dialog_list = (ListView) findViewById(R.id.dialog_list);
 		if(mItems != null){

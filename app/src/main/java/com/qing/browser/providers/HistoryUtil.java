@@ -57,7 +57,7 @@ public class HistoryUtil {
 	
 
 	/**
-	 * ±£´æ ÏÂÔØµÄ¾ßÌåĞÅÏ¢
+	 * ä¿å­˜ ä¸‹è½½çš„å…·ä½“ä¿¡æ¯
 	 */
 	public static void saveName(Context context, String title, String url,
 			long date, Bitmap icon) {
@@ -66,7 +66,7 @@ public class HistoryUtil {
 					R.drawable.hotseat_browser_bg);
 		}
 		final ByteArrayOutputStream os = new ByteArrayOutputStream();
-		// ½«BitmapÑ¹Ëõ³ÉPNG±àÂë£¬ÖÊÁ¿Îª100%´æ´¢
+		// å°†Bitmapå‹ç¼©æˆPNGç¼–ç ï¼Œè´¨é‡ä¸º100%å­˜å‚¨
 		icon.compress(Bitmap.CompressFormat.PNG, 100, os);
 
 		ContentValues values = new ContentValues();
@@ -101,7 +101,7 @@ public class HistoryUtil {
 	}
 
 	/**
-	 * ÏÂÔØÍê³ÉºóÉ¾³ıÊı¾İ¿âÖĞµÄÊı¾İ
+	 * ä¸‹è½½å®Œæˆååˆ é™¤æ•°æ®åº“ä¸­çš„æ•°æ®
 	 */
 	public static void delete(Context context, String url) {
 		ContentResolver cr = context.getContentResolver();

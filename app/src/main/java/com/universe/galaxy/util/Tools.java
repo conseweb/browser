@@ -44,7 +44,7 @@ public class Tools {
 	public static Random r = new Random();
 
 	/**
-	 * »ñÈ¡IMEI´®ºÅ Returns the unique device ID, for example, the IMEI for GSM and
+	 * è·å–IMEIä¸²å· Returns the unique device ID, for example, the IMEI for GSM and
 	 * the MEID for CDMA phones. Return null if device ID is not available.
 	 * 
 	 * @param context
@@ -79,7 +79,7 @@ public class Tools {
 		return packageInfo == null ? "100" : packageInfo.versionName;
 	}
 
-	// ÅĞ¶ÏÍøÂçÊÇ·ñ¿ÉÓÃ
+	// åˆ¤æ–­ç½‘ç»œæ˜¯å¦å¯ç”¨
 	public static boolean isConnectInternet(Context context) {
 		ConnectivityManager conManager = (ConnectivityManager) context
 				.getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -135,14 +135,14 @@ public class Tools {
 	}
 
 	/**
-	 * »ñÈ¡ÊÖ»úÏµÍ³µÄ°æ±¾
+	 * è·å–æ‰‹æœºç³»ç»Ÿçš„ç‰ˆæœ¬
 	 */
 	public static String getSystembVersion() {
 		return android.os.Build.VERSION.RELEASE;
 	}
 
 	/**
-	 * »ñÈ¡ÊÖ»úµÄÓïÑÔ
+	 * è·å–æ‰‹æœºçš„è¯­è¨€
 	 */
 	public static String getLanguage() {
 		String language = Locale.getDefault().getLanguage();
@@ -150,7 +150,7 @@ public class Tools {
 	}
 
 	/**
-	 * »ñÈ¡ÆÁÄ»³ß´ç
+	 * è·å–å±å¹•å°ºå¯¸
 	 */
 	public static String getDisplayInfo(Context context) {
 		DisplayMetrics dm = new DisplayMetrics();
@@ -159,8 +159,8 @@ public class Tools {
 		Display display = wm.getDefaultDisplay();
 		display.getMetrics(dm);
 
-		float density = dm.density; // ÆÁÄ»ÃÜ¶È£¨ÏñËØ±ÈÀı£º0.75/1.0/1.5/2.0£©
-		int densityDPI = dm.densityDpi; // ÆÁÄ»ÃÜ¶È£¨Ã¿´çÏñËØ£º120/160/240/320£©
+		float density = dm.density; // å±å¹•å¯†åº¦ï¼ˆåƒç´ æ¯”ä¾‹ï¼š0.75/1.0/1.5/2.0ï¼‰
+		int densityDPI = dm.densityDpi; // å±å¹•å¯†åº¦ï¼ˆæ¯å¯¸åƒç´ ï¼š120/160/240/320ï¼‰
 
 		int width = display.getWidth();
 		int height = display.getHeight();
@@ -171,7 +171,7 @@ public class Tools {
 	}
 
 	/**
-	 * »ñÈ¡ÊÖ»úºÅÂë
+	 * è·å–æ‰‹æœºå·ç 
 	 */
 	public static String getNativeNumber(Context context) {
 		String nativeNumber = "";
@@ -182,21 +182,21 @@ public class Tools {
 	}
 
 	/**
-	 * »ñÈ¡ÔËĞĞÉÌ
+	 * è·å–è¿è¡Œå•†
 	 */
 	public static String getProviders(Context context) {
 		String providers = "0";
 		TelephonyManager telephonyManager = (TelephonyManager) context
 				.getSystemService(Context.TELEPHONY_SERVICE);
 		String simOperator = telephonyManager.getSimOperator();
-		// IMSIºÅÇ°Ãæ3Î»460ÊÇ¹ú¼Ò£¬½ô½Ó×ÅºóÃæ2Î»00 02ÊÇÖĞ¹úÒÆ¶¯£¬01ÊÇÖĞ¹úÁªÍ¨£¬03ÊÇÖĞ¹úµçĞÅ¡£
+		// IMSIå·å‰é¢3ä½460æ˜¯å›½å®¶ï¼Œç´§æ¥ç€åé¢2ä½00 02æ˜¯ä¸­å›½ç§»åŠ¨ï¼Œ01æ˜¯ä¸­å›½è”é€šï¼Œ03æ˜¯ä¸­å›½ç”µä¿¡ã€‚
 		if (simOperator != null) {
 			if (simOperator.equals("46000") || simOperator.equals("46002")) {
-				providers = "1"; // "ÖĞ¹úÒÆ¶¯";
+				providers = "1"; // "ä¸­å›½ç§»åŠ¨";
 			} else if (simOperator.equals("46001")) {
-				providers = "2"; // "ÖĞ¹úÁªÍ¨";
+				providers = "2"; // "ä¸­å›½è”é€š";
 			} else if (simOperator.equals("46003")) {
-				providers = "3"; // "ÖĞ¹úµçĞÅ";
+				providers = "3"; // "ä¸­å›½ç”µä¿¡";
 			}
 		}
 		return providers;
@@ -204,7 +204,7 @@ public class Tools {
 	}
 
 	public static String readLatitude(Context context) {
-		// ¶ÁÈ¡SharedPreferencesÖĞÊı¾İ
+		// è¯»å–SharedPreferencesä¸­æ•°æ®
 		SharedPreferences sp = context.getSharedPreferences(
 				Constants.PREFERENCES_NAME, Context.MODE_PRIVATE);
 		String latitudeString = sp.getString(Constants.SSJD, "");
@@ -212,7 +212,7 @@ public class Tools {
 	}
 
 	public static String readLongitude(Context context) {
-		// ¶ÁÈ¡SharedPreferencesÖĞÊı¾İ
+		// è¯»å–SharedPreferencesä¸­æ•°æ®
 		SharedPreferences sp = context.getSharedPreferences(
 				Constants.PREFERENCES_NAME, Context.MODE_PRIVATE);
 		String longitudeString = sp.getString(Constants.SSWD, "");
@@ -220,7 +220,7 @@ public class Tools {
 	}
 
 	public static String readSJWZ(Context context) {
-		// ¶ÁÈ¡SharedPreferencesÖĞÊı¾İ
+		// è¯»å–SharedPreferencesä¸­æ•°æ®
 		SharedPreferences sp = context.getSharedPreferences(
 				Constants.PREFERENCES_NAME, Context.MODE_PRIVATE);
 		String sjwzString = sp.getString(Constants.SJWZ, "");
@@ -244,13 +244,13 @@ public class Tools {
 		return status;
 	}
 	/**
-	 * ×é×°FormBodyPartÊı×é
+	 * ç»„è£…FormBodyPartæ•°ç»„
 	 * 
 	 * @param context
 	 * @return
 	 */
 	public static List<FormBodyPart> getPostFormBodyPart(Context context) {
-		// ÏÈÉè¶¨¹«¹²ÄÚÈİ,·µ»ØString
+		// å…ˆè®¾å®šå…¬å…±å†…å®¹,è¿”å›String
 		List<FormBodyPart> postParams = new ArrayList<FormBodyPart>();
 		String manu = getManu(context);
 		String mach = getModel(context);
@@ -309,13 +309,13 @@ public class Tools {
 	}
 
 	/**
-	 * ×é×°POST×Ö´®
+	 * ç»„è£…POSTå­—ä¸²
 	 * 
 	 * @param context
 	 * @return
 	 */
 	public static String getPoststring(Context context) {
-		// ÏÈÉè¶¨¹«¹²ÄÚÈİ,·µ»ØString
+		// å…ˆè®¾å®šå…¬å…±å†…å®¹,è¿”å›String
 		String postString = "";
 		String imei = getIMEI(context);
 		String imsi = getIMSI(context);
@@ -350,13 +350,13 @@ public class Tools {
 	}
 
 	/**
-	 * ÇëÇóÍÆËÍ¹ã¸æ ×é×°POST×Ö´®
+	 * è¯·æ±‚æ¨é€å¹¿å‘Š ç»„è£…POSTå­—ä¸²
 	 * 
 	 * @param context
 	 * @return
 	 */
 	public static String getADPoststring(Context context) {
-		// ÏÈÉè¶¨¹«¹²ÄÚÈİ,·µ»ØString
+		// å…ˆè®¾å®šå…¬å…±å†…å®¹,è¿”å›String
 		String postString = "";
 		String manu = getManu(context);
 		String mach = getModel(context);
@@ -397,7 +397,7 @@ public class Tools {
 	}
 
 	/**
-	 * ÅĞ¶ÏÁªÍø·½Ê½WIFI GPRS WIFI 1 GPRS 2
+	 * åˆ¤æ–­è”ç½‘æ–¹å¼WIFI GPRS WIFI 1 GPRS 2
 	 */
 	public static String getConnectionMethod(Context context) {
 		String method = "0";
@@ -418,7 +418,7 @@ public class Tools {
 	}
 
 	/**
-	 * µÃµ½¼¸ÌìÇ°µÄÊ±¼ä
+	 * å¾—åˆ°å‡ å¤©å‰çš„æ—¶é—´
 	 * 
 	 * @param d
 	 * @param day
@@ -432,7 +432,7 @@ public class Tools {
 	}
 
 	/**
-	 * µÃµ½¼¸ÌìºóµÄÊ±¼ä
+	 * å¾—åˆ°å‡ å¤©åçš„æ—¶é—´
 	 */
 	public static Date getDateAfterDays(Date d, int day) {
 		Calendar now = Calendar.getInstance();
@@ -443,24 +443,24 @@ public class Tools {
 
 	 
 	/**
-	 * ²é¿´SD¿¨µÄÊ£Óà¿Õ¼ä
+	 * æŸ¥çœ‹SDå¡çš„å‰©ä½™ç©ºé—´
 	 */
 	public static long getSDFreeSize() {
-		// È¡µÃSD¿¨ÎÄ¼şÂ·¾¶
+		// å–å¾—SDå¡æ–‡ä»¶è·¯å¾„
 		File path = Environment.getExternalStorageDirectory();
 		StatFs sf = new StatFs(path.getPath());
-		// »ñÈ¡µ¥¸öÊı¾İ¿éµÄ´óĞ¡(Byte)
+		// è·å–å•ä¸ªæ•°æ®å—çš„å¤§å°(Byte)
 		long blockSize = sf.getBlockSize();
-		// ¿ÕÏĞµÄÊı¾İ¿éµÄÊıÁ¿
+		// ç©ºé—²çš„æ•°æ®å—çš„æ•°é‡
 		long freeBlocks = sf.getAvailableBlocks();
-		// ·µ»ØSD¿¨¿ÕÏĞ´óĞ¡
-		// return freeBlocks * blockSize; //µ¥Î»Byte
-		return (freeBlocks * blockSize) / 1024; // µ¥Î»KB
-		// return (freeBlocks * blockSize)/1024 /1024; //µ¥Î»MB
+		// è¿”å›SDå¡ç©ºé—²å¤§å°
+		// return freeBlocks * blockSize; //å•ä½Byte
+		return (freeBlocks * blockSize) / 1024; // å•ä½KB
+		// return (freeBlocks * blockSize)/1024 /1024; //å•ä½MB
 	}
 
 	/**
-	 * »ñÈ¡ÊÖ»úµÄmacµØÖ·
+	 * è·å–æ‰‹æœºçš„macåœ°å€
 	 */
 	public static String getMac(Context context) {
 		WifiManager wifi = (WifiManager) context

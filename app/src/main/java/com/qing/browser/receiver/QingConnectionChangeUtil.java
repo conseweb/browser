@@ -39,7 +39,7 @@ public class QingConnectionChangeUtil implements Runnable {
 				String json = URLUtil.getInstance().getJson(
 						ConstantsUrl.getSALENETSETUP, poststring);
 				
-				Log.v("LS","安装一次的统计 json=="+json);
+				Log.v("LS","瀹夎涓�娆＄殑缁熻 json=="+json);
 				
 				if (StringUtil.isNull(json)) {
 					Message msg = new Message();

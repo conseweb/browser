@@ -34,15 +34,15 @@ public class NewVersionActivity extends Activity {
 			TongJi.AddAnalyticsData(TongJi.n_gengxin);
 			setContentView(R.layout.new_version);
 			TextView dialog_title = (TextView)findViewById(R.id.dialog_title);
-			dialog_title.setText("ºÏ≤È–¬∞Ê±æ");
+			dialog_title.setText("Ê£ÄÊü•Êñ∞ÁâàÊú¨");
 			
 			TextView vtv = (TextView) findViewById(R.id.gengxin_banben);
-			vtv.setText("∞Ê±æ£∫" + versionInfo.getVersion());
+			vtv.setText("ÁâàÊú¨Ôºö" + versionInfo.getVersion());
 			TextView stv = (TextView) findViewById(R.id.gengxin_daxiao);
 			float size = Float.valueOf(versionInfo.getSize()) / 1024 / 1024;
 			DecimalFormat fnum = new DecimalFormat("##0.00");
 			String dd = fnum.format(size);
-			stv.setText("¥Û–°£∫ " + fnum.format(size) + " M");
+			stv.setText("Â§ßÂ∞èÔºö " + fnum.format(size) + " M");
 			TextView xtv = (TextView) findViewById(R.id.gengxin_neirong);
 			Log.i("CNCOMAN", versionInfo.getText());
 			String contentString = "";

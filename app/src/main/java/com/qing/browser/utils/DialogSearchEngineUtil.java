@@ -23,8 +23,8 @@ public class DialogSearchEngineUtil extends Dialog {
 	private Button btn_cancel;
 	private GridView dragGridView;
 
-	String[] itemSub = { "°Ù¶È", "¹È¸è", "µ±µ±", "ËÑ¹·", "ÌÔ±¦", "ĞÂÀË", "Ò×²é",
-			"ÑÇÂíÑ·", "ÒËËÑ" };
+	String[] itemSub = { "ç™¾åº¦", "è°·æ­Œ", "å½“å½“", "æœç‹—", "æ·˜å®", "æ–°æµª", "æ˜“æŸ¥",
+			"äºšé©¬é€Š", "å®œæœ" };
 	final int[] imageSub = { R.drawable.search_baidu,
 			R.drawable.search_guge, R.drawable.earch_dangdang,
 			R.drawable.search_sougou, R.drawable.search_taobao,
@@ -54,7 +54,7 @@ public class DialogSearchEngineUtil extends Dialog {
 		this.setContentView(R.layout.faxian_activity);
 
 		TextView title = (TextView) findViewById(R.id.grid_pop_title);
-		title.setText("Ñ¡ÔñËÑË÷ÒıÇæ");
+		title.setText("é€‰æ‹©æœç´¢å¼•æ“");
 		
 		btn_cancel = (Button) findViewById(R.id.faxian_close);
 		btn_cancel.setOnClickListener(new View.OnClickListener() {

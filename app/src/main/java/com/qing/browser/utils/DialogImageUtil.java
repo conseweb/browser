@@ -48,7 +48,7 @@ public class DialogImageUtil extends Dialog {
 	}
 
 	private void setListener() {
-		// 取消
+		// 鍙栨秷
 		if (negativeClickListener != null) {
 			btn_cancel.setOnClickListener(negativeClickListener);
 		} else {
@@ -77,7 +77,7 @@ public class DialogImageUtil extends Dialog {
 			dialogTitleView.setText(dialogTitle);
 		}else {
 			dialogTitleView.setVisibility(View.VISIBLE);
-			dialogTitleView.setText("温馨提示");
+			dialogTitleView.setText("娓╅Θ鎻愮ず");
 		}
 		dialog_image = (ImageView) findViewById(R.id.dialog_image);
 		dialog_image.setImageResource(dialogresId);

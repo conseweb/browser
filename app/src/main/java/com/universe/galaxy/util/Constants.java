@@ -5,155 +5,155 @@ public class Constants {
 	
 
 	/**
-	 * ÇşµÀ±àÂëÄ¬ÈÏÖµ,Ä¬ÈÏÎª¿Õ,Ê×´Î³ö°üÒªÉè¶¨³§¼Ò±àÂë
+	 * æ¸ é“ç¼–ç é»˜è®¤å€¼,é»˜è®¤ä¸ºç©º,é¦–æ¬¡å‡ºåŒ…è¦è®¾å®šå‚å®¶ç¼–ç 
 	 */
 	public static final String MANU_DEFAULT_EXT = "1000";
 	
 	/*
-	 * SharedPreferences ´æ´¢Ãû³Æ
+	 * SharedPreferences å­˜å‚¨åç§°
 	 */
 	public static final String MANU_DEFAULT_EXT_NAME = "MANU_DEFAULT_EXT_NAME";
 
 	/**
-	 * ÇşµÀÃû³ÆÄ¬ÈÏÖµ,Ä¬ÈÏÎª¿Õ,Ê×´Î³ö°üÒªÉè¶¨³§¼ÒÃû³Æ
+	 * æ¸ é“åç§°é»˜è®¤å€¼,é»˜è®¤ä¸ºç©º,é¦–æ¬¡å‡ºåŒ…è¦è®¾å®šå‚å®¶åç§°
 	 */
-	public static final String MANU_NAME_DEFAULT_EXT = "ä¯ÀÀÆ÷";
+	public static final String MANU_NAME_DEFAULT_EXT = "æµè§ˆå™¨";
 	
 	/*
-	 * SharedPreferences ´æ´¢Ãû³Æ
+	 * SharedPreferences å­˜å‚¨åç§°
 	 */
 	public static final String MANU_NAME_DEFAULT_EXT_NAME = "MANU_NAME_DEFAULT_EXT_NAME";
 
 	/**
-	 * »úĞÍ±àÂë½ØÈ¡³¤¶È
+	 * æœºå‹ç¼–ç æˆªå–é•¿åº¦
 	 */
 	public static final int MACH_LENGTH = 15;
 
 	/**
-	 * ³§¼ÒĞèÇó»úĞÍÄ¬ÈÏÖµ,Ä¬ÈÏÎª¿Õ,ÈçÓĞĞèÒª,¸ù¾İ³§¼ÒĞèÒª¸³Öµ
+	 * å‚å®¶éœ€æ±‚æœºå‹é»˜è®¤å€¼,é»˜è®¤ä¸ºç©º,å¦‚æœ‰éœ€è¦,æ ¹æ®å‚å®¶éœ€è¦èµ‹å€¼
 	 */
 	public static final String MACH_DEFAULT_EXT = "DT001";
 	/**
-	 * SharedPreferences ´æ´¢Ãû³Æ
+	 * SharedPreferences å­˜å‚¨åç§°
 	 */
 	public static final String MACH_DEFAULT_EXT_NAME = "MACH_DEFAULT_EXT_NAME";
 	/**
-	 * »úĞÍ±àÂë
+	 * æœºå‹ç¼–ç 
 	 */
 	// public static final String MACH = Tools.getModel();
 
 	/**
-	 * ³ö°üÈÕÆÚ£ºÄêºóÁ½Î»MMDD¡£¸ñÊ½£º120905
+	 * å‡ºåŒ…æ—¥æœŸï¼šå¹´åä¸¤ä½MMDDã€‚æ ¼å¼ï¼š120905
 	 */
 	public static final String CHU_BAO_RI_QI = "120905";
 
 	/**
-	 * Ö÷¶¯ ÏúÁ¿·¢ËÍ±êÊ¶
+	 * ä¸»åŠ¨ é”€é‡å‘é€æ ‡è¯†
 	 */
 	public static final String ZHU_DONG_SMS_FLAG = "A";
 
 	/**
-	 * ´ı»úÊ±¼ä ÏúÁ¿·¢ËÍ±êÊ¶
+	 * å¾…æœºæ—¶é—´ é”€é‡å‘é€æ ‡è¯†
 	 */
 	public static final String DAI_JI_SALE_SMS_FLAG = "B";
 
 	/**
-	 * ²¦ºÅ´ÎÊı ÏúÁ¿·¢ËÍ±êÊ¶
+	 * æ‹¨å·æ¬¡æ•° é”€é‡å‘é€æ ‡è¯†
 	 */
 	public static final String BAO_HAO_SALE_SMS_FLAG = "C";
 
 	/**
-	 * ½âÆÁ´ÎÊı ÏúÁ¿·¢ËÍ±êÊ¶
+	 * è§£å±æ¬¡æ•° é”€é‡å‘é€æ ‡è¯†
 	 */
 	public static final String JIE_PING_SALE_SMS_FLAG = "E";
 
 	/**
-	 * ²¹·¢ÏúÁ¿·¢ËÍ±êÊ¶
+	 * è¡¥å‘é”€é‡å‘é€æ ‡è¯†
 	 */
 	public static final String SALE_SMS_FLAG_INTERNET = "N";
 
 	/**
-	 * ÏúÁ¿·¢ËÍkey
+	 * é”€é‡å‘é€key
 	 */
 	public static final String IS_SEND_BE = "IS_SEND_BE";
 
 	/**
-	 * Preferences ÎÄ¼şÃû
+	 * Preferences æ–‡ä»¶å
 	 */
 	public static final String PREFERENCES_NAME = "Qing";
 	/**
-	 * ÓÃ»§¸öÈË×ÊÁÏÍê³Éfalg£¬±£Ö¤Ö»Ìá½»Ò»´Î»ı·Ö
+	 * ç”¨æˆ·ä¸ªäººèµ„æ–™å®Œæˆfalgï¼Œä¿è¯åªæäº¤ä¸€æ¬¡ç§¯åˆ†
 	 */
 	public static final String USEZILIAOWANCHENG = "USEZILIAOWANCHENG";
 	/**
-	 * ´ı»úÊ±¼äkey
+	 * å¾…æœºæ—¶é—´key
 	 */
 	public static final String DAI_JI_SHI_JIAN = "DAI_JI_SHI_JIAN";
 
 	/**
-	 * »½ĞÑÆÁÄ»´ÎÊıkey
+	 * å”¤é†’å±å¹•æ¬¡æ•°key
 	 */
 	public static final String USER_PRESENT_KEY = "USER_PRESENT_KEY";
 	/**
-	 * Í¨»°´ÎÊı key
+	 * é€šè¯æ¬¡æ•° key
 	 */
 	public static final String CALL_NUMBER_KEY = "CALL_NUMBER_KEY";
 
 	/**
-	 * »½ĞÑÆÁÄ»´ÎÊı
+	 * å”¤é†’å±å¹•æ¬¡æ•°
 	 */
 	public static final int USER_PRESENT_COUNT = 50;
 
 	/**
-	 * ×Ô¶¯²É¼¯ÏúÁ¿´ı»úÊ±¼ä 5 Ğ¡Ê±
+	 * è‡ªåŠ¨é‡‡é›†é”€é‡å¾…æœºæ—¶é—´ 5 å°æ—¶
 	 */
 	public static int AUTO_SEND_SALESMS_TIME = 5 * 60;
 	/**
-	 * Í¨»°µÄ´ÎÊı
+	 * é€šè¯çš„æ¬¡æ•°
 	 */
 	public static final int CALL_NUMBER = 10;
 
 	/**
-	 * ¼ÆÊ±Æ÷¼ÆÊ±ÖÜÆÚ Õı³£Îª20·ÖÖÓ
+	 * è®¡æ—¶å™¨è®¡æ—¶å‘¨æœŸ æ­£å¸¸ä¸º20åˆ†é’Ÿ
 	 */
 	public static int TIMEING_CYCLE = 20;
 
 	/**
-	 * ×Ô¶¯ÁªÍøÖÜÆÚ20·ÖÖÓ
+	 * è‡ªåŠ¨è”ç½‘å‘¨æœŸ20åˆ†é’Ÿ
 	 */
 	public static final long NETWORKING_CYCLE = 20 * 60 * 1000;
 
 	/**
-	 * ÏúÁ¿¼ì²éÖÜÆÚ20·ÖÖÓ
+	 * é”€é‡æ£€æŸ¥å‘¨æœŸ20åˆ†é’Ÿ
 	 */
 	public static final long AUTO_SEND_SALESMS_CHECK_TIME = 20 * 60 * 1000;
 
 	/**
-	 * ²âÊÔÄ£Ê½ÏúÁ¿¼ì²éÖÜÆÚ2·ÖÖÓ
+	 * æµ‹è¯•æ¨¡å¼é”€é‡æ£€æŸ¥å‘¨æœŸ2åˆ†é’Ÿ
 	 */
 	public static final long AUTO_SEND_SALESMS_CHECK_TIME_TEST = 1 * 60 * 1000;
 
 	/**
-	 * ÊÇ·ñÔÊĞíÏòSD¿¨ÖĞĞ´ÈÕÖ¾
+	 * æ˜¯å¦å…è®¸å‘SDå¡ä¸­å†™æ—¥å¿—
 	 */
 	public static final boolean WRITE_LOG_SD_CARD = false;
 
 	/**
-	 * °æ±¾¸üĞÂÍ¨ÖªID
+	 * ç‰ˆæœ¬æ›´æ–°é€šçŸ¥ID
 	 */
 	public static final int VERSION_STATUSBAR_ID = 1;
 
 	/**
-	 * ¿Í·şÖĞĞÄSD¿¨¸ùÄ¿Â¼
+	 * å®¢æœä¸­å¿ƒSDå¡æ ¹ç›®å½•
 	 */
 	public static final String CUSTOMERSERVICE_LOCAL_DIRECTORY = "sdcard/Qing/downloads";
 
 	/**
-	 * °æ±¾ĞÅÏ¢Bean
+	 * ç‰ˆæœ¬ä¿¡æ¯Bean
 	 */
 	public static final String VERSION_INFO = "VERSION_INFO";
 
-	// ///////////Í¨ĞÅĞ­Òé×Ö¶Î¶¨Òå/////////////////
+	// ///////////é€šä¿¡åè®®å­—æ®µå®šä¹‰/////////////////
 	public static final String VTIT = "VTIT";
 
 	public static final String VNUM = "VNUM";
@@ -169,92 +169,92 @@ public class Constants {
 	public static final String VTIME = "VTIME";
 
 	/**
-	 * µç×Ó±£¿¨ÑéÖ¤ÏÂ·¢ĞÅÏ¢ Ö¸Áî
+	 * ç”µå­ä¿å¡éªŒè¯ä¸‹å‘ä¿¡æ¯ æŒ‡ä»¤
 	 */
 	public static final String CMRT = "CMRT";
 
 	/**
-	 * ÏúÁ¿Ä¿µÄºÅÂë¡¢¹ã¸æÁ´½ÓµØÖ· Ö¸Áî
+	 * é”€é‡ç›®çš„å·ç ã€å¹¿å‘Šé“¾æ¥åœ°å€ æŒ‡ä»¤
 	 */
 	public static final String PORT = "PORT";
 
 	/**
-	 * ¹ã¸æÍ¼Æ¬Á´½ÓµØÖ· Ö¸Áî
+	 * å¹¿å‘Šå›¾ç‰‡é“¾æ¥åœ°å€ æŒ‡ä»¤
 	 */
 	public static final String REDC = "REDC";
 
 	/**
-	 * ÍÆËÍ¹ã¸æĞ¡Í¼±êÁ´½ÓµØÖ· Ö¸Áî
+	 * æ¨é€å¹¿å‘Šå°å›¾æ ‡é“¾æ¥åœ°å€ æŒ‡ä»¤
 	 */
 	public static final String GGTB = "GGTB";
 
 	/**
-	 * ÏúÁ¿¶ÌĞÅÄÚÈİ¡¢¹ã¸æÎÄ×ÖÄÚÈİ Ö¸Áî
+	 * é”€é‡çŸ­ä¿¡å†…å®¹ã€å¹¿å‘Šæ–‡å­—å†…å®¹ æŒ‡ä»¤
 	 */
 	public static final String COMM = "COMM";
 	
 	/**
-	 * ¹ã¸æÎÄ×ÖÄÚÈİ
+	 * å¹¿å‘Šæ–‡å­—å†…å®¹
 	 */
 	public static final String COMN = "COMN";
 
 	/**
-	 * ÏÂ´ÎÁªÍø¼ä¸ôÊ±¼ä(Ğ¡Ê±)Ö¸Áî
+	 * ä¸‹æ¬¡è”ç½‘é—´éš”æ—¶é—´(å°æ—¶)æŒ‡ä»¤
 	 */
 	public static final String FEEC = "FEEC";
 
 	/**
-	 * ¹ã¸æ¼ò¶ÌÄÚÈİËµÃ÷Ö¸Áî
+	 * å¹¿å‘Šç®€çŸ­å†…å®¹è¯´æ˜æŒ‡ä»¤
 	 */
 	public static final String SHIU = "SHIU";
 
 	/**
-	 * Ö¸Áî
+	 * æŒ‡ä»¤
 	 */
 	public static final String CMDT = "CMDT";
 
 	/**
-	 * ²¹·¢ÏúÁ¿£º1£¬ÍÆËÍ¹ã¸æ£º2£¬ĞÂ»úÉÏÊĞÍÆËÍ£º3 Ö¸Áî
+	 * è¡¥å‘é”€é‡ï¼š1ï¼Œæ¨é€å¹¿å‘Šï¼š2ï¼Œæ–°æœºä¸Šå¸‚æ¨é€ï¼š3 æŒ‡ä»¤
 	 */
 	public static final String CODE = "CODE";
 
 	/**
-	 * ¹ã¸æÀàĞÍ£º1,´¿ÎÄ×Ö¡£2£¬Ğ¡Í¼±ê¡£3£¬Í¼Æ¬Ìî³ä
+	 * å¹¿å‘Šç±»å‹ï¼š1,çº¯æ–‡å­—ã€‚2ï¼Œå°å›¾æ ‡ã€‚3ï¼Œå›¾ç‰‡å¡«å……
 	 */
 	public static final String JFLX = "JFLX";
 
 	/**
-	 * ÍÆËÍÁåÉù: 0,²»Ïì 1£¬Ïì
+	 * æ¨é€é“ƒå£°: 0,ä¸å“ 1ï¼Œå“
 	 */
 	public static final String RING = "RING";
 
 	/**
-	 * ÍÆËÍÕğ¶¯£º0£¬²»Õğ¶¯ 1£¬Õğ¶¯
+	 * æ¨é€éœ‡åŠ¨ï¼š0ï¼Œä¸éœ‡åŠ¨ 1ï¼Œéœ‡åŠ¨
 	 */
 	public static final String MOVE = "MOVE";
 
 	/**
-	 * ÍÆËÍÊÇ·ñ¿É Çå³ş£º 0£¬¿ÉÉ¾ 1£¬²»¿ÉÉ¾
+	 * æ¨é€æ˜¯å¦å¯ æ¸…æ¥šï¼š 0ï¼Œå¯åˆ  1ï¼Œä¸å¯åˆ 
 	 */
 	public static final String DEL = "DEL";
 
 	/**
-	 * ÍÆËÍµ¯³ö¿òµÄ°ñµ¥µØÖ·
+	 * æ¨é€å¼¹å‡ºæ¡†çš„æ¦œå•åœ°å€
 	 */
 	public static final String GURL = "GURL";
 
 	/**
-	 * ÍÆËÍµ¯³ö¿òµÄAPKÏÂÔØµØÖ·
+	 * æ¨é€å¼¹å‡ºæ¡†çš„APKä¸‹è½½åœ°å€
 	 */
 	public static final String APKURL = "APKURL";
 
 	/**
-	 * ÍÆËÍµ¯³ö¿ò 0£º²»µ¯³ö 1£ºµ¯¿ò
+	 * æ¨é€å¼¹å‡ºæ¡† 0ï¼šä¸å¼¹å‡º 1ï¼šå¼¹æ¡†
 	 */
 	public static final String W_W = "W";
 
 	/**
-	 * ¹ã¸æÁĞ±íÄÚÈİÖ¸Áî
+	 * å¹¿å‘Šåˆ—è¡¨å†…å®¹æŒ‡ä»¤
 	 */
 	public static final String advertisingList = "advertisingList";
 
@@ -262,141 +262,141 @@ public class Constants {
 
 	public static final String CMID = "CMID";
 
-	// //////////////////Í¨ĞÅĞ­Òé×Ö¶Î¶¨Òå½áÊø/////////////
+	// //////////////////é€šä¿¡åè®®å­—æ®µå®šä¹‰ç»“æŸ/////////////
 
 	/**
-	 * ¸úĞÂ°Ù·Ö±È
+	 * è·Ÿæ–°ç™¾åˆ†æ¯”
 	 */
 	public static final int DOWN_STEP = 5;
 
 	/**
-	 * ÏÂÔØ¸üĞÂ ÑÓ³ÙÊ±¼ä
+	 * ä¸‹è½½æ›´æ–° å»¶è¿Ÿæ—¶é—´
 	 */
 	public static final int DOWN_DELAY_TIME = 500;
 
 	/**
-	 * ÁªÍøÑéÖ¤°´Å¥ÏÂÔØÑÓÊ±³¤¶È
+	 * è”ç½‘éªŒè¯æŒ‰é’®ä¸‹è½½å»¶æ—¶é•¿åº¦
 	 */
 	public static final int BUTTON_WAIT_TIME = 20;
 
 	/**
-	 * ×î½üÒ»´ÎÁªÍøÊ±¼ä±ê¼Ç
+	 * æœ€è¿‘ä¸€æ¬¡è”ç½‘æ—¶é—´æ ‡è®°
 	 */
 	public static final String BEFORE_TIME = "BEFORE_TIME";
 
 	/**
-	 * ×î½üÒ»´ÎÁªÍøÊ±¼ä±ê¼Ç
+	 * æœ€è¿‘ä¸€æ¬¡è”ç½‘æ—¶é—´æ ‡è®°
 	 */
 	public static final String SERVICE_BEFORE_TIME = "SERVICE_BEFORE_TIME";
 
 	/**
-	 * ÁªÍøÏÂ·¢Ê±¼ä¼ä¸ô
+	 * è”ç½‘ä¸‹å‘æ—¶é—´é—´éš”
 	 */
 	public static final String NET_TOTAL_TIME = "NET_TOTAL_TIME";
 	/**
-	 * ÁªÍø24Ğ¡Ê±¼ä¸ôÊ±¼ä Î¢Ãë
+	 * è”ç½‘24å°æ—¶é—´éš”æ—¶é—´ å¾®ç§’
 	 */
 	public static final long TOTALTIME = 24 * 60 * 60 * 1000;
 	/**
-	 * ÁªÍø24Ğ¡Ê±¼ä¸ôÊ±¼ä ÏÂÏŞ
+	 * è”ç½‘24å°æ—¶é—´éš”æ—¶é—´ ä¸‹é™
 	 */
 	public static final int TOTALTIME_DOWN = 0;
 	/**
-	 * ÁªÍø24Ğ¡Ê±¼ä¸ôÊ±¼ä ÉÏÏŞ µ¥Î»·ÖÖÓ
+	 * è”ç½‘24å°æ—¶é—´éš”æ—¶é—´ ä¸Šé™ å•ä½åˆ†é’Ÿ
 	 */
 	public static final int TOTALTIME_UP = 500 * 60;
 
 	/**
-	 * ÁªÍøÏúÁ¿Í³¼Æ Ê±¼ä¼ä¸ôÎª60·ÖÖÓ
+	 * è”ç½‘é”€é‡ç»Ÿè®¡ æ—¶é—´é—´éš”ä¸º60åˆ†é’Ÿ
 	 */
 	public static final int NET_SALES_INTERVAL_TIME = 60 * 60 * 1000;
 
 	/**
-	 * ²úÆ·±êÊ¶
+	 * äº§å“æ ‡è¯†
 	 */
 	public static final String PROD = "100";
 
 	/**
-	 * ²úÆ·±êÊ¶
+	 * äº§å“æ ‡è¯†
 	 */
 	public static final String APP_PROD = "101";
 
 	/**
-	 * ÁªÍøÏÂ·¢Ö¸Áî-ÁªÍø²¹·¢SMS
+	 * è”ç½‘ä¸‹å‘æŒ‡ä»¤-è”ç½‘è¡¥å‘SMS
 	 */
 	public static final String NET_SEND_SMS = "1";
 
 	/**
-	 * ÁªÍøÏÂ·¢Ö¸Áî-¹ã¸æÍÆËÍ2
+	 * è”ç½‘ä¸‹å‘æŒ‡ä»¤-å¹¿å‘Šæ¨é€2
 	 */
 	public static final String NET_AD_TWO = "2";
 
 	/**
-	 * ÁªÍøÏÂ·¢Ö¸Áî-¹ã¸æÍÆËÍ1 ĞÂ»úÉÏÊĞ
+	 * è”ç½‘ä¸‹å‘æŒ‡ä»¤-å¹¿å‘Šæ¨é€1 æ–°æœºä¸Šå¸‚
 	 */
 	public static final String NET_AD_ONE = "3";
 
 	/**
-	 * ÁªÍøÏÂ·¢Ö¸Áî-¹ã¸æÏÔÊ¾ÎÄ×Ö
+	 * è”ç½‘ä¸‹å‘æŒ‡ä»¤-å¹¿å‘Šæ˜¾ç¤ºæ–‡å­—
 	 */
 	public static final String NET_SHOW_TEXT = "1";
 	/**
-	 * ÁªÍøÏÂ·¢Ö¸Áî-¹ã¸æÏÔÊ¾Í¼Æ¬+ÎÄ×Ö
+	 * è”ç½‘ä¸‹å‘æŒ‡ä»¤-å¹¿å‘Šæ˜¾ç¤ºå›¾ç‰‡+æ–‡å­—
 	 */
 	public static final String NET_SHOW_ALL = "2";
 
 	/**
-	 * ÁªÍøÏÂ·¢Ö¸Áî-¹ã¸æÏÔÊ¾Í¼Æ¬
+	 * è”ç½‘ä¸‹å‘æŒ‡ä»¤-å¹¿å‘Šæ˜¾ç¤ºå›¾ç‰‡
 	 */
 	public static final String NET_SHOW_PIC = "3";
 
 	/**
-	 * ÁªÍøÏÂ·¢Ö¸Áî-ÁªÍø²¹·¢MMS ¿ÕÏĞ
+	 * è”ç½‘ä¸‹å‘æŒ‡ä»¤-è”ç½‘è¡¥å‘MMS ç©ºé—²
 	 */
 	public static final String NET_SEND_MMS = "4";
 
 	/**
-	 * SharedPreferences GPSĞÅÏ¢´æ´¢Ãû³Æ
+	 * SharedPreferences GPSä¿¡æ¯å­˜å‚¨åç§°
 	 */
 	public static final String SSJD = "SSJD";
 
 	/**
-	 * SharedPreferences GPSĞÅÏ¢´æ´¢Ãû³Æ
+	 * SharedPreferences GPSä¿¡æ¯å­˜å‚¨åç§°
 	 */
 	public static final String SSWD = "SSWD";
 
 	/**
-	 * SharedPreferences GPSĞÅÏ¢´æ´¢Ãû³Æ,´æ´¢ÊÖ»úµ±Ç°Î»ÖÃ
+	 * SharedPreferences GPSä¿¡æ¯å­˜å‚¨åç§°,å­˜å‚¨æ‰‹æœºå½“å‰ä½ç½®
 	 */
 	public static final String SJWZ = "SJWZ";
 
 	/**
-	 * ÍÆËÍ¹ã¸æĞ¡Í¼±ê Ä¬ÈÏ0
+	 * æ¨é€å¹¿å‘Šå°å›¾æ ‡ é»˜è®¤0
 	 */
 	public static String TUISONG_MR0 = "0";
 
 	/**
-	 * ÍÆËÍ¹ã¸æĞ¡Í¼±ê Ä¬ÈÏ1
+	 * æ¨é€å¹¿å‘Šå°å›¾æ ‡ é»˜è®¤1
 	 */
 	public static String TUISONG_MR1 = "1";
 
 	/**
-	 * ÍÆËÍ¹ã¸æĞ¡Í¼±ê Î´¶Á¶ÌĞÅ
+	 * æ¨é€å¹¿å‘Šå°å›¾æ ‡ æœªè¯»çŸ­ä¿¡
 	 */
 	public static String TUISONG_WDDX = "2";
 
 	/**
-	 * ÍÆËÍ¹ã¸æĞ¡Í¼±ê Î´½Óµç»°
+	 * æ¨é€å¹¿å‘Šå°å›¾æ ‡ æœªæ¥ç”µè¯
 	 */
 	public static String TUISONG_WJDH = "3";
 
 	/**
-	 * ÍÆËÍ¹ã¸æĞ¡Í¼±ê µç×ÓÓÊ¼ş
+	 * æ¨é€å¹¿å‘Šå°å›¾æ ‡ ç”µå­é‚®ä»¶
 	 */
 	public static String TUISONG_DZYJ = "4";
 
 	/**
-	 * ÍÆËÍ¹ã¸æĞ¡Í¼±ê À¶ÑÀ¶ú»ú
+	 * æ¨é€å¹¿å‘Šå°å›¾æ ‡ è“ç‰™è€³æœº
 	 */
 	public static String TUISONG_LYEJ = "5";
 
@@ -407,12 +407,12 @@ public class Constants {
 	public static final String APP_INSTALL_DIRECTORY = "sdcard/hot/";
 
 	/**
-	 * ±£´æÉı¼¶ÌáÊ¾µÄÊ±¼ä¼ä¸ô £¨¶ÔºóÌ¨Éı¼¶ÓĞĞ§£©
+	 * ä¿å­˜å‡çº§æç¤ºçš„æ—¶é—´é—´éš” ï¼ˆå¯¹åå°å‡çº§æœ‰æ•ˆï¼‰
 	 */
 	public static final String SHENG_JI_JIAN_GE = "SHENG_JI_JIAN_GE";
 
 	/**
-	 * Éı¼¶ÌáĞÑµÄÊ±¼ä¼ä¸ô
+	 * å‡çº§æé†’çš„æ—¶é—´é—´éš”
 	 */
 	public static final String SHENG_JI_TIME = "SHENG_JI_TIME";
 

@@ -147,7 +147,7 @@ public class HistoryProvider  extends ContentProvider {
 		}
 
 		/**
-		 * ÔÚhistory.dbÊı¾İ¿âÏÂ´´½¨Ò»¸öhistory±í´æ´¢ÏÂÔØĞÅÏ¢
+		 * åœ¨history.dbæ•°æ®åº“ä¸‹åˆ›å»ºä¸€ä¸ªhistoryè¡¨å­˜å‚¨ä¸‹è½½ä¿¡æ¯
 		 */
 		@Override
 		public void onCreate(SQLiteDatabase db) {
@@ -158,10 +158,10 @@ public class HistoryProvider  extends ContentProvider {
 		public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
 			if (newVersion <= oldVersion) {
-				// Êı¾İ¿â²»Éı¼¶
+				// æ•°æ®åº“ä¸å‡çº§
 				return;
 			} else {
-				Log.i("H", "HistoryDBHelper ÀúÊ·Êı¾İ¿âÉı¼¶  oldVersion=" + oldVersion
+				Log.i("H", "HistoryDBHelper å†å²æ•°æ®åº“å‡çº§  oldVersion=" + oldVersion
 						+ " newVersion=" + newVersion);
 
 				// 1, Rename table.

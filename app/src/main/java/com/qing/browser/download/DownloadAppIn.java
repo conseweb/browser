@@ -19,7 +19,7 @@ public class DownloadAppIn {
 	private Context mContext;
 	private String urlStr;
 	private Dao dao;
-	private String localfile = null;// 保存路径
+	private String localfile = null;// 淇濆瓨璺緞
 	private int fileSize = 0;
 	private String mFileName = null;
 	private DownloadManager downloadManager;
@@ -62,7 +62,7 @@ public class DownloadAppIn {
 				connection.setRequestMethod("GET");
 				fileSize = connection.getContentLength();
 				if (localfile == null) {
-					// 打印输出服务器Header信息
+					// 鎵撳嵃杈撳嚭鏈嶅姟鍣℉eader淇℃伅
 					Map<String, List<String>> map = connection
 							.getHeaderFields();
 					for (String str : map.keySet()) {
@@ -81,7 +81,7 @@ public class DownloadAppIn {
 						mFileName = spStr[1];
 					}
 
-					mFileName = mFileName.replace("\"", "");// 去掉下载文件名中的双引号
+					mFileName = mFileName.replace("\"", "");// 鍘绘帀涓嬭浇鏂囦欢鍚嶄腑鐨勫弻寮曞彿
 					mFileName = mFileName + Constants.DownLoadFileName;
 					Log.i("H", "InitThread mFileName = " + mFileName);
 					checkFileName(mFileName);
@@ -93,13 +93,13 @@ public class DownloadAppIn {
 				if (!file.exists()) {
 					file.createNewFile();
 				}
-				// 本地访问文件
+				// 鏈湴璁块棶鏂囦欢
 				RandomAccessFile accessFile = new RandomAccessFile(file, "rwd");
 				accessFile.setLength(fileSize);
 				accessFile.close();
 				connection.disconnect();
 
-				// 创建info保存info数据到数据库
+				// 鍒涘缓info淇濆瓨info鏁版嵁鍒版暟鎹簱
 				DownloadItem info = new DownloadItem(0,0, fileSize - 1, 0,
 						urlStr, DownloadManager.DOWNLOAD_STATE_NORMAL,
 						mFileName);

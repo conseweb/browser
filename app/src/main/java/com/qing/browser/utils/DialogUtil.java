@@ -47,7 +47,7 @@ public class DialogUtil extends Dialog {
 	}
 
 	private void setListener() {
-		// 取消
+		// 鍙栨秷
 		if (negativeClickListener != null) {
 			btn_cancel.setOnClickListener(negativeClickListener);
 		} else {
@@ -76,7 +76,7 @@ public class DialogUtil extends Dialog {
 			dialogTitleView.setText(dialogTitle);
 		}else {
 			dialogTitleView.setVisibility(View.VISIBLE);
-			dialogTitleView.setText("温馨提示");
+			dialogTitleView.setText("娓╅Θ鎻愮ず");
 		}
 		dialogTextView = (TextView) findViewById(R.id.dialog_text);
 		dialogTextView.setText(dialogText);

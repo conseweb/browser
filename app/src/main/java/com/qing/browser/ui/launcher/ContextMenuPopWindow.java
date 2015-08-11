@@ -18,7 +18,7 @@ public class ContextMenuPopWindow extends PopupWindow {
 		super(context);
 		this.context = context;
 
-		// ´´½¨
+		// åˆ›å»º
 		this.initTab();
 		setWidth(LayoutParams.WRAP_CONTENT);
 		setHeight(LayoutParams.WRAP_CONTENT);
@@ -28,7 +28,7 @@ public class ContextMenuPopWindow extends PopupWindow {
 		setFocusable(true);
 	}
 
-	// ÊµÀý»¯
+	// å®žä¾‹åŒ–
 	private void initTab() {
 		this.contextMenuPopWindowInflater = LayoutInflater.from(this.context);
 		this.contextMenuPopWindowInflaterView = this.contextMenuPopWindowInflater

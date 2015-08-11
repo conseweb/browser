@@ -25,7 +25,7 @@ import com.qing.browser.utils.Constants;
 
 public class BootOrShutDownReceiver extends BroadcastReceiver {
 
-	// PackageManager °ü¹ÜÀíÀà
+	// PackageManager åŒ…ç®¡ç†ç±»
 	PackageManager packageManager;
 	public SharedPreferences sp;
 	private Context mContext;
@@ -38,7 +38,7 @@ public class BootOrShutDownReceiver extends BroadcastReceiver {
 				Context.MODE_PRIVATE);
 
 		mContext = context;
-		// ¿ª»ú¼àÌı
+		// å¼€æœºç›‘å¬
 		if (intent.getAction().equals(Intent.ACTION_BOOT_COMPLETED)) {
 
 			setAlarm();
@@ -51,27 +51,27 @@ public class BootOrShutDownReceiver extends BroadcastReceiver {
 					.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
 
 			if (mobNetInfo.isConnected()) {
-				// ¿ª»ú´ò¿ªÊı¾İÁ¬½Ó
+				// å¼€æœºæ‰“å¼€æ•°æ®è¿æ¥
 				sp.edit()
 						.putInt(LiuLiangTongji.NetworkStatus,
 								ConnectivityManager.TYPE_MOBILE).commit();
 			} else if (wifiNetInfo.isConnected()) {
-				// ¿ª»ú´ò¿ªwifiÁ¬½Ó
+				// å¼€æœºæ‰“å¼€wifiè¿æ¥
 				sp.edit()
 						.putInt(LiuLiangTongji.NetworkStatus,
 								ConnectivityManager.TYPE_WIFI).commit();
 			} else {
-				// ¿ª»úÎ´´ò¿ªÁªÍø
+				// å¼€æœºæœªæ‰“å¼€è”ç½‘
 				sp.edit()
 						.putInt(LiuLiangTongji.NetworkStatus,
 								LiuLiangTongji.NetworkStatus_Not).commit();
 			}
 		}
 
-		// ÔÚ¹Ø»ú¼àÌı
+		// åœ¨å…³æœºç›‘å¬
 		if (intent.getAction().equals(Intent.ACTION_SHUTDOWN)) {
 
-			// ¹Ø»úÈ¡ÏûÄÖÖÓ
+			// å…³æœºå–æ¶ˆé—¹é’Ÿ
 			Intent mIntent = new Intent(mContext, AlarmReceiver.class);
 			PendingIntent sender = PendingIntent.getBroadcast(mContext, 0,
 					mIntent, 0);
@@ -79,14 +79,14 @@ public class BootOrShutDownReceiver extends BroadcastReceiver {
 					.getSystemService(Activity.ALARM_SERVICE);
 			am.cancel(sender);
 
-			// ¼ÇÂ¼uidÓ¦ÓÃ ±¾´ÎÁ÷Á¿½áÓà
+			// è®°å½•uidåº”ç”¨ æœ¬æ¬¡æµé‡ç»“ä½™
 			saveData();
 
 		}
 	}
 
 	public long getData() {
-		// TrafficStatsÀà¸ù¾İÓ¦ÓÃµÄUID»ñÈ¡µ½Á÷Á¿µÄÏà¹ØÊı¾İ
+		// TrafficStatsç±»æ ¹æ®åº”ç”¨çš„UIDè·å–åˆ°æµé‡çš„ç›¸å…³æ•°æ®
 		try {
 			ApplicationInfo ai = packageManager.getApplicationInfo(
 					"com.qing.browser", PackageManager.GET_ACTIVITIES);
@@ -100,7 +100,7 @@ public class BootOrShutDownReceiver extends BroadcastReceiver {
 			return recv + sent;
 
 		} catch (NameNotFoundException e) {
-			Log.e("H", "¹Ø»ú¼àÌı  " + e.toString());
+			Log.e("H", "å…³æœºç›‘å¬  " + e.toString());
 			return 0;
 		}
 	}
@@ -111,13 +111,13 @@ public class BootOrShutDownReceiver extends BroadcastReceiver {
 				LiuLiangTongji.NetworkStatus_Not);
 		switch (NetworkStatus) {
 		case ConnectivityManager.TYPE_MOBILE:
-			// ÉÏ´ÎÊÇÊı¾İÁ¬½Ó
+			// ä¸Šæ¬¡æ˜¯æ•°æ®è¿æ¥
 
 			if (0 != LiuLiangTongji.temp) {
 				LiuLiangTongji.temp = getData() - LiuLiangTongji.temp;
 			}
 			Log.d("H",
-					"¹Ø»ú¼àÌı ±¾´Î 3GÊ¹ÓÃÁ÷Á¿"
+					"å…³æœºç›‘å¬ æœ¬æ¬¡ 3Gä½¿ç”¨æµé‡"
 							+ LiuLiangTongji.getDataStr(LiuLiangTongji.temp));
 			sp.edit()
 					.putLong(
@@ -138,12 +138,12 @@ public class BootOrShutDownReceiver extends BroadcastReceiver {
 			break;
 
 		case ConnectivityManager.TYPE_WIFI:
-			// ÉÏ´ÎÊÇwifiÁ¬½Ó
+			// ä¸Šæ¬¡æ˜¯wifiè¿æ¥
 			if (0 != LiuLiangTongji.temp) {
 				LiuLiangTongji.temp = getData() - LiuLiangTongji.temp;
 			}
 			Log.d("H",
-					"¹Ø»ú¼àÌı ±¾´Î WIFIÊ¹ÓÃÁ÷Á¿"
+					"å…³æœºç›‘å¬ æœ¬æ¬¡ WIFIä½¿ç”¨æµé‡"
 							+ LiuLiangTongji.getDataStr(LiuLiangTongji.temp));
 			sp.edit()
 					.putLong(
@@ -164,7 +164,7 @@ public class BootOrShutDownReceiver extends BroadcastReceiver {
 			break;
 
 		default:
-			// ÉÏ´ÎÎ´Á¬½Ó
+			// ä¸Šæ¬¡æœªè¿æ¥
 			LiuLiangTongji.temp = 0;
 
 		}
@@ -177,7 +177,7 @@ public class BootOrShutDownReceiver extends BroadcastReceiver {
 				mContext, 0, intent,
 				PendingIntent.FLAG_UPDATE_CURRENT);
 
-		// 1·ÖÖÓºó·¢ËÍ¹ã²¥£¬È»ºóÃ¿¸ô1Ğ¡Ê±ÃëÖØ¸´·¢¹ã²¥
+		// 1åˆ†é’Ÿåå‘é€å¹¿æ’­ï¼Œç„¶åæ¯éš”1å°æ—¶ç§’é‡å¤å‘å¹¿æ’­
 		int triggerAtTime = (int) (System.currentTimeMillis() + 60 * 1000);
 		int interval = 60 * 60 * 1000;
  

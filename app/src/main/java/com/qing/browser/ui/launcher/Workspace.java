@@ -114,7 +114,7 @@ public class Workspace extends ViewGroup {
 	private int screenWidth;
 
 	/**
-	 * 0×ó 1ÓÒ -1³ö´í
+	 * 0å·¦ 1å³ -1å‡ºé”™
 	 */
 	private int screen_left_or_right = -1;
 	private int left_or_right_getScrollX = 0;
@@ -147,7 +147,7 @@ public class Workspace extends ViewGroup {
 
 		final ViewConfiguration configuration = ViewConfiguration
 				.get(getContext());
-		// Ôö´ó×óÓÒ»¬¶¯ÅĞ¶Ï¾àÀë
+		// å¢å¤§å·¦å³æ»‘åŠ¨åˆ¤æ–­è·ç¦»
 		// mTouchSlop = configuration.getScaledTouchSlop() * 10;
 		DisplayMetrics dm = new DisplayMetrics();
 		WindowManager wm = (WindowManager) getContext().getSystemService(
@@ -285,7 +285,7 @@ public class Workspace extends ViewGroup {
 
 		mCustomWebView.setWebViewClient(new WebViewClient() {
 			public boolean shouldOverrideUrlLoading(WebView view, String url) {
-				// ÖØĞ´´Ë·½·¨±íÃ÷µã»÷ÍøÒ³ÀïÃæµÄÁ´½Ó»¹ÊÇÔÚµ±Ç°µÄwebviewÀïÌø×ª£¬²»Ìøµ½ä¯ÀÀÆ÷ÄÇ±ß
+				// é‡å†™æ­¤æ–¹æ³•è¡¨æ˜ç‚¹å‡»ç½‘é¡µé‡Œé¢çš„é“¾æ¥è¿˜æ˜¯åœ¨å½“å‰çš„webviewé‡Œè·³è½¬ï¼Œä¸è·³åˆ°æµè§ˆå™¨é‚£è¾¹
 				view.loadUrl(url);
 				return true;
 			}
@@ -330,9 +330,9 @@ public class Workspace extends ViewGroup {
 
 	@Override
 	public void computeScroll() {
-		if (mScroller.computeScrollOffset()) {// ·µ»Øtrue£¬±íÊ¾¶¯»­ÈÔÔÚ½øĞĞ£¬»¹Ã»ÓĞÍ£Ö¹
-			scrollTo(mScroller.getCurrX(), mScroller.getCurrY());// ¹ö¶¯µ½Ä¿±ê×ø±ê
-			postInvalidate(); // Ê¹viewÖØ»­
+		if (mScroller.computeScrollOffset()) {// è¿”å›trueï¼Œè¡¨ç¤ºåŠ¨ç”»ä»åœ¨è¿›è¡Œï¼Œè¿˜æ²¡æœ‰åœæ­¢
+			scrollTo(mScroller.getCurrX(), mScroller.getCurrY());// æ»šåŠ¨åˆ°ç›®æ ‡åæ ‡
+			postInvalidate(); // ä½¿viewé‡ç”»
 		}
 	}
 
@@ -564,7 +564,7 @@ public class Workspace extends ViewGroup {
 					mVelocityTracker.addMovement(event);
 				}
 				if (Math.abs(deltaX) > Math.abs(deltaY)) {
-					// ÕıÏò»òÕß¸ºÏòÒÆ¶¯£¬ÆÁÄ»¸úËæÊÖÖ¸ÒÆ¶¯
+					// æ­£å‘æˆ–è€…è´Ÿå‘ç§»åŠ¨ï¼Œå±å¹•è·Ÿéšæ‰‹æŒ‡ç§»åŠ¨
 					mLastMotionX = x;
 					scrollBy(deltaX, 0);
 				}
@@ -578,10 +578,10 @@ public class Workspace extends ViewGroup {
 			if (mVelocityTracker != null) {
 				mVelocityTracker.addMovement(event);
 				mVelocityTracker.computeCurrentVelocity(1000);
-				// µÃµ½XÖá·½ÏòÊÖÖ¸ÒÆ¶¯ËÙ¶È
+				// å¾—åˆ°Xè½´æ–¹å‘æ‰‹æŒ‡ç§»åŠ¨é€Ÿåº¦
 				velocityX = (int) mVelocityTracker.getXVelocity();
 			}
-			// velocityXÎªÕıÖµËµÃ÷ÊÖÖ¸ÏòÓÒ»¬¶¯£¬Îª¸ºÖµËµÃ÷ÊÖÖ¸Ïò×ó»¬¶¯
+			// velocityXä¸ºæ­£å€¼è¯´æ˜æ‰‹æŒ‡å‘å³æ»‘åŠ¨ï¼Œä¸ºè´Ÿå€¼è¯´æ˜æ‰‹æŒ‡å‘å·¦æ»‘åŠ¨
 			if (velocityX > SNAP_VELOCITY && mCurrentScreen > 0) {
 				// Fling enough to move left
 				snapToScreen(mCurrentScreen - 1);
@@ -637,20 +637,20 @@ public class Workspace extends ViewGroup {
 	}
 
 	/**
-	 * ¸ù¾İµ±Ç°²¼¾ÖµÄÎ»ÖÃ£¬¹ö¶¯µ½Ä¿µÄÒ³Ãæ
+	 * æ ¹æ®å½“å‰å¸ƒå±€çš„ä½ç½®ï¼Œæ»šåŠ¨åˆ°ç›®çš„é¡µé¢
 	 */
 	public void snapToDestination() {
-		/** »ñÈ¡viewµÄ¿í¶È */
+		/** è·å–viewçš„å®½åº¦ */
 		final int screenWidth = getScreenWidth();
 		/**
-		 * getScrollX():»ñµÃ¹ö¶¯ºóviewµÄºá×ø±ê
+		 * getScrollX():è·å¾—æ»šåŠ¨åviewçš„æ¨ªåæ ‡
 		 */
 		final int destScreen = (getScrollX() + screenWidth / 2) / screenWidth;
 		snapToScreen(destScreen);
 	}
 
 	private void snapToScreen(int whichScreen, int velocity, boolean settle) {
-		// »ñÈ¡ÓĞĞ§Ò³Ãæ
+		// è·å–æœ‰æ•ˆé¡µé¢
 		final int screenWidth = getScreenWidth();
 		whichScreen = Math.max(0, Math.min(whichScreen, getChildCount() - 1));
 		if (getScrollX() != (whichScreen * screenWidth)) {
@@ -659,11 +659,11 @@ public class Workspace extends ViewGroup {
 			mScroller.startScroll(getScrollX(), 0, delta, 0,
 					Math.abs(delta) * 2);
 			if (mCurrentScreen == 0 && whichScreen == 0) {
-				invalidate(); // Ê¹viewÖØ»­
+				invalidate(); // ä½¿viewé‡ç”»
 				return;
 			}
 			mCurrentScreen = whichScreen;
-			invalidate(); // Ê¹viewÖØ»­
+			invalidate(); // ä½¿viewé‡ç”»
 			if (mOnViewChangeListener != null) {
 				mOnViewChangeListener.OnViewChange(mCurrentScreen);
 			}
@@ -841,11 +841,11 @@ public class Workspace extends ViewGroup {
 	}
 
 	private boolean IsCanMove(int deltaX) {
-		// deltaX<0ËµÃ÷ÊÖÖ¸ÏòÓÒ»®
+		// deltaX<0è¯´æ˜æ‰‹æŒ‡å‘å³åˆ’
 		if (getScrollX() <= 0 && deltaX < 0) {
 			return false;
 		}
-		// deltaX>0ËµÃ÷ÊÖÖ¸Ïò×ó»®
+		// deltaX>0è¯´æ˜æ‰‹æŒ‡å‘å·¦åˆ’
 		if (getScrollX() >= (getChildCount() - 1) * getScreenWidth()
 				&& deltaX > 0) {
 			return false;

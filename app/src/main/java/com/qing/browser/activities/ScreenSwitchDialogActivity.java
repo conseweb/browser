@@ -27,7 +27,7 @@ public class ScreenSwitchDialogActivity extends BaseActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.dialog_screen_switch_page);
 		TextView dialog_title = (TextView) findViewById(R.id.dialog_title);
-		dialog_title.setText("—°‘Ò∆¡ƒª");
+		dialog_title.setText("ÈÄâÊã©Â±èÂπï");
 
 		mCancelButton = (Button) findViewById(R.id.dialog_cancel);
 
@@ -53,7 +53,7 @@ public class ScreenSwitchDialogActivity extends BaseActivity {
 					editor.putInt(Constants.PREFERENCES_SCREEN_ORIENTATION,
 								0);
 					editor.commit();
-					Toast.makeText(ScreenSwitchDialogActivity.this, "∫·∆¡",
+					Toast.makeText(ScreenSwitchDialogActivity.this, "Ê®™Â±è",
 							Toast.LENGTH_SHORT).show();
 					finish();
 					break;
@@ -61,7 +61,7 @@ public class ScreenSwitchDialogActivity extends BaseActivity {
 					editor.putInt(Constants.PREFERENCES_SCREEN_ORIENTATION,
 								1);
 					editor.commit(); 
-					Toast.makeText(ScreenSwitchDialogActivity.this, " ˙∆¡",
+					Toast.makeText(ScreenSwitchDialogActivity.this, "Á´ñÂ±è",
 							Toast.LENGTH_SHORT).show();
 					finish();
 					break;
@@ -69,7 +69,7 @@ public class ScreenSwitchDialogActivity extends BaseActivity {
 					editor.putInt(Constants.PREFERENCES_SCREEN_ORIENTATION,
 							2);
 					editor.commit(); 
-					Toast.makeText(ScreenSwitchDialogActivity.this, "∏˙ÀÊœµÕ≥",
+					Toast.makeText(ScreenSwitchDialogActivity.this, "Ë∑üÈöèÁ≥ªÁªü",
 							Toast.LENGTH_SHORT).show();
 					finish();
 					break;

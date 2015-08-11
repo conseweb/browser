@@ -38,10 +38,10 @@ public class QingConnectionChangeReceiver extends BroadcastReceiver {
 				LiuLiangTongji.NetworkStatus_Not);
 		switch (NetworkStatus) {
 		case ConnectivityManager.TYPE_MOBILE:
-			// ÉÏ´ÎÊÇÊı¾İÁ¬½Ó
+			// ä¸Šæ¬¡æ˜¯æ•°æ®è¿æ¥
 
 			Log.d("H",
-					"ÍøÂçÇĞ»» 3GÊ¹ÓÃÁ÷Á¿£ºw="
+					"ç½‘ç»œåˆ‡æ¢ 3Gä½¿ç”¨æµé‡ï¼šw="
 							+ LiuLiangTongji.getDataStr(LiuLiangTongji.temp)
 							+ " getData()="
 							+ LiuLiangTongji.getDataStr(getData()));
@@ -50,7 +50,7 @@ public class QingConnectionChangeReceiver extends BroadcastReceiver {
 				LiuLiangTongji.temp = getData() - LiuLiangTongji.temp;
 			}
 			Log.d("H",
-					"ÍøÂçÇĞ»» 3GÊ¹ÓÃÁ÷Á¿£º"
+					"ç½‘ç»œåˆ‡æ¢ 3Gä½¿ç”¨æµé‡ï¼š"
 							+ LiuLiangTongji.getDataStr(LiuLiangTongji.temp));
 			sp.edit()
 					.putLong(
@@ -85,9 +85,9 @@ public class QingConnectionChangeReceiver extends BroadcastReceiver {
 
 			break;
 		case ConnectivityManager.TYPE_WIFI:
-			// ÉÏ´ÎÊÇwifiÁ¬½Ó
+			// ä¸Šæ¬¡æ˜¯wifiè¿æ¥
 			Log.d("H",
-					"ÍøÂçÇĞ»» wifiÊ¹ÓÃÁ÷Á¿£ºw="
+					"ç½‘ç»œåˆ‡æ¢ wifiä½¿ç”¨æµé‡ï¼šw="
 							+ LiuLiangTongji.getDataStr(LiuLiangTongji.temp)
 							+ " getData()="
 							+ LiuLiangTongji.getDataStr(getData()));
@@ -96,7 +96,7 @@ public class QingConnectionChangeReceiver extends BroadcastReceiver {
 				LiuLiangTongji.temp = getData() - LiuLiangTongji.temp;
 			}
 			Log.d("H",
-					"ÍøÂçÇĞ»» wifiÊ¹ÓÃÁ÷Á¿£º"
+					"ç½‘ç»œåˆ‡æ¢ wifiä½¿ç”¨æµé‡ï¼š"
 							+ LiuLiangTongji.getDataStr(LiuLiangTongji.temp));
 
 			sp.edit()
@@ -132,7 +132,7 @@ public class QingConnectionChangeReceiver extends BroadcastReceiver {
 			break;
 
 		default:
-			// ÉÏ´ÎÎ´Á¬½Ó
+			// ä¸Šæ¬¡æœªè¿æ¥
 			LiuLiangTongji.temp = getData();
 			if (mobNetInfo.isConnected()) {
 				sp.edit()
@@ -162,8 +162,8 @@ public class QingConnectionChangeReceiver extends BroadcastReceiver {
 
 			Log.v("LS","QingConnectionChangeReceiver isWifiConnected="
 							+ isWifiConnected + " salenet=" + salenet 
-							+ " ÄÚÖÃ=" + Tools.getIsSystemApp(context));
-			// ÅĞ¶ÏÊÇ·ñÒªÁªÍø»ñÈ¡ÏÂ·¢ ¡¢ÄÚÖÃ¡¢ ·ÃÎÊÒ»´Î ³É¹¦ºó²»·ÃÎÊ
+							+ " å†…ç½®=" + Tools.getIsSystemApp(context));
+			// åˆ¤æ–­æ˜¯å¦è¦è”ç½‘è·å–ä¸‹å‘ ã€å†…ç½®ã€ è®¿é—®ä¸€æ¬¡ æˆåŠŸåä¸è®¿é—®
 			if (isWifiConnected && !salenet
 					/*&& ("1".equals(Tools.getIsSystemApp(context)))*/) {
 				QingConnectionChange.ConnectionChangeAction(context);
@@ -173,7 +173,7 @@ public class QingConnectionChangeReceiver extends BroadcastReceiver {
 	}
 
 	public long getData() {
-		// TrafficStatsÀà¸ù¾İÓ¦ÓÃµÄUID»ñÈ¡µ½Á÷Á¿µÄÏà¹ØÊı¾İ
+		// TrafficStatsç±»æ ¹æ®åº”ç”¨çš„UIDè·å–åˆ°æµé‡çš„ç›¸å…³æ•°æ®
 		try {
 			ApplicationInfo ai = packageManager.getApplicationInfo(
 					"com.qing.browser", PackageManager.GET_ACTIVITIES);

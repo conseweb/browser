@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 /**
- * ½¨Á¢Ò»¸öÊı¾İ¿â°ïÖúÀà
+ * å»ºç«‹ä¸€ä¸ªæ•°æ®åº“å¸®åŠ©ç±»
  */
 public class DBHelper extends SQLiteOpenHelper {
 
@@ -18,13 +18,13 @@ public class DBHelper extends SQLiteOpenHelper {
 
 	private static final int DATABASE_VERSION = 1;
 
-	// appdownload.db-->Êı¾İ¿âÃû
+	// appdownload.db-->æ•°æ®åº“å
 	public DBHelper(Context context) {
 		super(context, "qingdownload.db", null, DATABASE_VERSION);
 	}
 
 	/**
-	 * ÔÚappdownload.dbÊı¾İ¿âÏÂ´´½¨Ò»¸ödownload_info±í´æ´¢ÏÂÔØĞÅÏ¢
+	 * åœ¨appdownload.dbæ•°æ®åº“ä¸‹åˆ›å»ºä¸€ä¸ªdownload_infoè¡¨å­˜å‚¨ä¸‹è½½ä¿¡æ¯
 	 */
 	@Override
 	public void onCreate(SQLiteDatabase db) {
@@ -34,10 +34,10 @@ public class DBHelper extends SQLiteOpenHelper {
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 		if (newVersion <= oldVersion) {
-			// Êı¾İ¿â²»Éı¼¶
+			// æ•°æ®åº“ä¸å‡çº§
 			return;
 		} else {
-			Log.i("H", "DBHelper ÏÂÔØÊı¾İ¿âÉı¼¶  oldVersion=" + oldVersion
+			Log.i("H", "DBHelper ä¸‹è½½æ•°æ®åº“å‡çº§  oldVersion=" + oldVersion
 					+ " newVersion=" + newVersion);
 
 			// 1, Rename table.

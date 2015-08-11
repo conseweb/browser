@@ -264,7 +264,7 @@ public class LauncherModel {
 					null, where, new String[] { shortid, screen, container,
 							type }, null);
 			if (cursor.moveToFirst()) {
-				// ¸üĞÂ
+				// æ›´æ–°
 
 			} else {
 				Uri result = cr
@@ -300,7 +300,7 @@ public class LauncherModel {
 	public static Uri addItemToDatabase(Context context,
 			ShortcutInfo shortcutInfo, boolean notify) {
 		// if (-1 != QueryDuplicate(context, shortcutInfo.url, notify)) {
-		// Toast.makeText(context, "ÒÑ¾­Ìí¼Ó¹ı", Toast.LENGTH_SHORT).show();
+		// Toast.makeText(context, "å·²ç»æ·»åŠ è¿‡", Toast.LENGTH_SHORT).show();
 		// return;
 		// }
 
@@ -349,12 +349,12 @@ public class LauncherModel {
 	}
 
 	/**
-	 * ²éÑ¯ÊÇ·ñÓĞ¼ÇÂ¼
+	 * æŸ¥è¯¢æ˜¯å¦æœ‰è®°å½•
 	 * 
 	 * @param context
 	 * @param url
 	 * @param notify
-	 * @return -1 ÎŞ¼ÇÂ¼
+	 * @return -1 æ— è®°å½•
 	 */
 	public static long QueryDuplicate(Context context, String url,
 			boolean notify) {
@@ -378,12 +378,12 @@ public class LauncherModel {
 	}
 
 	/**
-	 * ²éÑ¯¸ÃÆÁÄ»ÓĞ¶àÉÙ¼ÇÂ¼
+	 * æŸ¥è¯¢è¯¥å±å¹•æœ‰å¤šå°‘è®°å½•
 	 * 
 	 * @param context
 	 * @param screen
 	 * @param notify
-	 * @return true ÓĞ¼ÇÂ¼
+	 * @return true æœ‰è®°å½•
 	 */
 	public static int QueryCount(Context context, int screen, boolean notify) {
 		final ContentResolver cr = context.getContentResolver();
@@ -433,7 +433,7 @@ public class LauncherModel {
 	}
 
 	/**
-	 * ²éÑ¯ÊÇ·ñÓĞÎÄ¼ş¼Ğ¼ÇÂ¼
+	 * æŸ¥è¯¢æ˜¯å¦æœ‰æ–‡ä»¶å¤¹è®°å½•
 	 * 
 	 * @param context
 	 * @param screen
@@ -930,7 +930,7 @@ public class LauncherModel {
 											if (icon == null) {
 												String picMD5 = Tools
 														.generateMD5(info.iconUrl);
-												// ÅĞ¶ÏÍ¼Æ¬ÊÇ·ñÒÑ´æÔÚ
+												// åˆ¤æ–­å›¾ç‰‡æ˜¯å¦å·²å­˜åœ¨
 												Attach attach = new Attach();
 												attach.setId((int) info.shortid);
 												attach.setTitle(picMD5);
@@ -1107,7 +1107,7 @@ public class LauncherModel {
 						}
 					}
 				}
-				// Ìí¼ÓÏÂÔØÍ¼Æ¬¹¦ÄÜ
+				// æ·»åŠ ä¸‹è½½å›¾ç‰‡åŠŸèƒ½
 				updateImageLoad(context);
 			}
 
@@ -1134,7 +1134,7 @@ public class LauncherModel {
 				mHandler.post(new Runnable() {
 					public void run() {
 						Callbacks callbacks = tryGetCallbacks(oldCallbacks);
-						if (callbacks != null) { // Çå³ıall view
+						if (callbacks != null) { // æ¸…é™¤all view
 							callbacks.startBinding(CellLayout.update_screen);
 						}
 					}
@@ -1280,7 +1280,7 @@ public class LauncherModel {
 	};
 
 	/**
-	 * ÅÅĞò ÓÉ´óµ½Ğ¡
+	 * æ’åº ç”±å¤§åˆ°å°
 	 */
 	public static final Comparator<ItemInfo> SHORTCUT_INDEX_COMPARATOR_APP_DESC = new Comparator<ItemInfo>() {
 		public final int compare(ItemInfo a, ItemInfo b) {
@@ -1289,7 +1289,7 @@ public class LauncherModel {
 	};
 
 	/**
-	 * ÅÅĞò ÓÉ´óµ½Ğ¡
+	 * æ’åº ç”±å¤§åˆ°å°
 	 */
 	public static final Comparator<HashMap<String, Object>> FAXIAN_INDEX_COMPARATOR_APP_DESC = new Comparator<HashMap<String, Object>>() {
 		public final int compare(HashMap<String, Object> a,
@@ -1301,7 +1301,7 @@ public class LauncherModel {
 
 	public static Bitmap zuHeBitMap(Bitmap bitmap2, Context context) {
 
-		// ·ÀÖ¹³öÏÖImmutable bitmap passed to Canvas constructor´íÎó
+		// é˜²æ­¢å‡ºç°Immutable bitmap passed to Canvas constructoré”™è¯¯
 		Bitmap bitmap1 = BitmapFactory.decodeResource(context.getResources(),
 				R.drawable.hotseat_browser_bg).copy(Bitmap.Config.ARGB_8888,
 				true);
@@ -1329,7 +1329,7 @@ public class LauncherModel {
 		canvas.drawBitmap(bitmap2, Math.abs(w - w_2) / 2,
 				Math.abs(h - h_2) / 2, paint);
 		canvas.save(Canvas.ALL_SAVE_FLAG);
-		// ´æ´¢ĞÂºÏ³ÉµÄÍ¼Æ¬
+		// å­˜å‚¨æ–°åˆæˆçš„å›¾ç‰‡
 		canvas.restore();
 
 		return newBitmap;
@@ -1344,10 +1344,10 @@ public class LauncherModel {
 				if (msg != null) {
 					switch (msg.what) {
 					case 0:
-						// ÎŞ¸üĞÂ
+						// æ— æ›´æ–°
 						break;
 					case 1:
-						// ¸üĞÂ
+						// æ›´æ–°
 
 						break;
 					}

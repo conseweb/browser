@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.qing.browser"
-    android:versionCode="5"
-    android:versionName="1.0.0.3" >
+    android:versionCode="13"
+    android:versionName="1.0.0.11" >
 
     <uses-sdk
         android:minSdkVersion="8"

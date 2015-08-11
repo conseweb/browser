@@ -2,10 +2,10 @@ package com.qing.browser.download;
 
 public class DownloadItem {
 	private int downloadID;
-	private int startPos;// ¿ªÊ¼µã
-	private int endPos;// ½áÊøµã
-	private int compeleteSize;// Íê³É¶È
-	private String url;// ÏÂÔØÆ÷ÍøÂç±êÊ¶
+	private int startPos;// å¼€å§‹ç‚¹
+	private int endPos;// ç»“æŸç‚¹
+	private int compeleteSize;// å®Œæˆåº¦
+	private String url;// ä¸‹è½½å™¨ç½‘ç»œæ ‡è¯†
 	private int progress;
 	private String mErrorMessage;
 	private int downloadState;

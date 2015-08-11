@@ -57,9 +57,9 @@ import com.universe.galaxy.util.TongJi;
 
 public class AddShortcutActivity extends BaseActivity {
 
-	private int currentView = 0;// µ±Ç°ÊÓÍ¼
-	private ViewPager mPager;// Ò³¿¨ÄÚÈİ
-	private List<View> listViews; // TabÒ³ÃæÁĞ±í
+	private int currentView = 0;// å½“å‰è§†å›¾
+	private ViewPager mPager;// é¡µå¡å†…å®¹
+	private List<View> listViews; // Tabé¡µé¢åˆ—è¡¨
 	private View viewpage1, viewpage2, viewpage3;
 	private TextView tv_bookmark, tv_history, tv_faxian;
 	private LinearLayout tv_bookmark_layout, tv_history_layout,
@@ -106,7 +106,7 @@ public class AddShortcutActivity extends BaseActivity {
 	}
 
 	/**
-	 * ³õÊ¼»¯Ò³¿¨ÄÚÈİViewPager
+	 * åˆå§‹åŒ–é¡µå¡å†…å®¹ViewPager
 	 */
 	private void InitViewPager() {
 		mPager = (ViewPager) findViewById(R.id.vPager);
@@ -145,7 +145,7 @@ public class AddShortcutActivity extends BaseActivity {
 	}
 
 	/**
-	 * ¸üĞÂµ±Ç°Ò³Âë
+	 * æ›´æ–°å½“å‰é¡µç 
 	 */
 	public void setCurPage(int page) {
 
@@ -193,7 +193,7 @@ public class AddShortcutActivity extends BaseActivity {
 	}
 
 	/**
-	 * Í·±êµã»÷¼àÌı
+	 * å¤´æ ‡ç‚¹å‡»ç›‘å¬
 	 */
 	public class MyOnClickListener implements View.OnClickListener {
 		private int index = 0;
@@ -209,7 +209,7 @@ public class AddShortcutActivity extends BaseActivity {
 	};
 
 	/**
-	 * ÊµÏÖÒ³¿¨ÇĞ»»¼àÌı
+	 * å®ç°é¡µå¡åˆ‡æ¢ç›‘å¬
 	 */
 	public class MyOnPageChangeListener implements OnPageChangeListener {
 
@@ -297,8 +297,8 @@ public class AddShortcutActivity extends BaseActivity {
 		nodata_tv = (TextView)page.findViewById(R.id.nodata_tv);
 		mData.clear();
 		if (currentView == 0) {
-			// ·¢ÏÖÊı¾İ
-			nodata_tv.setText("Ã»ÓĞ·¢ÏÖÊı¾İ");
+			// å‘ç°æ•°æ®
+			nodata_tv.setText("æ²¡æœ‰å‘ç°æ•°æ®");
 			Message msg = new Message();
 			msg.obj = "";
 			msg.what = 1;
@@ -308,7 +308,7 @@ public class AddShortcutActivity extends BaseActivity {
 
 			}
 		} else if (currentView == 1) {
-			// ÊéÇ©Êı¾İ
+			// ä¹¦ç­¾æ•°æ®
 
 			page.findViewById(R.id.addbookmark_layout).setVisibility(
 					View.VISIBLE);
@@ -316,15 +316,15 @@ public class AddShortcutActivity extends BaseActivity {
 			tv_addbookmark = (TextView) page.findViewById(R.id.tv_addbookmark);
 			nodata_btn_guangli = (TextView) page
 					.findViewById(R.id.nodata_btn_guangli);
-			nodata_tv.setText("Ã»ÓĞ¿ÉÓÃµÄÊéÇ©");
+			nodata_tv.setText("æ²¡æœ‰å¯ç”¨çš„ä¹¦ç­¾");
 			tv_addbookmark.setOnClickListener(clicklistener);
 			nodata_btn_guangli.setOnClickListener(clicklistener);
 
 			fillBookmarkData();
 			noDataView(page);
 		} else if (currentView == 2) {
-			// ÀúÊ·Êı¾İ
-			nodata_tv.setText("ÄúÃ»ÓĞÁôÏÂÈÎºÎÀúÊ·¼ÇÂ¼");
+			// å†å²æ•°æ®
+			nodata_tv.setText("æ‚¨æ²¡æœ‰ç•™ä¸‹ä»»ä½•å†å²è®°å½•");
 			mData = BookmarksProviderWrapper
 					.getStockHistoryForAddShortcut(AddShortcutActivity.this);
 			noDataView(page);
@@ -347,7 +347,7 @@ public class AddShortcutActivity extends BaseActivity {
 					LauncherModel.deleteItemFromDatabase(
 							AddShortcutActivity.this, _id);
 					holder.checkbox_select.setSelected(false);
-					Toast.makeText(AddShortcutActivity.this, "×ÀÃæ¿ì½İ·½Ê½ÒÑÉ¾³ı",
+					Toast.makeText(AddShortcutActivity.this, "æ¡Œé¢å¿«æ·æ–¹å¼å·²åˆ é™¤",
 							Toast.LENGTH_SHORT).show();
 				} else {
 					int count = LauncherModel.QueryCount(
@@ -413,7 +413,7 @@ public class AddShortcutActivity extends BaseActivity {
 							info, true);
 
 					holder.checkbox_select.setSelected(true);
-					Toast.makeText(AddShortcutActivity.this, "×ÀÃæ¿ì½İ·½Ê½ÒÑ´´½¨",
+					Toast.makeText(AddShortcutActivity.this, "æ¡Œé¢å¿«æ·æ–¹å¼å·²åˆ›å»º",
 							Toast.LENGTH_SHORT).show();
 				}
 
@@ -511,7 +511,7 @@ public class AddShortcutActivity extends BaseActivity {
 					JSONObject jsonObject = new JSONObject(json);
 					if (Launcher.STATUS_NULL.equals(jsonObject
 							.optString(Launcher.STATUS_KEY))) {
-						// ÎŞ¸üĞÂ
+						// æ— æ›´æ–°
 						Message msg = new Message();
 						msg.obj = Launcher.STATUS_NULL;
 						msg.what = 1;

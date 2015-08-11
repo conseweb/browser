@@ -35,7 +35,7 @@ public class BaseActivity extends Activity {
 		// TODO Auto-generated method stub
 		super.onResume();
 
-		// Ò¹¼äÄ£Ê½¿ªÆô
+		// å¤œé—´æ¨¡å¼å¼€å¯
 		if (sp.getBoolean(Constants.PREFERENCES_NIGHT_MODE, false)) {
 			night();
 		} else {

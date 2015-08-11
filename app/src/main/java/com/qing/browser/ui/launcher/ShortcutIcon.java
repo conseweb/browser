@@ -55,7 +55,7 @@ public class ShortcutIcon extends TextView implements DropTarget {
 		ShortcutIcon icon = (ShortcutIcon) LayoutInflater.from(launcher).inflate(
 				resId, group, false);
 
-		// ´¦Àítitle³¤¶ÈÎª5×Ö·û
+		// å¤„ç†titleé•¿åº¦ä¸º5å­—ç¬¦
 		String title = shortcutInfo.title.toString();
 		int length = title.length();
 		if (length > 6)
@@ -66,7 +66,7 @@ public class ShortcutIcon extends TextView implements DropTarget {
 		icon.mInfo = shortcutInfo;
 		icon.mLauncher = launcher;
 
-		icon.updateShortcutIcon(); // ¸üĞÂÍ¼±ê 
+		icon.updateShortcutIcon(); // æ›´æ–°å›¾æ ‡ 
 		 
 		shortcutInfo.setShortcutIcon(icon);
 		return icon;
@@ -74,43 +74,43 @@ public class ShortcutIcon extends TextView implements DropTarget {
 
 	
 	public void updateShortcutIcon() {
-		Bitmap closebmp = mInfo.getIcon(); // »ñÈ¡ËõÂÔÍ¼±ê
+		Bitmap closebmp = mInfo.getIcon(); // è·å–ç¼©ç•¥å›¾æ ‡
 		final Resources resources = mLauncher.getResources();
 		  
 		if(null == closebmp){ 
 			closebmp = BitmapFactory.decodeResource(resources,
-				R.drawable.hotseat_browser_bg); // »ñÈ¡FolderIcon¹Ø±ÕÊ±µÄ±³¾°Í¼
+				R.drawable.hotseat_browser_bg); // è·å–FolderIconå…³é—­æ—¶çš„èƒŒæ™¯å›¾
 		}
-		int iconWidth = closebmp.getWidth(); // iconµÄ¿í¶È
+		int iconWidth = closebmp.getWidth(); // iconçš„å®½åº¦
 		int iconHeight = closebmp.getHeight();
 		Bitmap folderclose = Bitmap.createBitmap(iconWidth, iconHeight,
 				Bitmap.Config.ARGB_8888);
 		Canvas canvas = new Canvas(folderclose);
-		canvas.drawBitmap(closebmp, 0, 0, null); // »æÖÆ±³¾°
-		mCloseIcon = new FastBitmapDrawable(folderclose); // ½«bitmap×ª»»ÎªDrawable
+		canvas.drawBitmap(closebmp, 0, 0, null); // ç»˜åˆ¶èƒŒæ™¯
+		mCloseIcon = new FastBitmapDrawable(folderclose); // å°†bitmapè½¬æ¢ä¸ºDrawable
 		setCompoundDrawablesWithIntrinsicBounds(null, mCloseIcon, null, null);
 
 		  
-		Matrix matrix = new Matrix(); // ´´½¨²Ù×÷Í¼Æ¬ÓÃµÄMatrix¶ÔÏó
-		float scaleWidth = iconWidth - 10;// ¼ÆËãËõÂÔÍ¼µÄ¿í(¸ßÓë¿íÏàÍ¬)
-		float scale = (scaleWidth / iconWidth); // ¼ÆËãËõ·Å±ÈÀı
-		matrix.postScale(scale, scale); // ÉèÖÃËõ·Å±ÈÀı
+		Matrix matrix = new Matrix(); // åˆ›å»ºæ“ä½œå›¾ç‰‡ç”¨çš„Matrixå¯¹è±¡
+		float scaleWidth = iconWidth - 10;// è®¡ç®—ç¼©ç•¥å›¾çš„å®½(é«˜ä¸å®½ç›¸åŒ)
+		float scale = (scaleWidth / iconWidth); // è®¡ç®—ç¼©æ”¾æ¯”ä¾‹
+		matrix.postScale(scale, scale); // è®¾ç½®ç¼©æ”¾æ¯”ä¾‹
 		Bitmap openbmp = BitmapFactory.decodeResource(resources,
-					R.drawable.ic_launcher_shortcut_open); // »ñÈ¡shortcut´ò¿ªÊ±µÄ±³¾°Í¼
-		int mOpeniconWidth = openbmp.getWidth(); // iconµÄ¿í¶È
+					R.drawable.ic_launcher_shortcut_open); // è·å–shortcutæ‰“å¼€æ—¶çš„èƒŒæ™¯å›¾
+		int mOpeniconWidth = openbmp.getWidth(); // iconçš„å®½åº¦
 		int mOpeniconHeight = openbmp.getHeight();
 		Bitmap folderopen = Bitmap.createBitmap(mOpeniconWidth, mOpeniconHeight,
 				Bitmap.Config.ARGB_8888); 
 		canvas = new Canvas(folderopen);
 		canvas.drawBitmap(openbmp, 0, 0, null);
 		 
-		// ´¦ÀíÍ¼Æ¬Ëõ·ÅµÄÎÊÌâ 
+		// å¤„ç†å›¾ç‰‡ç¼©æ”¾çš„é—®é¢˜ 
 		int x = (iconWidth - (int)scaleWidth) /2 ; 
 		Bitmap scalebmp = Bitmap.createBitmap(closebmp, 0, 0, iconWidth,
 				iconHeight, matrix, true);
 		canvas.drawBitmap(scalebmp, x, x, null);
 		
-		mOpenIcon = new FastBitmapDrawable(folderopen); // »æÖÆopenÍ¼Æ¬
+		mOpenIcon = new FastBitmapDrawable(folderopen); // ç»˜åˆ¶openå›¾ç‰‡
 	
 	
 	}
@@ -145,7 +145,7 @@ public class ShortcutIcon extends TextView implements DropTarget {
 			return;
 		}
 		
-		//TODO ´´½¨ÎÄ¼ş¼Ğ
+		//TODO åˆ›å»ºæ–‡ä»¶å¤¹
 		int shortId = mLauncher.addFolder(item.screen, mInfo.itemIndex); 
 	
 		
@@ -154,7 +154,7 @@ public class ShortcutIcon extends TextView implements DropTarget {
 		LauncherModel.addOrMoveItemInDatabase(mLauncher,item, 
 				shortId, item.screen, item.itemIndex); 
 		
-		updateShortcutIcon(); // ÍÏ×§·ÅÈëÊ±¸üĞÂ
+		updateShortcutIcon(); // æ‹–æ‹½æ”¾å…¥æ—¶æ›´æ–°
 	}
 
 	public void onDragEnter(DragSource source, int x, int y, int xOffset,

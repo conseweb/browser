@@ -36,17 +36,17 @@ public class KeywordsFlow extends FrameLayout implements OnGlobalLayoutListener{
     public static final int IDX_Y = 1;  
     public static final int IDX_TXT_LENGTH = 2;  
     public static final int IDX_DIS_Y = 3;  
-    /** ÓÉÍâÖÁÄÚµÄ¶¯»­¡£ */  
+    /** ç”±å¤–è‡³å†…çš„åŠ¨ç”»ã€‚ */  
     public static final int ANIMATION_IN = 1;  
-    /** ÓÉÄÚÖÁÍâµÄ¶¯»­¡£ */  
+    /** ç”±å†…è‡³å¤–çš„åŠ¨ç”»ã€‚ */  
     public static final int ANIMATION_OUT = 2;  
-    /** Î»ÒÆ¶¯»­ÀàĞÍ£º´ÓÍâÎ§ÒÆ¶¯µ½×ø±êµã¡£ */  
+    /** ä½ç§»åŠ¨ç”»ç±»å‹ï¼šä»å¤–å›´ç§»åŠ¨åˆ°åæ ‡ç‚¹ã€‚ */  
     public static final int OUTSIDE_TO_LOCATION = 1;  
-    /** Î»ÒÆ¶¯»­ÀàĞÍ£º´Ó×ø±êµãÒÆ¶¯µ½ÍâÎ§¡£ */  
+    /** ä½ç§»åŠ¨ç”»ç±»å‹ï¼šä»åæ ‡ç‚¹ç§»åŠ¨åˆ°å¤–å›´ã€‚ */  
     public static final int LOCATION_TO_OUTSIDE = 2;  
-    /** Î»ÒÆ¶¯»­ÀàĞÍ£º´ÓÖĞĞÄµãÒÆ¶¯µ½×ø±êµã¡£ */  
+    /** ä½ç§»åŠ¨ç”»ç±»å‹ï¼šä»ä¸­å¿ƒç‚¹ç§»åŠ¨åˆ°åæ ‡ç‚¹ã€‚ */  
     public static final int CENTER_TO_LOCATION = 3;  
-    /** Î»ÒÆ¶¯»­ÀàĞÍ£º´Ó×ø±êµãÒÆ¶¯µ½ÖĞĞÄµã¡£ */  
+    /** ä½ç§»åŠ¨ç”»ç±»å‹ï¼šä»åæ ‡ç‚¹ç§»åŠ¨åˆ°ä¸­å¿ƒç‚¹ã€‚ */  
     public static final int LOCATION_TO_CENTER = 4;  
     public static final long ANIM_DURATION = 800l;  
     public static int MAX = 10;  
@@ -58,7 +58,7 @@ public class KeywordsFlow extends FrameLayout implements OnGlobalLayoutListener{
     private static AlphaAnimation animAlpha2Transparent;  
     private static ScaleAnimation animScaleLarge2Normal, animScaleNormal2Large, animScaleZero2Normal,  
             animScaleNormal2Zero;  
-    /** ´æ´¢ÏÔÊ¾µÄ¹Ø¼ü×Ö¡£ */  
+    /** å­˜å‚¨æ˜¾ç¤ºçš„å…³é”®å­—ã€‚ */  
     private Vector<String> vecKeywords;  
     private int width, height;  
     
@@ -68,10 +68,10 @@ public class KeywordsFlow extends FrameLayout implements OnGlobalLayoutListener{
     private String[] bitmapurl;
     
     /** 
-     * go2Show()ÖĞ±»¸³ÖµÎªtrue£¬±êÊ¶¿ª·¢ÈËÔ±´¥·¢Æä¿ªÊ¼¶¯»­ÏÔÊ¾¡£<br/> 
-     * ±¾±êÊ¶µÄ×÷ÓÃÊÇ·ÀÖ¹ÔÚÌî³äkeywrodsÎ´Íê³ÉµÄ¹ı³ÌÖĞ»ñÈ¡µ½widthºÍheightºóÌáÇ°Æô¶¯¶¯»­¡£<br/> 
-     * ÔÚshow()·½·¨ÖĞÆä±»¸³ÖµÎªfalse¡£<br/> 
-     * ÕæÕıÄÜ¹»¶¯»­ÏÔÊ¾µÄÁíÒ»±ØÒªÌõ¼ş£ºwidth ºÍ height²»Îª0¡£<br/> 
+     * go2Show()ä¸­è¢«èµ‹å€¼ä¸ºtrueï¼Œæ ‡è¯†å¼€å‘äººå‘˜è§¦å‘å…¶å¼€å§‹åŠ¨ç”»æ˜¾ç¤ºã€‚<br/> 
+     * æœ¬æ ‡è¯†çš„ä½œç”¨æ˜¯é˜²æ­¢åœ¨å¡«å……keywrodsæœªå®Œæˆçš„è¿‡ç¨‹ä¸­è·å–åˆ°widthå’Œheightåæå‰å¯åŠ¨åŠ¨ç”»ã€‚<br/> 
+     * åœ¨show()æ–¹æ³•ä¸­å…¶è¢«èµ‹å€¼ä¸ºfalseã€‚<br/> 
+     * çœŸæ­£èƒ½å¤ŸåŠ¨ç”»æ˜¾ç¤ºçš„å¦ä¸€å¿…è¦æ¡ä»¶ï¼šwidth å’Œ heightä¸ä¸º0ã€‚<br/> 
      */  
     private boolean enableShow;  
     private Random random;  
@@ -84,9 +84,9 @@ public class KeywordsFlow extends FrameLayout implements OnGlobalLayoutListener{
      * @see CENTER_TO_LOCATION 
      * */  
     private int txtAnimInType, txtAnimOutType;  
-    /** ×î½üÒ»´ÎÆô¶¯¶¯»­ÏÔÊ¾µÄÊ±¼ä¡£ */  
+    /** æœ€è¿‘ä¸€æ¬¡å¯åŠ¨åŠ¨ç”»æ˜¾ç¤ºçš„æ—¶é—´ã€‚ */  
     private long lastStartAnimationTime;  
-    /** ¶¯»­ÔËĞĞÊ±¼ä¡£ */  
+    /** åŠ¨ç”»è¿è¡Œæ—¶é—´ã€‚ */  
     private long animDuration;  
   
     public KeywordsFlow(Context context, AttributeSet attrs, int defStyle) {  
@@ -137,12 +137,12 @@ public class KeywordsFlow extends FrameLayout implements OnGlobalLayoutListener{
     }  
   
     /** 
-     * ¿ªÊ¼¶¯»­ÏÔÊ¾¡£<br/> 
-     * Ö®Ç°ÒÑ¾­´æÔÚµÄTextView½«»áÏÔÊ¾ÍË³ö¶¯»­¡£<br/> 
+     * å¼€å§‹åŠ¨ç”»æ˜¾ç¤ºã€‚<br/> 
+     * ä¹‹å‰å·²ç»å­˜åœ¨çš„TextViewå°†ä¼šæ˜¾ç¤ºé€€å‡ºåŠ¨ç”»ã€‚<br/> 
      *  
-     * @return Õı³£ÏÔÊ¾¶¯»­·µ»Øtrue£»·´Ö®Îªfalse¡£·µ»ØfalseÔ­ÒòÈçÏÂ£º<br/> 
-     *         1.Ê±¼äÉÏ²»ÔÊĞí£¬ÊÜlastStartAnimationTimeµÄÖÆÔ¼£»<br/> 
-     *         2.Î´»ñÈ¡µ½widthºÍheightµÄÖµ¡£<br/> 
+     * @return æ­£å¸¸æ˜¾ç¤ºåŠ¨ç”»è¿”å›trueï¼›åä¹‹ä¸ºfalseã€‚è¿”å›falseåŸå› å¦‚ä¸‹ï¼š<br/> 
+     *         1.æ—¶é—´ä¸Šä¸å…è®¸ï¼Œå—lastStartAnimationTimeçš„åˆ¶çº¦ï¼›<br/> 
+     *         2.æœªè·å–åˆ°widthå’Œheightçš„å€¼ã€‚<br/> 
      */  
     public boolean go2Show(int animType) {  
         if (System.currentTimeMillis() - lastStartAnimationTime > animDuration) {  
@@ -196,9 +196,9 @@ public class KeywordsFlow extends FrameLayout implements OnGlobalLayoutListener{
         if (width > 0 && height > 0 && vecKeywords != null && vecKeywords.size() > 0 && enableShow) {  
             enableShow = false;  
             lastStartAnimationTime = System.currentTimeMillis(); 
-            //ÕÒµ½ÖĞĞÄµã
+            //æ‰¾åˆ°ä¸­å¿ƒç‚¹
             int xCenter = width >> 1, yCenter = height >> 1;  
-            //¹Ø¼ü×ÖµÄ¸öÊı¡£
+            //å…³é”®å­—çš„ä¸ªæ•°ã€‚
             int size = vecKeywords.size();
             
             foTextView = new LinearLayout[size];
@@ -207,7 +207,7 @@ public class KeywordsFlow extends FrameLayout implements OnGlobalLayoutListener{
             
             LinkedList<Integer> listX = new LinkedList<Integer>(), listY = new LinkedList<Integer>();  
             for (int i = 0; i < size; i++) {  
-                // ×¼±¸Ëæ»úºòÑ¡Êı£¬·Ö±ğ¶ÔÓ¦x/yÖáÎ»ÖÃ  
+                // å‡†å¤‡éšæœºå€™é€‰æ•°ï¼Œåˆ†åˆ«å¯¹åº”x/yè½´ä½ç½®  
                 listX.add(i * xItem);
                 listY.add(i * yItem + (yItem >> 2));
             }  
@@ -215,14 +215,14 @@ public class KeywordsFlow extends FrameLayout implements OnGlobalLayoutListener{
             LinkedList<LinearLayout> listTxtTop = new LinkedList<LinearLayout>();  
             for (int i = 0; i < size; i++) {  
                 String keyword = vecKeywords.get(i);  
-                // Ëæ»úÑÕÉ«  
+                // éšæœºé¢œè‰²  
                 //int ranColor = 0xff000000 | random.nextInt(0x0077ffff);  
                 int ranColor = 0xFF666666; 
-                // Ëæ»úÎ»ÖÃ£¬²ÚÖµ  
+                // éšæœºä½ç½®ï¼Œç³™å€¼  
                 int xy[] = randomXY(random, listX, listY, xItem);  
-                // Ëæ»ú×ÖÌå´óĞ¡  
+                // éšæœºå­—ä½“å¤§å°  
                 int txtSize = TEXT_SIZE_MIN ;//+ random.nextInt(TEXT_SIZE_MAX - TEXT_SIZE_MIN + 1);  
-                // ÊµÀı»¯TextView  
+                // å®ä¾‹åŒ–TextView  
                // final TextView txt = new TextView(getContext());  
                 View keywordlinear;
                 TextView txt;
@@ -295,7 +295,7 @@ public class KeywordsFlow extends FrameLayout implements OnGlobalLayoutListener{
                     
                     foTextView[i] = (LinearLayout) keywordlinear;
                     
-                    // »ñÈ¡ÎÄ±¾³¤¶È  
+                    // è·å–æ–‡æœ¬é•¿åº¦  
                     Paint paint = txt.getPaint();  
                     int strWidth = (int) (Math.ceil(paint.measureText(keyword)));  
                     int imageWidth = 0;
@@ -339,7 +339,7 @@ public class KeywordsFlow extends FrameLayout implements OnGlobalLayoutListener{
         return false;  
     }  
   
-    /** ĞŞÕıTextViewµÄY×ø±ê½«½«ÆäÌí¼Óµ½ÈİÆ÷ÉÏ¡£ */  
+    /** ä¿®æ­£TextViewçš„Yåæ ‡å°†å°†å…¶æ·»åŠ åˆ°å®¹å™¨ä¸Šã€‚ */  
     private void attach2Screen(LinkedList<LinearLayout> listTxt, int xCenter, int yCenter, int yItem) {  
         int size = listTxt.size();  
         sortXYList(listTxt, size);  
@@ -353,7 +353,7 @@ public class KeywordsFlow extends FrameLayout implements OnGlobalLayoutListener{
             layParams.topMargin = iXY[IDX_Y]+10;
             //layParams.setMargins(50, 50, 50, 0);
             addView(txt, layParams);  
-            // ¶¯»­  
+            // åŠ¨ç”»  
             AnimationSet animSet = getAnimationSet(iXY, xCenter, yCenter, txtAnimInType);  
             txt.startAnimation(animSet);  
         }  
@@ -390,12 +390,12 @@ public class KeywordsFlow extends FrameLayout implements OnGlobalLayoutListener{
     }  
   
     /** 
-     * ¸ù¾İÓëÖĞĞÄµãµÄ¾àÀëÓÉ½üµ½Ô¶½øĞĞÃ°ÅİÅÅĞò¡£ 
+     * æ ¹æ®ä¸ä¸­å¿ƒç‚¹çš„è·ç¦»ç”±è¿‘åˆ°è¿œè¿›è¡Œå†’æ³¡æ’åºã€‚ 
      *  
      * @param endIdx 
-     *            ÆğÊ¼Î»ÖÃ¡£ 
+     *            èµ·å§‹ä½ç½®ã€‚ 
      * @param txtArr 
-     *            ´ıÅÅĞòµÄÊı×é¡£ 
+     *            å¾…æ’åºçš„æ•°ç»„ã€‚ 
      *  
      */  
     private void sortXYList(LinkedList<LinearLayout> listTxt, int endIdx) {  
@@ -411,7 +411,7 @@ public class KeywordsFlow extends FrameLayout implements OnGlobalLayoutListener{
         }  
     }  
   
-    /** AÏß¶ÎÓëBÏß¶ÎËù´ú±íµÄÖ±ÏßÔÚXÖáÓ³ÉäÉÏÊÇ·ñÓĞ½»¼¯¡£ */  
+    /** Açº¿æ®µä¸Bçº¿æ®µæ‰€ä»£è¡¨çš„ç›´çº¿åœ¨Xè½´æ˜ å°„ä¸Šæ˜¯å¦æœ‰äº¤é›†ã€‚ */  
     private boolean isXMixed(int startA, int endA, int startB, int endB) {  
         boolean result = false;  
         if (startB >= startA && startB <= endA) {  
@@ -452,7 +452,7 @@ public class KeywordsFlow extends FrameLayout implements OnGlobalLayoutListener{
         vecKeywords.clear();  
     }  
   
-    /** Ö±½ÓÇå³ıËùÓĞµÄTextView¡£ÔÚÇå³ıÖ®Ç°²»»áÏÔÊ¾¶¯»­¡£ */  
+    /** ç›´æ¥æ¸…é™¤æ‰€æœ‰çš„TextViewã€‚åœ¨æ¸…é™¤ä¹‹å‰ä¸ä¼šæ˜¾ç¤ºåŠ¨ç”»ã€‚ */  
     public void rubAllViews() {  
         removeAllViews();  
     }  

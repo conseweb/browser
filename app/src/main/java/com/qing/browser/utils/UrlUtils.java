@@ -84,7 +84,7 @@ public class UrlUtils {
 	}
 
 	/**
-	 * 检查是否是url地址
+	 * 妫�鏌ユ槸鍚︽槸url鍦板潃
 	 * 
 	 * @param url
 	 * @return

@@ -477,7 +477,7 @@ public class DragController {
 	}
 
 	private DropTarget findDropTarget(int x, int y, int[] dropCoordinates) {
-		//再处理一下Zone SendZone DeleteZone 
+		//鍐嶅鐞嗕竴涓媄one SendZone DeleteZone 
 		
 		final Rect r = mRectTemp;
 

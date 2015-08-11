@@ -30,7 +30,7 @@ public class WelcomePageActivity extends Activity {
 	        R.drawable.thrid, R.drawable.four, R.drawable.five };
 	private ImageView open;
 	private int offset;
-	private int curPos = 0;// ¼ÇÂ¼µ±Ç°µÄÎ»ÖÃ
+	private int curPos = 0;// è®°å½•å½“å‰çš„ä½ç½®
 	private long mExitTime;
 
 	@Override
@@ -73,7 +73,7 @@ public class WelcomePageActivity extends Activity {
 		pager.setOnPageChangeListener(new OnPageChangeListener() {
 
 			public void onPageSelected(int arg0) {
-				// Èç¹ûÍ¼Æ¬Îª×îºóÒ»ÕÅ¾ÍÓ¦¸Ãµ¯³ö½øÈë ´°¿ÚÁË 
+				// å¦‚æœå›¾ç‰‡ä¸ºæœ€åä¸€å¼ å°±åº”è¯¥å¼¹å‡ºè¿›å…¥ çª—å£äº† 
 				moveCursorTo(arg0);
 				if (arg0 == (pics.length - 1)) {
 					handler.sendEmptyMessageDelayed(0, 500);
@@ -94,10 +94,10 @@ public class WelcomePageActivity extends Activity {
 	}
 
 	/**
-	 * ÒÆ¶¯Ö¸Õëµ½ÏàÁÚµÄÎ»ÖÃ
+	 * ç§»åŠ¨æŒ‡é’ˆåˆ°ç›¸é‚»çš„ä½ç½®
 	 * 
 	 * @param position
-	 *            Ö¸ÕëµÄË÷ÒıÖµ
+	 *            æŒ‡é’ˆçš„ç´¢å¼•å€¼
 	 * */
 	private void moveCursorTo(int position) {
 		TranslateAnimation anim = new TranslateAnimation(offset * curPos,

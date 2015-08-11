@@ -69,7 +69,7 @@ public class DialogEditUtil extends Dialog {
 			dialogTitleView.setText(dialogTitle);
 		}else {
 			dialogTitleView.setVisibility(View.VISIBLE);
-			dialogTitleView.setText("Œ¬‹∞Ã· æ");
+			dialogTitleView.setText("Ê∏©È¶®ÊèêÁ§∫");
 		}
 		dialogTextView = (EditText) findViewById(R.id.dialog_edit);
 		btn_sure = (Button) findViewById(R.id.dialog_ok);

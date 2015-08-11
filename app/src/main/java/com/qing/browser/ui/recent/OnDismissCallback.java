@@ -3,7 +3,7 @@ package com.qing.browser.ui.recent;
 import android.view.View;
 
 /**
- * É¾³ıµÄ»Øµ÷½Ó¿Ú
+ * åˆ é™¤çš„å›è°ƒæ¥å£
  * 
  */
 public interface OnDismissCallback {

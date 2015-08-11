@@ -49,9 +49,9 @@ public class ErWeiMaLiShilistActivity extends BaseActivity {
 		setContentView(R.layout.er_wei_ma_li_shi_list);
 		textView = (TextView) findViewById(R.id.item_title);
 		title_search = (TextView) findViewById(R.id.title_search);
-		title_search.setText("Çå³ı¼ÇÂ¼");
+		title_search.setText("æ¸…é™¤è®°å½•");
 		title_search.setVisibility(View.VISIBLE);
-		textView.setText("¶şÎ¬ÂëÀúÊ·");
+		textView.setText("äºŒç»´ç å†å²");
 		item_back = (ImageView) findViewById(R.id.item_back);
 		item_back.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
@@ -67,10 +67,10 @@ public class ErWeiMaLiShilistActivity extends BaseActivity {
 						file = new File(ErWeiMaChaKanActivity.getSDPath()
 								+ "/Qing/erweima/erweimajilu.txt");
 						if(file.delete()){
-							Toast.makeText(ErWeiMaLiShilistActivity.this,"Çå³ı¼ÇÂ¼³É¹¦!", 1000).show();
+							Toast.makeText(ErWeiMaLiShilistActivity.this,"æ¸…é™¤è®°å½•æˆåŠŸ!", 1000).show();
 							finish();
 						}else{
-							Toast.makeText(ErWeiMaLiShilistActivity.this,"Çå³ı¼ÇÂ¼Ê§°Ü", 1000).show();
+							Toast.makeText(ErWeiMaLiShilistActivity.this,"æ¸…é™¤è®°å½•å¤±è´¥", 1000).show();
 						}
 					} catch (Exception ex) {
 						ex.printStackTrace();
@@ -90,7 +90,7 @@ public class ErWeiMaLiShilistActivity extends BaseActivity {
 			} else {
 				setContentView(R.layout.er_wei_ma_li_shi_cha_kan_shi_bai);
 		        textView =(TextView)findViewById(R.id.item_title);
-		    	textView.setText("¶şÎ¬ÂëÀúÊ·");
+		    	textView.setText("äºŒç»´ç å†å²");
 		    	item_back = (ImageView)findViewById(R.id.item_back);
 		    	item_back.setOnClickListener(new OnClickListener(){
 		    		public void onClick(View v) {
@@ -98,8 +98,8 @@ public class ErWeiMaLiShilistActivity extends BaseActivity {
 		    		}});
 		    	Button loading_Button = (Button)findViewById(R.id.loading_Button);
 		    	TextView loading_text = (TextView)findViewById(R.id.loading_text);
-		    	loading_text.setText("Äú»¹Ã»ÓĞÉ¨ÃèÀúÊ·¼ÇÂ¼Å¶£¡");
-		    	loading_Button.setText("Á¢¼´É¨Ãè");
+		    	loading_text.setText("æ‚¨è¿˜æ²¡æœ‰æ‰«æå†å²è®°å½•å“¦ï¼");
+		    	loading_Button.setText("ç«‹å³æ‰«æ");
 		    	loading_Button.setOnClickListener(new OnClickListener() {
 					@Override
 					public void onClick(View v) {
@@ -121,7 +121,7 @@ public class ErWeiMaLiShilistActivity extends BaseActivity {
 								map.put("name", jsonObj.getString("neirong"));
 							}
 							if (!jsonObj.isNull("time")) {
-								map.put("time", "ÈÕÆÚ:"+jsonObj.getString("time"));
+								map.put("time", "æ—¥æœŸ:"+jsonObj.getString("time"));
 							}
 
 						} catch (JSONException e) {
@@ -137,7 +137,7 @@ public class ErWeiMaLiShilistActivity extends BaseActivity {
 				}
 			}
 		} catch (JSONException e1) {
-			Log.v("L", "Ô­À´ÊÇ³ö´íÁË");
+			Log.v("L", "åŸæ¥æ˜¯å‡ºé”™äº†");
 			e1.printStackTrace();
 		}
 
@@ -162,7 +162,7 @@ public class ErWeiMaLiShilistActivity extends BaseActivity {
 				
 
 			    if(qrCodeBitmap!=null){
-			    	textView.setText("É¨ÃèÀúÊ·");
+			    	textView.setText("æ‰«æå†å²");
 					BinaryBitmap localBinaryBitmap = new BinaryBitmap(
 							new HybridBinarizer(new RGBLuminanceSource(qrCodeBitmap)));
 					try {	
@@ -176,7 +176,7 @@ public class ErWeiMaLiShilistActivity extends BaseActivity {
 						startActivity(intent);	
 						
 					} catch (com.google.zxing.NotFoundException e) {
-						Toast.makeText(ErWeiMaLiShilistActivity.this,"ºÜ±§Ç¸£¬¶ÁÈ¡ÀúÊ·³ö´íÁË~",1000).show();
+						Toast.makeText(ErWeiMaLiShilistActivity.this,"å¾ˆæŠ±æ­‰ï¼Œè¯»å–å†å²å‡ºé”™äº†~",1000).show();
 						e.printStackTrace();
 					}
 				}
@@ -189,7 +189,7 @@ public class ErWeiMaLiShilistActivity extends BaseActivity {
 	}
 
 	/**
-	 * ¶ÁÈ¡¶şÎ¬ÂëµÄÀúÊ·¼ÇÂ¼
+	 * è¯»å–äºŒç»´ç çš„å†å²è®°å½•
 	 * 
 	 * @return
 	 */
@@ -211,7 +211,7 @@ public class ErWeiMaLiShilistActivity extends BaseActivity {
 					str = stream.toString();
 					stream.close();
 					inStream.close();
-					Log.v("L", "×Ö·û´®ÊÇÕâ¸ö===" + str);
+					Log.v("L", "å­—ç¬¦ä¸²æ˜¯è¿™ä¸ª===" + str);
 					return str;
 				}
 			} catch (Exception ex) {

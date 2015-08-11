@@ -20,7 +20,7 @@ import com.qing.browser.activities.BaseActivity;
 public class ErWeiMaEntryActivity extends BaseActivity {
 
 	private Button item_back = null;
-	String[] item = { "ÆÕÍ¨ÎÄ±¾", "¶ÌĞÅ", "ÍøÖ·", "ºÅÂë", "ÃûÆ¬", "ÓÊ¼ş" };
+	String[] item = { "æ™®é€šæ–‡æœ¬", "çŸ­ä¿¡", "ç½‘å€", "å·ç ", "åç‰‡", "é‚®ä»¶" };
 
 	final int[] imageSub = { R.drawable.er_wei_ma_wenben,
 			R.drawable.er_wei_ma_duanxin, R.drawable.er_wei_ma_wangzhi,

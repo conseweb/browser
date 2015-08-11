@@ -4,7 +4,7 @@ import android.util.Log;
 
 public class LLL {
 
-	//log ¿ª¹Ø¿ØÖÆ
+	//log å¼€å…³æŽ§åˆ¶
 	private static boolean logSwitch = true;
 
 	public static void i(String tag, String msg) {

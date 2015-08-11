@@ -10,7 +10,7 @@ import android.util.Log;
 
 /**
  * 
- * Ò»¸öÒµÎñÀà
+ * ä¸€ä¸ªä¸šåŠ¡ç±»
  */
 public class Dao {
 	private DBHelper dbHelper;
@@ -20,7 +20,7 @@ public class Dao {
 	}
 
 	/**
-	 * ²éÑ¯µÈ´ıÏÂÔØ
+	 * æŸ¥è¯¢ç­‰å¾…ä¸‹è½½
 	 */
 	public DownloadItem query(Context context) {
 		DownloadItem info = null;
@@ -58,7 +58,7 @@ public class Dao {
 	}
 
 	/**
-	 * ±£´æ ÏÂÔØµÄ¾ßÌåĞÅÏ¢
+	 * ä¿å­˜ ä¸‹è½½çš„å…·ä½“ä¿¡æ¯
 	 */
 	public void saveInfo(DownloadItem info) {
 		Log.d("H", "saveInfo " + info.toString());
@@ -72,7 +72,7 @@ public class Dao {
 	}
 
 	/**
-	 * ±£´æ ÏÂÔØµÄ¾ßÌåĞÅÏ¢
+	 * ä¿å­˜ ä¸‹è½½çš„å…·ä½“ä¿¡æ¯
 	 */
 	public void saveInfos(List<DownloadItem> infos) {
 		SQLiteDatabase database = dbHelper.getWritableDatabase();
@@ -87,7 +87,7 @@ public class Dao {
 	}
 
 	/**
-	 * µÃµ½ÏÂÔØ¾ßÌåĞÅÏ¢
+	 * å¾—åˆ°ä¸‹è½½å…·ä½“ä¿¡æ¯
 	 */
 	public DownloadItem getInfo(String urlstr) {
 		DownloadItem info = null;
@@ -105,7 +105,7 @@ public class Dao {
 	}
 
 	/**
-	 * µÃµ½ÏÂÔØ¾ßÌåĞÅÏ¢
+	 * å¾—åˆ°ä¸‹è½½å…·ä½“ä¿¡æ¯
 	 */
 	public List<DownloadItem> getInfos(Context context) {
 		List<DownloadItem> list = new ArrayList<DownloadItem>();
@@ -124,7 +124,7 @@ public class Dao {
 	}
 
 	/**
-	 * ¸üĞÂÊı¾İ¿âÖĞµÄÏÂÔØĞÅÏ¢
+	 * æ›´æ–°æ•°æ®åº“ä¸­çš„ä¸‹è½½ä¿¡æ¯
 	 */
 	public void updataInfos(int compeleteSize, int downing, String urlstr) {
 		SQLiteDatabase database = dbHelper.getReadableDatabase();
@@ -134,14 +134,14 @@ public class Dao {
 	}
 
 	/**
-	 * ¹Ø±ÕÊı¾İ¿â
+	 * å…³é—­æ•°æ®åº“
 	 */
 	public void closeDb() {
 		dbHelper.close();
 	}
 
 	/**
-	 * ÏÂÔØÍê³ÉºóÉ¾³ıÊı¾İ¿âÖĞµÄÊı¾İ
+	 * ä¸‹è½½å®Œæˆååˆ é™¤æ•°æ®åº“ä¸­çš„æ•°æ®
 	 */
 	public void delete(String url) {
 		SQLiteDatabase database = dbHelper.getReadableDatabase();
@@ -150,7 +150,7 @@ public class Dao {
 	}
 
 	/**
-	 * Çå³ıËùÓĞ
+	 * æ¸…é™¤æ‰€æœ‰
 	 */
 	public void clean() {
 		SQLiteDatabase database = dbHelper.getReadableDatabase();

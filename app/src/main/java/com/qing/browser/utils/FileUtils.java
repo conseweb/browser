@@ -14,7 +14,7 @@ import java.io.InputStreamReader;
 public class FileUtils { 
 	private static final int BUFFER = 8192;
 
-	// ¶ÁÈ¡ÎÄ¼ş
+	// è¯»å–æ–‡ä»¶
 	public static String readTextFile(File file) throws IOException {
 		String text = null;
 		InputStream is = null;
@@ -29,7 +29,7 @@ public class FileUtils {
 		return text;
 	}
 
-	// ´ÓÁ÷ÖĞ¶ÁÈ¡ÎÄ¼ş
+	// ä»æµä¸­è¯»å–æ–‡ä»¶
 	public static String readTextInputStream(InputStream is) throws IOException {
 		StringBuffer strbuffer = new StringBuffer();
 		String line;
@@ -47,7 +47,7 @@ public class FileUtils {
 		return strbuffer.toString();
 	}
 
-	// ½«ÎÄ±¾ÄÚÈİĞ´ÈëÎÄ¼ş
+	// å°†æ–‡æœ¬å†…å®¹å†™å…¥æ–‡ä»¶
 	public static void writeTextFile(File file, String str) throws IOException {
 		DataOutputStream out = null;
 		try {
@@ -60,7 +60,7 @@ public class FileUtils {
 		}
 	}
 
-	// ¸´ÖÆÎÄ¼ş
+	// å¤åˆ¶æ–‡ä»¶
 	public static void copyFile(File sourceFile, File targetFile)
 			throws IOException {
 		BufferedInputStream inBuff = null;

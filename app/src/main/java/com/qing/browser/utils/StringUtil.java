@@ -190,8 +190,8 @@ public class StringUtil {
 	}
 	
 	/**
-	 * »ñÈ¡contentType
-	 * @param suffix ÎÄ¼şºó×º
+	 * è·å–contentType
+	 * @param suffix æ–‡ä»¶åç¼€
 	 * @return
 	 */
 	public static String getHttpContentType(String suffix){
@@ -209,21 +209,21 @@ public class StringUtil {
 	}
 	
 	/**
-	 * Ìæ»»·Ç·¨µÄÎÄ¼şÃû·ûºÅ
+	 * æ›¿æ¢éæ³•çš„æ–‡ä»¶åç¬¦å·
 	 * @param str
 	 * @return
 	 */
 	public static String replaceIllegalFileSymbol(String str){
 		if(isNull(str))
 			return "";
-		String regEx="[`~!@#$%^&*()+=|{}':;',\\[\\]<>/?~£¡@#£¤%¡­¡­&*£¨£©¡ª¡ª+|{}¡¾¡¿¡®£»£º¡±¡°¡¯¡££¬¡¢£¿]";  
+		String regEx="[`~!@#$%^&*()+=|{}':;',\\[\\]<>/?~ï¼@#ï¿¥%â€¦â€¦&*ï¼ˆï¼‰â€”â€”+|{}ã€ã€‘â€˜ï¼›ï¼šâ€â€œâ€™ã€‚ï¼Œã€ï¼Ÿ]";  
         Pattern p = Pattern.compile(regEx);     
         Matcher m = p.matcher(str);     
         return m.replaceAll("").trim();  
 	}
 
 	/**
-	 * ×Ö·û´®Îª¿Õ·µ»Øtrue
+	 * å­—ç¬¦ä¸²ä¸ºç©ºè¿”å›true
 	 * 
 	 * @param str
 	 * @return
@@ -239,11 +239,11 @@ public class StringUtil {
 	}
 
 	/**
-	 * ¸ù¾İÊÖ»úºÅÂë²éÕÒÔËÓªÉÌ<br/>
-	 * ÊÖ»úºÅ´íÎóÊ±·µ»Ø0
+	 * æ ¹æ®æ‰‹æœºå·ç æŸ¥æ‰¾è¿è¥å•†<br/>
+	 * æ‰‹æœºå·é”™è¯¯æ—¶è¿”å›0
 	 * 
 	 * @param mobile
-	 * @return 1ÒÆ¶¯,2ÁªÍ¨,3µçĞÅ,4Î´ÖªÔËÓªÉÌ
+	 * @return 1ç§»åŠ¨,2è”é€š,3ç”µä¿¡,4æœªçŸ¥è¿è¥å•†
 	 */
 	public static int getOperator(String mobile) {
 		if (isNull(mobile))
@@ -253,23 +253,23 @@ public class StringUtil {
 			mobile = mobile.replaceFirst("86", "");
 		if (!isNumeric(mobile))
 			return 0;
-		if (mobile.length() < 7 || mobile.length() > 12) // ÊÖ»úºÅÂë±ØĞë´óÓÚ7Î»Ğ¡ÓÚ12Î»
+		if (mobile.length() < 7 || mobile.length() > 12) // æ‰‹æœºå·ç å¿…é¡»å¤§äº7ä½å°äº12ä½
 			return 0;
-		if (mobile.startsWith("1349")) // 1349ÊÇµçĞÅ
+		if (mobile.startsWith("1349")) // 1349æ˜¯ç”µä¿¡
 			return 3;
 		mobile = "," + mobile.substring(0, 3) + ",";
-		if (CMCC_NUMBERS.indexOf(mobile) != -1) // ÖĞÒÆ¶¯
+		if (CMCC_NUMBERS.indexOf(mobile) != -1) // ä¸­ç§»åŠ¨
 			return 1;
-		if (UNICOM_NUMBERS.indexOf(mobile) != -1) // ÁªÍ¨
+		if (UNICOM_NUMBERS.indexOf(mobile) != -1) // è”é€š
 			return 2;
-		if (CDMA_NUMBERS.indexOf(mobile) != -1) // µçĞÅ
+		if (CDMA_NUMBERS.indexOf(mobile) != -1) // ç”µä¿¡
 			return 3;
 		return 0;
 	}
 
 	/**
-	 * ÅĞ¶ÏÊÇ·ñÎªÕıÕûÊı<br/>
-	 * ÊÇ·ñÎªÕıĞ¡Êı
+	 * åˆ¤æ–­æ˜¯å¦ä¸ºæ­£æ•´æ•°<br/>
+	 * æ˜¯å¦ä¸ºæ­£å°æ•°
 	 * 
 	 * @param str
 	 * @return
@@ -286,7 +286,7 @@ public class StringUtil {
 	}
 
 	/**
-	 * Õı³£µã»÷·µ»Øfalse Æµ·±µã»÷·µ»Øtrue
+	 * æ­£å¸¸ç‚¹å‡»è¿”å›false é¢‘ç¹ç‚¹å‡»è¿”å›true
 	 * 
 	 * @param seconds
 	 * @return

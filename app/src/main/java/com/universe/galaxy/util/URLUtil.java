@@ -52,7 +52,7 @@ public class URLUtil {
 	 * 
 	 * @param address
 	 * @param postString
-	 *            ÒÔ&¿ªÊ¼, ÒÔ&½áÊø
+	 *            ä»¥&å¼€å§‹, ä»¥&ç»“æŸ
 	 * @return
 	 */
 	public String invokeURL(String address, String postString) {
@@ -69,7 +69,7 @@ public class URLUtil {
 			conn = url.openConnection();
 			conn.setDoOutput(true);
 			out = new OutputStreamWriter(conn.getOutputStream());
-			postString = "&TEMP=TEMP" + postString; // ÀúÊ·ÒÅÁôÎÊÌâ
+			postString = "&TEMP=TEMP" + postString; // å†å²é—ç•™é—®é¢˜
 			out.write(postString);
 			out.flush();
 			out.close();
@@ -80,7 +80,7 @@ public class URLUtil {
 				sb.append(line);
 			}
 			result = sb.toString();
-			Log.i("CNCOMAN", "ÏÂ·¢ÄÚÈİ" + result);
+			Log.i("CNCOMAN", "ä¸‹å‘å†…å®¹" + result);
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		} finally {
@@ -105,7 +105,7 @@ public class URLUtil {
 	 * 
 	 * @param address
 	 * @param postString
-	 *            ÒÔ&¿ªÊ¼£¬ÒÔ&½áÊø
+	 *            ä»¥&å¼€å§‹ï¼Œä»¥&ç»“æŸ
 	 * @return
 	 */
 	public Map<String, String> getMap(String address, String postString) {
@@ -135,7 +135,7 @@ public class URLUtil {
 	}
 
 	/**
-	 * ÁªÍø»ñÈ¡"ok"ÔòÁªÍøÏúÁ¿³É¹¦
+	 * è”ç½‘è·å–"ok"åˆ™è”ç½‘é”€é‡æˆåŠŸ
 	 * 
 	 * @param address
 	 * @param postString
@@ -159,7 +159,7 @@ public class URLUtil {
 		return isOK;
 	}
 
-	// »áÔ±¹¦ÄÜÉè¼Æ
+	// ä¼šå‘˜åŠŸèƒ½è®¾è®¡
 	public String getVIPJson(String address, String postString) {
 		String result = null;
 

@@ -53,7 +53,7 @@ public class PageDownOrUpActivity extends Dialog {
 	}
 
 	private void setListener() {
-		// 取消
+		// 鍙栨秷
 		if (negativeClickListener != null) {
 			btn_cancel.setOnClickListener(negativeClickListener);
 		} else {
@@ -77,7 +77,7 @@ public class PageDownOrUpActivity extends Dialog {
 
 	private void findView() {
 		TextView dialog_title = (TextView)findViewById(R.id.dialog_title);
-		dialog_title.setText("选择翻页模式");
+		dialog_title.setText("閫夋嫨缈婚〉妯″紡");
 		
 		btn_ok = (Button) findViewById(R.id.dialog_ok);
 		if (positiveText != null) {

@@ -101,7 +101,7 @@ public class RecentsPanelView extends RelativeLayout implements
 			Log.d(TAG,
 					"getView position = " + position + " td="
 							+ td.getPosition() + " " + td.getLabel()
-							+ " CurrentIndex=" + Launcher.mCurrentIndex + " ½ØÍ¼=" + td.getThumbnail());
+							+ " CurrentIndex=" + Launcher.mCurrentIndex + " æˆªå›¾=" + td.getThumbnail());
 			holder.labelView.setText(td.getLabel());
 			holder.thumbnailView.setContentDescription(td.getLabel());
 			updateThumbnail(holder, td.getThumbnail(), true, false);
@@ -331,7 +331,7 @@ public class RecentsPanelView extends RelativeLayout implements
 			}
 			h.thumbnailViewImageBitmap = thumbnail;
 		}else{
-			Log.e(TAG, "½ØÍ¼Îª¿Õ " );
+			Log.e(TAG, "æˆªå›¾ä¸ºç©º " );
 		}
 	}
 
@@ -394,7 +394,7 @@ public class RecentsPanelView extends RelativeLayout implements
 		TaskDescription td = ((ViewHolder) view.getTag()).taskDescription;
 		int index = ((ViewHolder) view.getTag()).position;
 		Log.i(TAG,
-				"handleOnClick µ¥»÷  td=" + td.getPosition() + " "
+				"handleOnClick å•å‡»  td=" + td.getPosition() + " "
 						+ td.getLabel() + " index=" + index + " position="
 						+ position + " CurrentIndex=" + Launcher.mCurrentIndex);
 
@@ -408,7 +408,7 @@ public class RecentsPanelView extends RelativeLayout implements
 		HashMap<String, Object> hashmap = Launcher.mWebViewStates.get(position);
 
 		Log.d(TAG,
-				"handleOnClick µ¥»÷ isHome=" + hashmap.get("isHome").toString()
+				"handleOnClick å•å‡» isHome=" + hashmap.get("isHome").toString()
 						+ " isWebview="
 						+ String.valueOf((Boolean) hashmap.get("isWebview")));
 		if (Launcher.CURRENT_SCREEN_WORKSPACE_NOT == Integer.parseInt((hashmap
@@ -470,10 +470,10 @@ public class RecentsPanelView extends RelativeLayout implements
 	public void handleSwipe(View view, int position) {
 		TaskDescription td = ((ViewHolder) view.getTag()).taskDescription;
 
-		// TODO ÒÑÉ¾³ı
+		// TODO å·²åˆ é™¤
 		int index = ((ViewHolder) view.getTag()).position;
 		Log.i(TAG,
-				"handleSwipe ÒÑÉ¾³ı  td=" + td.getPosition() + " " + td.getLabel()
+				"handleSwipe å·²åˆ é™¤  td=" + td.getPosition() + " " + td.getLabel()
 						+ " index=" + index + " CurrentIndex="
 						+ Launcher.mCurrentIndex);
 
@@ -508,13 +508,13 @@ public class RecentsPanelView extends RelativeLayout implements
 
 			Launcher.mTabspace.removeViewAt(position);
 
-			// ÉèÖÃĞèÒªÏÔÊ¾µÄtab
+			// è®¾ç½®éœ€è¦æ˜¾ç¤ºçš„tab
 
-			// TODO ¸ù¾İTabµÄ×´Ì¬,ÅĞ¶ÏÏÔÊ¾Ğ§¹û
+			// TODO æ ¹æ®Tabçš„çŠ¶æ€,åˆ¤æ–­æ˜¾ç¤ºæ•ˆæœ
 			HashMap<String, Object> hashmap = Launcher.mWebViewStates
 					.get(Launcher.tabCurrentItem);
 			Log.d(TAG,
-					"handleSwipe µ¥»÷ isHome="
+					"handleSwipe å•å‡» isHome="
 							+ hashmap.get("isHome").toString()
 							+ " isWebview="
 							+ String.valueOf((Boolean) hashmap.get("isWebview")));
@@ -566,7 +566,7 @@ public class RecentsPanelView extends RelativeLayout implements
 
 		} else {
 
-			// ÅĞ¶Ï¶à´°ÌåµÄÊıÁ¿
+			// åˆ¤æ–­å¤šçª—ä½“çš„æ•°é‡
 			if (Launcher.mTabspace.getChildCount() >= 2) {
 				Launcher.mWebViewBitmaps.remove(position);
 				Launcher.mWebViewStates.remove(position);
@@ -647,7 +647,7 @@ public class RecentsPanelView extends RelativeLayout implements
 				}
 				HashMap<String, Object> hashmap = new HashMap<String, Object>();
 
-				// ´æ´¢µ±Ç°tabÏÔÊ¾×´Ì¬ workspace false tabspace true
+				// å­˜å‚¨å½“å‰tabæ˜¾ç¤ºçŠ¶æ€ workspace false tabspace true
 				HashMap<String, Object> bitmaphashmap = new HashMap<String, Object>();
 
 				Bitmap bitmap = getViewBitmap(Launcher.mHomespace);
@@ -655,7 +655,7 @@ public class RecentsPanelView extends RelativeLayout implements
 				hashmap.put("isWebview", false);
 				hashmap.put("isHome", Launcher.mWorkspace.getCurrentScreen());
 
-				bitmaphashmap.put("title", "Ö÷Ò³");
+				bitmaphashmap.put("title", "ä¸»é¡µ");
 				if (Launcher.mWebViewBitmaps.size() > Launcher.mCurrentIndex) {
 					Launcher.mWebViewBitmaps.set(Launcher.mCurrentIndex,
 							bitmaphashmap);

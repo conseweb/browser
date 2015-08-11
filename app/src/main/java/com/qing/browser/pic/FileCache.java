@@ -30,7 +30,7 @@ public class FileCache {
         
     }
     
-    /** ½«url×ª³ÉÎÄ¼şÃû **/
+    /** å°†urlè½¬æˆæ–‡ä»¶å **/
 	private String convertUrlToFileName(String url) {
 		String[] strs = url.split("/");
 		return strs[strs.length - 1];

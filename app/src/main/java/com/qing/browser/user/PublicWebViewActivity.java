@@ -101,14 +101,14 @@ public class PublicWebViewActivity extends BaseActivity {
 			if (Tools.sdCardExist()) {
 				Download.DownLoadFile(url);
 			} else {
-				Toast.makeText(PublicWebViewActivity.this, "SD¿¨Î´¾ÍĞ÷£¡",
+				Toast.makeText(PublicWebViewActivity.this, "SDå¡æœªå°±ç»ªï¼",
 						Toast.LENGTH_SHORT).show();
 			}
 		}
 
 	}
 
-	// ¼ÓÔØÒ³Ãæ
+	// åŠ è½½é¡µé¢
 	WebChromeClient webchromeclient = new WebChromeClient() {
 		public void onProgressChanged(WebView view, int progress) {
 			PublicWebViewActivity.this.setProgress(progress);
@@ -126,16 +126,16 @@ public class PublicWebViewActivity extends BaseActivity {
 		@Override
 		public boolean onJsConfirm(WebView view, String url, String message,
 				final JsResult result) {
-			// È·¶¨È¡Ïûµ¯¿ò
+			// ç¡®å®šå–æ¶ˆå¼¹æ¡†
 			dialogUtil = new DialogUtil.Builder(PublicWebViewActivity.this)
-					.setTitleText("ÎÂÜ°ÌáĞÑ").setText(message)
-					.setPositiveButton("È·¶¨", new View.OnClickListener() {
+					.setTitleText("æ¸©é¦¨æé†’").setText(message)
+					.setPositiveButton("ç¡®å®š", new View.OnClickListener() {
 						@Override
 						public void onClick(View v) {
 							dialogUtil.dismiss();
 							result.confirm();
 						}
-					}).setNegativeButton("È¡Ïû", new View.OnClickListener() {
+					}).setNegativeButton("å–æ¶ˆ", new View.OnClickListener() {
 						@Override
 						public void onClick(View v) {
 							dialogUtil.dismiss();
@@ -150,10 +150,10 @@ public class PublicWebViewActivity extends BaseActivity {
 		public boolean onJsAlert(WebView view, String url, String message,
 				final JsResult result) {
 
-			// È·¶¨µ¯¿ò
+			// ç¡®å®šå¼¹æ¡†
 			dialogUtil = new DialogUtil.Builder(PublicWebViewActivity.this)
-					.setTitleText("ÎÂÜ°ÌáĞÑ").setText(message)
-					.setPositiveButton("È·¶¨", new View.OnClickListener() {
+					.setTitleText("æ¸©é¦¨æé†’").setText(message)
+					.setPositiveButton("ç¡®å®š", new View.OnClickListener() {
 						@Override
 						public void onClick(View v) {
 							dialogUtil.dismiss();
@@ -194,7 +194,7 @@ public class PublicWebViewActivity extends BaseActivity {
 		webset.setJavaScriptEnabled(true);
 		webset.setBuiltInZoomControls(true);
 		
-		//Ö§³ÖÍ¨¹ı JS ´ò¿ªĞÂ´°¿Ú 
+		//æ”¯æŒé€šè¿‡ JS æ‰“å¼€æ–°çª—å£ 
 		webset.setJavaScriptCanOpenWindowsAutomatically(true);
 		
 		int FontSize = sp.getInt(Constants.FontSize, 1);
@@ -287,7 +287,7 @@ public class PublicWebViewActivity extends BaseActivity {
 				view.reload();
 				RefreshScreen();
 				if (webimage != null) {
-					Log.v("L", "×ª¶¯º¯Êı");
+					Log.v("L", "è½¬åŠ¨å‡½æ•°");
 					Object ob = webimage.getBackground();
 					anim = (AnimationDrawable) ob;
 					anim.start();
@@ -318,7 +318,7 @@ public class PublicWebViewActivity extends BaseActivity {
 	@Override
 	public void onWindowFocusChanged(boolean hasFocus) {
 		if (webimage != null) {
-			Log.v("L", "×ª¶¯º¯Êı");
+			Log.v("L", "è½¬åŠ¨å‡½æ•°");
 			Object ob = webimage.getBackground();
 			anim = (AnimationDrawable) ob;
 			anim.start();

@@ -54,8 +54,8 @@ public class SendZone extends TextView implements DropTarget,
 		if (item instanceof ShortcutInfo) {
 			final ShortcutInfo mShortcutInfo = (ShortcutInfo) item;
 			
-			if((mShortcutInfo.title.equals("ÌìÆø")||mShortcutInfo.title.equals("·¢ÏÖ")
-					||mShortcutInfo.title.equals("É¨Ò»É¨")||mShortcutInfo.title.equals("ÕË»§")
+			if((mShortcutInfo.title.equals("å¤©æ°”")||mShortcutInfo.title.equals("å‘ç°")
+					||mShortcutInfo.title.equals("æ‰«ä¸€æ‰«")||mShortcutInfo.title.equals("è´¦æˆ·")
 				)&&mShortcutInfo.url.equals("")){
 				shortcutCreate_ZhiDing(mLauncher,mShortcutInfo,mShortcutInfo.title.toString());
 				
@@ -72,8 +72,8 @@ public class SendZone extends TextView implements DropTarget,
 	}
 	
 	/**
-	 * ´´½¨Ö¸¶¨ËÄ¸ö¿ì½İ·½Ê½ 
-	 * ÌìÆø ·¢ÏÖ É¨Ò»É¨ ÕË»§
+	 * åˆ›å»ºæŒ‡å®šå››ä¸ªå¿«æ·æ–¹å¼ 
+	 * å¤©æ°” å‘ç° æ‰«ä¸€æ‰« è´¦æˆ·
 	 */
 	private static void shortcutCreate_ZhiDing(Context context,ShortcutInfo mShortcutInfo,String type) {
 
@@ -91,7 +91,7 @@ public class SendZone extends TextView implements DropTarget,
 		intent.setData(uri);
 		shortcut.putExtra(Intent.EXTRA_SHORTCUT_INTENT, intent);
 
-		// ·¢ËÍ¹ã²¥
+		// å‘é€å¹¿æ’­
 		context.sendBroadcast(shortcut);
 
 	}

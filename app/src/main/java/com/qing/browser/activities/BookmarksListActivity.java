@@ -49,7 +49,7 @@ public class BookmarksListActivity {
 	private ListView mList;
 	private Activity context;
 	DialogListUtil builder;
-	final String[] mItems = { "ĞÂ´°¿Ú´ò¿ª", "±à¼­ÊéÇ©", "¸´ÖÆurl","É¾³ıÊéÇ©" };
+	final String[] mItems = { "æ–°çª—å£æ‰“å¼€", "ç¼–è¾‘ä¹¦ç­¾", "å¤åˆ¶url","åˆ é™¤ä¹¦ç­¾" };
 	private TextView btn_tongbu, btn_guangli;
 	private TextView nodata_btn_tongbu, nodata_btn_guangli;
 	private boolean updatabookmark = false;
@@ -116,7 +116,7 @@ public class BookmarksListActivity {
 							public void onItemClick(AdapterView<?> arg0,
 									View arg1, int arg2, long arg3) {
 								// TODO Auto-generated method stub
-								// µã»÷ºóµ¯³ö´°¿ÚÑ¡ÔñÁËµÚ¼¸Ïî
+								// ç‚¹å‡»åå¼¹å‡ºçª—å£é€‰æ‹©äº†ç¬¬å‡ é¡¹
 								LongClick(arg2, pos, bookmarkItem);
 								builder.dismiss();
 							}
@@ -142,7 +142,7 @@ public class BookmarksListActivity {
 			 switch(v.getId()){
 			 case R.id.btn_tongbu:
 			 case R.id.nodata_btn_tongbu:
-				 Toast.makeText(context, "·şÎñÆ÷´úÂëÉĞÎ´Í¬²½", Toast.LENGTH_SHORT)
+				 Toast.makeText(context, "æœåŠ¡å™¨ä»£ç å°šæœªåŒæ­¥", Toast.LENGTH_SHORT)
 					.show();
 			 break;
 			 case R.id.nodata_btn_guangli:

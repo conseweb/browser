@@ -57,7 +57,7 @@ public class IOUtils {
 	}
 
 	/**
-	 * ºóÆÚĞŞ¸ÄÎª±£´æµ½ÄÚ´æÖĞ
+	 * åæœŸä¿®æ”¹ä¸ºä¿å­˜åˆ°å†…å­˜ä¸­
 	 */
 	public static File getIconFolder() {
 		File root = getApplicationFolder();

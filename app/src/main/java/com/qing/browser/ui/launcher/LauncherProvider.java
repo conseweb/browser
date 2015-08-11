@@ -178,10 +178,10 @@ public class LauncherProvider extends ContentProvider {
 		public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
 			if (newVersion <= oldVersion) {
-				// Êý¾Ý¿â²»Éý¼¶
+				// æ•°æ®åº“ä¸å‡çº§
 				return;
 			} else {
-				Log.i("H", "LauncherProvider ×ÀÃæÊý¾Ý¿âÉý¼¶  oldVersion=" + oldVersion
+				Log.i("H", "LauncherProvider æ¡Œé¢æ•°æ®åº“å‡çº§  oldVersion=" + oldVersion
 						+ " newVersion=" + newVersion);
 
 				// 1, Rename table.

@@ -61,14 +61,14 @@ public class DownloadsListActivity extends BaseActivity implements
 		IDownloadEventsListener {
 	private DownloadListAdapter mAdapter;
 	private DownFinishListAdapter downfinshlistadapter;
-	private int currentView = 0;// µ±Ç°ÊÓÍ¼
+	private int currentView = 0;// å½“å‰è§†å›¾
 	private ListView mListloading;
 	private ListView mListFinsh;
 	private List<Map<String, Object>> downfinish;
 	private List<DownloadItem> downloads;
 	private DialogUtil dialogUtil;
-	private ViewPager mPager;// Ò³¿¨ÄÚÈİ
-	private List<View> listViews; // TabÒ³ÃæÁĞ±í
+	private ViewPager mPager;// é¡µå¡å†…å®¹
+	private List<View> listViews; // Tabé¡µé¢åˆ—è¡¨
 	private View viewpage1, viewpage2;
 	private TextView tv_bookmark, tv_history;
 	private LinearLayout tv_bookmark_layout, tv_history_layout;
@@ -93,15 +93,15 @@ public class DownloadsListActivity extends BaseActivity implements
 	}
 
 	/**
-	 * ³õÊ¼»¯Ò³¿¨ÄÚÈİViewPager
+	 * åˆå§‹åŒ–é¡µå¡å†…å®¹ViewPager
 	 */
 	private void InitViewPager() {
 		mPager = (ViewPager) findViewById(R.id.vPager);
 		tv_bookmark = (TextView) findViewById(R.id.tv_bookmark);
-		tv_bookmark.setText("ÕıÔÚÏÂÔØ");
+		tv_bookmark.setText("æ­£åœ¨ä¸‹è½½");
 
 		tv_history = (TextView) findViewById(R.id.tv_history);
-		tv_history.setText("ÒÑÏÂÔØ");
+		tv_history.setText("å·²ä¸‹è½½");
 
 		tv_bookmark_layout = (LinearLayout) findViewById(R.id.tv_bookmark_layout);
 		tv_history_layout = (LinearLayout) findViewById(R.id.tv_history_layout);
@@ -126,7 +126,7 @@ public class DownloadsListActivity extends BaseActivity implements
 		mPager.setOnPageChangeListener(new MyOnPageChangeListener());
 		// mPager.setOnTouchListener(new OnTouchListener() {
 		// public boolean onTouch(View v, MotionEvent event) {
-		// return true;// ½ûÖ¹»¬¶¯
+		// return true;// ç¦æ­¢æ»‘åŠ¨
 		// }
 		//
 		// });
@@ -192,8 +192,8 @@ public class DownloadsListActivity extends BaseActivity implements
 		btn_clear.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				dialogUtil = new DialogUtil.Builder(DownloadsListActivity.this)
-						.setTitleText("ÎÂÜ°ÌáÊ¾").setText("É¾³ıÈ«²¿ÒÑÏÂÔØÎÄ¼ş£¿")
-						.setPositiveButton("È·¶¨", new View.OnClickListener() {
+						.setTitleText("æ¸©é¦¨æç¤º").setText("åˆ é™¤å…¨éƒ¨å·²ä¸‹è½½æ–‡ä»¶ï¼Ÿ")
+						.setPositiveButton("ç¡®å®š", new View.OnClickListener() {
 							public void onClick(View v) {
 								cleardownloadfile();
 								downfinish.clear();
@@ -202,7 +202,7 @@ public class DownloadsListActivity extends BaseActivity implements
 								no_data_layout.setVisibility(View.VISIBLE);
 								dialogUtil.dismiss();
 							}
-						}).setNegativeButton("È¡Ïû", new View.OnClickListener() {
+						}).setNegativeButton("å–æ¶ˆ", new View.OnClickListener() {
 							public void onClick(View v) {
 								dialogUtil.dismiss();
 							}
@@ -216,7 +216,7 @@ public class DownloadsListActivity extends BaseActivity implements
 	}
 
 	/**
-	 * ¸üĞÂµ±Ç°Ò³Âë
+	 * æ›´æ–°å½“å‰é¡µç 
 	 */
 	public void setCurPage(int page) {
 
@@ -247,7 +247,7 @@ public class DownloadsListActivity extends BaseActivity implements
 	}
 
 	/**
-	 * Í·±êµã»÷¼àÌı
+	 * å¤´æ ‡ç‚¹å‡»ç›‘å¬
 	 */
 	public class MyOnClickListener implements View.OnClickListener {
 		private int index = 0;
@@ -263,7 +263,7 @@ public class DownloadsListActivity extends BaseActivity implements
 	};
 
 	/**
-	 * ÊµÏÖÒ³¿¨ÇĞ»»¼àÌı
+	 * å®ç°é¡µå¡åˆ‡æ¢ç›‘å¬
 	 */
 	public class MyOnPageChangeListener implements OnPageChangeListener {
 
@@ -343,10 +343,10 @@ public class DownloadsListActivity extends BaseActivity implements
 					size = Tools.getFileSize(f);
 				} catch (Exception e) {
 					e.printStackTrace();
-					Log.e("»ñÈ¡ÎÄ¼ş´óĞ¡", "»ñÈ¡Ê§°Ü!");
+					Log.e("è·å–æ–‡ä»¶å¤§å°", "è·å–å¤±è´¥!");
 				}
 
-				// TODO Î´ÏÂÔØÍê³É ²»¼ÓÈëÒÑÏÂÔØÁĞ±í
+				// TODO æœªä¸‹è½½å®Œæˆ ä¸åŠ å…¥å·²ä¸‹è½½åˆ—è¡¨
 				if (f.getName().toString().indexOf(Constants.DownLoadFileName) == -1) {
 					HashMap<String, Object> map = new HashMap<String, Object>();
 					map.put("name", f.getName());
@@ -370,7 +370,7 @@ public class DownloadsListActivity extends BaseActivity implements
 		for (int i = 0; i < files.length; i++) {
 			final File f = files[i];
 			if (f.isFile()) {
-				// TODO Î´ÏÂÔØÍê³É ²»É¾³ı
+				// TODO æœªä¸‹è½½å®Œæˆ ä¸åˆ é™¤
 				if (f.getName().toString().indexOf(Constants.DownLoadFileName) == -1) {
 					f.delete();
 				}
@@ -430,7 +430,7 @@ public class DownloadsListActivity extends BaseActivity implements
 				}
 				Button mStop = mAdapter.getButtonMap().get(item.getUrl());
 				if (mStop != null) {
-					mStop.setText("ÔİÍ£");
+					mStop.setText("æš‚åœ");
 				}
 
 			}
@@ -438,7 +438,7 @@ public class DownloadsListActivity extends BaseActivity implements
 			if (data != null) {
 				DownloadItem item = (DownloadItem) data;
 				Log.i("H", "DownloadsListActivity " + item.getFileName()
-						+ "ÏÂÔØÍê³É");
+						+ "ä¸‹è½½å®Œæˆ");
 				TextView title = mAdapter.getTitleMap().get(item.getUrl());
 				if (title != null) {
 					title.setText(item.getFileName());
@@ -451,7 +451,7 @@ public class DownloadsListActivity extends BaseActivity implements
 
 				Button button = mAdapter.getButtonMap().get(item.getUrl());
 				if (button != null) {
-					button.setText("Íê³É");
+					button.setText("å®Œæˆ");
 					button.setEnabled(false);
 				}
 
@@ -476,7 +476,7 @@ public class DownloadsListActivity extends BaseActivity implements
 
 			Button button = mAdapter.getButtonMap().get(item.getUrl());
 			if (button != null) {
-				button.setText("¼ÌĞø");
+				button.setText("ç»§ç»­");
 				button.setEnabled(true);
 			}
 			
@@ -577,7 +577,7 @@ public class DownloadsListActivity extends BaseActivity implements
 					}
 					String suffix = file.getPath().substring(idx);
 					if (suffix.toLowerCase().equals(".apk")
-							|| suffix.toLowerCase().equals(".exe"))// TODO °²×°ÎÄ¼ş
+							|| suffix.toLowerCase().equals(".exe"))// TODO å®‰è£…æ–‡ä»¶
 					{
 
 						MimeTypeMap mime = MimeTypeMap.getSingleton();

@@ -34,7 +34,7 @@ public class CustomWebView extends WebView {
 
 	private boolean mLoaded = false;
 
-	// 识别在切换出去前 当前Tab是显示的是否是WebView页面
+	// 璇嗗埆鍦ㄥ垏鎹㈠嚭鍘诲墠 褰撳墠Tab鏄樉绀虹殑鏄惁鏄疻ebView椤甸潰
 	private boolean mCurrent = false;
 
 	private String mLoadedUrl;
@@ -120,13 +120,13 @@ public class CustomWebView extends WebView {
 				.getBoolean(Constants.PREFERENCES_BROWSER_ENABLE_FORM_DATA,
 						true));
 
-		// 设置是否保存密码
+		// 璁剧疆鏄惁淇濆瓨瀵嗙爜
 		settings.setSavePassword(Controller
 				.getInstance()
 				.getPreferences()
 				.getBoolean(Constants.PREFERENCES_BROWSER_ENABLE_PASSWORDS,
 						true));
-		// 设置默认缩放方式尺寸
+		// 璁剧疆榛樿缂╂斁鏂瑰紡灏哄
 		settings.setDefaultZoom(ZoomDensity.valueOf(Controller
 				.getInstance()
 				.getPreferences()

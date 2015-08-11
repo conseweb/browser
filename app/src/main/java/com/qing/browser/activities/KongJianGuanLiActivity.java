@@ -30,7 +30,7 @@ public class KongJianGuanLiActivity extends BaseActivity {
 	private MyGuanliAdapter mAdapter;
 	private ArrayList<HashMap<String, Object>> Itemload;
 	
-	String[] gongneng = { "Çå³ı»º´æ", "Çå³ıÀúÊ·¼ÇÂ¼", "Çå³ıËùÓĞCookieÊı¾İ", "Çå³ı±íµ¥","Çå³ıÃÜÂë"};
+	String[] gongneng = { "æ¸…é™¤ç¼“å­˜", "æ¸…é™¤å†å²è®°å½•", "æ¸…é™¤æ‰€æœ‰Cookieæ•°æ®", "æ¸…é™¤è¡¨å•","æ¸…é™¤å¯†ç "};
 	
 	CheckBox[] checkbox = new CheckBox[gongneng.length]; 
 	
@@ -43,7 +43,7 @@ public class KongJianGuanLiActivity extends BaseActivity {
 		setContentView(R.layout.kong_jian_guan_li_page);
 		
 		TextView item_title = (TextView) findViewById(R.id.item_title);
-		item_title.setText("Çå³ıÊı¾İ");
+		item_title.setText("æ¸…é™¤æ•°æ®");
 		ImageView btn_back = (ImageView) findViewById(R.id.item_back);
 		btn_back.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
@@ -71,38 +71,38 @@ public class KongJianGuanLiActivity extends BaseActivity {
 			public void onClick(View v) {
 				dialogUtil = new DialogUtil.Builder(
 						KongJianGuanLiActivity.this)
-						.setTitleText("ÎÂÜ°ÌáÊ¾")
-						.setText("È·¶¨É¾³ıËùÑ¡Êı¾İÂğ£¿")
-						.setPositiveButton("È·¶¨",
+						.setTitleText("æ¸©é¦¨æç¤º")
+						.setText("ç¡®å®šåˆ é™¤æ‰€é€‰æ•°æ®å—ï¼Ÿ")
+						.setPositiveButton("ç¡®å®š",
 								new View.OnClickListener() {
 									public void onClick(View v) {
 										
 										if(checkbox[0].isChecked()){
-											//Çå³ı»º´æ
+											//æ¸…é™¤ç¼“å­˜
 											clearCacheFolder(KongJianGuanLiActivity.this.getCacheDir(), System.currentTimeMillis());
 										}
 										if(checkbox[1].isChecked()){
-											//Çå³ıÀúÊ·¼ÇÂ¼
+											//æ¸…é™¤å†å²è®°å½•
 											BookmarksProviderWrapper.clearHistory(KongJianGuanLiActivity.this);
 										}
 										if(checkbox[2].isChecked()){
-											//Çå³ıËùÓĞcookies
+											//æ¸…é™¤æ‰€æœ‰cookies
 											new CookiesClearer();
 										}
 										if(checkbox[3].isChecked()){
-											//Çå³ı±íµ¥
+											//æ¸…é™¤è¡¨å•
 										}
 										
 										if(checkbox[4].isChecked()){
-											//Çå³ıÃÜÂë
+											//æ¸…é™¤å¯†ç 
 										}
 										
 										dialogUtil.dismiss();
 										dialogUtil = new DialogUtil.Builder(
 												KongJianGuanLiActivity.this)
-												.setTitleText("ÎÂÜ°ÌáÊ¾")
-												.setText("É¾³ı³É¹¦£¡")
-												.setPositiveButton("È·¶¨",
+												.setTitleText("æ¸©é¦¨æç¤º")
+												.setText("åˆ é™¤æˆåŠŸï¼")
+												.setPositiveButton("ç¡®å®š",
 														new View.OnClickListener() {
 															public void onClick(View v) {
 																finish();
@@ -112,7 +112,7 @@ public class KongJianGuanLiActivity extends BaseActivity {
 										dialogUtil.show();
 									}
 								})
-						.setNegativeButton("·µ»Ø", new OnClickListener() {
+						.setNegativeButton("è¿”å›", new OnClickListener() {
 							
 							@Override
 							public void onClick(View v) {
@@ -199,7 +199,7 @@ public class KongJianGuanLiActivity extends BaseActivity {
 	
 	
 	/**
-	 * Çå³ıCookiesÖµ
+	 * æ¸…é™¤Cookieså€¼
 	 */
 	class CookiesClearer implements Runnable {
 		public CookiesClearer() {
@@ -214,7 +214,7 @@ public class KongJianGuanLiActivity extends BaseActivity {
 	}
 	
 	/*
-	 * Çå³ı»º´æ
+	 * æ¸…é™¤ç¼“å­˜
 	 */
 	private int clearCacheFolder(File dir, long numDays) {        
         int deletedFiles = 0;       

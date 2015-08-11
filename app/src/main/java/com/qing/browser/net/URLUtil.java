@@ -58,7 +58,7 @@ public class URLUtil {
 	 * 
 	 * @param address
 	 * @param postString
-	 *            ÒÔ&¿ªÊ¼, ÒÔ&½áÊø
+	 *            ä»¥&å¼€å§‹, ä»¥&ç»“æŸ
 	 * @return
 	 */
 	public String invokeURL(String address, String postString) {
@@ -76,7 +76,7 @@ public class URLUtil {
 			conn = url.openConnection();
 			conn.setDoOutput(true);
 			out = new OutputStreamWriter(conn.getOutputStream());
-			postString = "&TEMP=TEMP" + postString; // ÀúÊ·ÒÅÁôÎÊÌâ
+			postString = "&TEMP=TEMP" + postString; // å†å²é—ç•™é—®é¢˜
 			out.write(postString);
 			out.flush();
 			out.close();
@@ -87,7 +87,7 @@ public class URLUtil {
 				sb.append(line);
 			}
 			result = sb.toString();
-			Log.i(TAG, "ÏÂ·¢ÄÚÈİ" + result);
+			Log.i(TAG, "ä¸‹å‘å†…å®¹" + result);
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		} finally {
@@ -112,7 +112,7 @@ public class URLUtil {
 	 * 
 	 * @param address
 	 * @param postString
-	 *            ÒÔ&¿ªÊ¼£¬ÒÔ&½áÊø
+	 *            ä»¥&å¼€å§‹ï¼Œä»¥&ç»“æŸ
 	 * @return
 	 */
 	public Map<String, String> getMap(String address, String postString) {
@@ -167,7 +167,7 @@ public class URLUtil {
 	}
 
 	/**
-	 * µÇÂ½
+	 * ç™»é™†
 	 * 
 	 * @param url
 	 * @return
@@ -194,20 +194,20 @@ public class URLUtil {
 				}
 
 			} else if (404 == id) {
-				Log.e("H", "·µ»ØÖµ=%d  ·ÃÎÊµÄÒ³ÃæÔİÊ±²»´æÔÚ" + id);
+				Log.e("H", "è¿”å›å€¼=%d  è®¿é—®çš„é¡µé¢æš‚æ—¶ä¸å­˜åœ¨" + id);
 				returnStr = "";
 			} else {
 				returnStr = "";
-				Log.e("H", "·µ»ØÖµ=%d  ÍøÂçÒì³£ " + id);
+				Log.e("H", "è¿”å›å€¼=%d  ç½‘ç»œå¼‚å¸¸ " + id);
 			}
 		} catch (UnsupportedEncodingException e) {
-			Log.e("H", "UnsupportedEncodingExceptionÒì³££º" + e);
+			Log.e("H", "UnsupportedEncodingExceptionå¼‚å¸¸ï¼š" + e);
 			e.printStackTrace();
 		} catch (ClientProtocolException e) {
-			Log.e("H", "ClientProtocolExceptionÒì³£:" + e);
+			Log.e("H", "ClientProtocolExceptionå¼‚å¸¸:" + e);
 			e.printStackTrace();
 		} catch (IOException e) {
-			Log.e("H", "IOExceptionÒì³£:" + e);
+			Log.e("H", "IOExceptionå¼‚å¸¸:" + e);
 			e.printStackTrace();
 		}
 
@@ -215,7 +215,7 @@ public class URLUtil {
 	}
 
 	/**
-	 * ÓÃ»§ÁªÍø²Ù×÷ ĞèÒª´øÉÏCookie
+	 * ç”¨æˆ·è”ç½‘æ“ä½œ éœ€è¦å¸¦ä¸ŠCookie
 	 * 
 	 * @param url
 	 * @param key
@@ -224,8 +224,8 @@ public class URLUtil {
 	 */
 	public String UserServer(String url, String key, String content) {
 		String returnStr = null;
-		url = url.replaceAll(" ", "%20");// ÓĞ¿Õ¸ñ ×ªÂë
-		url = url.replaceAll("\n", "%20");// ÓĞ»»ĞĞ ×ªÂë
+		url = url.replaceAll(" ", "%20");// æœ‰ç©ºæ ¼ è½¬ç 
+		url = url.replaceAll("\n", "%20");// æœ‰æ¢è¡Œ è½¬ç 
 		Log.i("H", "url=" + url);
 		HttpPost post = new HttpPost(url);
 		HttpClient client = getHttpClient();
@@ -236,7 +236,7 @@ public class URLUtil {
 			params.add(new BasicNameValuePair(key, content));
 		} catch (Exception ex) {
 			ex.printStackTrace();
-			Log.e("H", "UserServer Òì³££º" + ex);
+			Log.e("H", "UserServer å¼‚å¸¸ï¼š" + ex);
 		}
 
 		((AbstractHttpClient) client).setCookieStore(LauncherApplication
@@ -252,27 +252,27 @@ public class URLUtil {
 
 			} else if (404 == id) {
 				returnStr = "";
-				Log.e("H", "·ÃÎÊµÄÒ³ÃæÔİÊ±²»´æÔÚ ·µ»Ø " + id);
+				Log.e("H", "è®¿é—®çš„é¡µé¢æš‚æ—¶ä¸å­˜åœ¨ è¿”å› " + id);
 			} else {
 				returnStr = "";
-				Log.e("H", "ÍøÂçÒì³£ ·µ»ØÖµ=" + id);
+				Log.e("H", "ç½‘ç»œå¼‚å¸¸ è¿”å›å€¼=" + id);
 			}
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
-			Log.e("H", "Òì³£ UnsupportedEncodingException" + e);
+			Log.e("H", "å¼‚å¸¸ UnsupportedEncodingException" + e);
 		} catch (ClientProtocolException e) {
 			e.printStackTrace();
-			Log.e("H", "Òì³£ ClientProtocolException" + e);
+			Log.e("H", "å¼‚å¸¸ ClientProtocolException" + e);
 		} catch (IOException e) {
 			e.printStackTrace();
-			Log.e("H", "Òì³£ IOException" + e);
+			Log.e("H", "å¼‚å¸¸ IOException" + e);
 		}
 
 		return returnStr;
 	}
 	
 	/**
-	 * ÓÃ»§ÁªÍø²Ù×÷ ĞèÒª´øÉÏCookie
+	 * ç”¨æˆ·è”ç½‘æ“ä½œ éœ€è¦å¸¦ä¸ŠCookie
 	 * 
 	 * @param url
 	 * @param key
@@ -281,8 +281,8 @@ public class URLUtil {
 	 */
 	public String UserServer(String url, List<NameValuePair> params) {
 		String returnStr = null;
-		url = url.replaceAll(" ", "%20");// ÓĞ¿Õ¸ñ ×ªÂë
-		url = url.replaceAll("\n", "%20");// ÓĞ»»ĞĞ ×ªÂë
+		url = url.replaceAll(" ", "%20");// æœ‰ç©ºæ ¼ è½¬ç 
+		url = url.replaceAll("\n", "%20");// æœ‰æ¢è¡Œ è½¬ç 
 		Log.i("H", "url=" + url);
 		HttpPost post = new HttpPost(url);
 		HttpClient client = getHttpClient();
@@ -299,20 +299,20 @@ public class URLUtil {
 
 			} else if (404 == id) {
 				returnStr = "";
-				Log.e("H", "·ÃÎÊµÄÒ³ÃæÔİÊ±²»´æÔÚ ·µ»Ø " + id);
+				Log.e("H", "è®¿é—®çš„é¡µé¢æš‚æ—¶ä¸å­˜åœ¨ è¿”å› " + id);
 			} else {
 				returnStr = "";
-				Log.e("H", "ÍøÂçÒì³£ ·µ»ØÖµ=" + id);
+				Log.e("H", "ç½‘ç»œå¼‚å¸¸ è¿”å›å€¼=" + id);
 			}
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
-			Log.e("H", "Òì³£ UnsupportedEncodingException" + e);
+			Log.e("H", "å¼‚å¸¸ UnsupportedEncodingException" + e);
 		} catch (ClientProtocolException e) {
 			e.printStackTrace();
-			Log.e("H", "Òì³£ ClientProtocolException" + e);
+			Log.e("H", "å¼‚å¸¸ ClientProtocolException" + e);
 		} catch (IOException e) {
 			e.printStackTrace();
-			Log.e("H", "Òì³£ IOException" + e);
+			Log.e("H", "å¼‚å¸¸ IOException" + e);
 		}
 
 		return returnStr;

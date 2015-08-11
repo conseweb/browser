@@ -41,8 +41,8 @@ public class HistoryListActivity {
 	private HistoryExpandableListAdapter mAdapter;
 	private ProgressDialog mProgressDialog;
 	DialogListUtil builder;
-	final String[] mItems = { "ĞÂ´°¿Ú´ò¿ª", "¸´ÖÆurl", "É¾³ı" };
-	private int sign = -1;// ¿ØÖÆÁĞ±íµÄÕ¹¿ª
+	final String[] mItems = { "æ–°çª—å£æ‰“å¼€", "å¤åˆ¶url", "åˆ é™¤" };
+	private int sign = -1;// æ§åˆ¶åˆ—è¡¨çš„å±•å¼€
 	private DialogUtil dialogUtil;
 	private LinearLayout no_data_layout, data_layout;
 
@@ -63,18 +63,18 @@ public class HistoryListActivity {
 		 
 		
 		expandablelistview = (ExpandableListView) page.findViewById(R.id.expandablelistview);
-		expandablelistview.setGroupIndicator(null);// È¥µô¼ıÍ·Í¼±ê
+		expandablelistview.setGroupIndicator(null);// å»æ‰ç®­å¤´å›¾æ ‡
  
-		// Ö»Õ¹¿ªÒ»¸ögroupµÄÊµÏÖ·½·¨
+		// åªå±•å¼€ä¸€ä¸ªgroupçš„å®ç°æ–¹æ³•
 		expandablelistview.setOnGroupClickListener(new OnGroupClickListener() {
 
 			@Override
 			public boolean onGroupClick(ExpandableListView parent, View v,
 			        int groupPosition, long id) { 
 				if (sign == -1) {
-					// Õ¹¿ª±»Ñ¡µÄgroup
+					// å±•å¼€è¢«é€‰çš„group
 					expandablelistview.expandGroup(groupPosition);
-					// ÉèÖÃ±»Ñ¡ÖĞµÄgroupÖÃÓÚ¶¥¶Ë
+					// è®¾ç½®è¢«é€‰ä¸­çš„groupç½®äºé¡¶ç«¯
 					expandablelistview.setSelectedGroup(groupPosition);
 					sign = groupPosition;
 				} else if (sign == groupPosition) {
@@ -82,9 +82,9 @@ public class HistoryListActivity {
 					sign = -1;
 				} else {
 					expandablelistview.collapseGroup(sign);
-					// Õ¹¿ª±»Ñ¡µÄgroup
+					// å±•å¼€è¢«é€‰çš„group
 					expandablelistview.expandGroup(groupPosition);
-					// ÉèÖÃ±»Ñ¡ÖĞµÄgroupÖÃÓÚ¶¥¶Ë
+					// è®¾ç½®è¢«é€‰ä¸­çš„groupç½®äºé¡¶ç«¯
 					expandablelistview.setSelectedGroup(groupPosition);
 					sign = groupPosition;
 				}
@@ -104,7 +104,7 @@ public class HistoryListActivity {
 							public void onItemClick(AdapterView<?> arg0,
 									View arg1, int arg2, long arg3) {
 								// TODO Auto-generated method stub
-								// µã»÷ºóµ¯³ö´°¿ÚÑ¡ÔñÁËµÚ¼¸Ïî
+								// ç‚¹å‡»åå¼¹å‡ºçª—å£é€‰æ‹©äº†ç¬¬å‡ é¡¹
 								ExpandableClick(groupPosition, childPosition,
 										arg2);
 								builder.dismiss();
@@ -205,16 +205,16 @@ public class HistoryListActivity {
 	 */
 	private void clearHistory() {		
 		dialogUtil = new DialogUtil.Builder(context)
-				.setTitleText("ÎÂÜ°ÌáÊ¾")
-				.setText("È·¶¨ÒªÉ¾³ıÀúÊ·¼ÇÂ¼£¿")
-				.setPositiveButton("È·¶¨",
+				.setTitleText("æ¸©é¦¨æç¤º")
+				.setText("ç¡®å®šè¦åˆ é™¤å†å²è®°å½•ï¼Ÿ")
+				.setPositiveButton("ç¡®å®š",
 						new View.OnClickListener() {
 							public void onClick(View v) {
 								dialogUtil.dismiss();
 								doClearHistory();
 							}
 						})
-				.setNegativeButton("È¡Ïû",new OnClickListener() {
+				.setNegativeButton("å–æ¶ˆ",new OnClickListener() {
 					
 					@Override
 					public void onClick(View v) {

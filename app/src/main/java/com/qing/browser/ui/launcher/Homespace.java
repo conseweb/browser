@@ -154,9 +154,9 @@ public class Homespace extends ViewGroup {
 
 	@Override
 	public void computeScroll() {
-		if (mScroller.computeScrollOffset()) {// ·µ»Øtrue£¬±íÊ¾¶¯»­ÈÔÔÚ½øĞĞ£¬»¹Ã»ÓĞÍ£Ö¹
-			scrollTo(mScroller.getCurrX(), mScroller.getCurrY());// ¹ö¶¯µ½Ä¿±ê×ø±ê
-			postInvalidate(); // Ê¹viewÖØ»­
+		if (mScroller.computeScrollOffset()) {// è¿”å›trueï¼Œè¡¨ç¤ºåŠ¨ç”»ä»åœ¨è¿›è¡Œï¼Œè¿˜æ²¡æœ‰åœæ­¢
+			scrollTo(mScroller.getCurrX(), mScroller.getCurrY());// æ»šåŠ¨åˆ°ç›®æ ‡åæ ‡
+			postInvalidate(); // ä½¿viewé‡ç”»
 		}
 	}
 
@@ -272,15 +272,15 @@ public class Homespace extends ViewGroup {
 			final int xDiff = (int) Math.abs(mLastMotionX - x);
 			int deltaX = (int) (mLastMotionX - x);
 			int deltaY = (int) (mLastMotionY - y);
-			// ´¦Àí´«µİ¸øworkspace,workspace ÈıÆÁÇĞ»»
-			// Èç¹ûHomespaceµ±Ç°ÆÁÎªworkspace,ÔòÓÅÏÈÅĞ¶ÏworkspaceµÄÒ³ÃæÇĞ»»Çé¿ö,
-			// È»ºóÊÇworkspacewebviewspaceµÄÇĞ»»Çé¿ö
+			// å¤„ç†ä¼ é€’ç»™workspace,workspace ä¸‰å±åˆ‡æ¢
+			// å¦‚æœHomespaceå½“å‰å±ä¸ºworkspace,åˆ™ä¼˜å…ˆåˆ¤æ–­workspaceçš„é¡µé¢åˆ‡æ¢æƒ…å†µ,
+			// ç„¶åæ˜¯workspacewebviewspaceçš„åˆ‡æ¢æƒ…å†µ
 			if (mCurrentScreen == Launcher.CURRENT_SCREEN_WORKSPACE) {
-				// ÅĞ¶Ïµ±Ç°Îªworkspace
-				// ÅĞ¶ÏworkspaceµÄµ±Ç°ÆÁÄ»
+				// åˆ¤æ–­å½“å‰ä¸ºworkspace
+				// åˆ¤æ–­workspaceçš„å½“å‰å±å¹•
 				if (mWorkspace.getCurrentScreen() == Launcher.CURRENT_SCREEN_WORKSPACE_RIGHT) {
-					// ÔÚworkspaceµÄµÚÈıÆÁÏò×ó»¬¶¯
-					// Èç¹ûtabspaceÊôĞÔ¿É¼û,ÔòÏÔÊ¾tabspace
+					// åœ¨workspaceçš„ç¬¬ä¸‰å±å‘å·¦æ»‘åŠ¨
+					// å¦‚æœtabspaceå±æ€§å¯è§,åˆ™æ˜¾ç¤ºtabspace
 					if (Homespace.isRightScreenDrag) {
 						return false;
 					}
@@ -293,9 +293,9 @@ public class Homespace extends ViewGroup {
 				}			
 				return false;
 			} else if (mCurrentScreen == Launcher.CURRENT_SCREEN_TABSPACE) {
-				// TODO ÍøÒ³ÊÖÊÆ´¦Àí
-				// ÅĞ¶ÏtabspaceÖĞµÄwebviewspaceÊÇ·ñ°üº¬¶à¸öÒ³Ãæ
-				// ÅĞ¶ÏwebviewspaceÖĞµ±Ç°Ò³ÃæÎª0,Ôò×ó»¬¶¯Ê±,·µ»Øworkspace
+				// TODO ç½‘é¡µæ‰‹åŠ¿å¤„ç†
+				// åˆ¤æ–­tabspaceä¸­çš„webviewspaceæ˜¯å¦åŒ…å«å¤šä¸ªé¡µé¢
+				// åˆ¤æ–­webviewspaceä¸­å½“å‰é¡µé¢ä¸º0,åˆ™å·¦æ»‘åŠ¨æ—¶,è¿”å›workspace
 				long currentTime = ev.getEventTime();
 
 				
@@ -360,7 +360,7 @@ public class Homespace extends ViewGroup {
 					mVelocityTracker.addMovement(event);
 				}
 				if (Math.abs(deltaX) > Math.abs(deltaY)) {
-					// ÕıÏò»òÕß¸ºÏòÒÆ¶¯£¬ÆÁÄ»¸úËæÊÖÖ¸ÒÆ¶¯
+					// æ­£å‘æˆ–è€…è´Ÿå‘ç§»åŠ¨ï¼Œå±å¹•è·Ÿéšæ‰‹æŒ‡ç§»åŠ¨
 					mLastMotionX = x;
 					scrollBy(deltaX, 0);
 				}
@@ -372,10 +372,10 @@ public class Homespace extends ViewGroup {
 			if (mVelocityTracker != null) {
 				mVelocityTracker.addMovement(event);
 				mVelocityTracker.computeCurrentVelocity(1000);
-				// µÃµ½XÖá·½ÏòÊÖÖ¸ÒÆ¶¯ËÙ¶È
+				// å¾—åˆ°Xè½´æ–¹å‘æ‰‹æŒ‡ç§»åŠ¨é€Ÿåº¦
 				velocityX = (int) mVelocityTracker.getXVelocity();
 			}
-			// velocityXÎªÕıÖµËµÃ÷ÊÖÖ¸ÏòÓÒ»¬¶¯£¬Îª¸ºÖµËµÃ÷ÊÖÖ¸Ïò×ó»¬¶¯
+			// velocityXä¸ºæ­£å€¼è¯´æ˜æ‰‹æŒ‡å‘å³æ»‘åŠ¨ï¼Œä¸ºè´Ÿå€¼è¯´æ˜æ‰‹æŒ‡å‘å·¦æ»‘åŠ¨
 			if (velocityX > SNAP_VELOCITY && mCurrentScreen > 0) {
 				// Fling enough to move left
 				snapToScreen(mCurrentScreen - 1);
@@ -402,23 +402,23 @@ public class Homespace extends ViewGroup {
 	}
 
 	/**
-	 * ¸ù¾İµ±Ç°²¼¾ÖµÄÎ»ÖÃ£¬¹ö¶¯µ½Ä¿µÄÒ³Ãæ
+	 * æ ¹æ®å½“å‰å¸ƒå±€çš„ä½ç½®ï¼Œæ»šåŠ¨åˆ°ç›®çš„é¡µé¢
 	 */
 	public void snapToDestination() {
-		/** »ñÈ¡viewµÄ¿í¶È */
+		/** è·å–viewçš„å®½åº¦ */
 		final int screenWidth = getScreenWidth();
 		// Log.i(TAG, "screenWidth: " + screenWidth + " screenWidth/2: "
 		// + screenWidth / 2);
 		// Log.i(TAG, "getScrollX():" + getScrollX());
 		/**
-		 * getScrollX():»ñµÃ¹ö¶¯ºóviewµÄºá×ø±ê
+		 * getScrollX():è·å¾—æ»šåŠ¨åviewçš„æ¨ªåæ ‡
 		 */
 		final int destScreen = (getScrollX() + screenWidth / 2) / screenWidth;
 		snapToScreen(destScreen);
 	}
 
 	private void snapToScreen(int whichScreen, int velocity, boolean settle) {
-		// »ñÈ¡ÓĞĞ§Ò³Ãæ
+		// è·å–æœ‰æ•ˆé¡µé¢
 		final int screenWidth = getScreenWidth();
 		whichScreen = Math.max(0, Math.min(whichScreen, getChildCount() - 1));
 		if (getScrollX() != (whichScreen * screenWidth)) {
@@ -427,11 +427,11 @@ public class Homespace extends ViewGroup {
 			mScroller.startScroll(getScrollX(), 0, delta, 0,
 					Math.abs(delta) * 2);
 			if (mCurrentScreen == 0 && whichScreen == 0) {
-				invalidate(); // Ê¹viewÖØ»­
+				invalidate(); // ä½¿viewé‡ç”»
 				return;
 			}
 			mCurrentScreen = whichScreen;
-			invalidate(); // Ê¹viewÖØ»­
+			invalidate(); // ä½¿viewé‡ç”»
 			if (mOnViewChangeListener != null) {
 				mOnViewChangeListener.OnViewChange(mCurrentScreen);
 			}
@@ -622,11 +622,11 @@ public class Homespace extends ViewGroup {
 	}
 
 	private boolean IsCanMove(int deltaX) {
-		// deltaX<0ËµÃ÷ÊÖÖ¸ÏòÓÒ»®
+		// deltaX<0è¯´æ˜æ‰‹æŒ‡å‘å³åˆ’
 		if (getScrollX() <= 0 && deltaX < 0) {
 			return false;
 		}
-		// deltaX>0ËµÃ÷ÊÖÖ¸Ïò×ó»®
+		// deltaX>0è¯´æ˜æ‰‹æŒ‡å‘å·¦åˆ’
 		if (getScrollX() >= (getChildCount() - 1) *  getScreenWidth() && deltaX > 0) {
 			return false;
 		}

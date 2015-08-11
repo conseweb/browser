@@ -47,7 +47,7 @@ public class ConnectionChangeReceiver extends BroadcastReceiver {
 			// connect network
 			boolean isConnected = ConnectionChange.mathHours(context,
 					isWifiConnected);
-			// ÅĞ¶ÏÊÇ·ñÒªÁªÍø»ñÈ¡ÏÂ·¢
+			// åˆ¤æ–­æ˜¯å¦è¦è”ç½‘è·å–ä¸‹å‘
 			if (true) {
 				Log.v("LS","ConnectionChange.ConnectionChangeAction(context)");
 				ConnectionChange.ConnectionChangeAction(context);

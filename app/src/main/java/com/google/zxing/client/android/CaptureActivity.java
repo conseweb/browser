@@ -223,9 +223,9 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
     RelativeLayout layout_title_bar = (RelativeLayout)findViewById(R.id.layout_title_bar);
 	layout_title_bar.setVisibility(View.GONE);
     textView =(TextView)findViewById(R.id.item_title);
-	textView.setText("É¨Ò»É¨");
+	textView.setText("æ‰«ä¸€æ‰«");
 	title_search = (TextView)findViewById(R.id.title_search);
-	title_search.setText("¸ü¶à");
+	title_search.setText("æ›´å¤š");
 	title_search.setVisibility(View.VISIBLE);
 	title_search.setOnClickListener(new OnClickListener() {
 		@Override
@@ -399,7 +399,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
     return super.onKeyDown(keyCode, event);
   }
 
-  // TODO È¥³ı°ïÖúµÈ²Ëµ¥¡£  ÓĞĞèÇó¿ÉÒÔ¼ÓÉÏ  LINSHUO
+  // TODO å»é™¤å¸®åŠ©ç­‰èœå•ã€‚  æœ‰éœ€æ±‚å¯ä»¥åŠ ä¸Š  LINSHUO
 /*  @Override
   public boolean onCreateOptionsMenu(Menu menu) {
     super.onCreateOptionsMenu(menu);
@@ -754,7 +754,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
 
   private void resetStatusView() {
     statusView.setText(R.string.msg_default_status);
-    statusView.setVisibility(View.GONE);    //ÕâÀï¸Ä¶¯Ö®ºó ÏÔÊ¾ÌáÊ¾
+    statusView.setVisibility(View.GONE);    //è¿™é‡Œæ”¹åŠ¨ä¹‹å æ˜¾ç¤ºæç¤º
     viewfinderView.setVisibility(View.VISIBLE);
     lastResult = null;
   }
@@ -777,7 +777,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
 					if(cursor == null){
 						imageFilePath=uri.toString().replace("file://", "");
 						if(imageFilePath==null){
-							Toast.makeText(CaptureActivity.this,"ÇëÓÃÏµÍ³Í¼Æ¬ä¯ÀÀÆ÷Ñ¡ÔñÍ¼Æ¬£¡",1000).show();
+							Toast.makeText(CaptureActivity.this,"è¯·ç”¨ç³»ç»Ÿå›¾ç‰‡æµè§ˆå™¨é€‰æ‹©å›¾ç‰‡ï¼",1000).show();
 							//finish();
 							break;
 						}
@@ -806,7 +806,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
 									fis.close();
 									if(cursor!=null)
 									cursor.close();
-									Toast.makeText(CaptureActivity.this,"Í¼Æ¬Î´É¨Ãè³É¹¦",1000).show();
+									Toast.makeText(CaptureActivity.this,"å›¾ç‰‡æœªæ‰«ææˆåŠŸ",1000).show();
 									//finish();
 									//e.printStackTrace();
 								}
@@ -838,7 +838,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
 									
 									handleDecodeInternally(rawResult,bitmap);
 								} catch (com.google.zxing.NotFoundException e) {
-									Toast.makeText(CaptureActivity.this,"Í¼Æ¬Î´É¨Ãè³É¹¦",1000).show();
+									Toast.makeText(CaptureActivity.this,"å›¾ç‰‡æœªæ‰«ææˆåŠŸ",1000).show();
 									//finish();
 									//e.printStackTrace();
 								}
@@ -855,11 +855,11 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
   
   
 /**
- *  ´´½¨ÒÔÏÂµÄJSON¶ÔÏó   
+ *  åˆ›å»ºä»¥ä¸‹çš„JSONå¯¹è±¡   
  * @return
  */
 	private JSONObject createJSONObject(Result str) {  
-	      // ×îÍâ²ãÊÇ£û£ı£¬Ò²¾ÍÊÇÒ»¸öJSONObject¶ÔÏó  
+	      // æœ€å¤–å±‚æ˜¯ï½›ï½ï¼Œä¹Ÿå°±æ˜¯ä¸€ä¸ªJSONObjectå¯¹è±¡  
 	  JSONObject person = new JSONObject();  
 	  try {
 		  DateFormat formatter = DateFormat.getDateTimeInstance(DateFormat.SHORT, DateFormat.SHORT);
@@ -917,7 +917,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
 	
 	
 	/**
-	 * ²Ã¼ôÍ¼Æ¬·½·¨ÊµÏÖ
+	 * è£å‰ªå›¾ç‰‡æ–¹æ³•å®ç°
 	 * 
 	 * @param uri
 	 */
@@ -925,12 +925,12 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
 
 		Intent intent = new Intent("com.android.camera.action.CROP");
 		intent.setDataAndType(uri, "image/*");
-		// ÉèÖÃ²Ã¼ô
+		// è®¾ç½®è£å‰ª
 		intent.putExtra("crop", "true");
-		// aspectX aspectY ÊÇ¿í¸ßµÄ±ÈÀı
+		// aspectX aspectY æ˜¯å®½é«˜çš„æ¯”ä¾‹
 		intent.putExtra("aspectX", 1);
 		intent.putExtra("aspectY", 1);
-		// outputX outputY ÊÇ²Ã¼ôÍ¼Æ¬¿í¸ß
+		// outputX outputY æ˜¯è£å‰ªå›¾ç‰‡å®½é«˜
 		intent.putExtra("outputX", 350);
 		intent.putExtra("outputY", 350);
 		intent.putExtra("return-data", true);
@@ -938,7 +938,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
 	}
 	
 	/**
-	 * ÏÔÊ¾ËÑË÷ÒıÇæµ¯¿ò
+	 * æ˜¾ç¤ºæœç´¢å¼•æ“å¼¹æ¡†
 	 */
 	private void showSearWindow() {
 
@@ -949,7 +949,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
 			GridView search_engine_pop_gridview = (GridView) view
 					.findViewById(R.id.search_engine_pop_gridview);
 
-			String[] itemSub = { "´ÓÏà²áÑ¡Ôñ", "ÎÒµÄ¶şÎ¬Âë"};
+			String[] itemSub = { "ä»ç›¸å†Œé€‰æ‹©", "æˆ‘çš„äºŒç»´ç "};
 			final int[] imageSub = { R.drawable.erweima_xiangce,R.drawable.erweima_wode};
 
 			ArrayList<HashMap<String, Object>> Itemload = new ArrayList<HashMap<String, Object>>();
@@ -973,7 +973,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
 									startActivity(intent);
 									
 								} else {
-									Toast.makeText(CaptureActivity.this,"SD¿¨ÒÑĞ¶ÔØ»ò²»´æÔÚ.", 1000).show();
+									Toast.makeText(CaptureActivity.this,"SDå¡å·²å¸è½½æˆ–ä¸å­˜åœ¨.", 1000).show();
 								}
 							}else if(arg2==1){
 								startActivity(new Intent(CaptureActivity.this, ErWeiMaListActivity.class));
@@ -993,19 +993,19 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
 			WindowManager wm = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
 			Display display = wm.getDefaultDisplay();
 			display.getMetrics(dm);
-			// ´´½¨Ò»¸öPopuWidow¶ÔÏó
+			// åˆ›å»ºä¸€ä¸ªPopuWidowå¯¹è±¡
 			SearWindow = new PopupWindow(view, 300, 220);
 		}
 
-		// Ê¹Æä¾Û¼¯
+		// ä½¿å…¶èšé›†
 		SearWindow.setFocusable(true);
-		// ÉèÖÃÔÊĞíÔÚÍâµã»÷ÏûÊ§
+		// è®¾ç½®å…è®¸åœ¨å¤–ç‚¹å‡»æ¶ˆå¤±
 		SearWindow.setOutsideTouchable(true);
 
-		// Õâ¸öÊÇÎªÁËµã»÷¡°·µ»ØBack¡±Ò²ÄÜÊ¹ÆäÏûÊ§£¬²¢ÇÒ²¢²»»áÓ°ÏìÄãµÄ±³¾°
+		// è¿™ä¸ªæ˜¯ä¸ºäº†ç‚¹å‡»â€œè¿”å›Backâ€ä¹Ÿèƒ½ä½¿å…¶æ¶ˆå¤±ï¼Œå¹¶ä¸”å¹¶ä¸ä¼šå½±å“ä½ çš„èƒŒæ™¯
 		SearWindow.setBackgroundDrawable(new BitmapDrawable());
 
-		// ÉèÖÃlayoutÔÚPopupWindowÖĞÏÔÊ¾µÄÎ»ÖÃ
+		// è®¾ç½®layoutåœ¨PopupWindowä¸­æ˜¾ç¤ºçš„ä½ç½®
 
 		SearWindow.showAsDropDown(title_search, 0, 0);
 

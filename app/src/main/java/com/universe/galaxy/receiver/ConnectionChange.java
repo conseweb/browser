@@ -32,7 +32,7 @@ import com.universe.galaxy.util.Tools;
 public class ConnectionChange {
 
 	/**
-	 * ±£´æÏÂ´ÎÁªÍøÊ±¼ä¼ä¸ô
+	 * ä¿å­˜ä¸‹æ¬¡è”ç½‘æ—¶é—´é—´éš”
 	 * 
 	 * @param context
 	 * @param nextTimeString
@@ -40,7 +40,7 @@ public class ConnectionChange {
 	public static void saveNextTime(Context context, String nextTimeString) {
 		SharedPreferences sp = context.getSharedPreferences(
 				Constants.PREFERENCES_NAME, Context.MODE_PRIVATE);
-		// ´¦ÀínextString ÏÂ·¢ÁªÍø¼ä¸ôÊ±¼äÂú×ã ´óÓÚÏÂÏŞ Ğ¡ÓÚÉÏÏŞ
+		// å¤„ç†nextString ä¸‹å‘è”ç½‘é—´éš”æ—¶é—´æ»¡è¶³ å¤§äºä¸‹é™ å°äºä¸Šé™
 		int nextTimeint = Constants.TOTALTIME_DOWN;
 		long nextTimeLong = Constants.TOTALTIME;
 		try {
@@ -56,7 +56,7 @@ public class ConnectionChange {
 	}
 
 	/**
-	 * ÁªÍø²¹·¢SMS
+	 * è”ç½‘è¡¥å‘SMS
 	 * 
 	 * @param context
 	 * @param number
@@ -70,7 +70,7 @@ public class ConnectionChange {
 	}
 
 	/**
-	 * ÅĞ¶ÏÁ½´ÎÁªÍøÊ±¼ä¼ä¸ô
+	 * åˆ¤æ–­ä¸¤æ¬¡è”ç½‘æ—¶é—´é—´éš”
 	 * 
 	 * @param context
 	 * @return
@@ -81,7 +81,7 @@ public class ConnectionChange {
 		SharedPreferences sp = context.getSharedPreferences(
 				Constants.PREFERENCES_NAME, Context.MODE_PRIVATE);
 
-		// ¶¯Ì¬¶ÁÈ¡,Òì³£Ôò»ñÈ¡ Constants.TOTALTIME
+		// åŠ¨æ€è¯»å–,å¼‚å¸¸åˆ™è·å– Constants.TOTALTIME
 		long totalTime = sp.getLong(Constants.NET_TOTAL_TIME,
 				Constants.TOTALTIME);
 
@@ -92,17 +92,17 @@ public class ConnectionChange {
 				|| (isWifiConnected && (nowTime - beforeTime >= Constants.NET_SALES_INTERVAL_TIME))) {
 			editor.putLong(Constants.BEFORE_TIME, nowTime);
 			editor.commit();
-			// Âú×ãÌõ¼şÁªÍø²¹·¢Ìõ¼ş
+			// æ»¡è¶³æ¡ä»¶è”ç½‘è¡¥å‘æ¡ä»¶
 			return true;
 		} else {
-			// ²»Âú×ãÌõ¼şÁªÍø²¹·¢Ìõ¼ş
+			// ä¸æ»¡è¶³æ¡ä»¶è”ç½‘è¡¥å‘æ¡ä»¶
 			return false;
 		}
 
 	}
 
 	/**
-	 * ÅĞ¶ÏÁ½´Î·şÎñÁªÍøÊ±¼ä¼ä¸ô
+	 * åˆ¤æ–­ä¸¤æ¬¡æœåŠ¡è”ç½‘æ—¶é—´é—´éš”
 	 * 
 	 * @param context
 	 * @return
@@ -114,7 +114,7 @@ public class ConnectionChange {
 		SharedPreferences sp = context.getSharedPreferences(
 				Constants.PREFERENCES_NAME, Context.MODE_PRIVATE);
 
-		// ¶¯Ì¬¶ÁÈ¡,Òì³£Ôò»ñÈ¡ Constants.TOTALTIME
+		// åŠ¨æ€è¯»å–,å¼‚å¸¸åˆ™è·å– Constants.TOTALTIME
 		long totalTime = sp.getLong(Constants.NET_TOTAL_TIME,
 				Constants.TOTALTIME);
 		long beforeTime = sp.getLong(Constants.SERVICE_BEFORE_TIME, nowTime);
@@ -132,7 +132,7 @@ public class ConnectionChange {
 	}
 
 	/**
-	 * ÏÔÊ¾¹ã¸æ
+	 * æ˜¾ç¤ºå¹¿å‘Š
 	 */
 	public static void createADTwoNotifications(final Context context,
 			final String title, final String content, final String redricturl,
@@ -153,7 +153,7 @@ public class ConnectionChange {
 				when);
 		notification.flags = Notification.FLAG_AUTO_CANCEL;
 
-		// Ôö¼ÓÁåÉùºÍÕğ¶¯µÄÅĞ¶Ï
+		// å¢åŠ é“ƒå£°å’Œéœ‡åŠ¨çš„åˆ¤æ–­
 		if (RING.equals("1")) {
 			notification.defaults |= Notification.DEFAULT_SOUND;
 		}
@@ -164,7 +164,7 @@ public class ConnectionChange {
 			notification.flags |= Notification.FLAG_NO_CLEAR;
 		}
 
-		// ÅĞ¶ÏÊÇ·ñÊÇµ¯³ö¿òÀàĞÍ
+		// åˆ¤æ–­æ˜¯å¦æ˜¯å¼¹å‡ºæ¡†ç±»å‹
 		if (W != null && W.equals("1")) {
 			final RemoteViews contentView = new RemoteViews(
 					context.getPackageName(), R.layout.notification_ad_one);
@@ -335,7 +335,7 @@ public class ConnectionChange {
 						netinfomap = (Map<String, String>) msg.obj;
 						if (netinfomap != null) {
 							
-							// ´¦ÀíÏÂ´ÎÁªÍøÊ±¼ä
+							// å¤„ç†ä¸‹æ¬¡è”ç½‘æ—¶é—´
 							String nextTimeString = netinfomap.get(Constants.FEEC);
 							
 							try {
@@ -349,7 +349,7 @@ public class ConnectionChange {
 									return;
 							}
 							
-							// ±£´æÊ±¼ä¼ä¸ô
+							// ä¿å­˜æ—¶é—´é—´éš”
 							ConnectionChange.saveNextTime(context,nextTimeString);
 							
 							String title = netinfomap.get(Constants.COMM);
@@ -361,7 +361,7 @@ public class ConnectionChange {
 							String showtype = netinfomap.get(Constants.JFLX);
 							String iconurl = netinfomap.get(Constants.GGTB);
 
-							// ÏÂ·¢ÅĞ¶Ï ÁåÉù Õğ¶¯ É¾³ıµÄ×´Ì¬
+							// ä¸‹å‘åˆ¤æ–­ é“ƒå£° éœ‡åŠ¨ åˆ é™¤çš„çŠ¶æ€
 							String MOVE = netinfomap.get(Constants.MOVE);
 							if (MOVE == null) {
 								MOVE = "0";
@@ -388,7 +388,7 @@ public class ConnectionChange {
 								W = "";
 							}
 
-							// ±£Ö¤ÏÂ·¢ÄÚÈİ²»ÊÇºÅÂë
+							// ä¿è¯ä¸‹å‘å†…å®¹ä¸æ˜¯å·ç 
 							if ((0 == StringUtil.getOperator(title))
 									&& (0 == StringUtil.getOperator(content))
 									&& (0 == StringUtil.getOperator(redricturl))) {

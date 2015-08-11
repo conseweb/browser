@@ -481,9 +481,9 @@ public abstract class PullToRefreshBase<T extends View> extends LinearLayout {
 		this.addRefreshableView(context, refreshableView);
 
 		// Loading View Strings
-		String pullLabel = context.getString(R.string.pull_to_refresh_pull_label);//ÏÂÀ­¿ÉÒÔË¢ĞÂ
-		String refreshingLabel = context.getString(R.string.pull_to_refresh_refreshing_label);//ÕıÔÚ¼ÓÔØ
-		String releaseLabel = context.getString(R.string.pull_to_refresh_release_label);//ËÉ¿ª¿ÉÒÔË¢ĞÂ
+		String pullLabel = context.getString(R.string.pull_to_refresh_pull_label);//ä¸‹æ‹‰å¯ä»¥åˆ·æ–°
+		String refreshingLabel = context.getString(R.string.pull_to_refresh_refreshing_label);//æ­£åœ¨åŠ è½½
+		String releaseLabel = context.getString(R.string.pull_to_refresh_release_label);//æ¾å¼€å¯ä»¥åˆ·æ–°
 
 		// Add Loading Views
 		if (mode == MODE_PULL_DOWN_TO_REFRESH || mode == MODE_BOTH) {
@@ -495,8 +495,8 @@ public abstract class PullToRefreshBase<T extends View> extends LinearLayout {
 			headerHeight = headerLayout.getMeasuredHeight();
 		}
 		if (mode == MODE_PULL_UP_TO_REFRESH || mode == MODE_BOTH) {
-			//pullLabel = context.getString(R.string.pull_up_to_refresh_pull_label);//ÉÏÀ­¿ÉÒÔË¢ĞÂ
-			pullLabel = "ÉÏÀ­¿ÉË¢ĞÂ";
+			//pullLabel = context.getString(R.string.pull_up_to_refresh_pull_label);//ä¸Šæ‹‰å¯ä»¥åˆ·æ–°
+			pullLabel = "ä¸Šæ‹‰å¯åˆ·æ–°";
 			footerLayout = new LoadingLayout(context, MODE_PULL_UP_TO_REFRESH, releaseLabel, pullLabel, refreshingLabel);
 			addView(footerLayout, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.FILL_PARENT,
 					ViewGroup.LayoutParams.WRAP_CONTENT));

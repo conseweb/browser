@@ -42,7 +42,7 @@ import java.util.HashSet;
 public final class ViewfinderView extends View {
 
   private static final int[] SCANNER_ALPHA = {0, 64, 128, 192, 255, 192, 128, 64};
-  private static final long ANIMATION_DELAY = 30L; // ±º‰
+  private static final long ANIMATION_DELAY = 30L; //Êó∂Èó¥
   private static final int OPAQUE = 0xFF;
 
   private final Paint paint;
@@ -56,19 +56,19 @@ public final class ViewfinderView extends View {
   private Collection<ResultPoint> possibleResultPoints;
   private Collection<ResultPoint> lastPossibleResultPoints;
   
-  private static float density;   // ÷ª˙µƒ∆¡ƒª√‹∂»
+  private static float density;   //ÊâãÊú∫ÁöÑÂ±èÂπïÂØÜÂ∫¶
 
-  private int ScreenRate;   //Àƒ∏ˆ¬Ã…´±ﬂΩ«∂‘”¶µƒ≥§∂» 
+  private int ScreenRate;   //Âõõ‰∏™ÁªøËâ≤ËæπËßíÂØπÂ∫îÁöÑÈïøÂ∫¶ 
     
-  private static final int CORNER_WIDTH = 10;  //Àƒ∏ˆ¬Ã…´±ﬂΩ«∂‘”¶µƒøÌ∂»
+  private static final int CORNER_WIDTH = 10;  //Âõõ‰∏™ÁªøËâ≤ËæπËßíÂØπÂ∫îÁöÑÂÆΩÂ∫¶
   
-  private static final int SPEEN_DISTANCE = 8;   //÷–º‰ƒ«Ãıœﬂ√ø¥ŒÀ¢–¬“∆∂Øµƒæ‡¿Î
+  private static final int SPEEN_DISTANCE = 8;   //‰∏≠Èó¥ÈÇ£Êù°Á∫øÊØèÊ¨°Âà∑Êñ∞ÁßªÂä®ÁöÑË∑ùÁ¶ª
 	
-  private int slideTop;   //÷–º‰ª¨∂Øœﬂµƒ◊Ó∂•∂ÀŒª÷√
+  private int slideTop;   //‰∏≠Èó¥ÊªëÂä®Á∫øÁöÑÊúÄÈ°∂Á´Ø‰ΩçÁΩÆ
   
-  private static final int MIDDLE_LINE_PADDING = 7; // …®√ËøÚ÷–µƒ÷–º‰œﬂµƒ”Î…®√ËøÚ◊Û”“µƒº‰œ∂
+  private static final int MIDDLE_LINE_PADDING = 7; // Êâ´ÊèèÊ°Ü‰∏≠ÁöÑ‰∏≠Èó¥Á∫øÁöÑ‰∏éÊâ´ÊèèÊ°ÜÂ∑¶Âè≥ÁöÑÈó¥Èöô
 	
-  private static final int MIDDLE_LINE_WIDTH = 6;  //…®√ËøÚ÷–µƒ÷–º‰œﬂµƒøÌ∂»
+  private static final int MIDDLE_LINE_WIDTH = 6;  //Êâ´ÊèèÊ°Ü‰∏≠ÁöÑ‰∏≠Èó¥Á∫øÁöÑÂÆΩÂ∫¶
 	
   boolean isFirst = false;
 
@@ -77,7 +77,7 @@ public final class ViewfinderView extends View {
     super(context, attrs);
 
     density = context.getResources().getDisplayMetrics().density;
-	//Ω´œÒÀÿ◊™ªª≥…dp
+	//Â∞ÜÂÉèÁ¥†ËΩ¨Êç¢Êàêdp
 	ScreenRate = (int)(20 * density);
     
     // Initialize these once for performance rather than calling them every time in onDraw().
@@ -85,9 +85,9 @@ public final class ViewfinderView extends View {
     Resources resources = getResources();
     maskColor = resources.getColor(R.color.viewfinder_mask);
     resultColor = resources.getColor(R.color.result_view);
-    frameColor = resources.getColor(R.color.viewfinder_frame);  //øÚµƒ—’…´
-    laserColor = resources.getColor(R.color.viewfinder_laser);  //÷–º‰ƒ«Ãı∫Ïœﬂµƒ—’…´
-    //resultPointColor = resources.getColor(R.color.possible_result_points);  //‘≠¿¥µƒ …®√Ëµ„ ¡÷À∂
+    frameColor = resources.getColor(R.color.viewfinder_frame);  //Ê°ÜÁöÑÈ¢úËâ≤
+    laserColor = resources.getColor(R.color.viewfinder_laser);  //‰∏≠Èó¥ÈÇ£Êù°Á∫¢Á∫øÁöÑÈ¢úËâ≤
+    //resultPointColor = resources.getColor(R.color.possible_result_points);  //ÂéüÊù•ÁöÑ Êâ´ÊèèÁÇπ ÊûóÁ°ï
     resultPointColor = resources.getColor(R.color.transparent);
     scannerAlpha = 0;
     isFirst = false;
@@ -147,7 +147,7 @@ public final class ViewfinderView extends View {
               frame.right, frame.bottom, paint); 
       
       
-    //ªÊ÷∆÷–º‰µƒœﬂ,√ø¥ŒÀ¢–¬ΩÁ√Ê£¨÷–º‰µƒœﬂÕ˘œ¬“∆∂ØSPEEN_DISTANCE
+    //ÁªòÂà∂‰∏≠Èó¥ÁöÑÁ∫ø,ÊØèÊ¨°Âà∑Êñ∞ÁïåÈù¢Ôºå‰∏≠Èó¥ÁöÑÁ∫øÂæÄ‰∏ãÁßªÂä®SPEEN_DISTANCE
 		slideTop += SPEEN_DISTANCE;
 		if(slideTop >= frame.bottom){
 			slideTop = frame.top;
@@ -159,7 +159,7 @@ public final class ViewfinderView extends View {
       paint.setColor(laserColor);
       paint.setAlpha(SCANNER_ALPHA[scannerAlpha]);
       scannerAlpha = (scannerAlpha + 1) % SCANNER_ALPHA.length;
-     // int middle = frame.height() / 2 + frame.top;  //’‚¿Ô «‘≠¿¥÷–º‰∫Ïœﬂ
+     // int middle = frame.height() / 2 + frame.top;  //ËøôÈáåÊòØÂéüÊù•‰∏≠Èó¥Á∫¢Á∫ø
      // canvas.drawRect(frame.left + 2, middle - 1, frame.right - 1, middle + 2, paint);
 
       Collection<ResultPoint> currentPossible = possibleResultPoints;

@@ -371,7 +371,7 @@ public abstract class ResultHandler {
     launchIntent(intent);
   }
 
-  final void openURL(String url) { //ÁÖË¶ LS
+  final void openURL(String url) { //æž—ç¡• LS
     //launchIntent(new Intent(Intent.ACTION_VIEW, Uri.parse(url)))
 	  Launcher.mLauncher_ErWeiMa.addTab(url);
 	  

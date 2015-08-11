@@ -17,57 +17,57 @@ import com.qing.browser.ui.launcher.Launcher;
 public class FloatWindowTurnthepageView extends LinearLayout {
 
 	/**
-	 * ¼ÇÂ¼Ğ¡Ğü¸¡´°µÄ¿í¶È
+	 * è®°å½•å°æ‚¬æµ®çª—çš„å®½åº¦
 	 */
 	public static int viewWidth;
 
 	/**
-	 * ¼ÇÂ¼Ğ¡Ğü¸¡´°µÄ¸ß¶È
+	 * è®°å½•å°æ‚¬æµ®çª—çš„é«˜åº¦
 	 */
 	public static int viewHeight;
 
 	/**
-	 * ¼ÇÂ¼ÏµÍ³×´Ì¬À¸µÄ¸ß¶È
+	 * è®°å½•ç³»ç»ŸçŠ¶æ€æ çš„é«˜åº¦
 	 */
 	 private static int statusBarHeight;
 
 	/**
-	 * ÓÃÓÚ¸üĞÂĞ¡Ğü¸¡´°µÄÎ»ÖÃ
+	 * ç”¨äºæ›´æ–°å°æ‚¬æµ®çª—çš„ä½ç½®
 	 */
 	private WindowManager windowManager;
 
 	/**
-	 * Ğ¡Ğü¸¡´°µÄ²ÎÊı
+	 * å°æ‚¬æµ®çª—çš„å‚æ•°
 	 */
 	private WindowManager.LayoutParams mParams;
 
 	/**
-	 * ¼ÇÂ¼µ±Ç°ÊÖÖ¸Î»ÖÃÔÚÆÁÄ»ÉÏµÄºá×ø±êÖµ
+	 * è®°å½•å½“å‰æ‰‹æŒ‡ä½ç½®åœ¨å±å¹•ä¸Šçš„æ¨ªåæ ‡å€¼
 	 */
 	private float xInScreen;
 
 	/**
-	 * ¼ÇÂ¼µ±Ç°ÊÖÖ¸Î»ÖÃÔÚÆÁÄ»ÉÏµÄ×İ×ø±êÖµ
+	 * è®°å½•å½“å‰æ‰‹æŒ‡ä½ç½®åœ¨å±å¹•ä¸Šçš„çºµåæ ‡å€¼
 	 */
 	private float yInScreen;
 
 	/**
-	 * ¼ÇÂ¼ÊÖÖ¸°´ÏÂÊ±ÔÚÆÁÄ»ÉÏµÄºá×ø±êµÄÖµ
+	 * è®°å½•æ‰‹æŒ‡æŒ‰ä¸‹æ—¶åœ¨å±å¹•ä¸Šçš„æ¨ªåæ ‡çš„å€¼
 	 */
 	private float xDownInScreen;
 
 	/**
-	 * ¼ÇÂ¼ÊÖÖ¸°´ÏÂÊ±ÔÚÆÁÄ»ÉÏµÄ×İ×ø±êµÄÖµ
+	 * è®°å½•æ‰‹æŒ‡æŒ‰ä¸‹æ—¶åœ¨å±å¹•ä¸Šçš„çºµåæ ‡çš„å€¼
 	 */
 	private float yDownInScreen;
 
 	/**
-	 * ¼ÇÂ¼ÊÖÖ¸°´ÏÂÊ±ÔÚĞ¡Ğü¸¡´°µÄViewÉÏµÄºá×ø±êµÄÖµ
+	 * è®°å½•æ‰‹æŒ‡æŒ‰ä¸‹æ—¶åœ¨å°æ‚¬æµ®çª—çš„Viewä¸Šçš„æ¨ªåæ ‡çš„å€¼
 	 */
 	private float xInView;
 
 	/**
-	 * ¼ÇÂ¼ÊÖÖ¸°´ÏÂÊ±ÔÚĞ¡Ğü¸¡´°µÄViewÉÏµÄ×İ×ø±êµÄÖµ
+	 * è®°å½•æ‰‹æŒ‡æŒ‰ä¸‹æ—¶åœ¨å°æ‚¬æµ®çª—çš„Viewä¸Šçš„çºµåæ ‡çš„å€¼
 	 */
 	private float yInView;
 
@@ -99,7 +99,7 @@ public class FloatWindowTurnthepageView extends LinearLayout {
 	public boolean onTouchEvent(MotionEvent event) {
 		switch (event.getAction()) {
 		case MotionEvent.ACTION_DOWN:
-			// ÊÖÖ¸°´ÏÂÊ±¼ÇÂ¼±ØÒªÊı¾İ,×İ×ø±êµÄÖµ¶¼ĞèÒª¼õÈ¥×´Ì¬À¸¸ß¶È
+			// æ‰‹æŒ‡æŒ‰ä¸‹æ—¶è®°å½•å¿…è¦æ•°æ®,çºµåæ ‡çš„å€¼éƒ½éœ€è¦å‡å»çŠ¶æ€æ é«˜åº¦
 			xInView = event.getX();
 			yInView = event.getY();
 			xDownInScreen = event.getRawX();
@@ -110,13 +110,13 @@ public class FloatWindowTurnthepageView extends LinearLayout {
 		case MotionEvent.ACTION_MOVE:
 			xInScreen = event.getRawX();
 			yInScreen = event.getRawY() - getStatusBarHeight();
-			// ÊÖÖ¸ÒÆ¶¯µÄÊ±ºò¸üĞÂĞ¡Ğü¸¡´°µÄÎ»ÖÃ
+			// æ‰‹æŒ‡ç§»åŠ¨çš„æ—¶å€™æ›´æ–°å°æ‚¬æµ®çª—çš„ä½ç½®
 			updateViewPosition();
 			break;
 		case MotionEvent.ACTION_UP:
-			// Èç¹ûÊÖÖ¸Àë¿ªÆÁÄ»Ê±£¬xDownInScreenºÍxInScreenÏàµÈ£¬ÇÒyDownInScreenºÍyInScreenÏàµÈ£¬ÔòÊÓÎª´¥·¢ÁËµ¥»÷ÊÂ¼ş¡£
+			// å¦‚æœæ‰‹æŒ‡ç¦»å¼€å±å¹•æ—¶ï¼ŒxDownInScreenå’ŒxInScreenç›¸ç­‰ï¼Œä¸”yDownInScreenå’ŒyInScreenç›¸ç­‰ï¼Œåˆ™è§†ä¸ºè§¦å‘äº†å•å‡»äº‹ä»¶ã€‚
 			if (xDownInScreen == xInScreen && yDownInScreen == yInScreen) {
-				Log.i("H", "onTouchEvent ACTION_UP µã»÷");
+				Log.i("H", "onTouchEvent ACTION_UP ç‚¹å‡»");
 			}
 			break;
 		default:
@@ -126,17 +126,17 @@ public class FloatWindowTurnthepageView extends LinearLayout {
 	}
 
 	/**
-	 * ½«Ğ¡Ğü¸¡´°µÄ²ÎÊı´«Èë£¬ÓÃÓÚ¸üĞÂĞ¡Ğü¸¡´°µÄÎ»ÖÃ¡£
+	 * å°†å°æ‚¬æµ®çª—çš„å‚æ•°ä¼ å…¥ï¼Œç”¨äºæ›´æ–°å°æ‚¬æµ®çª—çš„ä½ç½®ã€‚
 	 * 
 	 * @param params
-	 *            Ğ¡Ğü¸¡´°µÄ²ÎÊı
+	 *            å°æ‚¬æµ®çª—çš„å‚æ•°
 	 */
 	public void setParams(WindowManager.LayoutParams params) {
 		mParams = params;
 	}
 
 	/**
-	 * ¸üĞÂĞ¡Ğü¸¡´°ÔÚÆÁÄ»ÖĞµÄÎ»ÖÃ¡£
+	 * æ›´æ–°å°æ‚¬æµ®çª—åœ¨å±å¹•ä¸­çš„ä½ç½®ã€‚
 	 */
 	private void updateViewPosition() {
 		
@@ -146,9 +146,9 @@ public class FloatWindowTurnthepageView extends LinearLayout {
 	}
 
 	/**
-	 * ÓÃÓÚ»ñÈ¡×´Ì¬À¸µÄ¸ß¶È¡£
+	 * ç”¨äºè·å–çŠ¶æ€æ çš„é«˜åº¦ã€‚
 	 * 
-	 * @return ·µ»Ø×´Ì¬À¸¸ß¶ÈµÄÏñËØÖµ¡£
+	 * @return è¿”å›çŠ¶æ€æ é«˜åº¦çš„åƒç´ å€¼ã€‚
 	 */
 	private int getStatusBarHeight() {
 		if (statusBarHeight == 0) {

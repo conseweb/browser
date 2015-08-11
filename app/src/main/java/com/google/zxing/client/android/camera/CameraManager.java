@@ -46,7 +46,7 @@ public final class CameraManager {
 
   private static final int MIN_FRAME_WIDTH = 240;
   private static final int MIN_FRAME_HEIGHT = 240;
-  private static final int MAX_FRAME_WIDTH = 360;				//ÁÖË¶  ĞŞ¸ÄÏÔÊ¾µÄ¸ß¶ÈºÍ¿í¶È
+  private static final int MAX_FRAME_WIDTH = 360;				//æ—ç¡•  ä¿®æ”¹æ˜¾ç¤ºçš„é«˜åº¦å’Œå®½åº¦
   private static final int MAX_FRAME_HEIGHT = 360;
 
   private static CameraManager cameraManager;
@@ -244,7 +244,7 @@ public final class CameraManager {
     	  height = width;
       }
       int leftOffset = (screenResolution.x - width) / 2;
-      int topOffset = (screenResolution.y - height) / 2-100;  //ÁÖË¶ ¼õÈ¥titleµÄ¸ß¶È
+      int topOffset = (screenResolution.y - height) / 2-100;  //æ—ç¡• å‡å»titleçš„é«˜åº¦
       framingRect = new Rect(leftOffset, topOffset, leftOffset + width, topOffset + height);
       Log.d(TAG, "Calculated framing rect: " + framingRect);
     }
@@ -260,7 +260,7 @@ public final class CameraManager {
       Rect rect = new Rect(getFramingRect());
       Point cameraResolution = configManager.getCameraResolution();
       Point screenResolution = configManager.getScreenResolution();
-      // rect.left = rect.left * cameraResolution.x / screenResolution.x;    ÁÖË¶ ÊúÆÁÄ»¸Ä¶¯
+      // rect.left = rect.left * cameraResolution.x / screenResolution.x;    æ—ç¡• ç«–å±å¹•æ”¹åŠ¨
       // rect.right = rect.right * cameraResolution.x / screenResolution.x;
       // rect.top = rect.top * cameraResolution.y / screenResolution.y;
       // rect.bottom = rect.bottom * cameraResolution.y / screenResolution.y;

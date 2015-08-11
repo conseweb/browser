@@ -203,11 +203,11 @@ public class HistoryExpandableListAdapter extends BaseExpandableListAdapter {
 		int binIndex = groupPositionToBin(groupPosition);
 		
 		switch (binIndex) {
-		case 0: return "½ñÈÕ";
-		case 1: return "×òÈÕ";
-		case 2: return "ÉÏÖÜ";
-		case 3: return "ÉÏ¸öÔÂ";
-		default: return "¸üÔçÖ®Ç°";
+		case 0: return "ä»Šæ—¥";
+		case 1: return "æ˜¨æ—¥";
+		case 2: return "ä¸Šå‘¨";
+		case 3: return "ä¸Šä¸ªæœˆ";
+		default: return "æ›´æ—©ä¹‹å‰";
 		}
 	}
 

@@ -35,9 +35,9 @@ public class LoadingLayout extends FrameLayout {
 //	private final ProgressBar headerProgress;
 	private final TextView headerText, refresh_time, last_refresh;
 
-	private String pullLabel;//下拉可以刷新
-	private String refreshingLabel;//正在加载
-	private String releaseLabel;//松开可以刷新
+	private String pullLabel;//涓嬫媺鍙互鍒锋柊
+	private String refreshingLabel;//姝ｅ湪鍔犺浇
+	private String releaseLabel;//鏉惧紑鍙互鍒锋柊
 	private AnimationDrawable anim = null;
 	private final Animation rotateAnimation, resetRotateAnimation;
 
@@ -88,7 +88,7 @@ public class LoadingLayout extends FrameLayout {
 	}
 
 	/**
-	 * 下拉可以刷新
+	 * 涓嬫媺鍙互鍒锋柊
 	 */
 	public void reset() {
 		headerText.setText(pullLabel);
@@ -101,7 +101,7 @@ public class LoadingLayout extends FrameLayout {
 	}
 	
 	/**
-	 * 松开可以刷新
+	 * 鏉惧紑鍙互鍒锋柊
 	 */
 	public void releaseToRefresh() {
 		headerText.setText(releaseLabel);
@@ -115,7 +115,7 @@ public class LoadingLayout extends FrameLayout {
 
 	
 	/**
-	 * 正在加载
+	 * 姝ｅ湪鍔犺浇
 	 */
 	public void refreshing() {
 		headerText.setText(refreshingLabel);
@@ -139,7 +139,7 @@ public class LoadingLayout extends FrameLayout {
 	}
 
 	public void pullToRefresh() {
-		headerText.setText(pullLabel);//下拉可以刷新
+		headerText.setText(pullLabel);//涓嬫媺鍙互鍒锋柊
 		headerImage.clearAnimation();
 		headerImage.startAnimation(resetRotateAnimation);
 	}

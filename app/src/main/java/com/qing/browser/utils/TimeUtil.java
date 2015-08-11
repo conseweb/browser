@@ -6,9 +6,9 @@ import java.util.Date;
 import java.util.TimeZone;
 
 public class TimeUtil {
-	private static final String[] WEEK = { "Ìì", "Ò»", "¶ş", "Èı", "ËÄ", "Îå", "Áù" };
-	public static final String XING_QI = "ĞÇÆÚ";
-	public static final String ZHOU = "ÖÜ";
+	private static final String[] WEEK = { "å¤©", "ä¸€", "äºŒ", "ä¸‰", "å››", "äº”", "å…­" };
+	public static final String XING_QI = "æ˜ŸæœŸ";
+	public static final String ZHOU = "å‘¨";
 
 	public static String getWeek(int num, String format) {
 		final Calendar c = Calendar.getInstance();
@@ -27,8 +27,8 @@ public class TimeUtil {
 
 	public static String getDay(long timesamp) {
 		if(timesamp == 0L)
-			return "Î´";
-		String result = "Î´";
+			return "æœª";
+		String result = "æœª";
 		SimpleDateFormat sdf = new SimpleDateFormat("dd");
 		Date today = new Date(System.currentTimeMillis());
 		Date otherDay = new Date(timesamp);
@@ -37,17 +37,17 @@ public class TimeUtil {
 
 		switch (temp) {
 		case 0:
-			result = "½ñÌì" + getTime(timesamp);
+			result = "ä»Šå¤©" + getTime(timesamp);
 			break;
 		case 1:
-			result = "×òÌì"+ getTime(timesamp);
+			result = "æ˜¨å¤©"+ getTime(timesamp);
 			break;
 		case 2:
-			result = "Ç°Ìì"+ getTime(timesamp);
+			result = "å‰å¤©"+ getTime(timesamp);
 			break;
 
 		default:
-			result = temp + "ÌìÇ°"+ getTime(timesamp);
+			result = temp + "å¤©å‰"+ getTime(timesamp);
 			break;
 		}
 
