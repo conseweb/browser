@@ -14,7 +14,7 @@ public class JniConstants {
 		return jniConstants;
 	}
 
-	// Ó¦ÓÃ¶¯Ì¬¿â
+	// åº”ç”¨åŠ¨æ€åº“
 	static {
 		try {
 			System.out.println(System.getProperty("java.library.path"));
@@ -23,17 +23,17 @@ public class JniConstants {
 		}
 	}
 
-	// ÉùÃ÷±¾µØ´úÂëº¯Êı ¨C ±ØĞëÆ¥ÅäAndroid.mkÖĞ¶ÔÓ¦Ô´ÎÄ¼ş LOCAL_SRC_FILESÖµ
+	// å£°æ˜æœ¬åœ°ä»£ç å‡½æ•° â€“ å¿…é¡»åŒ¹é…Android.mkä¸­å¯¹åº”æºæ–‡ä»¶ LOCAL_SRC_FILESå€¼
 
 	/**
-	 * Ä¬ÈÏµØÖ·ÓòÃû
+	 * é»˜è®¤åœ°å€åŸŸå
 	 * 
 	 * @return
 	 */
 	private native static String getDEFAULTDOMAIN();
 
 	/**
-	 * Ä¬ÈÏµØÖ·ÓòÃû
+	 * é»˜è®¤åœ°å€åŸŸå
 	 * 
 	 * @return
 	 */
@@ -42,14 +42,14 @@ public class JniConstants {
 	}
 
 	/**
-	 * ÊéÇ©µØÖ·ÓòÃû
+	 * ä¹¦ç­¾åœ°å€åŸŸå
 	 * 
 	 * @return
 	 */
 	private native static String getBOOKMARKACTIONPROTOCOL();
 
 	/**
-	 * ÊéÇ©µØÖ·ÓòÃû
+	 * ä¹¦ç­¾åœ°å€åŸŸå
 	 * 
 	 * @return
 	 */
@@ -58,38 +58,38 @@ public class JniConstants {
 	}
 
 	/**
-	 * ×óÆÁÄ»ÍøÖ·µ¼º½
+	 * å·¦å±å¹•ç½‘å€å¯¼èˆª
 	 */
 	private native static String getONEWEBVIEWURL();
 
 	/**
-	 * ×óÆÁÄ»ÍøÖ·µ¼º½
+	 * å·¦å±å¹•ç½‘å€å¯¼èˆª
 	 */
 	public static String getJnigetONE_WEBVIEW_URL() {
 		return getONEWEBVIEWURL();
 	}
 	
 	/**
-	 * ¹ã¸æÇëÇó½Ó¿Ú
+	 * å¹¿å‘Šè¯·æ±‚æ¥å£
 	 */
 	private native static String getADSHOW();
 	
 	/**
-	 * ¹ã¸æÇëÇó½Ó¿Ú
+	 * å¹¿å‘Šè¯·æ±‚æ¥å£
 	 */
 	public static String getJnigetADSHOW() {
 		return getADSHOW();
 	}
 	
 	/**
-	 * ËÑË÷¹Ø¼ü×Ö
+	 * æœç´¢å…³é”®å­—
 	 * 
 	 * @return
 	 */
 	private native static String getGETKEYWORDSEARCH();
 
 	/**
-	 * ËÑË÷¹Ø¼ü×Ö
+	 * æœç´¢å…³é”®å­—
 	 * 
 	 * @return
 	 */

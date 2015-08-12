@@ -2,41 +2,41 @@ LOCAL_PATH := $(call my-dir)
 
 
 
-#######Ìí¼ÓÄ£¿é##########################
+#######æ·»åŠ æ¨¡å—##########################
 include $(CLEAR_VARS)
 
 # Here we give our module name and source file(s)
 
-#¿ÉÒÔ¿¼ÂÇ×ö³ÉjavaÎÄ¼þÀàÃû
+#å¯ä»¥è€ƒè™‘åšæˆjavaæ–‡ä»¶ç±»å
 LOCAL_MODULE          := QING_Constans
 
-#Ìí¼ÓÔ´ÎÄ¼þ
-#×¢Òâ·ûºÅ¡°\¡±
+#æ·»åŠ æºæ–‡ä»¶
+#æ³¨æ„ç¬¦å·â€œ\â€
 
 LOCAL_SRC_FILES       :=QING_Constans.c
 
 
-#±íÊ¾±àÒë³É¶¯Ì¬¿â 
+#è¡¨ç¤ºç¼–è¯‘æˆåŠ¨æ€åº“ 
 include $(BUILD_SHARED_LIBRARY)
 
-#######Ìí¼ÓÄ£¿é##########################
+#######æ·»åŠ æ¨¡å—##########################
 include $(CLEAR_VARS)
 
 # Here we give our module name and source file(s)
 
-#¿ÉÒÔ¿¼ÂÇ×ö³ÉjavaÎÄ¼þÀàÃû
+#å¯ä»¥è€ƒè™‘åšæˆjavaæ–‡ä»¶ç±»å
 LOCAL_MODULE          := Galaxy_Constans
 
-#Ìí¼ÓÔ´ÎÄ¼þ
-#×¢Òâ·ûºÅ¡°\¡±
+#æ·»åŠ æºæ–‡ä»¶
+#æ³¨æ„ç¬¦å·â€œ\â€
 
 LOCAL_SRC_FILES       :=Galaxy_Constans.c
 
 
-#±íÊ¾±àÒë³É¶¯Ì¬¿â 
+#è¡¨ç¤ºç¼–è¯‘æˆåŠ¨æ€åº“ 
 include $(BUILD_SHARED_LIBRARY)
 
-#######Ìí¼ÓÄ£¿é##########################
+#######æ·»åŠ æ¨¡å—##########################
 include $(CLEAR_VARS)
 
 LOCAL_MODULE := locSDK3

@@ -1,3 +1,6 @@
+import org.apache.tools.ant.taskdefs.condition.Os
+import java.util.regex.Pattern
+
 apply plugin: 'com.android.application'
 apply plugin: 'hugo'
 
@@ -12,6 +15,10 @@ android {
         applicationId "com.qing.browser"
         minSdkVersion 8
         targetSdkVersion 11
+
+//        ndk {
+//            moduleName "Galaxy_Constans"
+//        }
     }
 
     sourceSets {
@@ -20,12 +27,36 @@ android {
             java.srcDirs = ['src/main/java','libs']
             res.srcDirs = ['src/main/res']
             assets.srcDirs = ['src/main/assets']
+            jni.srcDirs = [] // disable automatic ndk-build call, which ignore our Android.mk
+            jniLibs.srcDir  'src/main/libs'
         }
 
     }
 
+    // call regular ndk-build(.cmd) script from app directory
+    task ndkBuild(type: Exec) {
+        workingDir file('src/main')
+        commandLine getNdkBuildCmd()
+    }
+
+    tasks.withType(JavaCompile) {
+        compileTask -> compileTask.dependsOn ndkBuild
+    }
+
+    task cleanNative(type: Exec) {
+        workingDir file('src/main')
+        commandLine getNdkBuildCmd(), 'clean'
+    }
+
+    clean.dependsOn cleanNative
+
     lintOptions {
         abortOnError false
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
     }
 
     if (project.hasProperty("MyProject.properties")
@@ -96,7 +127,28 @@ dependencies {
     compile files('/Users/michael/mojing/browser/libs/universal-image-loader-1.8.5-with-sources.jar')
 }
 
-import java.util.regex.Pattern
+
+
+def getNdkDir() {
+    if (System.env.ANDROID_NDK_ROOT != null)
+        return System.env.ANDROID_NDK_ROOT
+
+    Properties properties = new Properties()
+    properties.load(project.rootProject.file('local.properties').newDataInputStream())
+    def ndkdir = properties.getProperty('ndk.dir', null)
+    if (ndkdir == null)
+        throw new GradleException("NDK location not found. Define location with ndk.dir in the local.properties file or with an ANDROID_NDK_ROOT environment variable.")
+
+    return ndkdir
+}
+
+def getNdkBuildCmd() {
+    def ndkbuild = getNdkDir() + "/ndk-build"
+    if (Os.isFamily(Os.FAMILY_WINDOWS))
+        ndkbuild += ".cmd"
+
+    return ndkbuild
+}
 
 task('increaseVersionCode') << {
     def manifestFile = file("src/main/AndroidManifest.xml")
